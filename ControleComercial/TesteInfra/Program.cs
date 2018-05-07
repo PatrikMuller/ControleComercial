@@ -18,14 +18,18 @@ namespace TesteInfra
             PessoaFisica obj = new PessoaFisica();
             PessoaFisicaAccess dao = new PessoaFisicaAccess();
 
+            obj.IdPessoa = 0;
             obj.Nome = "Patrik";
             obj.NomeMae = "Mãe";
             obj.NomePai = "Pai";
             obj.Rg = "RG";
+            obj.Sexo = "M";
             obj.Cpf = "703.111.222-23";
 
             dao.Grava(obj);
 
+            Console.WriteLine("Gravado com Sucesso!");
+            Console.ReadKey();
         }
     }
 }

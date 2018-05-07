@@ -15,6 +15,8 @@ using NHibernate.Dialect;
 using NHibernate.Connection;
 using System.Collections;
 using FluentNHibernate.Automapping;
+using FluentNHibernate.Cfg.Db;
+using NHibernate.Tool.hbm2ddl;
 //using System.Collections;
 
 namespace Infraestrutura.Factory
@@ -23,11 +25,41 @@ namespace Infraestrutura.Factory
     {
 
         private static ISessionFactory factory = CriaSessionFactory();
-
-        
+                
         public static ISessionFactory CriaSessionFactory()
         {
-            Configuration cfg = new Configuration();
+
+            //IPersistenceConfigurer configDB = PostgreSQLConfiguration.PostgreSQL82.ConnectionString("Server=localhost;Port=5432;Database=money_sic;User Id=postgres;Password=123456;");
+            IPersistenceConfigurer configDB = MsSqlConfiguration.MsSql2012.ConnectionString("Server=(local); Database=teste; User Id=user_teste; Password=Bili@35;");
+            var configMap = Fluently.Configure().Database(configDB).
+                //Mappings(c => c.FluentMappings.AddFromAssemblyOf<Mapping.PessoaFisicaMapping>());
+                Mappings(x => { x.FluentMappings.AddFromAssembly(Assembly.GetExecutingAssembly()); }).
+                //ExposeConfiguration( y => new SchemaExport(y).Create(true, false));
+                ExposeConfiguration(y => new SchemaUpdate(y).Execute(true, true));
+
+
+
+            factory = configMap.BuildSessionFactory();
+
+
+            //ISessionFactory sessionFactory = Fluently.Configure()
+            //    .Database(MsSqlConfiguration.MsSql2012
+            //      .ConnectionString(@"Data Source=(localDB)\v11.0;Initial Catalog=Cadastro;Integrated Security=True")
+            //                  .ShowSql()
+            //    )
+            //   .Mappings(m =>
+            //              m.FluentMappings
+            //                  .AddFromAssemblyOf<Aluno>())
+            //    .ExposeConfiguration(cfg => new SchemaExport(cfg)
+            //                                    .Create(false, false))
+            //    .BuildSessionFactory();
+
+
+
+            //ISessionFactory factory = Fluently.Configure(cfg).
+            //Mappings(x => { x.FluentMappings.AddFromAssembly(Assembly.GetExecutingAssembly()); }).BuildSessionFactory();
+
+            //Configuration cfg = new Configuration();
 
             //cfg.SetProperty("connection.provider", "NHibernate.Connection.DriverConnectionProvider");
             //cfg.SetProperty("dialect", "NHibernate.Dialect.PostgreSQLDialect");
@@ -35,7 +67,7 @@ namespace Infraestrutura.Factory
             //cfg.SetProperty("connection.connection_string", "Server=localhost;Port=5432;Database=money_sic;User Id=postgres;Password=123456;");
             //cfg.SetProperty("hbm2ddl.auto", "update");
 
-            cfg.Configure();
+            //cfg.Configure();
 
             //Environment.
 
@@ -121,9 +153,9 @@ namespace Infraestrutura.Factory
             //    .BuildSessionFactory();
 
 
-            ISessionFactory factory = Fluently.Configure(cfg).Mappings
-                (x => { x.FluentMappings.AddFromAssembly(Assembly.GetExecutingAssembly()); }).BuildSessionFactory();
-                //(m => m.AutoMappings.Add(AutoMap.AssemblyOf<Machine>)).BuildSessionFactory();
+            //ISessionFactory factory = Fluently.Configure(cfg).Mappings
+            //    (x => { x.FluentMappings.AddFromAssembly(Assembly.GetExecutingAssembly()); }).BuildSessionFactory();
+            //(m => m.AutoMappings.Add(AutoMap.AssemblyOf<Machine>)).BuildSessionFactory();
 
             //string conexão = System.Configuration.ConfigurationManager.ConnectionStrings["Nome da Conexão"].ConnectionString;
 
@@ -133,7 +165,7 @@ namespace Infraestrutura.Factory
 
         public static ISession AbreSessao()
         {
-            return factory.OpenSession();
+            return CriaSessionFactory().OpenSession();
         }
 
     }

@@ -9,7 +9,7 @@ using Infraestrutura.Models;
 
 namespace Infraestrutura.Mapping
 {
-    class PessoaFisicaMapping : SubclassMap<PessoaFisica>
+    public class PessoaFisicaMapping : SubclassMap<PessoaFisica>
     {
 
         public PessoaFisicaMapping()
@@ -19,6 +19,7 @@ namespace Infraestrutura.Mapping
             Map(o => o.NomePai);
             Map(o => o.NomeMae);
             Map(o => o.Sexo);
+            //Map(o => o.Matricula);
             Map(o => o.DataNascimento);
             //Map(obj => obj.DataNascimento);
             //Map(obj => obj.IdMunicipioNascimento);

@@ -9,7 +9,7 @@ using Infraestrutura.Models;
 
 namespace Infraestrutura.Mapping
 {
-    class PessoaJuridicaMapping : SubclassMap<PessoaJuridica>
+    public class PessoaJuridicaMapping : SubclassMap<PessoaJuridica>
     {
 
         public PessoaJuridicaMapping()
