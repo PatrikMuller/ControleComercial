@@ -1,20 +1,20 @@
 ﻿//using System;
-using System.Collections.Generic;
+//using System.Collections.Generic;
 //using System.Linq;
 //using System.Text;
 //using System.Threading.Tasks;
 
 using NHibernate;
-using NHibernate.Cfg;
+//using NHibernate.Cfg;
 using FluentNHibernate.Cfg;
 using System.Reflection;
 
-using NHibernate.Driver;
-using NHibernate.Bytecode;
-using NHibernate.Dialect;
-using NHibernate.Connection;
-using System.Collections;
-using FluentNHibernate.Automapping;
+//using NHibernate.Driver;
+//using NHibernate.Bytecode;
+//using NHibernate.Dialect;
+//using NHibernate.Connection;
+//using System.Collections;
+//using FluentNHibernate.Automapping;
 using FluentNHibernate.Cfg.Db;
 using NHibernate.Tool.hbm2ddl;
 //using System.Collections;
