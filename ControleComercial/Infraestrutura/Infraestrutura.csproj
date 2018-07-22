@@ -67,12 +67,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Access\CarrinhoAccess.cs" />
     <Compile Include="Access\PessoaFisicaAccess.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Factory\NHibernateHelper.cs" />
+    <Compile Include="Mapping\CarrinhoMapping.cs" />
     <Compile Include="Mapping\PessoaFisicaMapping.cs" />
     <Compile Include="Mapping\PessoaJuridicaMapping.cs" />
     <Compile Include="Mapping\PessoaMapping.cs" />
+    <Compile Include="Models\Carrinho.cs" />
     <Compile Include="Models\Pessoa.cs" />
     <Compile Include="Models\PessoaFisica.cs" />
     <Compile Include="Models\PessoaJuridica.cs" />
