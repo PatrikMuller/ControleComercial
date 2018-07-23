@@ -81,6 +81,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Item\CadastroItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Item\CadastroItem.Designer.cs">
+      <DependentUpon>CadastroItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\ListaItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Item\ListaItem.Designer.cs">
+      <DependentUpon>ListaItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Venda\CadastroVenda.cs">
@@ -89,6 +101,12 @@
     <Compile Include="Venda\CadastroVenda.Designer.cs">
       <DependentUpon>CadastroVenda.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Item\CadastroItem.resx">
+      <DependentUpon>CadastroItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\ListaItem.resx">
+      <DependentUpon>ListaItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
