@@ -11,11 +11,11 @@ using System.Windows.Forms;
 using Infraestrutura.Access;
 using Infraestrutura.Models;
 
-namespace Windows.Venda
+namespace Windows.FormsCarrinho
 {
-    public partial class CadastroVenda : Form
+    public partial class CadastroCarrinho : Form
     {
-        public CadastroVenda()
+        public CadastroCarrinho()
         {
             InitializeComponent();
         }
@@ -29,7 +29,7 @@ namespace Windows.Venda
             //carrinho.Id = 15;
             carrinho.Id = Convert.ToInt32(txtIdCarrinho.Text);
             carrinho.Data = DateTime.Now;
-                        
+
             //txtIdCarrinho.Text = Convert.ToString(carrinho.Id);
             txtIdCarrinho.Text = Convert.ToString(CarrinhoDao.Novo(carrinho));
             txtDataCarrinho.Text = Convert.ToString(carrinho.Data);
@@ -49,5 +49,6 @@ namespace Windows.Venda
             txtIdCarrinho.Text = Convert.ToString(CarrinhoDao.Gravar(carrinho));
             txtDataCarrinho.Text = Convert.ToString(carrinho.Data);
         }
+
     }
 }

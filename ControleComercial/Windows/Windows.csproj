@@ -81,30 +81,33 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Item\CadastroItem.cs">
+    <Compile Include="FormsCarrinho\CadastroCarrinho.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Item\CadastroItem.Designer.cs">
+    <Compile Include="FormsCarrinho\CadastroCarrinho.Designer.cs">
+      <DependentUpon>CadastroCarrinho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsItem\CadastroItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsItem\CadastroItem.Designer.cs">
       <DependentUpon>CadastroItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Item\ListaItem.cs">
+    <Compile Include="FormsItem\ListaItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Item\ListaItem.Designer.cs">
+    <Compile Include="FormsItem\ListaItem.Designer.cs">
       <DependentUpon>ListaItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Venda\CadastroVenda.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Venda\CadastroVenda.Designer.cs">
-      <DependentUpon>CadastroVenda.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Item\CadastroItem.resx">
+    <EmbeddedResource Include="FormsCarrinho\CadastroCarrinho.resx">
+      <DependentUpon>CadastroCarrinho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsItem\CadastroItem.resx">
       <DependentUpon>CadastroItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Item\ListaItem.resx">
+    <EmbeddedResource Include="FormsItem\ListaItem.resx">
       <DependentUpon>ListaItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -116,9 +119,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Venda\CadastroVenda.resx">
-      <DependentUpon>CadastroVenda.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -139,5 +139,6 @@
       <Name>Infraestrutura</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

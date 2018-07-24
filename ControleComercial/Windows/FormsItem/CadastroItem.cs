@@ -8,10 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-//using Infraestrutura.Access;
-//using Infraestrutura.Models;
+using Infraestrutura.Access;
+using Infraestrutura.Models;
 
-namespace Windows.Item
+namespace Windows.FormsItem
 {
     public partial class CadastroItem : Form
     {
@@ -22,8 +22,8 @@ namespace Windows.Item
 
         private void btnGravar_Click(object sender, EventArgs e)
         {
-            Infraestrutura.Models.Item item = new Infraestrutura.Models.Item();
-            Infraestrutura.Access.ItemAccess itemAccess = new Infraestrutura.Access.ItemAccess();
+            Item item = new Item();
+            ItemAccess itemAccess = new ItemAccess();
 
             item.Id = Convert.ToInt32(txtId.Text);
             item.Nome = txtNome.Text;
@@ -31,7 +31,8 @@ namespace Windows.Item
             item.Preco = Convert.ToDecimal(txtPreco.Text);
             item.Desconto = Convert.ToDecimal(txtDesconto.Text);
 
-            txtId.Text = Convert.ToString(itemAccess.Novo(item));                        
+            txtId.Text = Convert.ToString(itemAccess.Novo(item));
         }
+
     }
 }

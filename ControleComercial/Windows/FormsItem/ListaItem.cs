@@ -8,7 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Windows.Item
+using Infraestrutura.Access;
+using Infraestrutura.Models;
+
+namespace Windows.FormsItem
 {
     public partial class ListaItem : Form
     {
@@ -19,15 +22,21 @@ namespace Windows.Item
 
         private void ListaItem_Activated(object sender, EventArgs e)
         {
-            Infraestrutura.Models.Item item = new Infraestrutura.Models.Item();
-            Infraestrutura.Access.ItemAccess itemAccess = new Infraestrutura.Access.ItemAccess();
+            Item item = new Item();
+            ItemAccess itemAccess = new ItemAccess();
 
             grid.DataSource = null;
             grid.DataSource = itemAccess.Lista();
 
             //Grid.DataSource = null;
             //Grid.DataSource = lista;
-
         }
+
+        private void btnInserir_Click(object sender, EventArgs e)
+        {
+            CadastroItem form = new CadastroItem();
+            form.ShowDialog();
+        }
+
     }
 }
