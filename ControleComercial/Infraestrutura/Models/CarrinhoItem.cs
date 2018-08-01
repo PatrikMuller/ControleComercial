@@ -14,6 +14,5 @@ namespace Infraestrutura.Models
         public virtual Decimal Quantidade { get; set; }
         public virtual Decimal Preco { get; set; }
         public virtual Decimal Desconto { get; set; }
-
     }
 }

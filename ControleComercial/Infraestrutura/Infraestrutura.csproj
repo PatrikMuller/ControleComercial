@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Access\CarrinhoAccess.cs" />
+    <Compile Include="Access\CarrinhoItemAccess.cs" />
     <Compile Include="Access\ItemAccess.cs" />
     <Compile Include="Access\PessoaFisicaAccess.cs" />
     <Compile Include="Class1.cs" />

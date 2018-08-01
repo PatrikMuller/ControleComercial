@@ -16,8 +16,8 @@ namespace Windows
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new FormsCarrinho.CadastroCarrinho());
-            Application.Run(new FormsItem.ListaItem());
+            Application.Run(new FormsCarrinho.CadastroCarrinho());
+            //Application.Run(new FormsItem.ListaItem());
         }
     }
 }

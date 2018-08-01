@@ -87,6 +87,12 @@
     <Compile Include="FormsCarrinho\CadastroCarrinho.Designer.cs">
       <DependentUpon>CadastroCarrinho.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsCarrinho\LocalizarItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsCarrinho\LocalizarItem.Designer.cs">
+      <DependentUpon>LocalizarItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsItem\CadastroItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormsCarrinho\CadastroCarrinho.resx">
       <DependentUpon>CadastroCarrinho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsCarrinho\LocalizarItem.resx">
+      <DependentUpon>LocalizarItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsItem\CadastroItem.resx">
       <DependentUpon>CadastroItem.cs</DependentUpon>

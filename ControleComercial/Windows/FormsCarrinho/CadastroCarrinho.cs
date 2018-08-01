@@ -15,9 +15,18 @@ namespace Windows.FormsCarrinho
 {
     public partial class CadastroCarrinho : Form
     {
+
+        CarrinhoItem carrinhoItem = new CarrinhoItem();
+        CarrinhoItemAccess carrinhoItemDao = new CarrinhoItemAccess();
+
+                
         public CadastroCarrinho()
         {
             InitializeComponent();
+
+            GridProdutos.DataSource = null;
+            GridProdutos.DataSource = carrinhoItemDao.Lista();
+
         }
 
         private void btnNovoCarrinho_Click(object sender, EventArgs e)
@@ -49,6 +58,40 @@ namespace Windows.FormsCarrinho
             txtIdCarrinho.Text = Convert.ToString(CarrinhoDao.Gravar(carrinho));
             txtDataCarrinho.Text = Convert.ToString(carrinho.Data);
         }
+
+        private void btnLocalizar_Click(object sender, EventArgs e)
+        {
+            LocalizarItem form = new LocalizarItem();
+            
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                DataGridViewRow Row = new DataGridViewRow();
+                Row = form.Row();
+
+
+                Carrinho carrinho = new Carrinho();
+                carrinho.Id = Convert.ToInt32(txtIdCarrinho.Text);
+                Item item = new Item();
+                item.Id = Convert.ToInt32(Row.Cells[0].Value);
+
+
+                carrinhoItem.Carrinho = carrinho;
+                carrinhoItem.Item = item;
+                carrinhoItem.Quantidade = Convert.ToDecimal(txtQuantidade.Text);
+                carrinhoItem.Preco = Convert.ToDecimal(15.78);
+                carrinhoItem.Desconto = Convert.ToDecimal(0.00);
+                carrinhoItemDao.Novo(carrinhoItem);
+                GridProdutos.DataSource = null;
+                GridProdutos.DataSource = carrinhoItemDao.Lista();
+
+                //GravarNotaItem(Convert.ToInt32(Row.Cells[0].Value), "patrikmuller");
+                //setarGridItem();
+            }
+
+            //ConfiguraCampos();
+        }
+
+
 
     }
 }
