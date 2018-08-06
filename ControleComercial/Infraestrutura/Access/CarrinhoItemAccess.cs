@@ -8,6 +8,8 @@ using Infraestrutura.Factory;
 using Infraestrutura.Models;
 using NHibernate;
 using NHibernate.Linq;
+using NHibernate.Engine;
+using System.Data;
 
 namespace Infraestrutura.Access
 {
@@ -58,7 +60,7 @@ namespace Infraestrutura.Access
             }
         }
 
-        public IList<Object> Lista()
+        public IList<CarrinhoItem> Lista(Int32 idCarrinho)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
@@ -67,23 +69,37 @@ namespace Infraestrutura.Access
                 //return query.List<Carrinho>();
                 //return session.Get<Carrinho>;
 
+
+                //IQuery query = session.CreateQuery("select {c.*} from CarrinhoItem c");
+                //query.setParameter("id", "123");
+                //return query.List<Object>();
+
+
                 //return session.Query<Bem>().Fetch(b => b.Marca).Fetch(b => b.Modelo).OrderBy(b => b.IdBem).ToList();
 
-                var results = from query in session.Query<CarrinhoItem>().
-                              Fetch(c => c.Carrinho).
-                              Fetch(i => i.Item).OrderBy(ci => ci.Id).ToList()
-                              select(new
-                              {
-                                  query.Id,
-                                  //query.Carrinho.Id as idcar,
-                                  //query.Item.Id as iditem,
-                                  query.Quantidade,
-                                  query.Preco
-                              });
+                //var results = from query in session.Query<CarrinhoItem>().
+                //              Fetch(c => c.Carrinho).
+                //              Fetch(i => i.Item).OrderBy(ci => ci.Id).ToList()
+                //              select(new
+                //              {
+                //                  query.Id,
+                //                  //query.Carrinho.Id as idcar,
+                //                  //query.Item.Id as iditem,
+                //                  query.Quantidade,
+                //                  query.Preco
+                //              });
 
-                return results.ToList<Object>();
+                //return results.ToList<Object>();
 
-                //return session.Query<CarrinhoItem>().Fetch(b => b.Marca) Select(C => new CarrinhoItem { Id, C.Carrinho.Id, }).OrderBy(C => C.Id).ToList();
+                return session.Query<CarrinhoItem>().Fetch(i => i.Item).Where(i => i.Carrinho.Id == idCarrinho).OrderBy(c => c.Id).ToList();
+
+                //foreach (var c in result)
+                //{
+                //    retorno.Add(c.Carrinho.Id);
+                //}
+
+                //return result;
+
             }
         }
 

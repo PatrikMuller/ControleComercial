@@ -19,6 +19,8 @@ namespace Windows.FormsCarrinho
         //private Int32 idcarrinho;
         //private Decimal quantidade;
         //private CadastroCarrinho CadastroCarrinho;
+        Item item = new Item();
+        ItemAccess itemAccess = new ItemAccess();
 
 
         //public LocalizarItem(Int32 idcarrinho, Decimal quantidade, CadastroCarrinho form)
@@ -30,6 +32,25 @@ namespace Windows.FormsCarrinho
             InitializeComponent();
         }
 
+        private void tabelaGrid(DataGridView g, IList<Item> l)
+        {
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("id", System.Type.GetType("System.String"));
+            dt.Columns.Add("produto", System.Type.GetType("System.String"));
+            dt.Columns.Add("qtd", System.Type.GetType("System.String"));
+
+            //for (int i = 1; i < 10; i++)
+            foreach (var item in l)
+            {
+                dt.Rows.Add(new String[] { Convert.ToString(item.Id), item.Nome, Convert.ToString(item.Quantidade) });
+            }
+
+            //return dt;
+
+            g.DataSource = null;
+            g.DataSource = dt;
+        }
 
         public DataGridViewRow Row()
         {
@@ -39,11 +60,12 @@ namespace Windows.FormsCarrinho
 
         private void ListaItem_Activated(object sender, EventArgs e)
         {
-            Item item = new Item();
-            ItemAccess itemAccess = new ItemAccess();
+            
 
-            grid.DataSource = null;
-            grid.DataSource = itemAccess.Lista();
+            //grid.DataSource = null;
+            //grid.DataSource = itemAccess.Lista();
+
+            tabelaGrid(grid, itemAccess.Lista());
 
             //Grid.DataSource = null;
             //Grid.DataSource = lista;
