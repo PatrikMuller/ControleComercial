@@ -14,10 +14,11 @@ namespace Infraestrutura.Mapping
 
         public PessoaJuridicaMapping()
         {
-            Map(o => o.Cnpj);
+            
             Map(o => o.Ie);
             Map(o => o.Fantasia);
             Map(o => o.DataConstituicao);
+
         }
     }
 }

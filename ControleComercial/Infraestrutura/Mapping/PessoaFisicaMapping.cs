@@ -14,7 +14,7 @@ namespace Infraestrutura.Mapping
 
         public PessoaFisicaMapping()
         {
-            Map(o => o.Cpf);
+            
             Map(o => o.Rg);
             Map(o => o.NomePai);
             Map(o => o.NomeMae);
@@ -23,6 +23,7 @@ namespace Infraestrutura.Mapping
             Map(o => o.DataNascimento);
             //Map(obj => obj.DataNascimento);
             //Map(obj => obj.IdMunicipioNascimento);
+
         }
 
     }

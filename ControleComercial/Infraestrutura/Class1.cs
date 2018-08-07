@@ -22,7 +22,7 @@ namespace Infraestrutura
             obj.NomeMae = "Mãe";
             obj.NomePai = "Pai";
             obj.Rg = "RG";
-            obj.Cpf = "703.111.222-23";
+            //obj.Cpf = "703.111.222-23";
 
             dao.Grava(obj);
         }        

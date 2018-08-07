@@ -51,11 +51,13 @@
             this.txtDataCarrinho = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.Cabecalho = new System.Windows.Forms.Panel();
+            this.btnInserirCliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GridProdutos)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.Corpo.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.Rodape.SuspendLayout();
             this.Cabecalho.SuspendLayout();
@@ -77,7 +79,7 @@
             this.GridProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridProdutos.Location = new System.Drawing.Point(0, 0);
             this.GridProdutos.Name = "GridProdutos";
-            this.GridProdutos.Size = new System.Drawing.Size(350, 301);
+            this.GridProdutos.Size = new System.Drawing.Size(778, 434);
             this.GridProdutos.TabIndex = 0;
             // 
             // panel3
@@ -86,12 +88,12 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 40);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(350, 301);
+            this.panel3.Size = new System.Drawing.Size(778, 434);
             this.panel3.TabIndex = 2;
             // 
             // txtQuantidade
             // 
-            this.txtQuantidade.Location = new System.Drawing.Point(12, 45);
+            this.txtQuantidade.Location = new System.Drawing.Point(12, 25);
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(100, 20);
             this.txtQuantidade.TabIndex = 6;
@@ -100,7 +102,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 29);
+            this.label3.Location = new System.Drawing.Point(12, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 13);
             this.label3.TabIndex = 5;
@@ -108,7 +110,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 84);
+            this.textBox1.Location = new System.Drawing.Point(12, 64);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(300, 20);
             this.textBox1.TabIndex = 3;
@@ -116,7 +118,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 68);
+            this.label2.Location = new System.Drawing.Point(12, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 2;
@@ -124,7 +126,7 @@
             // 
             // btnLocalizar
             // 
-            this.btnLocalizar.Location = new System.Drawing.Point(318, 82);
+            this.btnLocalizar.Location = new System.Drawing.Point(318, 62);
             this.btnLocalizar.Name = "btnLocalizar";
             this.btnLocalizar.Size = new System.Drawing.Size(75, 23);
             this.btnLocalizar.TabIndex = 1;
@@ -138,7 +140,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(350, 40);
+            this.panel2.Size = new System.Drawing.Size(778, 40);
             this.panel2.TabIndex = 1;
             // 
             // Corpo
@@ -147,9 +149,9 @@
             this.Corpo.Controls.Add(this.panel4);
             this.Corpo.Controls.Add(this.panel1);
             this.Corpo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Corpo.Location = new System.Drawing.Point(0, 100);
+            this.Corpo.Location = new System.Drawing.Point(0, 64);
             this.Corpo.Name = "Corpo";
-            this.Corpo.Size = new System.Drawing.Size(800, 341);
+            this.Corpo.Size = new System.Drawing.Size(1272, 474);
             this.Corpo.TabIndex = 5;
             // 
             // panel5
@@ -160,17 +162,18 @@
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.btnLocalizar);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(0, 150);
+            this.panel5.Location = new System.Drawing.Point(0, 372);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(450, 191);
+            this.panel5.Size = new System.Drawing.Size(494, 102);
             this.panel5.TabIndex = 3;
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.btnInserirCliente);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(450, 150);
+            this.panel4.Size = new System.Drawing.Size(494, 372);
             this.panel4.TabIndex = 2;
             // 
             // panel1
@@ -178,9 +181,9 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(450, 0);
+            this.panel1.Location = new System.Drawing.Point(494, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(350, 341);
+            this.panel1.Size = new System.Drawing.Size(778, 474);
             this.panel1.TabIndex = 1;
             // 
             // button5
@@ -218,9 +221,9 @@
             this.Rodape.Controls.Add(this.button3);
             this.Rodape.Controls.Add(this.btnNovoCarrinho);
             this.Rodape.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Rodape.Location = new System.Drawing.Point(0, 441);
+            this.Rodape.Location = new System.Drawing.Point(0, 538);
             this.Rodape.Name = "Rodape";
-            this.Rodape.Size = new System.Drawing.Size(800, 100);
+            this.Rodape.Size = new System.Drawing.Size(1272, 100);
             this.Rodape.TabIndex = 4;
             // 
             // btnNovoCarrinho
@@ -276,18 +279,29 @@
             this.Cabecalho.Dock = System.Windows.Forms.DockStyle.Top;
             this.Cabecalho.Location = new System.Drawing.Point(0, 0);
             this.Cabecalho.Name = "Cabecalho";
-            this.Cabecalho.Size = new System.Drawing.Size(800, 100);
+            this.Cabecalho.Size = new System.Drawing.Size(1272, 64);
             this.Cabecalho.TabIndex = 3;
+            // 
+            // btnInserirCliente
+            // 
+            this.btnInserirCliente.Location = new System.Drawing.Point(194, 78);
+            this.btnInserirCliente.Name = "btnInserirCliente";
+            this.btnInserirCliente.Size = new System.Drawing.Size(75, 23);
+            this.btnInserirCliente.TabIndex = 2;
+            this.btnInserirCliente.Text = "Cliente";
+            this.btnInserirCliente.UseVisualStyleBackColor = true;
+            this.btnInserirCliente.Click += new System.EventHandler(this.btnInserirCliente_Click);
             // 
             // CadastroCarrinho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 541);
+            this.ClientSize = new System.Drawing.Size(1272, 638);
             this.Controls.Add(this.Corpo);
             this.Controls.Add(this.Rodape);
             this.Controls.Add(this.Cabecalho);
             this.Name = "CadastroCarrinho";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CadastroCarrinho";
             ((System.ComponentModel.ISupportInitialize)(this.GridProdutos)).EndInit();
             this.panel3.ResumeLayout(false);
@@ -296,6 +310,7 @@
             this.Corpo.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.Rodape.ResumeLayout(false);
             this.Cabecalho.ResumeLayout(false);
@@ -329,5 +344,6 @@
         private System.Windows.Forms.TextBox txtDataCarrinho;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel Cabecalho;
+        private System.Windows.Forms.Button btnInserirCliente;
     }
 }

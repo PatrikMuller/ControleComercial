@@ -21,7 +21,7 @@ namespace Infraestrutura.Access
             using (ISession session = NHibernateHelper.AbreSessao())
             {
                 ITransaction tx = session.BeginTransaction();
-
+                                                                
                 session.Save(obj);
 
                 tx.Commit();
