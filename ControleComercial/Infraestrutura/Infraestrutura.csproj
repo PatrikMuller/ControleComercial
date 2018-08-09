@@ -69,6 +69,7 @@
   <ItemGroup>
     <Compile Include="Access\CarrinhoAccess.cs" />
     <Compile Include="Access\CarrinhoItemAccess.cs" />
+    <Compile Include="Access\CarrinhoPessoaAccess.cs" />
     <Compile Include="Access\ItemAccess.cs" />
     <Compile Include="Access\PessoaAccess.cs" />
     <Compile Include="Access\PessoaFisicaAccess.cs" />
@@ -76,12 +77,16 @@
     <Compile Include="Factory\NHibernateHelper.cs" />
     <Compile Include="Mapping\CarrinhoItemMapping.cs" />
     <Compile Include="Mapping\CarrinhoMapping.cs" />
+    <Compile Include="Mapping\CarrinhoPessoaMapping.cs" />
+    <Compile Include="Mapping\CarrinhoPessoaTipoMapping.cs" />
     <Compile Include="Mapping\ItemMapping.cs" />
     <Compile Include="Mapping\PessoaFisicaMapping.cs" />
     <Compile Include="Mapping\PessoaJuridicaMapping.cs" />
     <Compile Include="Mapping\PessoaMapping.cs" />
     <Compile Include="Models\Carrinho.cs" />
     <Compile Include="Models\CarrinhoItem.cs" />
+    <Compile Include="Models\CarrinhoPessoa.cs" />
+    <Compile Include="Models\CarrinhoPessoaTipo.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\Pessoa.cs" />
     <Compile Include="Models\PessoaFisica.cs" />

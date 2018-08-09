@@ -51,7 +51,9 @@
             this.txtDataCarrinho = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.Cabecalho = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.btnInserirCliente = new System.Windows.Forms.Button();
+            this.gridCliente = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.GridProdutos)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -61,6 +63,8 @@
             this.panel1.SuspendLayout();
             this.Rodape.SuspendLayout();
             this.Cabecalho.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -169,7 +173,7 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.btnInserirCliente);
+            this.panel4.Controls.Add(this.panel6);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
@@ -282,15 +286,33 @@
             this.Cabecalho.Size = new System.Drawing.Size(1272, 64);
             this.Cabecalho.TabIndex = 3;
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.gridCliente);
+            this.panel6.Controls.Add(this.btnInserirCliente);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(494, 129);
+            this.panel6.TabIndex = 3;
+            // 
             // btnInserirCliente
             // 
-            this.btnInserirCliente.Location = new System.Drawing.Point(194, 78);
+            this.btnInserirCliente.Location = new System.Drawing.Point(413, 96);
             this.btnInserirCliente.Name = "btnInserirCliente";
             this.btnInserirCliente.Size = new System.Drawing.Size(75, 23);
-            this.btnInserirCliente.TabIndex = 2;
+            this.btnInserirCliente.TabIndex = 3;
             this.btnInserirCliente.Text = "Cliente";
             this.btnInserirCliente.UseVisualStyleBackColor = true;
-            this.btnInserirCliente.Click += new System.EventHandler(this.btnInserirCliente_Click);
+            // 
+            // gridCliente
+            // 
+            this.gridCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridCliente.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gridCliente.Location = new System.Drawing.Point(0, 0);
+            this.gridCliente.Name = "gridCliente";
+            this.gridCliente.Size = new System.Drawing.Size(494, 90);
+            this.gridCliente.TabIndex = 4;
             // 
             // CadastroCarrinho
             // 
@@ -315,6 +337,8 @@
             this.Rodape.ResumeLayout(false);
             this.Cabecalho.ResumeLayout(false);
             this.Cabecalho.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridCliente)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -344,6 +368,8 @@
         private System.Windows.Forms.TextBox txtDataCarrinho;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel Cabecalho;
+        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button btnInserirCliente;
+        private System.Windows.Forms.DataGridView gridCliente;
     }
 }

@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtCpfCnpj = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnInserir = new System.Windows.Forms.Button();
+            this.btnLocalizar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
-            this.btnLocalizar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtCpfCnpj = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnInserir = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -57,56 +57,14 @@
             this.panel2.Size = new System.Drawing.Size(523, 321);
             this.panel2.TabIndex = 8;
             // 
-            // label1
+            // btnLocalizar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 98);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Nome";
-            // 
-            // txtNome
-            // 
-            this.txtNome.Location = new System.Drawing.Point(26, 114);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(200, 20);
-            this.txtNome.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 139);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Cpf / Cnpj";
-            // 
-            // txtCpfCnpj
-            // 
-            this.txtCpfCnpj.Location = new System.Drawing.Point(26, 155);
-            this.txtCpfCnpj.Name = "txtCpfCnpj";
-            this.txtCpfCnpj.Size = new System.Drawing.Size(200, 20);
-            this.txtCpfCnpj.TabIndex = 3;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnInserir);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 271);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(523, 50);
-            this.panel1.TabIndex = 9;
-            // 
-            // btnInserir
-            // 
-            this.btnInserir.Location = new System.Drawing.Point(12, 3);
-            this.btnInserir.Name = "btnInserir";
-            this.btnInserir.Size = new System.Drawing.Size(75, 23);
-            this.btnInserir.TabIndex = 12;
-            this.btnInserir.Text = "Inserir";
-            this.btnInserir.UseVisualStyleBackColor = true;
-            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
+            this.btnLocalizar.Location = new System.Drawing.Point(232, 155);
+            this.btnLocalizar.Name = "btnLocalizar";
+            this.btnLocalizar.Size = new System.Drawing.Size(75, 23);
+            this.btnLocalizar.TabIndex = 13;
+            this.btnLocalizar.Text = "Localizar";
+            this.btnLocalizar.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -125,14 +83,57 @@
             this.txtId.TabIndex = 5;
             this.txtId.Text = "0";
             // 
-            // btnLocalizar
+            // label2
             // 
-            this.btnLocalizar.Location = new System.Drawing.Point(232, 155);
-            this.btnLocalizar.Name = "btnLocalizar";
-            this.btnLocalizar.Size = new System.Drawing.Size(75, 23);
-            this.btnLocalizar.TabIndex = 13;
-            this.btnLocalizar.Text = "Localizar";
-            this.btnLocalizar.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(23, 139);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Cpf / Cnpj";
+            // 
+            // txtCpfCnpj
+            // 
+            this.txtCpfCnpj.Location = new System.Drawing.Point(26, 155);
+            this.txtCpfCnpj.Name = "txtCpfCnpj";
+            this.txtCpfCnpj.Size = new System.Drawing.Size(200, 20);
+            this.txtCpfCnpj.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(23, 98);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Nome";
+            // 
+            // txtNome
+            // 
+            this.txtNome.Location = new System.Drawing.Point(26, 114);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(200, 20);
+            this.txtNome.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnInserir);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 271);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(523, 50);
+            this.panel1.TabIndex = 9;
+            // 
+            // btnInserir
+            // 
+            this.btnInserir.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnInserir.Location = new System.Drawing.Point(12, 3);
+            this.btnInserir.Name = "btnInserir";
+            this.btnInserir.Size = new System.Drawing.Size(75, 23);
+            this.btnInserir.TabIndex = 12;
+            this.btnInserir.Text = "Inserir";
+            this.btnInserir.UseVisualStyleBackColor = true;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // InserirCliente
             // 

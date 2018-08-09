@@ -16,10 +16,13 @@ namespace Windows.FormsCarrinho
     public partial class InserirCliente : Form
     {
         Pessoa pessoa = new Pessoa();
-
-        PessoaAccess pessoaAccess = new PessoaAccess();
         
+        PessoaAccess pessoaAccess = new PessoaAccess();
+                
 
+        public int Id { get; set; }
+
+        
         public InserirCliente()
         {
 
@@ -31,12 +34,22 @@ namespace Windows.FormsCarrinho
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
+
+            Id = Convert.ToInt32(txtId.Text);
+
             pessoa.Id = Convert.ToInt32(txtId.Text);
 
             pessoa.Nome = txtNome.Text;
             pessoa.CpfCnpj = txtCpfCnpj.Text;
             
-            txtId.Text = Convert.ToString(pessoaAccess.Novo(pessoa));
+            Id = pessoaAccess.Novo(pessoa);
+
+            txtId.Text = Convert.ToString(Id);
+
+            if (Id != 0)
+            {
+                this.DialogResult = DialogResult.OK;
+            }
 
         }
     }

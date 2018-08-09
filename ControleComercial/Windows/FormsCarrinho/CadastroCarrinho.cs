@@ -19,11 +19,15 @@ namespace Windows.FormsCarrinho
         //Modelo
         Carrinho carrinho = new Carrinho();
         Item item = new Item();
+        Pessoa pessoa = new Pessoa();
         CarrinhoItem carrinhoItem = new CarrinhoItem();
+        CarrinhoPessoa carrinhoPessoa = new CarrinhoPessoa();
+        CarrinhoPessoaTipo carrinhoPessoaTipo = new CarrinhoPessoaTipo();
 
         //Persistencia
         CarrinhoAccess CarrinhoDao = new CarrinhoAccess();       
         CarrinhoItemAccess carrinhoItemDao = new CarrinhoItemAccess();
+        CarrinhoPessoaAccess carrinhoPessoaDao = new CarrinhoPessoaAccess();
 
 
         private DataTable dadosGridProduto(IList<CarrinhoItem> l)
@@ -58,6 +62,23 @@ namespace Windows.FormsCarrinho
 
         }
 
+        private DataTable dadosGridCliente(IList<CarrinhoPessoa> l)
+        {
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("nome", System.Type.GetType("System.String"));
+            dt.Columns.Add("cpf", System.Type.GetType("System.String"));
+
+            foreach (var carrinhoPessoa in l)
+            {
+                dt.Rows.Add(new String[] { carrinhoPessoa.Pessoa.Nome, carrinhoPessoa.Pessoa.CpfCnpj });
+            }
+
+            return dt;
+        }
+
+
+
 
         public CadastroCarrinho()
         {
@@ -68,6 +89,8 @@ namespace Windows.FormsCarrinho
             GridProdutos.DataSource = dadosGridProduto(carrinhoItemDao.Lista(41));
             configuraGridProdutos();
 
+            gridCliente.DataSource = dadosGridCliente(carrinhoPessoaDao.Lista(42, 1));
+            
         }
         
         private void btnNovoCarrinho_Click(object sender, EventArgs e)
@@ -124,23 +147,20 @@ namespace Windows.FormsCarrinho
 
             if (form.ShowDialog() == DialogResult.OK)
             {
-                
+
+                pessoa.Id = form.Id;
+                carrinho.Id = Convert.ToInt32(txtIdCarrinho.Text);
+                carrinhoPessoaTipo.Id = 1; // 1 = Cliente
+
                 //DataGridViewRow Row = new DataGridViewRow();
                 //Row = form.Row();
 
-                //carrinho.Id = Convert.ToInt32(txtIdCarrinho.Text);
-                //item.Id = Convert.ToInt32(Row.Cells[0].Value);
-                //carrinhoItem.Ordem = (GridProdutos.Rows.Count);
-                //carrinhoItem.Carrinho = carrinho;
-                //carrinhoItem.Item = item;
-                //carrinhoItem.Quantidade = Convert.ToDecimal(txtQuantidade.Text);
-                //carrinhoItem.Preco = Convert.ToDecimal(Row.Cells[3].Value);
-                //carrinhoItem.Desconto = Convert.ToDecimal(0.00);
-                //carrinhoItemDao.Novo(carrinhoItem);
-                //GridProdutos.DataSource = null;
-                //GridProdutos.DataSource = dadosGridProduto(carrinhoItemDao.Lista(Convert.ToInt32(txtIdCarrinho.Text)));
-                //configuraGridProdutos();
+                carrinhoPessoa.Carrinho = carrinho;
+                carrinhoPessoa.Pessoa = pessoa;
+                carrinhoPessoa.CarrinhoPessoaTipo = carrinhoPessoaTipo;
 
+                carrinhoPessoaDao.Novo(carrinhoPessoa);
+                                                
             }
         }
     }
