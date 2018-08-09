@@ -23,11 +23,14 @@ namespace Windows.FormsCarrinho
         CarrinhoItem carrinhoItem = new CarrinhoItem();
         CarrinhoPessoa carrinhoPessoa = new CarrinhoPessoa();
         CarrinhoPessoaTipo carrinhoPessoaTipo = new CarrinhoPessoaTipo();
+        FormaPagamentoParcelamento formaPagamentoParcelamento = new FormaPagamentoParcelamento();
+        CarrinhoFormaPagamentoParcelamento carrinhoFormaPagamentoParcelamento = new CarrinhoFormaPagamentoParcelamento();
 
         //Persistencia
         CarrinhoAccess CarrinhoDao = new CarrinhoAccess();       
         CarrinhoItemAccess carrinhoItemDao = new CarrinhoItemAccess();
         CarrinhoPessoaAccess carrinhoPessoaDao = new CarrinhoPessoaAccess();
+        CarrinhoFormaPagamentoParcelamentoAccess carrinhoFormaPagamentoParcelamentoDao = new CarrinhoFormaPagamentoParcelamentoAccess();
 
 
         private DataTable dadosGridProduto(IList<CarrinhoItem> l)
@@ -77,6 +80,29 @@ namespace Windows.FormsCarrinho
             return dt;
         }
 
+        private DataTable dadosGridFormaPgto(IList<CarrinhoFormaPagamentoParcelamento> l)
+        {
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("Id", System.Type.GetType("System.String"));
+            dt.Columns.Add("Forma Pagamento", System.Type.GetType("System.String"));
+            dt.Columns.Add("parcelas", System.Type.GetType("System.String"));
+            dt.Columns.Add("juros", System.Type.GetType("System.String"));
+
+            foreach (var carrinhoFormaPagamentoParcelamento in l)
+            {
+                dt.Rows.Add(new String[] {
+                    Convert.ToString(carrinhoFormaPagamentoParcelamento.Id),
+                    Convert.ToString(carrinhoFormaPagamentoParcelamento.FormaPagamento.Descricao), 
+                    //Convert.ToString(carrinhoFormaPagamentoParcelamento.FormaPagamentoParcelamento.FormaPagamento.Descricao), 
+                    Convert.ToString(carrinhoFormaPagamentoParcelamento.QtdParcelas), 
+                    Convert.ToString(carrinhoFormaPagamentoParcelamento.Juros)
+                });
+            }
+
+            return dt;
+        }
+
 
 
 
@@ -90,7 +116,10 @@ namespace Windows.FormsCarrinho
             configuraGridProdutos();
 
             gridCliente.DataSource = dadosGridCliente(carrinhoPessoaDao.Lista(42, 1));
-            
+
+            gridFormaPgto.DataSource = dadosGridFormaPgto(carrinhoFormaPagamentoParcelamentoDao.Lista(Convert.ToInt32(txtIdCarrinho.Text)));
+            //var result = carrinhoFormaPagamentoParcelamentoDao.Lista(42);
+
         }
         
         private void btnNovoCarrinho_Click(object sender, EventArgs e)
@@ -163,5 +192,32 @@ namespace Windows.FormsCarrinho
                                                 
             }
         }
+
+        private void btnFormaPgto_Click(object sender, EventArgs e)
+        {
+            //LocalizarItem form = new LocalizarItem();
+            SelecionarFormaPagamento form = new SelecionarFormaPagamento();
+            
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+
+                DataGridViewRow Row = new DataGridViewRow();
+                Row = form.Row();
+                                
+                carrinho.Id = Convert.ToInt32(txtIdCarrinho.Text);
+                formaPagamentoParcelamento.Id = Convert.ToInt32(Row.Cells[0].Value);
+                
+                carrinhoFormaPagamentoParcelamento.Carrinho = carrinho;
+                carrinhoFormaPagamentoParcelamento.FormaPagamentoParcelamento = formaPagamentoParcelamento;
+                carrinhoFormaPagamentoParcelamento.QtdParcelas = Convert.ToInt32(Row.Cells[2].Value);
+                carrinhoFormaPagamentoParcelamento.Juros = Convert.ToDecimal(Row.Cells[3].Value);
+
+                carrinhoFormaPagamentoParcelamentoDao.Novo(carrinhoFormaPagamentoParcelamento);
+                //gridFormaPgto.DataSource = dadosGridFormaPgto(carrinhoFormaPagamentoParcelamentoDao.Lista(Convert.ToInt32(txtIdCarrinho.Text)));
+
+
+            }
+        }
+
     }
 }

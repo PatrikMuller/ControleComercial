@@ -42,10 +42,9 @@ namespace Infraestrutura.Factory
                 //ExposeConfiguration( y => new SchemaExport(y).Create(true, false));
                 .ExposeConfiguration(y => new SchemaUpdate(y).Execute(true, true))
                 .BuildConfiguration().BuildSessionFactory();
-                                    
-
+                                                
             factory = configMap;
-            
+                                    
             return factory;            
         }
 

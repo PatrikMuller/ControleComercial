@@ -99,6 +99,12 @@
     <Compile Include="FormsCarrinho\LocalizarItem.Designer.cs">
       <DependentUpon>LocalizarItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsCarrinho\SelecionarFormaPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsCarrinho\SelecionarFormaPagamento.Designer.cs">
+      <DependentUpon>SelecionarFormaPagamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsItem\CadastroItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormsCarrinho\LocalizarItem.resx">
       <DependentUpon>LocalizarItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsCarrinho\SelecionarFormaPagamento.resx">
+      <DependentUpon>SelecionarFormaPagamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsItem\CadastroItem.resx">
       <DependentUpon>CadastroItem.cs</DependentUpon>
@@ -157,6 +166,8 @@
       <Name>Infraestrutura</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="FormsFormaPagamento\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
