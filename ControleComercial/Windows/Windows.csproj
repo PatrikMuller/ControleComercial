@@ -117,6 +117,24 @@
     <Compile Include="FormsItem\ListaItem.Designer.cs">
       <DependentUpon>ListaItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsPessoaFisica\FormCadastroPessoaFisica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsPessoaFisica\FormCadastroPessoaFisica.Designer.cs">
+      <DependentUpon>FormCadastroPessoaFisica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPessoaFisica\FormListaPessoaFisica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsPessoaFisica\FormListaPessoaFisica.Designer.cs">
+      <DependentUpon>FormListaPessoaFisica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPrincipal\FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsPrincipal\FormPrincipal.Designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormsCarrinho\CadastroCarrinho.resx">
@@ -136,6 +154,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormsItem\ListaItem.resx">
       <DependentUpon>ListaItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsPessoaFisica\FormListaPessoaFisica.resx">
+      <DependentUpon>FormListaPessoaFisica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsPrincipal\FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

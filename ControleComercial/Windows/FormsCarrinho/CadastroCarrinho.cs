@@ -27,7 +27,7 @@ namespace Windows.FormsCarrinho
         CarrinhoFormaPagamentoParcelamento carrinhoFormaPagamentoParcelamento = new CarrinhoFormaPagamentoParcelamento();
 
         //Persistencia
-        CarrinhoAccess CarrinhoDao = new CarrinhoAccess();       
+        CarrinhoAccess CarrinhoDao = new CarrinhoAccess();
         CarrinhoItemAccess carrinhoItemDao = new CarrinhoItemAccess();
         CarrinhoPessoaAccess carrinhoPessoaDao = new CarrinhoPessoaAccess();
         CarrinhoFormaPagamentoParcelamentoAccess carrinhoFormaPagamentoParcelamentoDao = new CarrinhoFormaPagamentoParcelamentoAccess();
@@ -44,19 +44,19 @@ namespace Windows.FormsCarrinho
             dt.Columns.Add("preco", System.Type.GetType("System.Decimal"));
             dt.Columns.Add("desconto", System.Type.GetType("System.Decimal"));
             dt.Columns.Add("total", System.Type.GetType("System.Decimal"));
-            
+
             foreach (var carrinhoItem in l)
             {
                 dt.Rows.Add(new String[] { Convert.ToString(carrinhoItem.Ordem), carrinhoItem.Item.Nome, Convert.ToString(carrinhoItem.Quantidade), Convert.ToString(carrinhoItem.Preco), Convert.ToString(carrinhoItem.Desconto), Convert.ToString(carrinhoItem.Quantidade * (carrinhoItem.Preco - carrinhoItem.Desconto)) });
             }
 
             return dt;
-            
+
         }
 
         private void configuraGridProdutos()
         {
-            
+
             //GridProdutos.Columns[1].Width = 200;
             GridProdutos.Columns[2].DefaultCellStyle.Format = "###,###,###,##0.000";
             GridProdutos.Columns[3].DefaultCellStyle.Format = "R$ ###,###,###,##0.00";
@@ -95,7 +95,7 @@ namespace Windows.FormsCarrinho
                     Convert.ToString(carrinhoFormaPagamentoParcelamento.Id),
                     Convert.ToString(carrinhoFormaPagamentoParcelamento.FormaPagamento.Descricao), 
                     //Convert.ToString(carrinhoFormaPagamentoParcelamento.FormaPagamentoParcelamento.FormaPagamento.Descricao), 
-                    Convert.ToString(carrinhoFormaPagamentoParcelamento.QtdParcelas), 
+                    Convert.ToString(carrinhoFormaPagamentoParcelamento.QtdParcelas),
                     Convert.ToString(carrinhoFormaPagamentoParcelamento.Juros)
                 });
             }
@@ -103,6 +103,20 @@ namespace Windows.FormsCarrinho
             return dt;
         }
 
+        private DataTable dadosGridVendedor(IList<CarrinhoPessoa> l)
+        {
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("nome", System.Type.GetType("System.String"));
+            dt.Columns.Add("cpf", System.Type.GetType("System.String"));
+
+            foreach (var carrinhoPessoa in l)
+            {
+                dt.Rows.Add(new String[] { carrinhoPessoa.Pessoa.Nome, carrinhoPessoa.Pessoa.CpfCnpj });
+            }
+
+            return dt;
+        }
 
 
 
@@ -118,10 +132,12 @@ namespace Windows.FormsCarrinho
             gridCliente.DataSource = dadosGridCliente(carrinhoPessoaDao.Lista(42, 1));
 
             gridFormaPgto.DataSource = dadosGridFormaPgto(carrinhoFormaPagamentoParcelamentoDao.Lista(Convert.ToInt32(txtIdCarrinho.Text)));
+
+            gridVendedor.DataSource = dadosGridVendedor(carrinhoPessoaDao.Lista(Convert.ToInt32(txtIdCarrinho.Text), 2));
             //var result = carrinhoFormaPagamentoParcelamentoDao.Lista(42);
 
         }
-        
+
         private void btnNovoCarrinho_Click(object sender, EventArgs e)
         {
 
@@ -133,8 +149,8 @@ namespace Windows.FormsCarrinho
         }
 
         private void btnGravar_Click(object sender, EventArgs e)
-        {            
-            
+        {
+
             carrinho.Id = Convert.ToInt32(txtIdCarrinho.Text);
             carrinho.Data = DateTime.Now;
             txtIdCarrinho.Text = Convert.ToString(CarrinhoDao.Gravar(carrinho));
@@ -144,14 +160,15 @@ namespace Windows.FormsCarrinho
 
         private void btnLocalizar_Click(object sender, EventArgs e)
         {
+
             LocalizarItem form = new LocalizarItem();
-            
+
             if (form.ShowDialog() == DialogResult.OK)
             {
 
                 DataGridViewRow Row = new DataGridViewRow();
                 Row = form.Row();
-                
+
                 carrinho.Id = Convert.ToInt32(txtIdCarrinho.Text);
                 item.Id = Convert.ToInt32(Row.Cells[0].Value);
                 carrinhoItem.Ordem = (GridProdutos.Rows.Count);
@@ -171,6 +188,7 @@ namespace Windows.FormsCarrinho
 
         private void btnInserirCliente_Click(object sender, EventArgs e)
         {
+
             //LocalizarItem form = new LocalizarItem();
             InserirCliente form = new InserirCliente();
 
@@ -189,24 +207,26 @@ namespace Windows.FormsCarrinho
                 carrinhoPessoa.CarrinhoPessoaTipo = carrinhoPessoaTipo;
 
                 carrinhoPessoaDao.Novo(carrinhoPessoa);
-                                                
+
             }
+
         }
 
         private void btnFormaPgto_Click(object sender, EventArgs e)
         {
+
             //LocalizarItem form = new LocalizarItem();
             SelecionarFormaPagamento form = new SelecionarFormaPagamento();
-            
+
             if (form.ShowDialog() == DialogResult.OK)
             {
 
                 DataGridViewRow Row = new DataGridViewRow();
                 Row = form.Row();
-                                
+
                 carrinho.Id = Convert.ToInt32(txtIdCarrinho.Text);
                 formaPagamentoParcelamento.Id = Convert.ToInt32(Row.Cells[0].Value);
-                
+
                 carrinhoFormaPagamentoParcelamento.Carrinho = carrinho;
                 carrinhoFormaPagamentoParcelamento.FormaPagamentoParcelamento = formaPagamentoParcelamento;
                 carrinhoFormaPagamentoParcelamento.QtdParcelas = Convert.ToInt32(Row.Cells[2].Value);
@@ -217,7 +237,26 @@ namespace Windows.FormsCarrinho
 
 
             }
+
         }
 
+        private void btnVendedor_Click(object sender, EventArgs e)
+        {
+                        
+            pessoa.Id = 1;
+            carrinho.Id = Convert.ToInt32(txtIdCarrinho.Text);
+            carrinhoPessoaTipo.Id = 2; // 2 = Cliente
+
+            //DataGridViewRow Row = new DataGridViewRow();
+            //Row = form.Row();
+
+            carrinhoPessoa.Carrinho = carrinho;
+            carrinhoPessoa.Pessoa = pessoa;
+            carrinhoPessoa.CarrinhoPessoaTipo = carrinhoPessoaTipo;
+
+            carrinhoPessoaDao.Novo(carrinhoPessoa);
+            gridVendedor.DataSource = dadosGridVendedor(carrinhoPessoaDao.Lista(Convert.ToInt32(txtIdCarrinho.Text), 2));
+
+        }
     }
 }

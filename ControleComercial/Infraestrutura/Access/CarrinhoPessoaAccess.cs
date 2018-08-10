@@ -81,7 +81,7 @@ namespace Infraestrutura.Access
                 return session.Query<CarrinhoPessoa>().
                     Fetch(o => o.Pessoa).
                     Fetch(o => o.CarrinhoPessoaTipo).
-                    Where(o => o.Carrinho.Id == idCarrinho || o.CarrinhoPessoaTipo.Id == carrinhoPessoaTipo_Id).
+                    Where(o => o.Carrinho.Id == idCarrinho && o.CarrinhoPessoaTipo.Id == carrinhoPessoaTipo_Id).
                     OrderBy(o => o.Id).ToList();
 
             }

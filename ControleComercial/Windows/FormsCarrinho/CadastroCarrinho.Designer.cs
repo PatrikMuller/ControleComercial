@@ -40,6 +40,12 @@
             this.Corpo = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.gridFormaPgto = new System.Windows.Forms.DataGridView();
+            this.btnFormaPgto = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.gridVendedor = new System.Windows.Forms.DataGridView();
+            this.btnVendedor = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.gridCliente = new System.Windows.Forms.DataGridView();
             this.btnInserirCliente = new System.Windows.Forms.Button();
@@ -54,27 +60,21 @@
             this.txtDataCarrinho = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.Cabecalho = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.gridVendedor = new System.Windows.Forms.DataGridView();
-            this.btnVendedor = new System.Windows.Forms.Button();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.gridFormaPgto = new System.Windows.Forms.DataGridView();
-            this.btnFormaPgto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GridProdutos)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.Corpo.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridFormaPgto)).BeginInit();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridVendedor)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCliente)).BeginInit();
             this.panel1.SuspendLayout();
             this.Rodape.SuspendLayout();
             this.Cabecalho.SuspendLayout();
-            this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridVendedor)).BeginInit();
-            this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridFormaPgto)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -191,6 +191,64 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(494, 372);
             this.panel4.TabIndex = 2;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.gridFormaPgto);
+            this.panel8.Controls.Add(this.btnFormaPgto);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(0, 209);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(494, 157);
+            this.panel8.TabIndex = 5;
+            // 
+            // gridFormaPgto
+            // 
+            this.gridFormaPgto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridFormaPgto.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gridFormaPgto.Location = new System.Drawing.Point(0, 0);
+            this.gridFormaPgto.Name = "gridFormaPgto";
+            this.gridFormaPgto.Size = new System.Drawing.Size(494, 125);
+            this.gridFormaPgto.TabIndex = 4;
+            // 
+            // btnFormaPgto
+            // 
+            this.btnFormaPgto.Location = new System.Drawing.Point(413, 131);
+            this.btnFormaPgto.Name = "btnFormaPgto";
+            this.btnFormaPgto.Size = new System.Drawing.Size(75, 23);
+            this.btnFormaPgto.TabIndex = 3;
+            this.btnFormaPgto.Text = "Forma Pgto";
+            this.btnFormaPgto.UseVisualStyleBackColor = true;
+            this.btnFormaPgto.Click += new System.EventHandler(this.btnFormaPgto_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.gridVendedor);
+            this.panel7.Controls.Add(this.btnVendedor);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 104);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(494, 105);
+            this.panel7.TabIndex = 4;
+            // 
+            // gridVendedor
+            // 
+            this.gridVendedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridVendedor.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gridVendedor.Location = new System.Drawing.Point(0, 0);
+            this.gridVendedor.Name = "gridVendedor";
+            this.gridVendedor.Size = new System.Drawing.Size(494, 66);
+            this.gridVendedor.TabIndex = 4;
+            // 
+            // btnVendedor
+            // 
+            this.btnVendedor.Location = new System.Drawing.Point(413, 72);
+            this.btnVendedor.Name = "btnVendedor";
+            this.btnVendedor.Size = new System.Drawing.Size(75, 23);
+            this.btnVendedor.TabIndex = 3;
+            this.btnVendedor.Text = "Vendedor";
+            this.btnVendedor.UseVisualStyleBackColor = true;
+            this.btnVendedor.Click += new System.EventHandler(this.btnVendedor_Click);
             // 
             // panel6
             // 
@@ -327,63 +385,6 @@
             this.Cabecalho.Size = new System.Drawing.Size(1272, 64);
             this.Cabecalho.TabIndex = 3;
             // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.gridVendedor);
-            this.panel7.Controls.Add(this.btnVendedor);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 104);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(494, 105);
-            this.panel7.TabIndex = 4;
-            // 
-            // gridVendedor
-            // 
-            this.gridVendedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridVendedor.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gridVendedor.Location = new System.Drawing.Point(0, 0);
-            this.gridVendedor.Name = "gridVendedor";
-            this.gridVendedor.Size = new System.Drawing.Size(494, 66);
-            this.gridVendedor.TabIndex = 4;
-            // 
-            // btnVendedor
-            // 
-            this.btnVendedor.Location = new System.Drawing.Point(413, 72);
-            this.btnVendedor.Name = "btnVendedor";
-            this.btnVendedor.Size = new System.Drawing.Size(75, 23);
-            this.btnVendedor.TabIndex = 3;
-            this.btnVendedor.Text = "Vendedor";
-            this.btnVendedor.UseVisualStyleBackColor = true;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.gridFormaPgto);
-            this.panel8.Controls.Add(this.btnFormaPgto);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(0, 209);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(494, 157);
-            this.panel8.TabIndex = 5;
-            // 
-            // gridFormaPgto
-            // 
-            this.gridFormaPgto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridFormaPgto.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gridFormaPgto.Location = new System.Drawing.Point(0, 0);
-            this.gridFormaPgto.Name = "gridFormaPgto";
-            this.gridFormaPgto.Size = new System.Drawing.Size(494, 125);
-            this.gridFormaPgto.TabIndex = 4;
-            // 
-            // btnFormaPgto
-            // 
-            this.btnFormaPgto.Location = new System.Drawing.Point(413, 131);
-            this.btnFormaPgto.Name = "btnFormaPgto";
-            this.btnFormaPgto.Size = new System.Drawing.Size(75, 23);
-            this.btnFormaPgto.TabIndex = 3;
-            this.btnFormaPgto.Text = "Forma Pgto";
-            this.btnFormaPgto.UseVisualStyleBackColor = true;
-            this.btnFormaPgto.Click += new System.EventHandler(this.btnFormaPgto_Click);
-            // 
             // CadastroCarrinho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -403,16 +404,16 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridFormaPgto)).EndInit();
+            this.panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridVendedor)).EndInit();
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridCliente)).EndInit();
             this.panel1.ResumeLayout(false);
             this.Rodape.ResumeLayout(false);
             this.Cabecalho.ResumeLayout(false);
             this.Cabecalho.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridVendedor)).EndInit();
-            this.panel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridFormaPgto)).EndInit();
             this.ResumeLayout(false);
 
         }
