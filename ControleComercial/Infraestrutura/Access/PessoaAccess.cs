@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Infraestrutura.Factory;
 using Infraestrutura.Models;
 using NHibernate;
+using NHibernate.Linq;
 
 namespace Infraestrutura.Access
 {
@@ -47,6 +48,14 @@ namespace Infraestrutura.Access
             }
         }
 
+        public Pessoa LerCpfCnpj(String CpfCnpj)
+        {
+            using (ISession session = NHibernateHelper.AbreSessao())
+            {
+                return session.Query<Pessoa>().Where(o => o.CpfCnpj == CpfCnpj).FirstOrDefault();
+            }
+        }
+
         public void Remove(Pessoa o)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
@@ -57,7 +66,7 @@ namespace Infraestrutura.Access
             }
         }
 
-        public IList<Pessoa> Lista()
+        public IList<Pessoa> Lista(String nome)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
@@ -68,7 +77,8 @@ namespace Infraestrutura.Access
 
                 //return session.Query<Bem>().Fetch(b => b.Marca).Fetch(b => b.Modelo).OrderBy(b => b.IdBem).ToList();
 
-                return session.Query<Pessoa>().OrderBy(o => o.Id).ToList();
+                return session.Query<Pessoa>().Where(o => o.Nome.Like(nome)).OrderBy(o => o.Id).ToList();
+
             }
         }
 

@@ -135,6 +135,7 @@
     <Compile Include="FormsPrincipal\FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Negocio\Utilitario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormsCarrinho\CadastroCarrinho.resx">
@@ -155,6 +156,9 @@
     <EmbeddedResource Include="FormsItem\ListaItem.resx">
       <DependentUpon>ListaItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormsPessoaFisica\FormCadastroPessoaFisica.resx">
+      <DependentUpon>FormCadastroPessoaFisica.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormsPessoaFisica\FormListaPessoaFisica.resx">
       <DependentUpon>FormListaPessoaFisica.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +173,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -192,6 +197,39 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="FormsFormaPagamento\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6166_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6169_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6176_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6177_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6178_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6067_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7464_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6059_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6098_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6036_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7484_32x32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
