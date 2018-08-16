@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Infraestrutura.Models
 {
-    public class PessoaFisica : Pessoa
+    public class PessoaFisica
     {
 
+        public virtual int Id { get; set; }
+        public virtual Pessoa Pessoa { get; set; }
         public virtual string Rg { get; set; }
         public virtual string NomePai { get; set; }
         public virtual string NomeMae { get; set; }

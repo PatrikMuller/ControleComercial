@@ -9,12 +9,16 @@ using Infraestrutura.Models;
 
 namespace Infraestrutura.Mapping
 {
-    public class PessoaFisicaMapping : SubclassMap<PessoaFisica>
+    public class PessoaFisicaMapping : ClassMap<PessoaFisica> //SubclassMap<PessoaFisica>
     {
 
         public PessoaFisicaMapping()
         {
-            
+
+            Id(o => o.Id).GeneratedBy.Sequence("PessoaFisica_Id_Seq"); //Para Postgres
+            //Id(pessoa => pessoa.IdPessoa).GeneratedBy.Identity(); //Para SQL Server
+            //References(o => o.Pessoa, "PessoaId").Cascade.All();
+            References(o => o.Pessoa, "PessoaId").Cascade.All();
             Map(o => o.Rg);
             Map(o => o.NomePai);
             Map(o => o.NomeMae);

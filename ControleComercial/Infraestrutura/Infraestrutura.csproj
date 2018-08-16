@@ -76,6 +76,7 @@
     <Compile Include="Access\ItemAccess.cs" />
     <Compile Include="Access\PessoaAccess.cs" />
     <Compile Include="Access\PessoaFisicaAccess.cs" />
+    <Compile Include="Access\SexoAccess.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Factory\NHibernateHelper.cs" />
     <Compile Include="Mapping\CarrinhoFormaPagamentoParcelamentoMapping.cs" />
@@ -94,6 +95,7 @@
     <Compile Include="Models\CarrinhoItem.cs" />
     <Compile Include="Models\CarrinhoPessoa.cs" />
     <Compile Include="Models\CarrinhoPessoaTipo.cs" />
+    <Compile Include="Models\ddl.cs" />
     <Compile Include="Models\FormaPagamento.cs" />
     <Compile Include="Models\FormaPagamentoParcelamento.cs" />
     <Compile Include="Models\Item.cs" />

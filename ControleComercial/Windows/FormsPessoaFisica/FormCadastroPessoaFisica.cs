@@ -23,6 +23,7 @@ namespace Windows.FormsPessoaFisica
         //Access
         PessoaAccess ObjPessoaAccess = new PessoaAccess();
         PessoaFisicaAccess ObjPessoaFisicaAccess = new PessoaFisicaAccess();
+        SexoAccess ObjSexoAccess = new SexoAccess();
 
         //Negocio
         Negocio.Utilitario ObjUtilitario = new Negocio.Utilitario();
@@ -31,7 +32,7 @@ namespace Windows.FormsPessoaFisica
         //Início - Métodos locais
         private void LerPessoaFisica()
         {
-            if (ObjPessoa.Id > 0)
+            if (ObjPessoa != null)
             {
                 txtid.Text = Convert.ToString(ObjPessoa.Id);
                 txtnome.Text = ObjPessoa.Nome;
@@ -88,7 +89,7 @@ namespace Windows.FormsPessoaFisica
             {
                 lblValidaCpf.Text = "-";
                 ObjPessoa = ObjPessoaAccess.LerCpfCnpj(txtcpf.Text);
-                ObjPessoaFisica = ObjPessoaFisicaAccess.Ler(ObjPessoa.Id);
+                ObjPessoaFisica = ObjPessoaFisicaAccess.Ler(txtcpf.Text);
 
                 LerPessoaFisica();
 
@@ -107,6 +108,8 @@ namespace Windows.FormsPessoaFisica
         {
             InitializeComponent();
 
+            ObjUtilitario. setComboBox(cbSexo, ObjSexoAccess.Lista());
+
             //if (id != 0)
             //{
             //    ObjPessoaFisica = ObjNegocioPessoaFisica.Ler(id);
@@ -119,17 +122,50 @@ namespace Windows.FormsPessoaFisica
                 
         private void btnGravar_Click(object sender, EventArgs e)
         {
-            ObjPessoaFisica.Id = Convert.ToInt32(txtid.Text);
-            ObjPessoaFisica.Nome = txtnome.Text;
-            ObjPessoaFisica.CpfCnpj = txtcpf.Text;
+
+            //Pessoa ObjP = new Pessoa();
+            //PessoaFisica ObjPF = new PessoaFisica();
+
+            if (ObjPessoa == null)
+                ObjPessoa = new Pessoa();
+
+            if (ObjPessoaFisica == null)
+            { 
+                ObjPessoaFisica = new PessoaFisica();
+                ObjPessoaFisica.Id = 0;
+            }
+
+            ObjPessoa.Id = Convert.ToInt32(txtid.Text);
+            ObjPessoa.Nome = txtnome.Text;
+            ObjPessoa.CpfCnpj = txtcpf.Text;
+            ObjPessoaFisica.Pessoa = ObjPessoa;
+
+            //ObjPessoaFisica.Pessoa.Id = Convert.ToInt32(txtid.Text);
+            //ObjPessoaFisica.Pessoa.Nome = txtnome.Text;
+            //ObjPessoaFisica.Pessoa.CpfCnpj = txtcpf.Text;
+
             ObjPessoaFisica.Rg = txtrg.Text;
             ObjPessoaFisica.NomePai = txtnomepai.Text;
             ObjPessoaFisica.NomeMae = txtnomemae.Text;
             ObjPessoaFisica.DataNascimento = Convert.ToDateTime(ObjUtilitario.formataData(txtdatanascimento.Text)); //txtdatanascimento.Text.Substring(6, 4) + "-" + txtdatanascimento.Text.Substring(3, 2) + "-" + txtdatanascimento.Text.Substring(0, 2);
             ObjPessoaFisica.Sexo = Convert.ToString(cbSexo.SelectedValue);
             //ObjPessoaFisica.Usuario = "patrikmuller";
-            txtid.Text = Convert.ToString(ObjPessoaFisicaAccess.Novo(ObjPessoaFisica));
+            
+            //txtid.Text = Convert.ToString(ObjPessoaFisicaAccess.Salvar(ObjPessoaFisica));
+            txtid.Text = Convert.ToString(ObjPessoaFisicaAccess.Editar(ObjPessoaFisica));
             Close();
+            
+            //if (Convert.ToInt32(txtid.Text) == 0)
+            //{
+            //    //txtid.Text = Convert.ToString(ObjPessoaFisicaAccess.Novo(Obj));
+            //    txtid.Text = Convert.ToString(ObjPessoaFisicaAccess.Editar(Obj));
+            //    Close();
+            //}
+            //else
+            //{
+            //    txtid.Text = Convert.ToString(ObjPessoaFisicaAccess.Editar(Obj));
+            //    Close();
+            //}
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

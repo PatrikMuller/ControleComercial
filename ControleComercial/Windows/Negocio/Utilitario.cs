@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Infraestrutura.Models;
+
 namespace Windows.Negocio
 {
     class Utilitario
@@ -16,6 +18,17 @@ namespace Windows.Negocio
             //
             // TODO: Add constructor logic here
             //
+        }
+
+
+        //método para preencher um dropdownlist
+        public void setComboBox(ComboBox cb, List<ddl> lista)
+        {
+            cb.DataSource = null;
+
+            cb.DataSource = lista;
+            cb.ValueMember = "Id";
+            cb.DisplayMember = "Nome";
         }
 
         //formata data para o padrão (aaaa-mm-dd)

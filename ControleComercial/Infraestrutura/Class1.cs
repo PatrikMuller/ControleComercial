@@ -15,16 +15,16 @@ namespace Infraestrutura
 
         public void Main()
         {
-            PessoaFisica obj = new PessoaFisica();
-            PessoaFisicaAccess dao = new PessoaFisicaAccess();
+            //PessoaFisica obj = new PessoaFisica();
+            //PessoaFisicaAccess dao = new PessoaFisicaAccess();
 
-            obj.Nome = "Patrik";
-            obj.NomeMae = "Mãe";
-            obj.NomePai = "Pai";
-            obj.Rg = "RG";
-            //obj.Cpf = "703.111.222-23";
+            //obj.Nome = "Patrik";
+            //obj.NomeMae = "Mãe";
+            //obj.NomePai = "Pai";
+            //obj.Rg = "RG";
+            ////obj.Cpf = "703.111.222-23";
 
-            dao.Grava(obj);
+            //dao.Grava(obj);
         }        
 
     }

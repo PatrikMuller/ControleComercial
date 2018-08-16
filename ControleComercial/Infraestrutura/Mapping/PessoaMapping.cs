@@ -14,7 +14,7 @@ namespace Infraestrutura.Mapping
 
         public PessoaMapping()
         {
-            Id(o => o.Id).GeneratedBy.Sequence("Pessoa_IdPessoa_Seq"); //Para Postgres
+            Id(o => o.Id).GeneratedBy.Sequence("Pessoa_Id_Seq"); //Para Postgres
             //Id(pessoa => pessoa.IdPessoa).GeneratedBy.Identity(); //Para SQL Server
             Map(o => o.Nome);
             Map(o => o.CpfCnpj);

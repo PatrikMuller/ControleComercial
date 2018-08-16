@@ -14,20 +14,66 @@ namespace Infraestrutura.Access
     public class PessoaFisicaAccess
     {
 
+        public Int32 Salvar(PessoaFisica o)
+        {
+            using (ISession session = NHibernateHelper.AbreSessao())
+            {
+                ITransaction tx = session.BeginTransaction();
+                
+                session.Save(o.Pessoa).Equals(o.Pessoa.Id == 0);
+                //session.Merge(o.Pessoa).Equals(o.Pessoa.Id > 0);
+
+                //session.Save(o).Equals(o.Id == 0);
+                //session.Merge(o).Equals(o.Id > 0);
+                //session.Merge(o);
+
+                //if (o.Pessoa.Id == 0)
+                //    session.Save(o.Pessoa);
+                //else
+                //    session.Merge(o.Pessoa);
+
+                //if (o.Id == 0)
+                //    session.Save(o);
+                //else
+                //    session.Merge(o);
+
+                //session.Merge(o);
+
+
+                if (o.Id == 0)
+                {
+                    session.Save(o);
+                }
+                else
+                {
+                    session.Update(o.Pessoa);
+                    session.Update(o);
+                }
+                    
+
+
+                tx.Commit();
+                return o.Pessoa.Id;
+            }
+        }
+
         public Int32 Novo(PessoaFisica o)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
                 ITransaction tx = session.BeginTransaction();
 
-                session.Save(o);
+                session.Save(o.Pessoa).Equals(o.Pessoa.Id == 0);
+                session.Merge(o.Pessoa).Equals(o.Pessoa.Id > 0);
+
+                session.Merge(o);
 
                 tx.Commit();
-                return o.Id;
+                return o.Pessoa.Id;
             }
         }
 
-        public Int32 Gravar(PessoaFisica o)
+        public Int32 Editar(PessoaFisica o)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
@@ -36,7 +82,7 @@ namespace Infraestrutura.Access
                 session.Merge(o);
 
                 tx.Commit();
-                return o.Id;
+                return o.Pessoa.Id;
             }
         }
 
@@ -47,7 +93,16 @@ namespace Infraestrutura.Access
                 return session.Get<PessoaFisica>(id);
             }
         }
-                
+        
+        public PessoaFisica Ler(String Cpf)
+        {
+            using (ISession session = NHibernateHelper.AbreSessao())
+            {
+                //return session.Get<PessoaFisica>(id);
+                return session.Query<PessoaFisica>().Where(o => o.Pessoa.CpfCnpj == Cpf).OrderBy(o => o.Id).FirstOrDefault();
+            }
+        }
+
         public void Remove(PessoaFisica o)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
@@ -69,7 +124,17 @@ namespace Infraestrutura.Access
 
                 //return session.Query<Bem>().Fetch(b => b.Marca).Fetch(b => b.Modelo).OrderBy(b => b.IdBem).ToList();
 
-                return session.Query<PessoaFisica>().Where(o => o.Nome.Like(nome)).OrderBy(o => o.Id).ToList();
+                //NHibernateSession.CreateQuery("FROM ListingCategoryDo l WHERE l.ListingId = :listingId ORDER BY l.PublishDate DESC")
+                //    .SetParameter("listingId", listingId)
+                //    .SetReadOnly(true)
+                //    .SetMaxResults(1)
+                //    .UniqueResult<ListingCategoryDo>();
+                var result = session.CreateQuery("From Pessoa p Left Join PessoaFisica pf ON p.id = pf.Pessoa_id WHERE p.id = 1").
+                    SetMaxResults(1).
+                    UniqueResult<PessoaFisica>();
+
+
+                return session.Query<PessoaFisica>().Where(o => o.Pessoa.Nome.Like(nome)).OrderBy(o => o.Pessoa.Id).ToList();
 
             }
         }
