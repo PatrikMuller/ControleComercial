@@ -113,6 +113,7 @@
             this.MenuButtonEditar.Name = "MenuButtonEditar";
             this.MenuButtonEditar.Size = new System.Drawing.Size(24, 24);
             this.MenuButtonEditar.Text = "Editar";
+            this.MenuButtonEditar.Click += new System.EventHandler(this.MenuButtonEditar_Click);
             // 
             // toolStripSeparator1
             // 

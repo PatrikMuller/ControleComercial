@@ -32,32 +32,32 @@ namespace Windows.FormsPessoaFisica
         //Início - Métodos locais
         private void LerPessoaFisica()
         {
-            if (ObjPessoa != null)
-            {
-                txtid.Text = Convert.ToString(ObjPessoa.Id);
-                txtnome.Text = ObjPessoa.Nome;
-                txtcpf.Text = ObjPessoa.CpfCnpj;
 
-                if (ObjPessoaFisica != null)
-                {
-                    txtrg.Text = Convert.ToString(ObjPessoaFisica.Rg);
-                    txtnomepai.Text = Convert.ToString(ObjPessoaFisica.NomePai);
-                    txtnomemae.Text = Convert.ToString(ObjPessoaFisica.NomeMae);
-                    txtdatanascimento.Text = Convert.ToString(ObjPessoaFisica.DataNascimento);
+            //CASO OBJETO ESTEJA null CRIA UMA NOVA ESTÂNCIA
+            ObjPessoa = ObjPessoa ?? new Pessoa();
+            
+            txtId.Text = Convert.ToString(ObjPessoa.Id);
+            txtNome.Text = ObjPessoa.Nome;
+            txtCpf.Text = ObjPessoa.CpfCnpj == null ? txtCpf.Text : ObjPessoa.CpfCnpj;
+            
+            ObjPessoaFisica = ObjPessoaFisica ?? new PessoaFisica();
+            
+            txtRg.Text = Convert.ToString(ObjPessoaFisica.Rg);
+            txtNomePai.Text = Convert.ToString(ObjPessoaFisica.NomePai);
+            txtNomeMae.Text = Convert.ToString(ObjPessoaFisica.NomeMae);
+            dtDataNascimento.Text = ObjPessoaFisica.DataNascimento <= DateTime.MinValue ? Convert.ToString(DateTime.Now) : Convert.ToString(ObjPessoaFisica.DataNascimento);
+            cbSexo.SelectedValue = ObjPessoaFisica.Sexo == null ? "M" : Convert.ToString(ObjPessoaFisica.Sexo);
 
-                    cbSexo.SelectedValue = Convert.ToString(ObjPessoaFisica.Sexo);
-                }
-                                                
-            }
+            AtivaComponentes();
         }
 
         private void DesativaComponentes()
         {
-
-            txtnome.Enabled = false;
-            txtcpf.Enabled = true;
+            
+            txtNome.Enabled = false;
+            txtCpf.Enabled = true;
             btnValidar.Enabled = true;
-            txtrg.Enabled = false;
+            txtRg.Enabled = false;
             tcDados.Enabled = false;
             btnGravar.Enabled = false;
 
@@ -66,106 +66,94 @@ namespace Windows.FormsPessoaFisica
         private void AtivaComponentes()
         {
 
-            txtnome.Enabled = true;
-            txtcpf.Enabled = false;
+            txtNome.Enabled = true;
+            txtCpf.Enabled = false;
             btnValidar.Enabled = false;
-            txtrg.Enabled = true;
+            txtRg.Enabled = true;
             tcDados.Enabled = true;
             btnGravar.Enabled = true;
 
         }
-
-        private void ConfiguraComponentes()
+        
+        private String CpfValido()
         {
-            if (txtid.Text == "0")
-                DesativaComponentes();
-            else
-                AtivaComponentes();
+
+            lblValidaCpf.Text = "-";
+            ObjPessoa = ObjPessoaAccess.LerCpfCnpj(txtCpf.Text);
+            ObjPessoaFisica = ObjPessoaFisicaAccess.Ler(txtCpf.Text);
+            
+            LerPessoaFisica();
+
+            //AtivaComponentes();
+            return "OK";
+
         }
 
+        private String CpfInvalido()
+        {
+
+            return "Numero de CPF Inválido!";
+
+        }
+                        
         private void ValidarCpf()
         {
-            if (ObjUtilitario.validacpf(txtcpf.Text))
-            {
-                lblValidaCpf.Text = "-";
-                ObjPessoa = ObjPessoaAccess.LerCpfCnpj(txtcpf.Text);
-                ObjPessoaFisica = ObjPessoaFisicaAccess.Ler(txtcpf.Text);
 
-                LerPessoaFisica();
+            lblValidaCpf.Text = ObjUtilitario.validacpf(txtCpf.Text) == true ? CpfValido() : CpfInvalido();
+            txtCpf.Focus().Equals(lblValidaCpf.Text != "OK");
+            txtNome.Focus().Equals(lblValidaCpf.Text == "OK");
 
-                AtivaComponentes();
-            }
-            else
-            {
-                lblValidaCpf.Text = "Numero de CPF Inválido!";
-                txtcpf.Focus();
-            }
+        }
+
+        private String IdMaiorZero(Int32 Id)
+        {
+            ObjPessoa = ObjPessoaAccess.Ler(Id);
+            ObjPessoaFisica = ObjPessoaFisicaAccess.Ler(ObjPessoa.CpfCnpj);
+
+            LerPessoaFisica();
+
+            return Convert.ToString(Id);
+        }
+
+        private String IdZero()
+        {
+            DesativaComponentes();
+
+            return "0";
         }
         //Fim - Métodos locais
+              
 
 
-        public FormCadastroPessoaFisica()
+        public FormCadastroPessoaFisica(Int32 Id)
         {
+
             InitializeComponent();
 
             ObjUtilitario. setComboBox(cbSexo, ObjSexoAccess.Lista());
 
-            //if (id != 0)
-            //{
-            //    ObjPessoaFisica = ObjNegocioPessoaFisica.Ler(id);
-            //    LerPessoaFisica();
-            //}
-
-            ConfiguraComponentes();
-
+            txtId.Text = Id == 0 ? IdZero() : IdMaiorZero(Id);
+                        
         }
                 
         private void btnGravar_Click(object sender, EventArgs e)
         {
-
-            //Pessoa ObjP = new Pessoa();
-            //PessoaFisica ObjPF = new PessoaFisica();
-
-            if (ObjPessoa == null)
-                ObjPessoa = new Pessoa();
-
-            if (ObjPessoaFisica == null)
-            { 
-                ObjPessoaFisica = new PessoaFisica();
-                ObjPessoaFisica.Id = 0;
-            }
-
-            ObjPessoa.Id = Convert.ToInt32(txtid.Text);
-            ObjPessoa.Nome = txtnome.Text;
-            ObjPessoa.CpfCnpj = txtcpf.Text;
+                        
+            ObjPessoa.Id = Convert.ToInt32(txtId.Text);
+            ObjPessoa.Nome = txtNome.Text;
+            ObjPessoa.CpfCnpj = txtCpf.Text;
             ObjPessoaFisica.Pessoa = ObjPessoa;
-
-            //ObjPessoaFisica.Pessoa.Id = Convert.ToInt32(txtid.Text);
-            //ObjPessoaFisica.Pessoa.Nome = txtnome.Text;
-            //ObjPessoaFisica.Pessoa.CpfCnpj = txtcpf.Text;
-
-            ObjPessoaFisica.Rg = txtrg.Text;
-            ObjPessoaFisica.NomePai = txtnomepai.Text;
-            ObjPessoaFisica.NomeMae = txtnomemae.Text;
-            ObjPessoaFisica.DataNascimento = Convert.ToDateTime(ObjUtilitario.formataData(txtdatanascimento.Text)); //txtdatanascimento.Text.Substring(6, 4) + "-" + txtdatanascimento.Text.Substring(3, 2) + "-" + txtdatanascimento.Text.Substring(0, 2);
+                        
+            ObjPessoaFisica.Rg = txtRg.Text;
+            ObjPessoaFisica.NomePai = txtNomePai.Text;
+            ObjPessoaFisica.NomeMae = txtNomeMae.Text;
+            ObjPessoaFisica.DataNascimento = Convert.ToDateTime(ObjUtilitario.formataData(dtDataNascimento.Text)); //txtdatanascimento.Text.Substring(6, 4) + "-" + txtdatanascimento.Text.Substring(3, 2) + "-" + txtdatanascimento.Text.Substring(0, 2);
             ObjPessoaFisica.Sexo = Convert.ToString(cbSexo.SelectedValue);
             //ObjPessoaFisica.Usuario = "patrikmuller";
-            
-            //txtid.Text = Convert.ToString(ObjPessoaFisicaAccess.Salvar(ObjPessoaFisica));
-            txtid.Text = Convert.ToString(ObjPessoaFisicaAccess.Editar(ObjPessoaFisica));
+
+            txtId.Text = Convert.ToString(ObjPessoaFisicaAccess.Salvar(ObjPessoaFisica));
             Close();
-            
-            //if (Convert.ToInt32(txtid.Text) == 0)
-            //{
-            //    //txtid.Text = Convert.ToString(ObjPessoaFisicaAccess.Novo(Obj));
-            //    txtid.Text = Convert.ToString(ObjPessoaFisicaAccess.Editar(Obj));
-            //    Close();
-            //}
-            //else
-            //{
-            //    txtid.Text = Convert.ToString(ObjPessoaFisicaAccess.Editar(Obj));
-            //    Close();
-            //}
+                        
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

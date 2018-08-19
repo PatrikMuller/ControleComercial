@@ -1,0 +1,2 @@
+﻿Conceito Strategy: http://blog.alura.com.br/reduzindo-de-n-ifs-para-nenhum-com-strategy-em-java/
+https://docs.microsoft.com/pt-br/dotnet/csharp/language-reference/keywords/enum

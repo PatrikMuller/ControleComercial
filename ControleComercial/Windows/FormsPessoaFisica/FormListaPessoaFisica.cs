@@ -63,16 +63,17 @@ namespace Windows.FormsPessoaFisica
 
         private void Editar()
         {
-            //Int32 id = Convert.ToInt32(Grid.CurrentRow.Cells[0].Value);
+            Int32 id = Convert.ToInt32(Grid.CurrentRow.Cells[0].Value);
             //CadastroPessoaFisica Form = new CadastroPessoaFisica(id);
-            //Form.ShowDialog();
+            FormCadastroPessoaFisica form = new FormCadastroPessoaFisica(id);
+            form.ShowDialog();
         }
 
         private void Novo()
         {
             //CadastroPessoaFisica Form = new CadastroPessoaFisica(0);
             //Form.ShowDialog();
-            FormCadastroPessoaFisica form = new FormCadastroPessoaFisica();
+            FormCadastroPessoaFisica form = new FormCadastroPessoaFisica(0);
             form.ShowDialog();
         }
         //Fim - Métodos locais

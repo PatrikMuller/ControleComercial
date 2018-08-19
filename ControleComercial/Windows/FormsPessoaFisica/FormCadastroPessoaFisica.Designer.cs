@@ -30,13 +30,13 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblValidaCpf = new System.Windows.Forms.Label();
-            this.txtnome = new System.Windows.Forms.TextBox();
-            this.txtcpf = new System.Windows.Forms.MaskedTextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtCpf = new System.Windows.Forms.MaskedTextBox();
             this.btnValidar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtid = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtrg = new System.Windows.Forms.TextBox();
+            this.txtRg = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -46,12 +46,12 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.cbSexo = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.txtdatanascimento = new System.Windows.Forms.DateTimePicker();
+            this.dtDataNascimento = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtnomemae = new System.Windows.Forms.TextBox();
+            this.txtNomeMae = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtnomepai = new System.Windows.Forms.TextBox();
+            this.txtNomePai = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tcDados.SuspendLayout();
@@ -61,13 +61,13 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lblValidaCpf);
-            this.groupBox1.Controls.Add(this.txtnome);
-            this.groupBox1.Controls.Add(this.txtcpf);
+            this.groupBox1.Controls.Add(this.txtNome);
+            this.groupBox1.Controls.Add(this.txtCpf);
             this.groupBox1.Controls.Add(this.btnValidar);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtid);
+            this.groupBox1.Controls.Add(this.txtId);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtrg);
+            this.groupBox1.Controls.Add(this.txtRg);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -88,21 +88,21 @@
             this.lblValidaCpf.Text = "-";
             this.lblValidaCpf.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // txtnome
+            // txtNome
             // 
-            this.txtnome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtnome.Location = new System.Drawing.Point(96, 49);
-            this.txtnome.Name = "txtnome";
-            this.txtnome.Size = new System.Drawing.Size(400, 20);
-            this.txtnome.TabIndex = 3;
+            this.txtNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNome.Location = new System.Drawing.Point(96, 49);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(400, 20);
+            this.txtNome.TabIndex = 3;
             // 
-            // txtcpf
+            // txtCpf
             // 
-            this.txtcpf.Location = new System.Drawing.Point(96, 75);
-            this.txtcpf.Mask = "000.000.000-00";
-            this.txtcpf.Name = "txtcpf";
-            this.txtcpf.Size = new System.Drawing.Size(100, 20);
-            this.txtcpf.TabIndex = 1;
+            this.txtCpf.Location = new System.Drawing.Point(96, 75);
+            this.txtCpf.Mask = "000.000.000-00";
+            this.txtCpf.Name = "txtCpf";
+            this.txtCpf.Size = new System.Drawing.Size(100, 20);
+            this.txtCpf.TabIndex = 1;
             // 
             // btnValidar
             // 
@@ -124,14 +124,14 @@
             this.label5.Text = "Identificador";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // txtid
+            // txtId
             // 
-            this.txtid.Enabled = false;
-            this.txtid.Location = new System.Drawing.Point(96, 23);
-            this.txtid.Name = "txtid";
-            this.txtid.Size = new System.Drawing.Size(100, 20);
-            this.txtid.TabIndex = 0;
-            this.txtid.Text = "0";
+            this.txtId.Enabled = false;
+            this.txtId.Location = new System.Drawing.Point(96, 23);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(100, 20);
+            this.txtId.TabIndex = 0;
+            this.txtId.Text = "0";
             // 
             // label4
             // 
@@ -143,13 +143,13 @@
             this.label4.Text = "RG";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // txtrg
+            // txtRg
             // 
-            this.txtrg.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtrg.Location = new System.Drawing.Point(96, 100);
-            this.txtrg.Name = "txtrg";
-            this.txtrg.Size = new System.Drawing.Size(140, 20);
-            this.txtrg.TabIndex = 5;
+            this.txtRg.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtRg.Location = new System.Drawing.Point(96, 100);
+            this.txtRg.Name = "txtRg";
+            this.txtRg.Size = new System.Drawing.Size(140, 20);
+            this.txtRg.TabIndex = 5;
             // 
             // label3
             // 
@@ -217,12 +217,12 @@
             // 
             this.tabPage1.Controls.Add(this.cbSexo);
             this.tabPage1.Controls.Add(this.label15);
-            this.tabPage1.Controls.Add(this.txtdatanascimento);
+            this.tabPage1.Controls.Add(this.dtDataNascimento);
             this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.label9);
-            this.tabPage1.Controls.Add(this.txtnomemae);
+            this.tabPage1.Controls.Add(this.txtNomeMae);
             this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.txtnomepai);
+            this.tabPage1.Controls.Add(this.txtNomePai);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -251,13 +251,13 @@
             this.label15.Text = "Sexo";
             this.label15.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // txtdatanascimento
+            // dtDataNascimento
             // 
-            this.txtdatanascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtdatanascimento.Location = new System.Drawing.Point(92, 42);
-            this.txtdatanascimento.Name = "txtdatanascimento";
-            this.txtdatanascimento.Size = new System.Drawing.Size(100, 20);
-            this.txtdatanascimento.TabIndex = 8;
+            this.dtDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtDataNascimento.Location = new System.Drawing.Point(92, 42);
+            this.dtDataNascimento.Name = "dtDataNascimento";
+            this.dtDataNascimento.Size = new System.Drawing.Size(100, 20);
+            this.dtDataNascimento.TabIndex = 8;
             // 
             // label11
             // 
@@ -279,13 +279,13 @@
             this.label9.Text = "Nome da Mãe";
             this.label9.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // txtnomemae
+            // txtNomeMae
             // 
-            this.txtnomemae.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtnomemae.Location = new System.Drawing.Point(368, 16);
-            this.txtnomemae.Name = "txtnomemae";
-            this.txtnomemae.Size = new System.Drawing.Size(180, 20);
-            this.txtnomemae.TabIndex = 7;
+            this.txtNomeMae.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNomeMae.Location = new System.Drawing.Point(368, 16);
+            this.txtNomeMae.Name = "txtNomeMae";
+            this.txtNomeMae.Size = new System.Drawing.Size(180, 20);
+            this.txtNomeMae.TabIndex = 7;
             // 
             // label6
             // 
@@ -297,13 +297,13 @@
             this.label6.Text = "Nome do Pai";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // txtnomepai
+            // txtNomePai
             // 
-            this.txtnomepai.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtnomepai.Location = new System.Drawing.Point(92, 16);
-            this.txtnomepai.Name = "txtnomepai";
-            this.txtnomepai.Size = new System.Drawing.Size(180, 20);
-            this.txtnomepai.TabIndex = 6;
+            this.txtNomePai.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNomePai.Location = new System.Drawing.Point(92, 16);
+            this.txtNomePai.Name = "txtNomePai";
+            this.txtNomePai.Size = new System.Drawing.Size(180, 20);
+            this.txtNomePai.TabIndex = 6;
             // 
             // FormCadastroPessoaFisica
             // 
@@ -331,13 +331,13 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblValidaCpf;
-        private System.Windows.Forms.TextBox txtnome;
-        private System.Windows.Forms.MaskedTextBox txtcpf;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.MaskedTextBox txtCpf;
         private System.Windows.Forms.Button btnValidar;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtid;
+        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtrg;
+        private System.Windows.Forms.TextBox txtRg;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
@@ -347,11 +347,11 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.ComboBox cbSexo;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.DateTimePicker txtdatanascimento;
+        private System.Windows.Forms.DateTimePicker dtDataNascimento;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtnomemae;
+        private System.Windows.Forms.TextBox txtNomeMae;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtnomepai;
+        private System.Windows.Forms.TextBox txtNomePai;
     }
 }

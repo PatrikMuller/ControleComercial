@@ -19,39 +19,9 @@ namespace Infraestrutura.Access
             using (ISession session = NHibernateHelper.AbreSessao())
             {
                 ITransaction tx = session.BeginTransaction();
+
+                session.Merge(o);
                 
-                session.Save(o.Pessoa).Equals(o.Pessoa.Id == 0);
-                //session.Merge(o.Pessoa).Equals(o.Pessoa.Id > 0);
-
-                //session.Save(o).Equals(o.Id == 0);
-                //session.Merge(o).Equals(o.Id > 0);
-                //session.Merge(o);
-
-                //if (o.Pessoa.Id == 0)
-                //    session.Save(o.Pessoa);
-                //else
-                //    session.Merge(o.Pessoa);
-
-                //if (o.Id == 0)
-                //    session.Save(o);
-                //else
-                //    session.Merge(o);
-
-                //session.Merge(o);
-
-
-                if (o.Id == 0)
-                {
-                    session.Save(o);
-                }
-                else
-                {
-                    session.Update(o.Pessoa);
-                    session.Update(o);
-                }
-                    
-
-
                 tx.Commit();
                 return o.Pessoa.Id;
             }
