@@ -11,22 +11,22 @@ using System.Windows.Forms;
 using Infraestrutura.Access;
 using Infraestrutura.Models;
 
-namespace Windows.FormsPessoaFisica
+namespace Windows.FormsPessoaJuridica
 {
-    public partial class FormListaPessoaFisica : Form
+    public partial class FormListaPessoaJuridica : Form
     {
-                
         //Objetos
-        Pessoa pessoa = new Pessoa();
-        
+        //Pessoa pessoa = new Pessoa();
+
         //Access
-        PessoaAccess pessoaAccess = new PessoaAccess();
+        //PessoaAccess pessoaAccess = new PessoaAccess();
+        PessoaJuridicaAccess Access = new PessoaJuridicaAccess();
 
 
         //Início - Métodos locais
         private void configuraGrid(Int32 QtdLinhas)
         {
-            if(QtdLinhas > 0)
+            if (QtdLinhas > 0)
             {
                 Grid.Columns[0].Width = 80;
                 Grid.Columns[1].Width = 220;
@@ -45,7 +45,8 @@ namespace Windows.FormsPessoaFisica
         private void setarGrid()
         {
 
-            Grid.DataSource = pessoaAccess.Lista("%" + txtLocalizar.Text + "%");
+            //Grid.DataSource = pessoaAccess.Lista("%" + txtLocalizar.Text + "%");
+            Grid.DataSource = Access.Lista("%" + txtLocalizar.Text + "%");
             configuraGrid(Grid.RowCount);
             configuraBotoes(Grid.RowCount);
 
@@ -55,7 +56,7 @@ namespace Windows.FormsPessoaFisica
         {
 
             Int32 id = Convert.ToInt32(Grid.CurrentRow.Cells[0].Value);
-            FormCadastroPessoaFisica form = new FormCadastroPessoaFisica(id);
+            FormCadastroPessoaJuridica form = new FormCadastroPessoaJuridica(id);
             form.ShowDialog();
 
         }
@@ -63,15 +64,15 @@ namespace Windows.FormsPessoaFisica
         private void Novo()
         {
 
-            FormCadastroPessoaFisica form = new FormCadastroPessoaFisica(0);
+            FormCadastroPessoaJuridica form = new FormCadastroPessoaJuridica(0);
             form.ShowDialog();
 
         }
         //Fim - Métodos locais
 
-        
-        
-        public FormListaPessoaFisica()
+
+
+        public FormListaPessoaJuridica()
         {
 
             InitializeComponent();
@@ -84,7 +85,7 @@ namespace Windows.FormsPessoaFisica
         {
             setarGrid();
         }
-                
+
         private void txtLocalizar_TextChanged(object sender, EventArgs e)
         {
             setarGrid();

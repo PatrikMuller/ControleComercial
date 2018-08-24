@@ -147,25 +147,27 @@
             // 
             this.MenuItemNovo.Image = global::Windows.Properties.Resources.Novo;
             this.MenuItemNovo.Name = "MenuItemNovo";
-            this.MenuItemNovo.Size = new System.Drawing.Size(109, 22);
+            this.MenuItemNovo.Size = new System.Drawing.Size(184, 26);
             this.MenuItemNovo.Text = "Novo";
+            this.MenuItemNovo.Click += new System.EventHandler(this.MenuItemNovo_Click);
             // 
             // MenuItemEditar
             // 
             this.MenuItemEditar.Image = global::Windows.Properties.Resources.Editar;
             this.MenuItemEditar.Name = "MenuItemEditar";
-            this.MenuItemEditar.Size = new System.Drawing.Size(109, 22);
+            this.MenuItemEditar.Size = new System.Drawing.Size(184, 26);
             this.MenuItemEditar.Text = "Editar";
+            this.MenuItemEditar.Click += new System.EventHandler(this.MenuItemEditar_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(106, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(181, 6);
             // 
             // MenuItemFechar
             // 
             this.MenuItemFechar.Name = "MenuItemFechar";
-            this.MenuItemFechar.Size = new System.Drawing.Size(109, 22);
+            this.MenuItemFechar.Size = new System.Drawing.Size(184, 26);
             this.MenuItemFechar.Text = "Fechar";
             // 
             // ajudaToolStripMenuItem

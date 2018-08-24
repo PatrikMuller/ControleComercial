@@ -46,5 +46,11 @@ namespace Windows.FormsPrincipal
 
             //}
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormsPessoaJuridica.FormListaPessoaJuridica formListaPessoaJuridica = new FormsPessoaJuridica.FormListaPessoaJuridica();
+            formListaPessoaJuridica.ShowDialog();
+        }
     }
 }

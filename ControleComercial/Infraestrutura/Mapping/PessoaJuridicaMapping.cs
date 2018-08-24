@@ -17,7 +17,7 @@ namespace Infraestrutura.Mapping
 
             Id(o => o.Id).GeneratedBy.Sequence("PessoaJuridica_Id_Seq"); //Para Postgres
             //Id(pessoa => pessoa.IdPessoa).GeneratedBy.Identity(); //Para SQL Server
-            References(o => o.Pessoa, "PessoaId");
+            References(o => o.Pessoa, "PessoaId").Cascade.All();
             Map(o => o.Ie);
             Map(o => o.Fantasia);
             Map(o => o.DataConstituicao);

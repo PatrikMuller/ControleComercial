@@ -30,8 +30,9 @@
         {
             this.pnTopo = new System.Windows.Forms.Panel();
             this.pnConteudo = new System.Windows.Forms.Panel();
-            this.pnBaixo = new System.Windows.Forms.Panel();
             this.btnPessoaFisica = new System.Windows.Forms.Button();
+            this.pnBaixo = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnConteudo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,20 +46,13 @@
             // 
             // pnConteudo
             // 
+            this.pnConteudo.Controls.Add(this.button1);
             this.pnConteudo.Controls.Add(this.btnPessoaFisica);
             this.pnConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnConteudo.Location = new System.Drawing.Point(0, 100);
             this.pnConteudo.Name = "pnConteudo";
             this.pnConteudo.Size = new System.Drawing.Size(989, 511);
             this.pnConteudo.TabIndex = 1;
-            // 
-            // pnBaixo
-            // 
-            this.pnBaixo.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnBaixo.Location = new System.Drawing.Point(0, 511);
-            this.pnBaixo.Name = "pnBaixo";
-            this.pnBaixo.Size = new System.Drawing.Size(989, 100);
-            this.pnBaixo.TabIndex = 2;
             // 
             // btnPessoaFisica
             // 
@@ -69,6 +63,24 @@
             this.btnPessoaFisica.Text = "Pessoa Física";
             this.btnPessoaFisica.UseVisualStyleBackColor = true;
             this.btnPessoaFisica.Click += new System.EventHandler(this.btnPessoaFisica_Click);
+            // 
+            // pnBaixo
+            // 
+            this.pnBaixo.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnBaixo.Location = new System.Drawing.Point(0, 511);
+            this.pnBaixo.Name = "pnBaixo";
+            this.pnBaixo.Size = new System.Drawing.Size(989, 100);
+            this.pnBaixo.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(118, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 50);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Pessoa Jurídica";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormPrincipal
             // 
@@ -93,5 +105,6 @@
         private System.Windows.Forms.Panel pnConteudo;
         private System.Windows.Forms.Panel pnBaixo;
         private System.Windows.Forms.Button btnPessoaFisica;
+        private System.Windows.Forms.Button button1;
     }
 }

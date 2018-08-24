@@ -76,6 +76,7 @@
     <Compile Include="Access\ItemAccess.cs" />
     <Compile Include="Access\PessoaAccess.cs" />
     <Compile Include="Access\PessoaFisicaAccess.cs" />
+    <Compile Include="Access\PessoaJuridicaAccess.cs" />
     <Compile Include="Access\SexoAccess.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Factory\NHibernateHelper.cs" />
