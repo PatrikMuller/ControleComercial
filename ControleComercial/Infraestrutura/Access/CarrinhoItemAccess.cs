@@ -60,6 +60,24 @@ namespace Infraestrutura.Access
             }
         }
 
+
+        public Object ListaGrid(Int32 idCarrinho)
+        {
+            using (ISession session = NHibernateHelper.AbreSessao())
+            {
+                                                
+                var retorno = (from l in session.Query<CarrinhoItem>().
+                               Fetch(o => o.Item).
+                               Where(o => o.Carrinho.Id == idCarrinho).
+                               Select(o => new { o.Ordem, o.Item.Nome, o.Quantidade, o.Preco, o.Desconto, Total = (o.Quantidade * (o.Preco - o.Desconto))}).
+                               OrderBy(o => o.Ordem)
+                               select l).ToList();
+
+                return retorno;                        
+
+            }
+        }
+        
         public IList<CarrinhoItem> Lista(Int32 idCarrinho)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
@@ -91,6 +109,16 @@ namespace Infraestrutura.Access
 
                 //return results.ToList<Object>();
 
+
+                //var retorno = (from pj in session.Query<PessoaJuridica>().
+                //                Where(o => o.Pessoa.Nome.Like(nome)).
+                //                Fetch(o => o.Pessoa).
+                //                Select(o => new { o.Pessoa.Id, o.Pessoa.Nome, o.Fantasia, Cnpj = o.Pessoa.CpfCnpj, IE = o.Ie }).
+                //                OrderBy(o => o.Nome).
+                //                ToList()
+                //               select pj).Take(40).ToList();
+                              
+
                 return session.Query<CarrinhoItem>().Fetch(i => i.Item).Where(i => i.Carrinho.Id == idCarrinho).OrderBy(c => c.Id).ToList();
 
                 //foreach (var c in result)
@@ -102,6 +130,7 @@ namespace Infraestrutura.Access
 
             }
         }
+
 
     }
 }

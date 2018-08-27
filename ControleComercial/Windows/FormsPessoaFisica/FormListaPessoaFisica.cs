@@ -18,9 +18,10 @@ namespace Windows.FormsPessoaFisica
                 
         //Objetos
         Pessoa pessoa = new Pessoa();
-        
+
         //Access
-        PessoaAccess pessoaAccess = new PessoaAccess();
+        //PessoaAccess pessoaAccess = new PessoaAccess();
+        PessoaFisicaAccess access = new PessoaFisicaAccess();
 
 
         //Início - Métodos locais
@@ -31,6 +32,7 @@ namespace Windows.FormsPessoaFisica
                 Grid.Columns[0].Width = 80;
                 Grid.Columns[1].Width = 220;
                 Grid.Columns[2].Width = 150;
+                Grid.Columns[3].Width = 150;
             }
         }
 
@@ -45,7 +47,7 @@ namespace Windows.FormsPessoaFisica
         private void setarGrid()
         {
 
-            Grid.DataSource = pessoaAccess.Lista("%" + txtLocalizar.Text + "%");
+            Grid.DataSource = access.Lista("%" + txtLocalizar.Text + "%");
             configuraGrid(Grid.RowCount);
             configuraBotoes(Grid.RowCount);
 
@@ -82,12 +84,16 @@ namespace Windows.FormsPessoaFisica
 
         private void FormListaPessoaFisica_Activated(object sender, EventArgs e)
         {
+
             setarGrid();
+
         }
                 
         private void txtLocalizar_TextChanged(object sender, EventArgs e)
         {
+
             setarGrid();
+
         }
 
         private void Grid_DoubleClick(object sender, EventArgs e)

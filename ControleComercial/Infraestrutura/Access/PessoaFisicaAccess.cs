@@ -83,7 +83,7 @@ namespace Infraestrutura.Access
             }
         }
 
-        public IList<PessoaFisica> Lista(String nome)
+        public Object Lista(String nome)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
@@ -99,12 +99,23 @@ namespace Infraestrutura.Access
                 //    .SetReadOnly(true)
                 //    .SetMaxResults(1)
                 //    .UniqueResult<ListingCategoryDo>();
-                var result = session.CreateQuery("From Pessoa p Left Join PessoaFisica pf ON p.id = pf.Pessoa_id WHERE p.id = 1").
-                    SetMaxResults(1).
-                    UniqueResult<PessoaFisica>();
+                //var result = session.CreateQuery("From Pessoa p Left Join PessoaFisica pf ON p.id = pf.Pessoa_id WHERE p.id = 1").
+                //    SetMaxResults(1).
+                //    UniqueResult<PessoaFisica>();
 
 
-                return session.Query<PessoaFisica>().Where(o => o.Pessoa.Nome.Like(nome)).OrderBy(o => o.Pessoa.Id).ToList();
+                //return session.Query<PessoaFisica>().Where(o => o.Pessoa.Nome.Like(nome)).OrderBy(o => o.Pessoa.Id).ToList();
+
+                var retorno = (from pf in session.Query<PessoaFisica>().
+                                    Where(o => o.Pessoa.Nome.Like(nome)).
+                                    Fetch(o => o.Pessoa).
+                                    Select(o => new { o.Pessoa.Id, o.Pessoa.Nome, Cpf = o.Pessoa.CpfCnpj, RG = o.Rg }).
+                                    OrderBy(o => o.Nome).
+                                    ToList()
+                               select pf).Take(40).ToList();
+
+
+                return retorno;
 
             }
         }

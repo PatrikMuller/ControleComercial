@@ -345,7 +345,7 @@
             this.txtIdCarrinho.Name = "txtIdCarrinho";
             this.txtIdCarrinho.Size = new System.Drawing.Size(100, 20);
             this.txtIdCarrinho.TabIndex = 8;
-            this.txtIdCarrinho.Text = "42";
+            this.txtIdCarrinho.Text = "43";
             // 
             // label4
             // 

@@ -126,7 +126,8 @@ namespace Windows.FormsCarrinho
             InitializeComponent();
 
             //GridProdutos.DataSource = dadosGridProduto(carrinhoItemDao.Lista(Convert.ToInt32(txtIdCarrinho.Text)));
-            GridProdutos.DataSource = dadosGridProduto(carrinhoItemDao.Lista(41));
+            //GridProdutos.DataSource = dadosGridProduto(carrinhoItemDao.Lista(41));
+            GridProdutos.DataSource = carrinhoItemDao.ListaGrid(Convert.ToInt32(txtIdCarrinho.Text));
             configuraGridProdutos();
 
             gridCliente.DataSource = dadosGridCliente(carrinhoPessoaDao.Lista(42, 1));
@@ -170,17 +171,26 @@ namespace Windows.FormsCarrinho
                 Row = form.Row();
 
                 carrinho.Id = Convert.ToInt32(txtIdCarrinho.Text);
-                item.Id = Convert.ToInt32(Row.Cells[0].Value);
-                carrinhoItem.Ordem = (GridProdutos.Rows.Count);
                 carrinhoItem.Carrinho = carrinho;
+
+                item.Id = Convert.ToInt32(Row.Cells[0].Value);
                 carrinhoItem.Item = item;
+
+                carrinhoItem.Ordem = (GridProdutos.Rows.Count + 1);
                 carrinhoItem.Quantidade = Convert.ToDecimal(txtQuantidade.Text);
                 carrinhoItem.Preco = Convert.ToDecimal(Row.Cells[3].Value);
                 carrinhoItem.Desconto = Convert.ToDecimal(0.00);
+
                 carrinhoItemDao.Novo(carrinhoItem);
                 GridProdutos.DataSource = null;
-                GridProdutos.DataSource = dadosGridProduto(carrinhoItemDao.Lista(Convert.ToInt32(txtIdCarrinho.Text)));
+                //GridProdutos.DataSource = dadosGridProduto(carrinhoItemDao.Lista(Convert.ToInt32(txtIdCarrinho.Text)));
+                GridProdutos.DataSource = carrinhoItemDao.ListaGrid(Convert.ToInt32(txtIdCarrinho.Text));
                 configuraGridProdutos();
+
+                //NHibernate.Exceptions.GenericADOException: 'could not insert: [Infraestrutura.Models.CarrinhoItem#39][SQL: 
+                //INSERT INTO "CarrinhoItem" (Ordem, Quantidade, Preco, Desconto, CarrinhoId, ItemId, Id) VALUES (?, ?, ?, ?, ?, ?, ?)]'
+
+
 
             }
 

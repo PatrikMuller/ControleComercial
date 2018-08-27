@@ -47,10 +47,17 @@ namespace Windows.FormsPrincipal
             //}
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnPessoaJuridica_Click(object sender, EventArgs e)
         {
             FormsPessoaJuridica.FormListaPessoaJuridica formListaPessoaJuridica = new FormsPessoaJuridica.FormListaPessoaJuridica();
             formListaPessoaJuridica.ShowDialog();
         }
+
+        private void btnTelaVenda_Click(object sender, EventArgs e)
+        {
+            FormsCarrinho.CadastroCarrinho formCadastroCarrinho = new FormsCarrinho.CadastroCarrinho();
+            formCadastroCarrinho.ShowDialog();
+        }
+
     }
 }

@@ -95,7 +95,7 @@ namespace Infraestrutura.Access
                                 Select(o => new { o.Pessoa.Id, o.Pessoa.Nome, o.Fantasia, Cnpj = o.Pessoa.CpfCnpj, IE = o.Ie }).
                                 OrderBy(o => o.Nome).
                                 ToList()
-                              select pj).ToList();
+                              select pj).Take(40).ToList();
 
 
                 return retorno;
