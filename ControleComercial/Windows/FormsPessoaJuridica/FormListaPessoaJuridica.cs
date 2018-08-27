@@ -29,8 +29,10 @@ namespace Windows.FormsPessoaJuridica
             if (QtdLinhas > 0)
             {
                 Grid.Columns[0].Width = 80;
-                Grid.Columns[1].Width = 220;
+                Grid.Columns[1].Width = 200;
                 Grid.Columns[2].Width = 150;
+                Grid.Columns[3].Width = 120;
+                Grid.Columns[4].Width = 100;
             }
         }
 

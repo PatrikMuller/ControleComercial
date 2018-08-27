@@ -33,9 +33,9 @@
             this.MenuItemFechar = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuPrincipal = new System.Windows.Forms.MenuStrip();
             this.MenuItemNovo = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemEditar = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuPrincipal = new System.Windows.Forms.MenuStrip();
             this.menuButton = new System.Windows.Forms.ToolStrip();
             this.MenuButtonNovo = new System.Windows.Forms.ToolStripButton();
             this.MenuButtonEditar = new System.Windows.Forms.ToolStripButton();
@@ -91,18 +91,6 @@
             this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.arquivoToolStripMenuItem.Text = "Arquivo";
             // 
-            // menuPrincipal
-            // 
-            this.menuPrincipal.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.arquivoToolStripMenuItem,
-            this.ajudaToolStripMenuItem});
-            this.menuPrincipal.Location = new System.Drawing.Point(0, 0);
-            this.menuPrincipal.Name = "menuPrincipal";
-            this.menuPrincipal.Size = new System.Drawing.Size(800, 24);
-            this.menuPrincipal.TabIndex = 19;
-            this.menuPrincipal.Text = "menuStrip1";
-            // 
             // MenuItemNovo
             // 
             this.MenuItemNovo.Image = global::Windows.Properties.Resources.Novo;
@@ -118,6 +106,18 @@
             this.MenuItemEditar.Size = new System.Drawing.Size(109, 22);
             this.MenuItemEditar.Text = "Editar";
             this.MenuItemEditar.Click += new System.EventHandler(this.MenuItemEditar_Click);
+            // 
+            // menuPrincipal
+            // 
+            this.menuPrincipal.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.arquivoToolStripMenuItem,
+            this.ajudaToolStripMenuItem});
+            this.menuPrincipal.Location = new System.Drawing.Point(0, 0);
+            this.menuPrincipal.Name = "menuPrincipal";
+            this.menuPrincipal.Size = new System.Drawing.Size(800, 24);
+            this.menuPrincipal.TabIndex = 19;
+            this.menuPrincipal.Text = "menuStrip1";
             // 
             // menuButton
             // 
@@ -174,6 +174,7 @@
             this.txtLocalizar.Name = "txtLocalizar";
             this.txtLocalizar.Size = new System.Drawing.Size(500, 20);
             this.txtLocalizar.TabIndex = 3;
+            this.txtLocalizar.TextChanged += new System.EventHandler(this.txtLocalizar_TextChanged);
             // 
             // label1
             // 
