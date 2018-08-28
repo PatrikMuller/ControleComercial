@@ -31,29 +31,7 @@ namespace Windows.FormsCarrinho
         CarrinhoItemAccess carrinhoItemDao = new CarrinhoItemAccess();
         CarrinhoPessoaAccess carrinhoPessoaDao = new CarrinhoPessoaAccess();
         CarrinhoFormaPagamentoParcelamentoAccess carrinhoFormaPagamentoParcelamentoDao = new CarrinhoFormaPagamentoParcelamentoAccess();
-
-
-        private DataTable dadosGridProduto(IList<CarrinhoItem> l)
-        {
-
-            DataTable dt = new DataTable();
-
-            dt.Columns.Add("nº", System.Type.GetType("System.String"));
-            dt.Columns.Add("produto", System.Type.GetType("System.String"));
-            dt.Columns.Add("qtd", System.Type.GetType("System.Decimal"));
-            dt.Columns.Add("preco", System.Type.GetType("System.Decimal"));
-            dt.Columns.Add("desconto", System.Type.GetType("System.Decimal"));
-            dt.Columns.Add("total", System.Type.GetType("System.Decimal"));
-
-            foreach (var carrinhoItem in l)
-            {
-                dt.Rows.Add(new String[] { Convert.ToString(carrinhoItem.Ordem), carrinhoItem.Item.Nome, Convert.ToString(carrinhoItem.Quantidade), Convert.ToString(carrinhoItem.Preco), Convert.ToString(carrinhoItem.Desconto), Convert.ToString(carrinhoItem.Quantidade * (carrinhoItem.Preco - carrinhoItem.Desconto)) });
-            }
-
-            return dt;
-
-        }
-
+                        
         private void configuraGridProdutos()
         {
 
@@ -64,58 +42,28 @@ namespace Windows.FormsCarrinho
             GridProdutos.Columns[5].DefaultCellStyle.Format = "R$ ###,###,###,##0.00";
 
         }
-
-        private DataTable dadosGridCliente(IList<CarrinhoPessoa> l)
+                                
+        private void LerCliente()
         {
-            DataTable dt = new DataTable();
 
-            dt.Columns.Add("nome", System.Type.GetType("System.String"));
-            dt.Columns.Add("cpf", System.Type.GetType("System.String"));
-
-            foreach (var carrinhoPessoa in l)
+            carrinhoPessoa = carrinhoPessoaDao.Ler(Convert.ToInt32(txtIdCarrinho.Text), 1);
+            if (carrinhoPessoa != null)
             {
-                dt.Rows.Add(new String[] { carrinhoPessoa.Pessoa.Nome, carrinhoPessoa.Pessoa.CpfCnpj });
+                lblClienteNome.Text = carrinhoPessoa.Pessoa.Nome;
+                lblClienteCpfCnpj.Text = carrinhoPessoa.Pessoa.CpfCnpj;
             }
-
-            return dt;
+            
         }
 
-        private DataTable dadosGridFormaPgto(IList<CarrinhoFormaPagamentoParcelamento> l)
+        private void LerVendedor()
         {
-            DataTable dt = new DataTable();
 
-            dt.Columns.Add("Id", System.Type.GetType("System.String"));
-            dt.Columns.Add("Forma Pagamento", System.Type.GetType("System.String"));
-            dt.Columns.Add("parcelas", System.Type.GetType("System.String"));
-            dt.Columns.Add("juros", System.Type.GetType("System.String"));
-
-            foreach (var carrinhoFormaPagamentoParcelamento in l)
+            carrinhoPessoa = carrinhoPessoaDao.Ler(Convert.ToInt32(txtIdCarrinho.Text), 2);
+            if (carrinhoPessoa != null)
             {
-                dt.Rows.Add(new String[] {
-                    Convert.ToString(carrinhoFormaPagamentoParcelamento.Id),
-                    Convert.ToString(carrinhoFormaPagamentoParcelamento.FormaPagamento.Descricao), 
-                    //Convert.ToString(carrinhoFormaPagamentoParcelamento.FormaPagamentoParcelamento.FormaPagamento.Descricao), 
-                    Convert.ToString(carrinhoFormaPagamentoParcelamento.QtdParcelas),
-                    Convert.ToString(carrinhoFormaPagamentoParcelamento.Juros)
-                });
+                lblVendedorNome.Text = carrinhoPessoa.Pessoa.Nome;
             }
 
-            return dt;
-        }
-
-        private DataTable dadosGridVendedor(IList<CarrinhoPessoa> l)
-        {
-            DataTable dt = new DataTable();
-
-            dt.Columns.Add("nome", System.Type.GetType("System.String"));
-            dt.Columns.Add("cpf", System.Type.GetType("System.String"));
-
-            foreach (var carrinhoPessoa in l)
-            {
-                dt.Rows.Add(new String[] { carrinhoPessoa.Pessoa.Nome, carrinhoPessoa.Pessoa.CpfCnpj });
-            }
-
-            return dt;
         }
 
 
@@ -124,18 +72,16 @@ namespace Windows.FormsCarrinho
         {
 
             InitializeComponent();
-
-            //GridProdutos.DataSource = dadosGridProduto(carrinhoItemDao.Lista(Convert.ToInt32(txtIdCarrinho.Text)));
-            //GridProdutos.DataSource = dadosGridProduto(carrinhoItemDao.Lista(41));
+                        
             GridProdutos.DataSource = carrinhoItemDao.ListaGrid(Convert.ToInt32(txtIdCarrinho.Text));
             configuraGridProdutos();
 
-            gridCliente.DataSource = dadosGridCliente(carrinhoPessoaDao.Lista(42, 1));
+            LerCliente();
 
-            gridFormaPgto.DataSource = dadosGridFormaPgto(carrinhoFormaPagamentoParcelamentoDao.Lista(Convert.ToInt32(txtIdCarrinho.Text)));
-
-            gridVendedor.DataSource = dadosGridVendedor(carrinhoPessoaDao.Lista(Convert.ToInt32(txtIdCarrinho.Text), 2));
-            //var result = carrinhoFormaPagamentoParcelamentoDao.Lista(42);
+            LerVendedor();
+            
+            gridFormaPgto.DataSource = carrinhoFormaPagamentoParcelamentoDao.ListaGrid(Convert.ToInt32(txtIdCarrinho.Text));
+                        
 
         }
 
@@ -253,7 +199,7 @@ namespace Windows.FormsCarrinho
         private void btnVendedor_Click(object sender, EventArgs e)
         {
                         
-            pessoa.Id = 1;
+            pessoa.Id = 14;
             carrinho.Id = Convert.ToInt32(txtIdCarrinho.Text);
             carrinhoPessoaTipo.Id = 2; // 2 = Cliente
 
@@ -265,7 +211,7 @@ namespace Windows.FormsCarrinho
             carrinhoPessoa.CarrinhoPessoaTipo = carrinhoPessoaTipo;
 
             carrinhoPessoaDao.Novo(carrinhoPessoa);
-            gridVendedor.DataSource = dadosGridVendedor(carrinhoPessoaDao.Lista(Convert.ToInt32(txtIdCarrinho.Text), 2));
+            //gridVendedor.DataSource = dadosGridVendedor(carrinhoPessoaDao.Lista(Convert.ToInt32(txtIdCarrinho.Text), 2));
 
         }
     }

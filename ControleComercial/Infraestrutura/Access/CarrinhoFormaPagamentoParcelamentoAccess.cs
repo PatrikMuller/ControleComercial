@@ -73,5 +73,44 @@ namespace Infraestrutura.Access
                 
             }
         }
+
+        //public IList<CarrinhoFormaPagamentoParcelamento> Lista(int idCarrinho)
+        public Object ListaGrid(int idCarrinho)
+        {
+            using (ISession session = NHibernateHelper.AbreSessao())
+            {
+
+                var retorno = (from fp in session.Query<CarrinhoFormaPagamentoParcelamento>().
+                               Fetch(o => o.Carrinho).
+                               Where(o => o.Carrinho.Id == idCarrinho).
+                               Fetch(o => o.FormaPagamentoParcelamento).
+                               Fetch(o => o.FormaPagamento).
+                               Select(o => new { o.Id,
+                                   FormaPGTO = o.FormaPagamento.Descricao,
+                                   Parcelamento = o.FormaPagamentoParcelamento.FormaPagamento.Descricao,
+                                   o.QtdParcelas, 
+                                   o.Juros}).
+                               OrderBy(o => o.Id)
+                               select fp).ToList();
+
+                return retorno;
+
+                //Convert.ToString(carrinhoFormaPagamentoParcelamento.Id),
+                //Convert.ToString(carrinhoFormaPagamentoParcelamento.FormaPagamento.Descricao), 
+                ////Convert.ToString(carrinhoFormaPagamentoParcelamento.FormaPagamentoParcelamento.FormaPagamento.Descricao), 
+                //Convert.ToString(carrinhoFormaPagamentoParcelamento.QtdParcelas),
+                //Convert.ToString(carrinhoFormaPagamentoParcelamento.Juros)
+
+                //var retorno = (from l in session.Query<CarrinhoItem>().
+                //               Fetch(o => o.Item).
+                //               Where(o => o.Carrinho.Id == idCarrinho).
+                //               Select(o => new { o.Ordem, o.Item.Nome, o.Quantidade, o.Preco, o.Desconto, Total = (o.Quantidade * (o.Preco - o.Desconto)) }).
+                //               OrderBy(o => o.Ordem)
+                //               select l).ToList();
+
+
+            }
+        }
+
     }
 }

@@ -48,6 +48,18 @@ namespace Infraestrutura.Access
             }
         }
 
+        public CarrinhoPessoa Ler(Int32 idCarrinho, Int32 carrinhoPessoaTipo_Id)
+        {
+            using (ISession session = NHibernateHelper.AbreSessao())
+            {
+                return session.Query<CarrinhoPessoa>().
+                    Fetch(o => o.Pessoa).
+                    Fetch(o => o.CarrinhoPessoaTipo).
+                    Where(o => o.Carrinho.Id == idCarrinho && o.CarrinhoPessoaTipo.Id == carrinhoPessoaTipo_Id).
+                    FirstOrDefault();
+            }
+        }
+
         public void Remove(CarrinhoPessoa o)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
