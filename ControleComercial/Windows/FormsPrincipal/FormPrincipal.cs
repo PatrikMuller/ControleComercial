@@ -59,5 +59,17 @@ namespace Windows.FormsPrincipal
             formCadastroCarrinho.ShowDialog();
         }
 
+        private void btnFormaPagamento_Click(object sender, EventArgs e)
+        {
+            FormsFormaPagamento.FormsListaFormaPagamento formListaFormaPagamento = new FormsFormaPagamento.FormsListaFormaPagamento();
+            formListaFormaPagamento.ShowDialog();
+        }
+
+        private void btnFabricante_Click(object sender, EventArgs e)
+        {
+            FormsFabricante.FormListaFabricante formListaFabricante = new FormsFabricante.FormListaFabricante();
+            formListaFabricante.ShowDialog();
+        }
+
     }
 }

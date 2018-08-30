@@ -30,6 +30,10 @@
         {
             this.pnTopo = new System.Windows.Forms.Panel();
             this.pnConteudo = new System.Windows.Forms.Panel();
+            this.btnFabricante = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnFormaPagamento = new System.Windows.Forms.Button();
             this.btnTelaVenda = new System.Windows.Forms.Button();
             this.btnPessoaJuridica = new System.Windows.Forms.Button();
             this.btnPessoaFisica = new System.Windows.Forms.Button();
@@ -47,6 +51,10 @@
             // 
             // pnConteudo
             // 
+            this.pnConteudo.Controls.Add(this.btnFabricante);
+            this.pnConteudo.Controls.Add(this.button3);
+            this.pnConteudo.Controls.Add(this.button2);
+            this.pnConteudo.Controls.Add(this.btnFormaPagamento);
             this.pnConteudo.Controls.Add(this.btnTelaVenda);
             this.pnConteudo.Controls.Add(this.btnPessoaJuridica);
             this.pnConteudo.Controls.Add(this.btnPessoaFisica);
@@ -56,9 +64,47 @@
             this.pnConteudo.Size = new System.Drawing.Size(989, 511);
             this.pnConteudo.TabIndex = 1;
             // 
+            // btnFabricante
+            // 
+            this.btnFabricante.Location = new System.Drawing.Point(12, 118);
+            this.btnFabricante.Name = "btnFabricante";
+            this.btnFabricante.Size = new System.Drawing.Size(100, 50);
+            this.btnFabricante.TabIndex = 8;
+            this.btnFabricante.Text = "Fabricante";
+            this.btnFabricante.UseVisualStyleBackColor = true;
+            this.btnFabricante.Click += new System.EventHandler(this.btnFabricante_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(224, 6);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(100, 50);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Controle de Acesso";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(12, 62);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 50);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Produtos";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // btnFormaPagamento
+            // 
+            this.btnFormaPagamento.Location = new System.Drawing.Point(12, 174);
+            this.btnFormaPagamento.Name = "btnFormaPagamento";
+            this.btnFormaPagamento.Size = new System.Drawing.Size(100, 50);
+            this.btnFormaPagamento.TabIndex = 3;
+            this.btnFormaPagamento.Text = "Forma Pagamento";
+            this.btnFormaPagamento.UseVisualStyleBackColor = true;
+            this.btnFormaPagamento.Click += new System.EventHandler(this.btnFormaPagamento_Click);
+            // 
             // btnTelaVenda
             // 
-            this.btnTelaVenda.Location = new System.Drawing.Point(224, 6);
+            this.btnTelaVenda.Location = new System.Drawing.Point(224, 174);
             this.btnTelaVenda.Name = "btnTelaVenda";
             this.btnTelaVenda.Size = new System.Drawing.Size(100, 50);
             this.btnTelaVenda.TabIndex = 2;
@@ -119,5 +165,9 @@
         private System.Windows.Forms.Button btnPessoaFisica;
         private System.Windows.Forms.Button btnPessoaJuridica;
         private System.Windows.Forms.Button btnTelaVenda;
+        private System.Windows.Forms.Button btnFormaPagamento;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnFabricante;
     }
 }

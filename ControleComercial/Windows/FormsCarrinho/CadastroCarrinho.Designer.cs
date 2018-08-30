@@ -37,12 +37,27 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.gbFormaPgto = new System.Windows.Forms.GroupBox();
+            this.gridFormaPgto = new System.Windows.Forms.DataGridView();
+            this.btnFormaPgto = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.gbVendedor = new System.Windows.Forms.GroupBox();
+            this.lblVendedorNome = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnVendedor = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.gbCliente = new System.Windows.Forms.GroupBox();
+            this.lblClienteNome = new System.Windows.Forms.Label();
+            this.lblClienteCpfCnpj = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnInserirCliente = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
+            this.gbProdutos = new System.Windows.Forms.GroupBox();
+            this.GridProdutos = new System.Windows.Forms.DataGridView();
+            this.btnLocalizarCarrinho = new System.Windows.Forms.Button();
             this.btnGravar = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.Rodape = new System.Windows.Forms.Panel();
             this.btnNovoCarrinho = new System.Windows.Forms.Button();
             this.txtIdCarrinho = new System.Windows.Forms.TextBox();
@@ -50,36 +65,21 @@
             this.txtDataCarrinho = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.Cabecalho = new System.Windows.Forms.Panel();
-            this.gbProdutos = new System.Windows.Forms.GroupBox();
-            this.GridProdutos = new System.Windows.Forms.DataGridView();
-            this.gbCliente = new System.Windows.Forms.GroupBox();
-            this.btnInserirCliente = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblClienteCpfCnpj = new System.Windows.Forms.Label();
-            this.lblClienteNome = new System.Windows.Forms.Label();
-            this.gbVendedor = new System.Windows.Forms.GroupBox();
-            this.btnVendedor = new System.Windows.Forms.Button();
-            this.lblVendedorNome = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.gbFormaPgto = new System.Windows.Forms.GroupBox();
-            this.gridFormaPgto = new System.Windows.Forms.DataGridView();
-            this.btnFormaPgto = new System.Windows.Forms.Button();
             this.Corpo.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.Rodape.SuspendLayout();
-            this.Cabecalho.SuspendLayout();
-            this.gbProdutos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridProdutos)).BeginInit();
-            this.gbCliente.SuspendLayout();
-            this.gbVendedor.SuspendLayout();
             this.gbFormaPgto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridFormaPgto)).BeginInit();
+            this.panel7.SuspendLayout();
+            this.gbVendedor.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.gbCliente.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.gbProdutos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridProdutos)).BeginInit();
+            this.Rodape.SuspendLayout();
+            this.Cabecalho.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtQuantidade
@@ -169,249 +169,6 @@
             this.panel8.Size = new System.Drawing.Size(457, 180);
             this.panel8.TabIndex = 5;
             // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.gbVendedor);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 72);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(457, 72);
-            this.panel7.TabIndex = 4;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.gbCliente);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(457, 72);
-            this.panel6.TabIndex = 3;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.gbProdutos);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(457, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(778, 492);
-            this.panel1.TabIndex = 1;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(255, 6);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 82);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Localizar";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // btnGravar
-            // 
-            this.btnGravar.Location = new System.Drawing.Point(174, 6);
-            this.btnGravar.Name = "btnGravar";
-            this.btnGravar.Size = new System.Drawing.Size(75, 82);
-            this.btnGravar.TabIndex = 4;
-            this.btnGravar.Text = "Gravar";
-            this.btnGravar.UseVisualStyleBackColor = true;
-            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(93, 6);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 82);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Cancelar";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // Rodape
-            // 
-            this.Rodape.Controls.Add(this.button5);
-            this.Rodape.Controls.Add(this.btnGravar);
-            this.Rodape.Controls.Add(this.button3);
-            this.Rodape.Controls.Add(this.btnNovoCarrinho);
-            this.Rodape.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Rodape.Location = new System.Drawing.Point(0, 544);
-            this.Rodape.Name = "Rodape";
-            this.Rodape.Size = new System.Drawing.Size(1235, 100);
-            this.Rodape.TabIndex = 4;
-            // 
-            // btnNovoCarrinho
-            // 
-            this.btnNovoCarrinho.Location = new System.Drawing.Point(12, 6);
-            this.btnNovoCarrinho.Name = "btnNovoCarrinho";
-            this.btnNovoCarrinho.Size = new System.Drawing.Size(75, 82);
-            this.btnNovoCarrinho.TabIndex = 2;
-            this.btnNovoCarrinho.Text = "Novo";
-            this.btnNovoCarrinho.UseVisualStyleBackColor = true;
-            this.btnNovoCarrinho.Click += new System.EventHandler(this.btnNovoCarrinho_Click);
-            // 
-            // txtIdCarrinho
-            // 
-            this.txtIdCarrinho.Location = new System.Drawing.Point(12, 24);
-            this.txtIdCarrinho.Name = "txtIdCarrinho";
-            this.txtIdCarrinho.Size = new System.Drawing.Size(100, 20);
-            this.txtIdCarrinho.TabIndex = 8;
-            this.txtIdCarrinho.Text = "43";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 8);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Carrinho";
-            // 
-            // txtDataCarrinho
-            // 
-            this.txtDataCarrinho.Location = new System.Drawing.Point(118, 24);
-            this.txtDataCarrinho.Name = "txtDataCarrinho";
-            this.txtDataCarrinho.Size = new System.Drawing.Size(120, 20);
-            this.txtDataCarrinho.TabIndex = 10;
-            this.txtDataCarrinho.Text = "00/00/0000 00:00:00";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(118, 8);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(30, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Data";
-            // 
-            // Cabecalho
-            // 
-            this.Cabecalho.Controls.Add(this.txtDataCarrinho);
-            this.Cabecalho.Controls.Add(this.label5);
-            this.Cabecalho.Controls.Add(this.txtIdCarrinho);
-            this.Cabecalho.Controls.Add(this.label4);
-            this.Cabecalho.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Cabecalho.Location = new System.Drawing.Point(0, 0);
-            this.Cabecalho.Name = "Cabecalho";
-            this.Cabecalho.Size = new System.Drawing.Size(1235, 52);
-            this.Cabecalho.TabIndex = 3;
-            // 
-            // gbProdutos
-            // 
-            this.gbProdutos.Controls.Add(this.GridProdutos);
-            this.gbProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbProdutos.Location = new System.Drawing.Point(0, 0);
-            this.gbProdutos.Name = "gbProdutos";
-            this.gbProdutos.Size = new System.Drawing.Size(778, 492);
-            this.gbProdutos.TabIndex = 0;
-            this.gbProdutos.TabStop = false;
-            this.gbProdutos.Text = "Produtos";
-            // 
-            // GridProdutos
-            // 
-            this.GridProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridProdutos.Location = new System.Drawing.Point(3, 16);
-            this.GridProdutos.Name = "GridProdutos";
-            this.GridProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridProdutos.Size = new System.Drawing.Size(772, 473);
-            this.GridProdutos.TabIndex = 1;
-            // 
-            // gbCliente
-            // 
-            this.gbCliente.Controls.Add(this.lblClienteNome);
-            this.gbCliente.Controls.Add(this.lblClienteCpfCnpj);
-            this.gbCliente.Controls.Add(this.label6);
-            this.gbCliente.Controls.Add(this.label1);
-            this.gbCliente.Controls.Add(this.btnInserirCliente);
-            this.gbCliente.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbCliente.Location = new System.Drawing.Point(0, 0);
-            this.gbCliente.Name = "gbCliente";
-            this.gbCliente.Size = new System.Drawing.Size(457, 72);
-            this.gbCliente.TabIndex = 4;
-            this.gbCliente.TabStop = false;
-            this.gbCliente.Text = "Cliente";
-            // 
-            // btnInserirCliente
-            // 
-            this.btnInserirCliente.Location = new System.Drawing.Point(374, 29);
-            this.btnInserirCliente.Name = "btnInserirCliente";
-            this.btnInserirCliente.Size = new System.Drawing.Size(75, 23);
-            this.btnInserirCliente.TabIndex = 6;
-            this.btnInserirCliente.Text = "Cliente";
-            this.btnInserirCliente.UseVisualStyleBackColor = true;
-            this.btnInserirCliente.Click += new System.EventHandler(this.btnInserirCliente_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Nome";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(215, 16);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 13);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Cpf / Cnpj";
-            // 
-            // lblClienteCpfCnpj
-            // 
-            this.lblClienteCpfCnpj.Location = new System.Drawing.Point(215, 34);
-            this.lblClienteCpfCnpj.Name = "lblClienteCpfCnpj";
-            this.lblClienteCpfCnpj.Size = new System.Drawing.Size(150, 13);
-            this.lblClienteCpfCnpj.TabIndex = 11;
-            this.lblClienteCpfCnpj.Text = "-";
-            // 
-            // lblClienteNome
-            // 
-            this.lblClienteNome.Location = new System.Drawing.Point(9, 34);
-            this.lblClienteNome.Name = "lblClienteNome";
-            this.lblClienteNome.Size = new System.Drawing.Size(200, 13);
-            this.lblClienteNome.TabIndex = 12;
-            this.lblClienteNome.Text = "-";
-            // 
-            // gbVendedor
-            // 
-            this.gbVendedor.Controls.Add(this.lblVendedorNome);
-            this.gbVendedor.Controls.Add(this.label10);
-            this.gbVendedor.Controls.Add(this.btnVendedor);
-            this.gbVendedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbVendedor.Location = new System.Drawing.Point(0, 0);
-            this.gbVendedor.Name = "gbVendedor";
-            this.gbVendedor.Size = new System.Drawing.Size(457, 72);
-            this.gbVendedor.TabIndex = 0;
-            this.gbVendedor.TabStop = false;
-            this.gbVendedor.Text = "Vendedor";
-            // 
-            // btnVendedor
-            // 
-            this.btnVendedor.Location = new System.Drawing.Point(374, 29);
-            this.btnVendedor.Name = "btnVendedor";
-            this.btnVendedor.Size = new System.Drawing.Size(75, 23);
-            this.btnVendedor.TabIndex = 4;
-            this.btnVendedor.Text = "Vendedor";
-            this.btnVendedor.UseVisualStyleBackColor = true;
-            this.btnVendedor.Click += new System.EventHandler(this.btnVendedor_Click);
-            // 
-            // lblVendedorNome
-            // 
-            this.lblVendedorNome.Location = new System.Drawing.Point(9, 34);
-            this.lblVendedorNome.Name = "lblVendedorNome";
-            this.lblVendedorNome.Size = new System.Drawing.Size(200, 13);
-            this.lblVendedorNome.TabIndex = 14;
-            this.lblVendedorNome.Text = "-";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(9, 16);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(35, 13);
-            this.label10.TabIndex = 13;
-            this.label10.Text = "Nome";
-            // 
             // gbFormaPgto
             // 
             this.gbFormaPgto.Controls.Add(this.gridFormaPgto);
@@ -443,6 +200,253 @@
             this.btnFormaPgto.UseVisualStyleBackColor = true;
             this.btnFormaPgto.Click += new System.EventHandler(this.btnFormaPgto_Click);
             // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.gbVendedor);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 72);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(457, 72);
+            this.panel7.TabIndex = 4;
+            // 
+            // gbVendedor
+            // 
+            this.gbVendedor.Controls.Add(this.lblVendedorNome);
+            this.gbVendedor.Controls.Add(this.label10);
+            this.gbVendedor.Controls.Add(this.btnVendedor);
+            this.gbVendedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbVendedor.Location = new System.Drawing.Point(0, 0);
+            this.gbVendedor.Name = "gbVendedor";
+            this.gbVendedor.Size = new System.Drawing.Size(457, 72);
+            this.gbVendedor.TabIndex = 0;
+            this.gbVendedor.TabStop = false;
+            this.gbVendedor.Text = "Vendedor";
+            // 
+            // lblVendedorNome
+            // 
+            this.lblVendedorNome.Location = new System.Drawing.Point(9, 34);
+            this.lblVendedorNome.Name = "lblVendedorNome";
+            this.lblVendedorNome.Size = new System.Drawing.Size(200, 13);
+            this.lblVendedorNome.TabIndex = 14;
+            this.lblVendedorNome.Text = "-";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(9, 16);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(35, 13);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "Nome";
+            // 
+            // btnVendedor
+            // 
+            this.btnVendedor.Location = new System.Drawing.Point(374, 29);
+            this.btnVendedor.Name = "btnVendedor";
+            this.btnVendedor.Size = new System.Drawing.Size(75, 23);
+            this.btnVendedor.TabIndex = 4;
+            this.btnVendedor.Text = "Vendedor";
+            this.btnVendedor.UseVisualStyleBackColor = true;
+            this.btnVendedor.Click += new System.EventHandler(this.btnVendedor_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.gbCliente);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(457, 72);
+            this.panel6.TabIndex = 3;
+            // 
+            // gbCliente
+            // 
+            this.gbCliente.Controls.Add(this.lblClienteNome);
+            this.gbCliente.Controls.Add(this.lblClienteCpfCnpj);
+            this.gbCliente.Controls.Add(this.label6);
+            this.gbCliente.Controls.Add(this.label1);
+            this.gbCliente.Controls.Add(this.btnInserirCliente);
+            this.gbCliente.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbCliente.Location = new System.Drawing.Point(0, 0);
+            this.gbCliente.Name = "gbCliente";
+            this.gbCliente.Size = new System.Drawing.Size(457, 72);
+            this.gbCliente.TabIndex = 4;
+            this.gbCliente.TabStop = false;
+            this.gbCliente.Text = "Cliente";
+            // 
+            // lblClienteNome
+            // 
+            this.lblClienteNome.Location = new System.Drawing.Point(9, 34);
+            this.lblClienteNome.Name = "lblClienteNome";
+            this.lblClienteNome.Size = new System.Drawing.Size(200, 13);
+            this.lblClienteNome.TabIndex = 12;
+            this.lblClienteNome.Text = "-";
+            // 
+            // lblClienteCpfCnpj
+            // 
+            this.lblClienteCpfCnpj.Location = new System.Drawing.Point(215, 34);
+            this.lblClienteCpfCnpj.Name = "lblClienteCpfCnpj";
+            this.lblClienteCpfCnpj.Size = new System.Drawing.Size(150, 13);
+            this.lblClienteCpfCnpj.TabIndex = 11;
+            this.lblClienteCpfCnpj.Text = "-";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(215, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 13);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Cpf / Cnpj";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Nome";
+            // 
+            // btnInserirCliente
+            // 
+            this.btnInserirCliente.Location = new System.Drawing.Point(374, 29);
+            this.btnInserirCliente.Name = "btnInserirCliente";
+            this.btnInserirCliente.Size = new System.Drawing.Size(75, 23);
+            this.btnInserirCliente.TabIndex = 6;
+            this.btnInserirCliente.Text = "Cliente";
+            this.btnInserirCliente.UseVisualStyleBackColor = true;
+            this.btnInserirCliente.Click += new System.EventHandler(this.btnInserirCliente_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.gbProdutos);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(457, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(778, 492);
+            this.panel1.TabIndex = 1;
+            // 
+            // gbProdutos
+            // 
+            this.gbProdutos.Controls.Add(this.GridProdutos);
+            this.gbProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbProdutos.Location = new System.Drawing.Point(0, 0);
+            this.gbProdutos.Name = "gbProdutos";
+            this.gbProdutos.Size = new System.Drawing.Size(778, 492);
+            this.gbProdutos.TabIndex = 0;
+            this.gbProdutos.TabStop = false;
+            this.gbProdutos.Text = "Produtos";
+            // 
+            // GridProdutos
+            // 
+            this.GridProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GridProdutos.Location = new System.Drawing.Point(3, 16);
+            this.GridProdutos.Name = "GridProdutos";
+            this.GridProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GridProdutos.Size = new System.Drawing.Size(772, 473);
+            this.GridProdutos.TabIndex = 1;
+            // 
+            // btnLocalizarCarrinho
+            // 
+            this.btnLocalizarCarrinho.Enabled = false;
+            this.btnLocalizarCarrinho.Location = new System.Drawing.Point(255, 6);
+            this.btnLocalizarCarrinho.Name = "btnLocalizarCarrinho";
+            this.btnLocalizarCarrinho.Size = new System.Drawing.Size(75, 82);
+            this.btnLocalizarCarrinho.TabIndex = 5;
+            this.btnLocalizarCarrinho.Text = "Localizar";
+            this.btnLocalizarCarrinho.UseVisualStyleBackColor = true;
+            // 
+            // btnGravar
+            // 
+            this.btnGravar.Location = new System.Drawing.Point(174, 6);
+            this.btnGravar.Name = "btnGravar";
+            this.btnGravar.Size = new System.Drawing.Size(75, 82);
+            this.btnGravar.TabIndex = 4;
+            this.btnGravar.Text = "Gravar";
+            this.btnGravar.UseVisualStyleBackColor = true;
+            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Enabled = false;
+            this.btnCancelar.Location = new System.Drawing.Point(93, 6);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 82);
+            this.btnCancelar.TabIndex = 3;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // Rodape
+            // 
+            this.Rodape.Controls.Add(this.btnLocalizarCarrinho);
+            this.Rodape.Controls.Add(this.btnGravar);
+            this.Rodape.Controls.Add(this.btnCancelar);
+            this.Rodape.Controls.Add(this.btnNovoCarrinho);
+            this.Rodape.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Rodape.Location = new System.Drawing.Point(0, 544);
+            this.Rodape.Name = "Rodape";
+            this.Rodape.Size = new System.Drawing.Size(1235, 100);
+            this.Rodape.TabIndex = 4;
+            // 
+            // btnNovoCarrinho
+            // 
+            this.btnNovoCarrinho.Location = new System.Drawing.Point(12, 6);
+            this.btnNovoCarrinho.Name = "btnNovoCarrinho";
+            this.btnNovoCarrinho.Size = new System.Drawing.Size(75, 82);
+            this.btnNovoCarrinho.TabIndex = 2;
+            this.btnNovoCarrinho.Text = "Novo";
+            this.btnNovoCarrinho.UseVisualStyleBackColor = true;
+            this.btnNovoCarrinho.Click += new System.EventHandler(this.btnNovoCarrinho_Click);
+            // 
+            // txtIdCarrinho
+            // 
+            this.txtIdCarrinho.Enabled = false;
+            this.txtIdCarrinho.Location = new System.Drawing.Point(12, 24);
+            this.txtIdCarrinho.Name = "txtIdCarrinho";
+            this.txtIdCarrinho.Size = new System.Drawing.Size(100, 20);
+            this.txtIdCarrinho.TabIndex = 8;
+            this.txtIdCarrinho.Text = "0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 8);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Carrinho";
+            // 
+            // txtDataCarrinho
+            // 
+            this.txtDataCarrinho.Enabled = false;
+            this.txtDataCarrinho.Location = new System.Drawing.Point(118, 24);
+            this.txtDataCarrinho.Name = "txtDataCarrinho";
+            this.txtDataCarrinho.Size = new System.Drawing.Size(120, 20);
+            this.txtDataCarrinho.TabIndex = 10;
+            this.txtDataCarrinho.Text = "00/00/0000 00:00:00";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(118, 8);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(30, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Data";
+            // 
+            // Cabecalho
+            // 
+            this.Cabecalho.Controls.Add(this.txtDataCarrinho);
+            this.Cabecalho.Controls.Add(this.label5);
+            this.Cabecalho.Controls.Add(this.txtIdCarrinho);
+            this.Cabecalho.Controls.Add(this.label4);
+            this.Cabecalho.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Cabecalho.Location = new System.Drawing.Point(0, 0);
+            this.Cabecalho.Name = "Cabecalho";
+            this.Cabecalho.Size = new System.Drawing.Size(1235, 52);
+            this.Cabecalho.TabIndex = 3;
+            // 
             // CadastroCarrinho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -459,20 +463,20 @@
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
+            this.gbFormaPgto.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridFormaPgto)).EndInit();
             this.panel7.ResumeLayout(false);
+            this.gbVendedor.ResumeLayout(false);
+            this.gbVendedor.PerformLayout();
             this.panel6.ResumeLayout(false);
+            this.gbCliente.ResumeLayout(false);
+            this.gbCliente.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.gbProdutos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GridProdutos)).EndInit();
             this.Rodape.ResumeLayout(false);
             this.Cabecalho.ResumeLayout(false);
             this.Cabecalho.PerformLayout();
-            this.gbProdutos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GridProdutos)).EndInit();
-            this.gbCliente.ResumeLayout(false);
-            this.gbCliente.PerformLayout();
-            this.gbVendedor.ResumeLayout(false);
-            this.gbVendedor.PerformLayout();
-            this.gbFormaPgto.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridFormaPgto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -487,9 +491,9 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnLocalizarCarrinho;
         private System.Windows.Forms.Button btnGravar;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Panel Rodape;
         private System.Windows.Forms.Button btnNovoCarrinho;
         private System.Windows.Forms.TextBox txtIdCarrinho;

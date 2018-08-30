@@ -105,6 +105,30 @@
     <Compile Include="FormsCarrinho\SelecionarFormaPagamento.Designer.cs">
       <DependentUpon>SelecionarFormaPagamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsFabricante\FormCadastroFabricante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsFabricante\FormCadastroFabricante.Designer.cs">
+      <DependentUpon>FormCadastroFabricante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsFabricante\FormListaFabricante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsFabricante\FormListaFabricante.Designer.cs">
+      <DependentUpon>FormListaFabricante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsFormaPagamento\FormsCadastroFormaPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsFormaPagamento\FormsCadastroFormaPagamento.Designer.cs">
+      <DependentUpon>FormsCadastroFormaPagamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsFormaPagamento\FormsListaFormaPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsFormaPagamento\FormsListaFormaPagamento.Designer.cs">
+      <DependentUpon>FormsListaFormaPagamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsItem\CadastroItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +186,18 @@
     <EmbeddedResource Include="FormsCarrinho\SelecionarFormaPagamento.resx">
       <DependentUpon>SelecionarFormaPagamento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormsFabricante\FormCadastroFabricante.resx">
+      <DependentUpon>FormCadastroFabricante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsFabricante\FormListaFabricante.resx">
+      <DependentUpon>FormListaFabricante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsFormaPagamento\FormsCadastroFormaPagamento.resx">
+      <DependentUpon>FormsCadastroFormaPagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsFormaPagamento\FormsListaFormaPagamento.resx">
+      <DependentUpon>FormsListaFormaPagamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormsItem\CadastroItem.resx">
       <DependentUpon>CadastroItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -214,7 +250,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="FormsFormaPagamento\" />
+    <Folder Include="FormsControleAcesso\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\6166_32x32.png" />

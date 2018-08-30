@@ -42,7 +42,29 @@ namespace Windows.FormsCarrinho
             GridProdutos.Columns[5].DefaultCellStyle.Format = "R$ ###,###,###,##0.00";
 
         }
-                                
+
+        private void DesativaComponentes()
+        {
+
+            btnNovoCarrinho.Enabled = true;
+            btnInserirCliente.Enabled = false;
+            btnVendedor.Enabled = false;
+            btnFormaPgto.Enabled = false;
+
+
+        }
+
+        private void AtivaComponentes()
+        {
+
+            btnNovoCarrinho.Enabled = false;
+            btnInserirCliente.Enabled = true;
+            btnVendedor.Enabled = true;
+            btnFormaPgto.Enabled = true;
+
+
+        }
+
         private void LerCliente()
         {
 
@@ -65,22 +87,23 @@ namespace Windows.FormsCarrinho
             }
 
         }
-
-
+        
 
         public CadastroCarrinho()
         {
 
             InitializeComponent();
                         
-            GridProdutos.DataSource = carrinhoItemDao.ListaGrid(Convert.ToInt32(txtIdCarrinho.Text));
-            configuraGridProdutos();
+            //GridProdutos.DataSource = carrinhoItemDao.ListaGrid(Convert.ToInt32(txtIdCarrinho.Text));
+            //configuraGridProdutos();
 
-            LerCliente();
+            //LerCliente();
 
-            LerVendedor();
+            //LerVendedor();
             
-            gridFormaPgto.DataSource = carrinhoFormaPagamentoParcelamentoDao.ListaGrid(Convert.ToInt32(txtIdCarrinho.Text));
+            //gridFormaPgto.DataSource = carrinhoFormaPagamentoParcelamentoDao.ListaGrid(Convert.ToInt32(txtIdCarrinho.Text));
+
+            DesativaComponentes();
                         
 
         }
@@ -92,6 +115,7 @@ namespace Windows.FormsCarrinho
             carrinho.Data = DateTime.Now;
             txtIdCarrinho.Text = Convert.ToString(CarrinhoDao.Novo(carrinho));
             txtDataCarrinho.Text = Convert.ToString(carrinho.Data);
+            AtivaComponentes();
 
         }
 
@@ -102,6 +126,8 @@ namespace Windows.FormsCarrinho
             carrinho.Data = DateTime.Now;
             txtIdCarrinho.Text = Convert.ToString(CarrinhoDao.Gravar(carrinho));
             txtDataCarrinho.Text = Convert.ToString(carrinho.Data);
+            Close();
+            DesativaComponentes();
 
         }
 

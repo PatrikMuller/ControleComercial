@@ -11,16 +11,17 @@ using System.Windows.Forms;
 using Infraestrutura.Access;
 using Infraestrutura.Models;
 
-namespace Windows.FormsPessoaJuridica
+namespace Windows.FormsFabricante
 {
-    public partial class FormListaPessoaJuridica : Form
+    public partial class FormListaFabricante : Form
     {
+
         //Objetos
-        //Pessoa pessoa = new Pessoa();
+        Fabricante obj = new Fabricante();
 
         //Access
-        //PessoaAccess pessoaAccess = new PessoaAccess();
-        PessoaJuridicaAccess Access = new PessoaJuridicaAccess();
+        FabricanteAccess access = new FabricanteAccess();
+
 
 
         //Início - Métodos locais
@@ -29,10 +30,7 @@ namespace Windows.FormsPessoaJuridica
             if (QtdLinhas > 0)
             {
                 Grid.Columns[0].Width = 80;
-                Grid.Columns[1].Width = 200;
-                Grid.Columns[2].Width = 150;
-                Grid.Columns[3].Width = 120;
-                Grid.Columns[4].Width = 100;
+                Grid.Columns[1].Width = 220;
             }
         }
 
@@ -47,8 +45,7 @@ namespace Windows.FormsPessoaJuridica
         private void setarGrid()
         {
 
-            //Grid.DataSource = pessoaAccess.Lista("%" + txtLocalizar.Text + "%");
-            Grid.DataSource = Access.Lista("%" + txtLocalizar.Text + "%");
+            Grid.DataSource = access.Lista();
             configuraGrid(Grid.RowCount);
             configuraBotoes(Grid.RowCount);
 
@@ -58,7 +55,7 @@ namespace Windows.FormsPessoaJuridica
         {
 
             Int32 id = Convert.ToInt32(Grid.CurrentRow.Cells[0].Value);
-            FormCadastroPessoaJuridica form = new FormCadastroPessoaJuridica(id);
+            FormCadastroFabricante form = new FormCadastroFabricante(id);
             form.ShowDialog();
 
         }
@@ -66,7 +63,7 @@ namespace Windows.FormsPessoaJuridica
         private void Novo()
         {
 
-            FormCadastroPessoaJuridica form = new FormCadastroPessoaJuridica(0);
+            FormCadastroFabricante form = new FormCadastroFabricante(0);
             form.ShowDialog();
 
         }
@@ -74,7 +71,7 @@ namespace Windows.FormsPessoaJuridica
 
 
 
-        public FormListaPessoaJuridica()
+        public FormListaFabricante()
         {
 
             InitializeComponent();
@@ -82,10 +79,14 @@ namespace Windows.FormsPessoaJuridica
             txtLocalizar.Focus();
 
         }
-                
+
+        
+
         private void txtLocalizar_TextChanged(object sender, EventArgs e)
         {
+
             setarGrid();
+
         }
 
         private void Grid_DoubleClick(object sender, EventArgs e)
@@ -118,9 +119,10 @@ namespace Windows.FormsPessoaJuridica
             Editar();
         }
 
-        private void FormListaPessoaJuridica_Activated(object sender, EventArgs e)
+        private void FormListaFabricante_Activated(object sender, EventArgs e)
         {
             setarGrid();
         }
+
     }
 }

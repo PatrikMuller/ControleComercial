@@ -1,6 +1,6 @@
-﻿namespace Windows.FormsPessoaJuridica
+﻿namespace Windows.FormsFabricante
 {
-    partial class FormListaPessoaJuridica
+    partial class FormListaFabricante
     {
         /// <summary>
         /// Required designer variable.
@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemFechar = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.menuPrincipal = new System.Windows.Forms.MenuStrip();
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemNovo = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemEditar = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuPrincipal = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.MenuItemFechar = new System.Windows.Forms.ToolStripMenuItem();
+            this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuButton = new System.Windows.Forms.ToolStrip();
             this.MenuButtonNovo = new System.Windows.Forms.ToolStripButton();
             this.MenuButtonEditar = new System.Windows.Forms.ToolStripButton();
@@ -43,6 +42,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtLocalizar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.Grid = new System.Windows.Forms.DataGridView();
@@ -54,31 +54,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel2
+            // menuPrincipal
             // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 428);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 22);
-            this.panel2.TabIndex = 22;
-            // 
-            // ajudaToolStripMenuItem
-            // 
-            this.ajudaToolStripMenuItem.Name = "ajudaToolStripMenuItem";
-            this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.ajudaToolStripMenuItem.Text = "Ajuda";
-            // 
-            // MenuItemFechar
-            // 
-            this.MenuItemFechar.Name = "MenuItemFechar";
-            this.MenuItemFechar.Size = new System.Drawing.Size(109, 22);
-            this.MenuItemFechar.Text = "Fechar";
-            this.MenuItemFechar.Click += new System.EventHandler(this.MenuItemFechar_Click);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(106, 6);
+            this.menuPrincipal.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.arquivoToolStripMenuItem,
+            this.ajudaToolStripMenuItem});
+            this.menuPrincipal.Location = new System.Drawing.Point(0, 0);
+            this.menuPrincipal.Name = "menuPrincipal";
+            this.menuPrincipal.Size = new System.Drawing.Size(800, 24);
+            this.menuPrincipal.TabIndex = 17;
+            this.menuPrincipal.Text = "menuStrip1";
             // 
             // arquivoToolStripMenuItem
             // 
@@ -107,17 +93,23 @@
             this.MenuItemEditar.Text = "Editar";
             this.MenuItemEditar.Click += new System.EventHandler(this.MenuItemEditar_Click);
             // 
-            // menuPrincipal
+            // toolStripMenuItem2
             // 
-            this.menuPrincipal.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.arquivoToolStripMenuItem,
-            this.ajudaToolStripMenuItem});
-            this.menuPrincipal.Location = new System.Drawing.Point(0, 0);
-            this.menuPrincipal.Name = "menuPrincipal";
-            this.menuPrincipal.Size = new System.Drawing.Size(800, 24);
-            this.menuPrincipal.TabIndex = 19;
-            this.menuPrincipal.Text = "menuStrip1";
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(106, 6);
+            // 
+            // MenuItemFechar
+            // 
+            this.MenuItemFechar.Name = "MenuItemFechar";
+            this.MenuItemFechar.Size = new System.Drawing.Size(109, 22);
+            this.MenuItemFechar.Text = "Fechar";
+            this.MenuItemFechar.Click += new System.EventHandler(this.MenuItemFechar_Click);
+            // 
+            // ajudaToolStripMenuItem
+            // 
+            this.ajudaToolStripMenuItem.Name = "ajudaToolStripMenuItem";
+            this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.ajudaToolStripMenuItem.Text = "Ajuda";
             // 
             // menuButton
             // 
@@ -129,7 +121,7 @@
             this.menuButton.Location = new System.Drawing.Point(0, 24);
             this.menuButton.Name = "menuButton";
             this.menuButton.Size = new System.Drawing.Size(800, 27);
-            this.menuButton.TabIndex = 24;
+            this.menuButton.TabIndex = 18;
             this.menuButton.Text = "toolStrip1";
             // 
             // MenuButtonNovo
@@ -165,7 +157,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 51);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 35);
-            this.panel1.TabIndex = 26;
+            this.panel1.TabIndex = 19;
             // 
             // txtLocalizar
             // 
@@ -174,7 +166,6 @@
             this.txtLocalizar.Name = "txtLocalizar";
             this.txtLocalizar.Size = new System.Drawing.Size(500, 20);
             this.txtLocalizar.TabIndex = 3;
-            this.txtLocalizar.TextChanged += new System.EventHandler(this.txtLocalizar_TextChanged);
             // 
             // label1
             // 
@@ -185,6 +176,14 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Localizar";
             // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 428);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(800, 22);
+            this.panel2.TabIndex = 20;
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -193,7 +192,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(800, 342);
-            this.tabControl1.TabIndex = 27;
+            this.tabControl1.TabIndex = 21;
             // 
             // tabPage1
             // 
@@ -215,21 +214,21 @@
             this.Grid.Size = new System.Drawing.Size(786, 310);
             this.Grid.TabIndex = 0;
             // 
-            // FormListaPessoaJuridica
+            // FormListaFabricante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuButton);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.menuPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "FormListaPessoaJuridica";
+            this.Name = "FormListaFabricante";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormListaPessoaJuridica";
-            this.Activated += new System.EventHandler(this.FormListaPessoaJuridica_Activated);
+            this.Text = "Fabricante";
+            this.Activated += new System.EventHandler(this.FormListaFabricante_Activated);
             this.menuPrincipal.ResumeLayout(false);
             this.menuPrincipal.PerformLayout();
             this.menuButton.ResumeLayout(false);
@@ -245,14 +244,14 @@
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemFechar;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemEditar;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemNovo;
-        private System.Windows.Forms.ToolStripMenuItem arquivoToolStripMenuItem;
+
         private System.Windows.Forms.MenuStrip menuPrincipal;
+        private System.Windows.Forms.ToolStripMenuItem arquivoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemNovo;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemEditar;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemFechar;
+        private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem;
         private System.Windows.Forms.ToolStrip menuButton;
         private System.Windows.Forms.ToolStripButton MenuButtonNovo;
         private System.Windows.Forms.ToolStripButton MenuButtonEditar;
@@ -260,6 +259,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtLocalizar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView Grid;
