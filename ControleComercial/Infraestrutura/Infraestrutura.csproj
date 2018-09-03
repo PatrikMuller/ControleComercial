@@ -80,6 +80,7 @@
     <Compile Include="Access\PessoaFisicaAccess.cs" />
     <Compile Include="Access\PessoaJuridicaAccess.cs" />
     <Compile Include="Access\SexoAccess.cs" />
+    <Compile Include="Access\UnidadeMedidaAccess.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Factory\NHibernateHelper.cs" />
     <Compile Include="Mapping\CarrinhoFormaPagamentoParcelamentoMapping.cs" />
@@ -94,6 +95,7 @@
     <Compile Include="Mapping\PessoaFisicaMapping.cs" />
     <Compile Include="Mapping\PessoaJuridicaMapping.cs" />
     <Compile Include="Mapping\PessoaMapping.cs" />
+    <Compile Include="Mapping\UnidadeMedidaMapping.cs" />
     <Compile Include="Models\Carrinho.cs" />
     <Compile Include="Models\CarrinhoFormaPagamentoParcelamento.cs" />
     <Compile Include="Models\CarrinhoItem.cs" />
@@ -107,6 +109,7 @@
     <Compile Include="Models\Pessoa.cs" />
     <Compile Include="Models\PessoaFisica.cs" />
     <Compile Include="Models\PessoaJuridica.cs" />
+    <Compile Include="Models\UnidadeMedida.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

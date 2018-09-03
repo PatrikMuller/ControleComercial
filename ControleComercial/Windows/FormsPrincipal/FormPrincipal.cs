@@ -71,5 +71,10 @@ namespace Windows.FormsPrincipal
             formListaFabricante.ShowDialog();
         }
 
+        private void btnUnidadeMedida_Click(object sender, EventArgs e)
+        {
+            FormsUnidadeMedida.FormListaUnidadeMedida formListaUnidadeMedida = new FormsUnidadeMedida.FormListaUnidadeMedida();
+            formListaUnidadeMedida.ShowDialog();
+        }
     }
 }

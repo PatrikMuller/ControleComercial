@@ -38,6 +38,7 @@
             this.btnPessoaJuridica = new System.Windows.Forms.Button();
             this.btnPessoaFisica = new System.Windows.Forms.Button();
             this.pnBaixo = new System.Windows.Forms.Panel();
+            this.btnUnidadeMedida = new System.Windows.Forms.Button();
             this.pnConteudo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +52,7 @@
             // 
             // pnConteudo
             // 
+            this.pnConteudo.Controls.Add(this.btnUnidadeMedida);
             this.pnConteudo.Controls.Add(this.btnFabricante);
             this.pnConteudo.Controls.Add(this.button3);
             this.pnConteudo.Controls.Add(this.button2);
@@ -140,6 +142,16 @@
             this.pnBaixo.Size = new System.Drawing.Size(989, 100);
             this.pnBaixo.TabIndex = 2;
             // 
+            // btnUnidadeMedida
+            // 
+            this.btnUnidadeMedida.Location = new System.Drawing.Point(118, 118);
+            this.btnUnidadeMedida.Name = "btnUnidadeMedida";
+            this.btnUnidadeMedida.Size = new System.Drawing.Size(100, 50);
+            this.btnUnidadeMedida.TabIndex = 9;
+            this.btnUnidadeMedida.Text = "Unidade de Medida";
+            this.btnUnidadeMedida.UseVisualStyleBackColor = true;
+            this.btnUnidadeMedida.Click += new System.EventHandler(this.btnUnidadeMedida_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -169,5 +181,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnFabricante;
+        private System.Windows.Forms.Button btnUnidadeMedida;
     }
 }

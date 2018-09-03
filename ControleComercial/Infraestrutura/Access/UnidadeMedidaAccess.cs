@@ -11,10 +11,10 @@ using NHibernate.Linq;
 
 namespace Infraestrutura.Access
 {
-    public class FabricanteAccess
+    public class UnidadeMedidaAccess
     {
 
-        public Int32 Novo(Fabricante o)
+        public Int32 Novo(UnidadeMedida o)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
@@ -27,7 +27,7 @@ namespace Infraestrutura.Access
             }
         }
 
-        public Int32 Gravar(Fabricante o)
+        public Int32 Gravar(UnidadeMedida o)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
@@ -40,15 +40,15 @@ namespace Infraestrutura.Access
             }
         }
 
-        public Fabricante Ler(int id)
+        public UnidadeMedida Ler(int id)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
-                return session.Get<Fabricante>(id);
+                return session.Get<UnidadeMedida>(id);
             }
         }
 
-        public void Remove(Fabricante o)
+        public void Remove(UnidadeMedida o)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
@@ -58,12 +58,12 @@ namespace Infraestrutura.Access
             }
         }
 
-        public IList<Fabricante> Lista()
+        public IList<UnidadeMedida> Lista()
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
 
-                return session.Query<Fabricante>().OrderBy(o => o.Id).ToList();
+                return session.Query<UnidadeMedida>().OrderBy(o => o.Id).ToList();
 
             }
         }
