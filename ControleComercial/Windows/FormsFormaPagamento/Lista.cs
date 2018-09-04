@@ -9,30 +9,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Infraestrutura.Access;
-using Infraestrutura.Models;
 
-namespace Windows.FormsPessoaFisica
+namespace Windows.FormsFormaPagamento
 {
-    public partial class FormListaPessoaFisica : Form
+    public partial class Lista : Form
     {
-                
-        //Objetos
-        Pessoa pessoa = new Pessoa();
 
         //Access
-        //PessoaAccess pessoaAccess = new PessoaAccess();
-        PessoaFisicaAccess access = new PessoaFisicaAccess();
+        FormaPagamentoAccess access = new FormaPagamentoAccess();
+
 
 
         //Início - Métodos locais
         private void configuraGrid(Int32 QtdLinhas)
         {
-            if(QtdLinhas > 0)
+            if (QtdLinhas > 0)
             {
                 Grid.Columns[0].Width = 80;
                 Grid.Columns[1].Width = 220;
-                Grid.Columns[2].Width = 150;
-                Grid.Columns[3].Width = 150;
             }
         }
 
@@ -47,7 +41,7 @@ namespace Windows.FormsPessoaFisica
         private void setarGrid()
         {
 
-            Grid.DataSource = access.Lista("%" + txtLocalizar.Text + "%");
+            Grid.DataSource = access.Lista();
             configuraGrid(Grid.RowCount);
             configuraBotoes(Grid.RowCount);
 
@@ -57,7 +51,7 @@ namespace Windows.FormsPessoaFisica
         {
 
             Int32 id = Convert.ToInt32(Grid.CurrentRow.Cells[0].Value);
-            FormCadastroPessoaFisica form = new FormCadastroPessoaFisica(id);
+            FormsCadastroFormaPagamento form = new FormsCadastroFormaPagamento(id);
             form.ShowDialog();
 
         }
@@ -65,15 +59,15 @@ namespace Windows.FormsPessoaFisica
         private void Novo()
         {
 
-            FormCadastroPessoaFisica form = new FormCadastroPessoaFisica(0);
-            form.ShowDialog();
+            //FormCadastroPessoaFisica form = new FormCadastroPessoaFisica(0);
+            //form.ShowDialog();
 
         }
         //Fim - Métodos locais
 
-        
-        
-        public FormListaPessoaFisica()
+
+
+        public Lista()
         {
 
             InitializeComponent();
@@ -82,18 +76,10 @@ namespace Windows.FormsPessoaFisica
 
         }
 
-        private void FormListaPessoaFisica_Activated(object sender, EventArgs e)
-        {
-
-            setarGrid();
-
-        }
-                
+        
         private void txtLocalizar_TextChanged(object sender, EventArgs e)
         {
-
             setarGrid();
-
         }
 
         private void Grid_DoubleClick(object sender, EventArgs e)
@@ -124,6 +110,11 @@ namespace Windows.FormsPessoaFisica
         private void MenuButtonEditar_Click(object sender, EventArgs e)
         {
             Editar();
+        }
+
+        private void Lista_Activated(object sender, EventArgs e)
+        {
+            setarGrid();
         }
 
     }

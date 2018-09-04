@@ -9,19 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Infraestrutura.Access;
-using Infraestrutura.Models;
 
-namespace Windows.FormsFabricante
+namespace Windows.FormsPessoaFisica
 {
-    public partial class FormListaFabricante : Form
+    public partial class Lista : Form
     {
-
-        //Objetos
-        Fabricante obj = new Fabricante();
-
         //Access
-        FabricanteAccess access = new FabricanteAccess();
-
+        PessoaFisicaAccess access = new PessoaFisicaAccess();
 
 
         //Início - Métodos locais
@@ -31,6 +25,8 @@ namespace Windows.FormsFabricante
             {
                 Grid.Columns[0].Width = 80;
                 Grid.Columns[1].Width = 220;
+                Grid.Columns[2].Width = 150;
+                Grid.Columns[3].Width = 150;
             }
         }
 
@@ -45,7 +41,7 @@ namespace Windows.FormsFabricante
         private void setarGrid()
         {
 
-            Grid.DataSource = access.Lista();
+            Grid.DataSource = access.Lista("%" + txtLocalizar.Text + "%");
             configuraGrid(Grid.RowCount);
             configuraBotoes(Grid.RowCount);
 
@@ -55,7 +51,7 @@ namespace Windows.FormsFabricante
         {
 
             Int32 id = Convert.ToInt32(Grid.CurrentRow.Cells[0].Value);
-            FormCadastroFabricante form = new FormCadastroFabricante(id);
+            FormCadastroPessoaFisica form = new FormCadastroPessoaFisica(id);
             form.ShowDialog();
 
         }
@@ -63,7 +59,7 @@ namespace Windows.FormsFabricante
         private void Novo()
         {
 
-            FormCadastroFabricante form = new FormCadastroFabricante(0);
+            FormCadastroPessoaFisica form = new FormCadastroPessoaFisica(0);
             form.ShowDialog();
 
         }
@@ -71,7 +67,7 @@ namespace Windows.FormsFabricante
 
 
 
-        public FormListaFabricante()
+        public Lista()
         {
 
             InitializeComponent();
@@ -79,14 +75,11 @@ namespace Windows.FormsFabricante
             txtLocalizar.Focus();
 
         }
-
         
-
+        
         private void txtLocalizar_TextChanged(object sender, EventArgs e)
         {
-
             setarGrid();
-
         }
 
         private void Grid_DoubleClick(object sender, EventArgs e)
@@ -119,10 +112,9 @@ namespace Windows.FormsFabricante
             Editar();
         }
 
-        private void FormListaFabricante_Activated(object sender, EventArgs e)
+        private void Lista_Activated(object sender, EventArgs e)
         {
             setarGrid();
         }
-
     }
 }

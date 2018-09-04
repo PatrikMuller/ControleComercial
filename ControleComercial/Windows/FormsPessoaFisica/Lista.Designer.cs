@@ -1,6 +1,6 @@
 ﻿namespace Windows.FormsPessoaFisica
 {
-    partial class FormListaPessoaFisica
+    partial class Lista
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtLocalizar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,7 +43,6 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuItemFechar = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.Grid = new System.Windows.Forms.DataGridView();
@@ -54,6 +54,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.SuspendLayout();
             // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 428);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(800, 22);
+            this.panel2.TabIndex = 25;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.txtLocalizar);
@@ -61,8 +69,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 51);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(784, 35);
-            this.panel1.TabIndex = 16;
+            this.panel1.Size = new System.Drawing.Size(800, 35);
+            this.panel1.TabIndex = 24;
             // 
             // txtLocalizar
             // 
@@ -91,8 +99,8 @@
             this.toolStripSeparator1});
             this.menuButton.Location = new System.Drawing.Point(0, 24);
             this.menuButton.Name = "menuButton";
-            this.menuButton.Size = new System.Drawing.Size(784, 27);
-            this.menuButton.TabIndex = 15;
+            this.menuButton.Size = new System.Drawing.Size(800, 27);
+            this.menuButton.TabIndex = 23;
             this.menuButton.Text = "toolStrip1";
             // 
             // MenuButtonNovo
@@ -128,8 +136,8 @@
             this.ajudaToolStripMenuItem});
             this.menuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.menuPrincipal.Name = "menuPrincipal";
-            this.menuPrincipal.Size = new System.Drawing.Size(784, 24);
-            this.menuPrincipal.TabIndex = 14;
+            this.menuPrincipal.Size = new System.Drawing.Size(800, 24);
+            this.menuPrincipal.TabIndex = 22;
             this.menuPrincipal.Text = "menuStrip1";
             // 
             // arquivoToolStripMenuItem
@@ -147,7 +155,7 @@
             // 
             this.MenuItemNovo.Image = global::Windows.Properties.Resources.Novo;
             this.MenuItemNovo.Name = "MenuItemNovo";
-            this.MenuItemNovo.Size = new System.Drawing.Size(184, 26);
+            this.MenuItemNovo.Size = new System.Drawing.Size(109, 22);
             this.MenuItemNovo.Text = "Novo";
             this.MenuItemNovo.Click += new System.EventHandler(this.MenuItemNovo_Click);
             // 
@@ -155,34 +163,27 @@
             // 
             this.MenuItemEditar.Image = global::Windows.Properties.Resources.Editar;
             this.MenuItemEditar.Name = "MenuItemEditar";
-            this.MenuItemEditar.Size = new System.Drawing.Size(184, 26);
+            this.MenuItemEditar.Size = new System.Drawing.Size(109, 22);
             this.MenuItemEditar.Text = "Editar";
             this.MenuItemEditar.Click += new System.EventHandler(this.MenuItemEditar_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(181, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(106, 6);
             // 
             // MenuItemFechar
             // 
             this.MenuItemFechar.Name = "MenuItemFechar";
-            this.MenuItemFechar.Size = new System.Drawing.Size(184, 26);
+            this.MenuItemFechar.Size = new System.Drawing.Size(109, 22);
             this.MenuItemFechar.Text = "Fechar";
+            this.MenuItemFechar.Click += new System.EventHandler(this.MenuItemFechar_Click);
             // 
             // ajudaToolStripMenuItem
             // 
             this.ajudaToolStripMenuItem.Name = "ajudaToolStripMenuItem";
             this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.ajudaToolStripMenuItem.Text = "Ajuda";
-            // 
-            // panel2
-            // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 409);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(784, 22);
-            this.panel2.TabIndex = 17;
             // 
             // tabControl1
             // 
@@ -191,8 +192,8 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 86);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(784, 323);
-            this.tabControl1.TabIndex = 18;
+            this.tabControl1.Size = new System.Drawing.Size(800, 342);
+            this.tabControl1.TabIndex = 26;
             // 
             // tabPage1
             // 
@@ -200,7 +201,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(776, 297);
+            this.tabPage1.Size = new System.Drawing.Size(792, 316);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Lista";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -211,24 +212,25 @@
             this.Grid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Grid.Location = new System.Drawing.Point(3, 3);
             this.Grid.Name = "Grid";
-            this.Grid.Size = new System.Drawing.Size(770, 291);
+            this.Grid.Size = new System.Drawing.Size(786, 310);
             this.Grid.TabIndex = 0;
+            this.Grid.DoubleClick += new System.EventHandler(this.Grid_DoubleClick);
             // 
-            // FormListaPessoaFisica
+            // Lista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 431);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuButton);
             this.Controls.Add(this.menuPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "FormListaPessoaFisica";
+            this.Name = "Lista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Pessoa Fisica";
-            this.Activated += new System.EventHandler(this.FormListaPessoaFisica_Activated);
+            this.Text = "Lista";
+            this.Activated += new System.EventHandler(this.Lista_Activated);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.menuButton.ResumeLayout(false);
@@ -245,6 +247,7 @@
 
         #endregion
 
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtLocalizar;
         private System.Windows.Forms.Label label1;
@@ -259,7 +262,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem MenuItemFechar;
         private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView Grid;

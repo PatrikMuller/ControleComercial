@@ -9,18 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Infraestrutura.Access;
-using Infraestrutura.Models;
 
-namespace Windows.FormsFormaPagamento
+namespace Windows.FormsPessoaJuridica
 {
-    public partial class FormsListaFormaPagamento : Form
+    public partial class Lista : Form
     {
-        //Objetos
-        FormaPagamento obj = new FormaPagamento();
-
+                
         //Access
-        FormaPagamentoAccess access = new FormaPagamentoAccess();
-        
+        PessoaJuridicaAccess Access = new PessoaJuridicaAccess();
 
 
         //Início - Métodos locais
@@ -29,7 +25,10 @@ namespace Windows.FormsFormaPagamento
             if (QtdLinhas > 0)
             {
                 Grid.Columns[0].Width = 80;
-                Grid.Columns[1].Width = 220;
+                Grid.Columns[1].Width = 200;
+                Grid.Columns[2].Width = 150;
+                Grid.Columns[3].Width = 120;
+                Grid.Columns[4].Width = 100;
             }
         }
 
@@ -44,7 +43,8 @@ namespace Windows.FormsFormaPagamento
         private void setarGrid()
         {
 
-            Grid.DataSource = access.Lista();
+            //Grid.DataSource = pessoaAccess.Lista("%" + txtLocalizar.Text + "%");
+            Grid.DataSource = Access.Lista("%" + txtLocalizar.Text + "%");
             configuraGrid(Grid.RowCount);
             configuraBotoes(Grid.RowCount);
 
@@ -54,7 +54,7 @@ namespace Windows.FormsFormaPagamento
         {
 
             Int32 id = Convert.ToInt32(Grid.CurrentRow.Cells[0].Value);
-            FormsCadastroFormaPagamento form = new FormsCadastroFormaPagamento(id);
+            FormCadastroPessoaJuridica form = new FormCadastroPessoaJuridica(id);
             form.ShowDialog();
 
         }
@@ -62,15 +62,15 @@ namespace Windows.FormsFormaPagamento
         private void Novo()
         {
 
-            //FormCadastroPessoaFisica form = new FormCadastroPessoaFisica(0);
-            //form.ShowDialog();
+            FormCadastroPessoaJuridica form = new FormCadastroPessoaJuridica(0);
+            form.ShowDialog();
 
         }
         //Fim - Métodos locais
 
 
 
-        public FormsListaFormaPagamento()
+        public Lista()
         {
 
             InitializeComponent();
@@ -79,18 +79,9 @@ namespace Windows.FormsFormaPagamento
 
         }
 
-        private void FormListaPessoaFisica_Activated(object sender, EventArgs e)
-        {
-
-            setarGrid();
-
-        }
-
         private void txtLocalizar_TextChanged(object sender, EventArgs e)
         {
-
             setarGrid();
-
         }
 
         private void Grid_DoubleClick(object sender, EventArgs e)
@@ -122,5 +113,11 @@ namespace Windows.FormsFormaPagamento
         {
             Editar();
         }
+                
+        private void Lista_Activated(object sender, EventArgs e)
+        {
+            setarGrid();
+        }
+
     }
 }

@@ -15,42 +15,122 @@ namespace Windows.FormsCarrinho
 {
     public partial class InserirCliente : Form
     {
-        Pessoa pessoa = new Pessoa();
-        
-        PessoaAccess pessoaAccess = new PessoaAccess();
+
+        Pessoa ObjPessoa = new Pessoa();
+        Carrinho ObjCarrinho = new Carrinho();
+        CarrinhoPessoa ObjCarrinhoPessoa = new CarrinhoPessoa();
+        CarrinhoPessoaTipo ObjCarrinhoPessoaTipo = new CarrinhoPessoaTipo();
                 
+        PessoaAccess pessoaAccess = new PessoaAccess();
+        CarrinhoPessoaAccess carrinhoPessoaAccess = new CarrinhoPessoaAccess();
 
-        public int Id { get; set; }
+        //Negocio
+        Negocio.Utilitario ObjUtilitario = new Negocio.Utilitario();
+                       
 
-        
-        public InserirCliente()
+        //Início - Métodos locais
+        private void LerPessoaFisica()
+        {
+
+            //CASO OBJETO ESTEJA null CRIA UMA NOVA ESTÂNCIA
+            ObjPessoa = ObjPessoa ?? new Pessoa();
+
+            //txtId.Text = Convert.ToString(ObjPessoa.Id);
+            txtNome.Text = ObjPessoa.Nome;
+            txtCpf.Text = ObjPessoa.CpfCnpj == null ? txtCpf.Text : ObjPessoa.CpfCnpj;
+            
+            //AtivaComponentes();
+        }
+
+        private String CpfValido()
+        {
+
+            lblValidaCpf.Text = "-";
+            ObjPessoa = pessoaAccess.LerCpfCnpj(txtCpf.Text);
+            
+            LerPessoaFisica();
+
+            AtivaComponentes();
+            return "OK";
+
+        }
+
+        private String CpfInvalido()
+        {
+
+            return "Numero de CPF Inválido!";
+
+        }
+
+        private void ValidarCpf()
+        {
+
+            lblValidaCpf.Text = ObjUtilitario.validacpf(txtCpf.Text) == true ? CpfValido() : CpfInvalido();
+            txtCpf.Focus().Equals(lblValidaCpf.Text != "OK");
+            txtNome.Focus().Equals(lblValidaCpf.Text == "OK");
+
+        }
+
+        private void AtivaComponentes()
+        {
+            txtNome.Enabled = true;
+            btnInserir.Enabled = true;
+
+            txtCpf.Enabled = false;
+            btnValidar.Enabled = false;
+        }
+
+        private void DesativaComponentes()
+        {
+            txtNome.Enabled = false;
+            btnInserir.Enabled = false;
+
+            txtCpf.Enabled = true;
+            btnValidar.Enabled = true;
+        }
+
+        //Fim - Métodos locais
+
+
+        public InserirCliente(Int32 IdCarrinho)
         {
 
             //cbTipoPessoa.Select();
+            ObjCarrinho.Id = IdCarrinho;
+            ObjCarrinhoPessoaTipo.Id = 1;
 
             InitializeComponent();
+            DesativaComponentes();
+
+            txtCpf.Focus();
 
         }
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
 
-            Id = Convert.ToInt32(txtId.Text);
+            ObjPessoa.Nome = txtNome.Text;
+            ObjPessoa.CpfCnpj = txtCpf.Text;
 
-            pessoa.Id = Convert.ToInt32(txtId.Text);
+            ObjCarrinhoPessoa.Id = 0;
+            ObjCarrinhoPessoa.Carrinho = ObjCarrinho;
+            ObjCarrinhoPessoa.Pessoa = ObjPessoa;
+            ObjCarrinhoPessoa.CarrinhoPessoaTipo = ObjCarrinhoPessoaTipo;
+            carrinhoPessoaAccess.Gravar(ObjCarrinhoPessoa);
+                        
+            //if (Id != 0)
+            //{
+            //    this.DialogResult = DialogResult.OK;
+            //}
 
-            pessoa.Nome = txtNome.Text;
-            pessoa.CpfCnpj = txtCpfCnpj.Text;
-            
-            Id = pessoaAccess.Novo(pessoa);
-
-            txtId.Text = Convert.ToString(Id);
-
-            if (Id != 0)
-            {
-                this.DialogResult = DialogResult.OK;
-            }
+            Close();
 
         }
+                
+        private void btnValidar_Click(object sender, EventArgs e)
+        {
+            ValidarCpf();
+        }
+
     }
 }

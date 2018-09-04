@@ -13,7 +13,7 @@ using Infraestrutura.Models;
 
 namespace Windows.FormsUnidadeMedida
 {
-    public partial class FormListaUnidadeMedida : Form
+    public partial class Lista : Form
     {
 
         //Objetos
@@ -71,7 +71,7 @@ namespace Windows.FormsUnidadeMedida
 
 
 
-        public FormListaUnidadeMedida()
+        public Lista()
         {
 
             InitializeComponent();
@@ -84,9 +84,7 @@ namespace Windows.FormsUnidadeMedida
 
         private void txtLocalizar_TextChanged(object sender, EventArgs e)
         {
-
             setarGrid();
-
         }
 
         private void Grid_DoubleClick(object sender, EventArgs e)
@@ -118,8 +116,8 @@ namespace Windows.FormsUnidadeMedida
         {
             Editar();
         }
-
-        private void FormListaFabricante_Activated(object sender, EventArgs e)
+                
+        private void Lista_Activated(object sender, EventArgs e)
         {
             setarGrid();
         }

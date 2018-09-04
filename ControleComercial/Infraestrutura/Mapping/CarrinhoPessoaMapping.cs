@@ -15,9 +15,9 @@ namespace Infraestrutura.Mapping
         {
             Id(o => o.Id).GeneratedBy.Sequence("CarrinhoPessoa_Id_Seq"); //Para Postgres
             //Id(carrinho => carrinho.Id).GeneratedBy.Identity(); //Para SQL Server
-            References(o => o.Carrinho, "CarrinhoId");
-            References(o => o.Pessoa, "PessoaId");
-            References(o => o.CarrinhoPessoaTipo, "CarrinhoPessoaTipoId");
+            References(o => o.Carrinho, "CarrinhoId"); 
+            References(o => o.Pessoa, "PessoaId").Cascade.Merge(); 
+            References(o => o.CarrinhoPessoaTipo, "CarrinhoPessoaTipoId"); 
         }
     }
 }

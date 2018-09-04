@@ -27,7 +27,7 @@ namespace Infraestrutura.Access
             }
         }
 
-        public Int32 Gravar(CarrinhoPessoa o)
+        public void Gravar(CarrinhoPessoa o)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
@@ -36,7 +36,6 @@ namespace Infraestrutura.Access
                 session.Merge(o);
 
                 tx.Commit();
-                return o.Id;
             }
         }
 

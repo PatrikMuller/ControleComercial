@@ -171,13 +171,12 @@ namespace Windows.FormsCarrinho
         private void btnInserirCliente_Click(object sender, EventArgs e)
         {
 
-            //LocalizarItem form = new LocalizarItem();
-            InserirCliente form = new InserirCliente();
+            InserirCliente form = new InserirCliente(0);
 
             if (form.ShowDialog() == DialogResult.OK)
             {
 
-                pessoa.Id = form.Id;
+                //pessoa.Id = form.Id;
                 carrinho.Id = Convert.ToInt32(txtIdCarrinho.Text);
                 carrinhoPessoaTipo.Id = 1; // 1 = Cliente
 

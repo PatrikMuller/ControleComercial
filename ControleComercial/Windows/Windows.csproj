@@ -105,17 +105,29 @@
     <Compile Include="FormsCarrinho\SelecionarFormaPagamento.Designer.cs">
       <DependentUpon>SelecionarFormaPagamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsFabricante\Cadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsFabricante\Cadastro.Designer.cs">
+      <DependentUpon>Cadastro.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsFabricante\FormCadastroFabricante.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormsFabricante\FormCadastroFabricante.Designer.cs">
       <DependentUpon>FormCadastroFabricante.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsFabricante\FormListaFabricante.cs">
+    <Compile Include="FormsFabricante\Lista.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormsFabricante\FormListaFabricante.Designer.cs">
-      <DependentUpon>FormListaFabricante.cs</DependentUpon>
+    <Compile Include="FormsFabricante\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsFormaPagamento\Cadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsFormaPagamento\Cadastro.Designer.cs">
+      <DependentUpon>Cadastro.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsFormaPagamento\FormsCadastroFormaPagamento.cs">
       <SubType>Form</SubType>
@@ -123,11 +135,17 @@
     <Compile Include="FormsFormaPagamento\FormsCadastroFormaPagamento.Designer.cs">
       <DependentUpon>FormsCadastroFormaPagamento.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsFormaPagamento\FormsListaFormaPagamento.cs">
+    <Compile Include="FormsFormaPagamento\Lista.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormsFormaPagamento\FormsListaFormaPagamento.Designer.cs">
-      <DependentUpon>FormsListaFormaPagamento.cs</DependentUpon>
+    <Compile Include="FormsFormaPagamento\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsItem\Cadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsItem\Cadastro.Designer.cs">
+      <DependentUpon>Cadastro.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsItem\CadastroItem.cs">
       <SubType>Form</SubType>
@@ -135,11 +153,23 @@
     <Compile Include="FormsItem\CadastroItem.Designer.cs">
       <DependentUpon>CadastroItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsItem\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsItem\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsItem\ListaItem.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormsItem\ListaItem.Designer.cs">
       <DependentUpon>ListaItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPessoaFisica\Cadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsPessoaFisica\Cadastro.Designer.cs">
+      <DependentUpon>Cadastro.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsPessoaFisica\FormCadastroPessoaFisica.cs">
       <SubType>Form</SubType>
@@ -147,11 +177,17 @@
     <Compile Include="FormsPessoaFisica\FormCadastroPessoaFisica.Designer.cs">
       <DependentUpon>FormCadastroPessoaFisica.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsPessoaFisica\FormListaPessoaFisica.cs">
+    <Compile Include="FormsPessoaFisica\Lista.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormsPessoaFisica\FormListaPessoaFisica.Designer.cs">
-      <DependentUpon>FormListaPessoaFisica.cs</DependentUpon>
+    <Compile Include="FormsPessoaFisica\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPessoaJuridica\Cadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsPessoaJuridica\Cadastro.Designer.cs">
+      <DependentUpon>Cadastro.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsPessoaJuridica\FormCadastroPessoaJuridica.cs">
       <SubType>Form</SubType>
@@ -159,11 +195,11 @@
     <Compile Include="FormsPessoaJuridica\FormCadastroPessoaJuridica.Designer.cs">
       <DependentUpon>FormCadastroPessoaJuridica.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsPessoaJuridica\FormListaPessoaJuridica.cs">
+    <Compile Include="FormsPessoaJuridica\Lista.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormsPessoaJuridica\FormListaPessoaJuridica.Designer.cs">
-      <DependentUpon>FormListaPessoaJuridica.cs</DependentUpon>
+    <Compile Include="FormsPessoaJuridica\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsPrincipal\FormPrincipal.cs">
       <SubType>Form</SubType>
@@ -171,17 +207,23 @@
     <Compile Include="FormsPrincipal\FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsUnidadeMedida\FormListaUnidadeMedida.cs">
+    <Compile Include="FormsUnidadeMedida\Cadastro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormsUnidadeMedida\FormListaUnidadeMedida.Designer.cs">
-      <DependentUpon>FormListaUnidadeMedida.cs</DependentUpon>
+    <Compile Include="FormsUnidadeMedida\Cadastro.Designer.cs">
+      <DependentUpon>Cadastro.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsUnidadeMedida\FormUnidadeMedida.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormsUnidadeMedida\FormUnidadeMedida.Designer.cs">
       <DependentUpon>FormUnidadeMedida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsUnidadeMedida\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsUnidadeMedida\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
     </Compile>
     <Compile Include="Negocio\Utilitario.cs" />
     <Compile Include="Program.cs" />
@@ -198,44 +240,65 @@
     <EmbeddedResource Include="FormsCarrinho\SelecionarFormaPagamento.resx">
       <DependentUpon>SelecionarFormaPagamento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormsFabricante\Cadastro.resx">
+      <DependentUpon>Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormsFabricante\FormCadastroFabricante.resx">
       <DependentUpon>FormCadastroFabricante.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormsFabricante\FormListaFabricante.resx">
-      <DependentUpon>FormListaFabricante.cs</DependentUpon>
+    <EmbeddedResource Include="FormsFabricante\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsFormaPagamento\Cadastro.resx">
+      <DependentUpon>Cadastro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsFormaPagamento\FormsCadastroFormaPagamento.resx">
       <DependentUpon>FormsCadastroFormaPagamento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormsFormaPagamento\FormsListaFormaPagamento.resx">
-      <DependentUpon>FormsListaFormaPagamento.cs</DependentUpon>
+    <EmbeddedResource Include="FormsFormaPagamento\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsItem\Cadastro.resx">
+      <DependentUpon>Cadastro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsItem\CadastroItem.resx">
       <DependentUpon>CadastroItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormsItem\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormsItem\ListaItem.resx">
       <DependentUpon>ListaItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsPessoaFisica\Cadastro.resx">
+      <DependentUpon>Cadastro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsPessoaFisica\FormCadastroPessoaFisica.resx">
       <DependentUpon>FormCadastroPessoaFisica.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormsPessoaFisica\FormListaPessoaFisica.resx">
-      <DependentUpon>FormListaPessoaFisica.cs</DependentUpon>
+    <EmbeddedResource Include="FormsPessoaFisica\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsPessoaJuridica\Cadastro.resx">
+      <DependentUpon>Cadastro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsPessoaJuridica\FormCadastroPessoaJuridica.resx">
       <DependentUpon>FormCadastroPessoaJuridica.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormsPessoaJuridica\FormListaPessoaJuridica.resx">
-      <DependentUpon>FormListaPessoaJuridica.cs</DependentUpon>
+    <EmbeddedResource Include="FormsPessoaJuridica\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsPrincipal\FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormsUnidadeMedida\FormListaUnidadeMedida.resx">
-      <DependentUpon>FormListaUnidadeMedida.cs</DependentUpon>
+    <EmbeddedResource Include="FormsUnidadeMedida\Cadastro.resx">
+      <DependentUpon>Cadastro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsUnidadeMedida\FormUnidadeMedida.resx">
       <DependentUpon>FormUnidadeMedida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsUnidadeMedida\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

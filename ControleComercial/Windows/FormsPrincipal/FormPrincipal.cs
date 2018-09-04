@@ -21,36 +21,14 @@ namespace Windows.FormsPrincipal
 
         private void btnPessoaFisica_Click(object sender, EventArgs e)
         {
-
-            FormsPessoaFisica.FormListaPessoaFisica formListaPessoaFisica = new FormsPessoaFisica.FormListaPessoaFisica();
-            formListaPessoaFisica.ShowDialog();
-            
-            ////LocalizarItem form = new LocalizarItem();
-            //InserirCliente form = new InserirCliente();
-
-            //if (form.ShowDialog() == DialogResult.OK)
-            //{
-
-            //    pessoa.Id = form.Id;
-            //    carrinho.Id = Convert.ToInt32(txtIdCarrinho.Text);
-            //    carrinhoPessoaTipo.Id = 1; // 1 = Cliente
-
-            //    //DataGridViewRow Row = new DataGridViewRow();
-            //    //Row = form.Row();
-
-            //    carrinhoPessoa.Carrinho = carrinho;
-            //    carrinhoPessoa.Pessoa = pessoa;
-            //    carrinhoPessoa.CarrinhoPessoaTipo = carrinhoPessoaTipo;
-
-            //    carrinhoPessoaDao.Novo(carrinhoPessoa);
-
-            //}
+            FormsPessoaFisica.Lista formLista = new FormsPessoaFisica.Lista();
+            formLista.ShowDialog();                        
         }
 
         private void btnPessoaJuridica_Click(object sender, EventArgs e)
         {
-            FormsPessoaJuridica.FormListaPessoaJuridica formListaPessoaJuridica = new FormsPessoaJuridica.FormListaPessoaJuridica();
-            formListaPessoaJuridica.ShowDialog();
+            FormsPessoaJuridica.Lista formLista = new FormsPessoaJuridica.Lista();
+            formLista.ShowDialog();
         }
 
         private void btnTelaVenda_Click(object sender, EventArgs e)
@@ -61,20 +39,20 @@ namespace Windows.FormsPrincipal
 
         private void btnFormaPagamento_Click(object sender, EventArgs e)
         {
-            FormsFormaPagamento.FormsListaFormaPagamento formListaFormaPagamento = new FormsFormaPagamento.FormsListaFormaPagamento();
-            formListaFormaPagamento.ShowDialog();
+            FormsFormaPagamento.Lista formLista = new FormsFormaPagamento.Lista();
+            formLista.ShowDialog();            
         }
 
         private void btnFabricante_Click(object sender, EventArgs e)
         {
-            FormsFabricante.FormListaFabricante formListaFabricante = new FormsFabricante.FormListaFabricante();
-            formListaFabricante.ShowDialog();
+            FormsFabricante.Lista formLista = new FormsFabricante.Lista();
+            formLista.ShowDialog();
         }
 
         private void btnUnidadeMedida_Click(object sender, EventArgs e)
         {
-            FormsUnidadeMedida.FormListaUnidadeMedida formListaUnidadeMedida = new FormsUnidadeMedida.FormListaUnidadeMedida();
-            formListaUnidadeMedida.ShowDialog();
+            FormsUnidadeMedida.Lista formLista = new FormsUnidadeMedida.Lista();
+            formLista.ShowDialog();
         }
     }
 }
