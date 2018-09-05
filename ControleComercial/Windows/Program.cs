@@ -17,9 +17,13 @@ namespace Windows
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FormsCarrinho.CadastroCarrinho());
+
             //Application.Run(new FormsPrincipal.FormPrincipal());
+
             //Application.Run(new FormsItem.ListaItem());
-            Application.Run(new FormsCarrinho.InserirCliente(46));
+            //Application.Run(new FormsCarrinho.InserirCliente(46));
+            Application.Run(new FormsCarrinhoPessoa.ClienteCNPJ(46));
+
         }
     }
 }
