@@ -36,9 +36,19 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGravar = new System.Windows.Forms.Button();
-            this.gbParcelamento = new System.Windows.Forms.GroupBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.menuButton = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.Grid = new System.Windows.Forms.DataGridView();
+            this.MenuButtonNovo = new System.Windows.Forms.ToolStripButton();
+            this.MenuButtonEditar = new System.Windows.Forms.ToolStripButton();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.menuButton.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -125,22 +135,81 @@
             this.btnGravar.UseVisualStyleBackColor = true;
             this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
             // 
-            // gbParcelamento
+            // tabControl1
             // 
-            this.gbParcelamento.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbParcelamento.Location = new System.Drawing.Point(0, 90);
-            this.gbParcelamento.Name = "gbParcelamento";
-            this.gbParcelamento.Size = new System.Drawing.Size(690, 291);
-            this.gbParcelamento.TabIndex = 22;
-            this.gbParcelamento.TabStop = false;
-            this.gbParcelamento.Text = "Parcelamento";
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 90);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(690, 291);
+            this.tabControl1.TabIndex = 27;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.Grid);
+            this.tabPage1.Controls.Add(this.menuButton);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(682, 265);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Parcelamento";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // menuButton
+            // 
+            this.menuButton.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuButton.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuButtonNovo,
+            this.MenuButtonEditar,
+            this.toolStripSeparator1});
+            this.menuButton.Location = new System.Drawing.Point(3, 3);
+            this.menuButton.Name = "menuButton";
+            this.menuButton.Size = new System.Drawing.Size(676, 27);
+            this.menuButton.TabIndex = 29;
+            this.menuButton.Text = "toolStrip1";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
+            // 
+            // Grid
+            // 
+            this.Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Grid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Grid.Location = new System.Drawing.Point(3, 30);
+            this.Grid.Name = "Grid";
+            this.Grid.Size = new System.Drawing.Size(676, 232);
+            this.Grid.TabIndex = 30;
+            // 
+            // MenuButtonNovo
+            // 
+            this.MenuButtonNovo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MenuButtonNovo.Image = global::Windows.Properties.Resources.Novo;
+            this.MenuButtonNovo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MenuButtonNovo.Name = "MenuButtonNovo";
+            this.MenuButtonNovo.Size = new System.Drawing.Size(24, 24);
+            this.MenuButtonNovo.Text = "Novo";
+            this.MenuButtonNovo.Click += new System.EventHandler(this.MenuButtonNovo_Click);
+            // 
+            // MenuButtonEditar
+            // 
+            this.MenuButtonEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MenuButtonEditar.Image = global::Windows.Properties.Resources.Editar;
+            this.MenuButtonEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MenuButtonEditar.Name = "MenuButtonEditar";
+            this.MenuButtonEditar.Size = new System.Drawing.Size(24, 24);
+            this.MenuButtonEditar.Text = "Editar";
+            this.MenuButtonEditar.Click += new System.EventHandler(this.MenuButtonEditar_Click);
             // 
             // FormsCadastroFormaPagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(690, 417);
-            this.Controls.Add(this.gbParcelamento);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -150,6 +219,12 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.menuButton.ResumeLayout(false);
+            this.menuButton.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -164,6 +239,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGravar;
-        private System.Windows.Forms.GroupBox gbParcelamento;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.DataGridView Grid;
+        private System.Windows.Forms.ToolStrip menuButton;
+        private System.Windows.Forms.ToolStripButton MenuButtonNovo;
+        private System.Windows.Forms.ToolStripButton MenuButtonEditar;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }

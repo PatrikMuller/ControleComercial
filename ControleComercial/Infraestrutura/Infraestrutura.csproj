@@ -76,6 +76,7 @@
     <Compile Include="Access\FormaPagamentoAccess.cs" />
     <Compile Include="Access\FormaPagamentoParcelamentoAccess.cs" />
     <Compile Include="Access\ItemAccess.cs" />
+    <Compile Include="Access\ParcelamentoStatusAccess.cs" />
     <Compile Include="Access\PessoaAccess.cs" />
     <Compile Include="Access\PessoaFisicaAccess.cs" />
     <Compile Include="Access\PessoaJuridicaAccess.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Mapping\FormaPagamentoMapping.cs" />
     <Compile Include="Mapping\FormaPagamentoParcelamentoMapping.cs" />
     <Compile Include="Mapping\ItemMapping.cs" />
+    <Compile Include="Mapping\ParcelamentoStatusMapping.cs" />
     <Compile Include="Mapping\PessoaFisicaMapping.cs" />
     <Compile Include="Mapping\PessoaJuridicaMapping.cs" />
     <Compile Include="Mapping\PessoaMapping.cs" />
@@ -106,6 +108,7 @@
     <Compile Include="Models\FormaPagamento.cs" />
     <Compile Include="Models\FormaPagamentoParcelamento.cs" />
     <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\ParcelamentoStatus.cs" />
     <Compile Include="Models\Pessoa.cs" />
     <Compile Include="Models\PessoaFisica.cs" />
     <Compile Include="Models\PessoaJuridica.cs" />

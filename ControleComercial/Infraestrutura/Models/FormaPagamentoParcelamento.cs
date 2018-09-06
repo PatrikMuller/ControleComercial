@@ -13,6 +13,7 @@ namespace Infraestrutura.Models
         public virtual FormaPagamento FormaPagamento { get; set; }
         public virtual int QtdParcelas { get; set; }
         public virtual Double Juros { get; set; }
-        
+        public virtual ParcelamentoStatus ParcelamentoStatus { get; set; }
+
     }
 }

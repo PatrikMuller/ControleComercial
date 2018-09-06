@@ -68,7 +68,7 @@ namespace Windows.FormsCarrinho
         private void ListaItem_Activated(object sender, EventArgs e)
         {
 
-            grid.DataSource = dadosGrid(dao.Lista());
+            //grid.DataSource = dadosGrid(dao.Lista(0));
             configuraGrid();
 
         }

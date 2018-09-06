@@ -9,12 +9,13 @@ using Infraestrutura.Models;
 using NHibernate;
 using NHibernate.Linq;
 
+
 namespace Infraestrutura.Access
 {
-    public class FormaPagamentoParcelamentoAccess
+    public class ParcelamentoStatusAccess
     {
 
-        public Int32 Novo(FormaPagamentoParcelamento o)
+        public Int32 Novo(ParcelamentoStatus o)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
@@ -27,7 +28,7 @@ namespace Infraestrutura.Access
             }
         }
 
-        public Int32 Gravar(FormaPagamentoParcelamento o)
+        public Int32 Gravar(ParcelamentoStatus o)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
@@ -40,47 +41,37 @@ namespace Infraestrutura.Access
             }
         }
 
-        public FormaPagamentoParcelamento Ler(int id)
+        public ParcelamentoStatus Ler(int id)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
-                return session.Get<FormaPagamentoParcelamento>(id);
+                return session.Get<ParcelamentoStatus>(id);
             }
         }
-
-        public void Remove(FormaPagamentoParcelamento o)
-        {
-            using (ISession session = NHibernateHelper.AbreSessao())
-            {
-                ITransaction tx = session.BeginTransaction();
-                session.Delete(o);
-                tx.Commit();
-            }
-        }
-
+                
         public Object Lista(Int32 IdFormaPagamento)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
-                
-                var lista = (from fpp in session.Query<FormaPagamentoParcelamento>().
-                             Where(o => o.FormaPagamento.Id == IdFormaPagamento).
-                             Select(o => new { o.Id, o.QtdParcelas, o.Juros, Status = o.ParcelamentoStatus.Descricao}).
+
+                var lista = (from fpp in session.Query<ParcelamentoStatus>().
+                             //Where(o => o.FormaPagamento.Id == IdFormaPagamento).
+                             //Select(o => new { o.Id, o.QtdParcelas, o.Juros, Status = o.ParcelamentoStatus.Descricao }).
                              OrderBy(o => o.Id).ToList()
                              select fpp).ToList();
 
 
 
                 return lista;
-                                
+
             }
         }
 
-        public List<ddl> ddl(Int32 IdFormaPagamento)
+        public List<ddl> ddl()
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
-                var retorno = session.Query<FormaPagamentoParcelamento>().Where(o => o.FormaPagamento.Id == IdFormaPagamento).OrderBy(o => o.Id).ToList();
+                var retorno = session.Query<ParcelamentoStatus>().OrderBy(o => o.Id).ToList();
 
                 List<ddl> lista = new List<ddl>();
 
@@ -89,7 +80,7 @@ namespace Infraestrutura.Access
                     ddl Objddl = new ddl();
 
                     Objddl.Id = Convert.ToString(obj.Id);
-                    Objddl.Nome = Convert.ToString(obj.QtdParcelas) + " - Juros em cada Parcela: " + obj.Juros.ToString("###,###,###,##0.00"); //ToString("###,###,###,##0.00")
+                    Objddl.Nome = Convert.ToString(obj.Descricao);
 
                     lista.Add(Objddl);
                 }

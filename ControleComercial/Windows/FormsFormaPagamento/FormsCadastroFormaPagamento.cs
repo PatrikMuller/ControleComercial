@@ -20,18 +20,21 @@ namespace Windows.FormsFormaPagamento
         FormaPagamento obj = new FormaPagamento();
 
         //Access
-        FormaPagamentoAccess access = new FormaPagamentoAccess();
-                
+        FormaPagamentoAccess formaPagamentoAccess = new FormaPagamentoAccess();
+        FormaPagamentoParcelamentoAccess formaPagamentoParcelamentoAccess = new FormaPagamentoParcelamentoAccess();
+
 
         //Início - Métodos locais
         private void Ler(Int32 Id)
         {
 
-            obj = access.Ler(Id);
+            obj = formaPagamentoAccess.Ler(Id);
 
             txtId.Text = Convert.ToString(obj.Id);
             txtDescricao.Text = obj.Descricao;
-            
+
+            Grid.DataSource = formaPagamentoParcelamentoAccess.Lista(obj.Id);
+
             //AtivaComponentes();
         }
 
@@ -73,6 +76,23 @@ namespace Windows.FormsFormaPagamento
         {
             Close();
         }
-                
+
+        private void MenuButtonNovo_Click(object sender, EventArgs e)
+        {
+            FormsFormaPagamentoParcelamento.Cadastro form = new FormsFormaPagamentoParcelamento.Cadastro();
+            form.ShowDialog();
+        }
+
+        private void MenuButtonEditar_Click(object sender, EventArgs e)
+        {
+            FormsFormaPagamentoParcelamento.Cadastro form = new FormsFormaPagamentoParcelamento.Cadastro();
+            form.ShowDialog();
+        }
+
+        private void MenuButtonCancelar_Click(object sender, EventArgs e)
+        {
+            //
+        }
+
     }
 }
