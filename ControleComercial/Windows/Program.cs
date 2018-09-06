@@ -22,7 +22,8 @@ namespace Windows
 
             //Application.Run(new FormsItem.ListaItem());
             //Application.Run(new FormsCarrinho.InserirCliente(46));
-            Application.Run(new FormsCarrinhoPessoa.ClienteCNPJ(46));
+            //Application.Run(new FormsCarrinhoPessoa.ClienteCNPJ(46));
+            Application.Run(new FormsCarrinhoFormaPagamento.CadastroFormaPagamento(46, 435.98));
 
         }
     }

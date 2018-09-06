@@ -11,9 +11,10 @@ using NHibernate.Linq;
 
 namespace Infraestrutura.Access
 {
-    public class FormaPagamentoAccess
+    public class CarrinhoFormaPagamentoAccess
     {
-        public Int32 Novo(FormaPagamento o)
+
+        public Int32 Novo(CarrinhoFormaPagamento o)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
@@ -26,7 +27,7 @@ namespace Infraestrutura.Access
             }
         }
 
-        public Int32 Gravar(FormaPagamento o)
+        public Int32 Gravar(CarrinhoFormaPagamento o)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
@@ -39,15 +40,15 @@ namespace Infraestrutura.Access
             }
         }
 
-        public FormaPagamento Ler(int id)
+        public CarrinhoFormaPagamento Ler(int id)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
-                return session.Get<FormaPagamento>(id);
+                return session.Get<CarrinhoFormaPagamento>(id);
             }
         }
 
-        public void Remove(FormaPagamento o)
+        public void Remove(CarrinhoFormaPagamento o)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
@@ -57,36 +58,13 @@ namespace Infraestrutura.Access
             }
         }
 
-        public IList<FormaPagamento> Lista()
+        public IList<CarrinhoFormaPagamento> Lista()
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
 
-                return session.Query<FormaPagamento>().OrderBy(o => o.Id).ToList();
+                return session.Query<CarrinhoFormaPagamento>().OrderBy(o => o.Id).ToList();
 
-            }
-        }
-
-        public List<ddl> ddl()
-        {
-            using (ISession session = NHibernateHelper.AbreSessao())
-            {
-                var retorno = session.Query<FormaPagamento>().OrderBy(o => o.Id).ToList();
-                
-                List<ddl> lista = new List<ddl>();
-                
-                foreach (var obj in retorno)
-                {
-                    ddl Objddl = new ddl();
-
-                    Objddl.Id = Convert.ToString(obj.Id);
-                    Objddl.Nome = obj.Descricao;
-
-                    lista.Add(Objddl);
-                }
-                                
-                return lista;
-                
             }
         }
 

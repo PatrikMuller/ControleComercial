@@ -9,21 +9,21 @@ using Infraestrutura.Models;
 
 namespace Infraestrutura.Mapping
 {
-    class CarrinhoFormaPagamentoParcelamentoMapping : ClassMap<CarrinhoFormaPagamentoParcelamento>
+    class CarrinhoFormaPagamentoMapping : ClassMap<CarrinhoFormaPagamento>
     {
 
-        public CarrinhoFormaPagamentoParcelamentoMapping()
+        public CarrinhoFormaPagamentoMapping()
         {
-
-            Id(o => o.Id).GeneratedBy.Sequence("CarrinhoFormaPagamentoParcelamento_Id_Seq"); //Para Postgres
+            Id(o => o.Id).GeneratedBy.Sequence("CarrinhoFormaPagamento_Id_Seq"); //Para Postgres
             //Id(carrinho => carrinho.Id).GeneratedBy.Identity(); //Para SQL Server
             References(o => o.Carrinho, "CarrinhoId");
             References(o => o.FormaPagamento, "FormaPagamentoId");
-            References(o => o.FormaPagamentoParcelamento, "FormaPagamentoParcelamentoId");
+            Map(o => o.ValorPagar);
             Map(o => o.QtdParcelas);
             Map(o => o.Juros);
-            
-        }
+            Map(o => o.ValorParcela);
 
+        }
+        
     }
 }

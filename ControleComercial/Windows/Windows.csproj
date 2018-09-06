@@ -81,11 +81,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsCarrinhoFormaPagamento\FormaPagamento.cs">
+    <Compile Include="FormsCarrinhoFormaPagamento\CadastroFormaPagamento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormsCarrinhoFormaPagamento\FormaPagamento.Designer.cs">
-      <DependentUpon>FormaPagamento.cs</DependentUpon>
+    <Compile Include="FormsCarrinhoFormaPagamento\CadastroFormaPagamento.Designer.cs">
+      <DependentUpon>CadastroFormaPagamento.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsCarrinhoPessoa\ClienteCNPJ.cs">
       <SubType>Form</SubType>
@@ -246,8 +246,8 @@
     <Compile Include="Negocio\Utilitario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormsCarrinhoFormaPagamento\FormaPagamento.resx">
-      <DependentUpon>FormaPagamento.cs</DependentUpon>
+    <EmbeddedResource Include="FormsCarrinhoFormaPagamento\CadastroFormaPagamento.resx">
+      <DependentUpon>CadastroFormaPagamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsCarrinhoPessoa\ClienteCNPJ.resx">
       <DependentUpon>ClienteCNPJ.cs</DependentUpon>

@@ -67,6 +67,29 @@ namespace Infraestrutura.Access
 
             }
         }
-                
+
+        public List<ddl> ddl(Int32 IdFormaPagamento)
+        {
+            using (ISession session = NHibernateHelper.AbreSessao())
+            {
+                var retorno = session.Query<FormaPagamentoParcelamento>().Where(o => o.FormaPagamento.Id == IdFormaPagamento).OrderBy(o => o.Id).ToList();
+
+                List<ddl> lista = new List<ddl>();
+
+                foreach (var obj in retorno)
+                {
+                    ddl Objddl = new ddl();
+
+                    Objddl.Id = Convert.ToString(obj.Id);
+                    Objddl.Nome = Convert.ToString(obj.QtdParcelas) + " - Juros em cada Parcela: " + obj.Juros.ToString("###,###,###,##0.00"); //ToString("###,###,###,##0.00")
+
+                    lista.Add(Objddl);
+                }
+
+                return lista;
+
+            }
+        }
+
     }
 }

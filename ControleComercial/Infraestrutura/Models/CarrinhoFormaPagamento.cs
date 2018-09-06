@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace Infraestrutura.Models
 {
-    public class CarrinhoFormaPagamentoParcelamento
+    public class CarrinhoFormaPagamento
     {
 
         public virtual int Id { get; set; }
         public virtual Carrinho Carrinho { get; set; }
         public virtual FormaPagamento FormaPagamento { get; set; }
-        public virtual FormaPagamentoParcelamento FormaPagamentoParcelamento { get; set; }
+        public virtual Double ValorPagar { get; set; }
         public virtual int QtdParcelas { get; set; }
-        public virtual Decimal Juros { get; set; }
+        public virtual Double Juros { get; set; }
+        public virtual Double ValorParcela { get; set; }
 
     }
 }

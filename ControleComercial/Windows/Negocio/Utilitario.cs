@@ -21,6 +21,12 @@ namespace Windows.Negocio
         }
 
 
+        //Método arredonda para 2 casas decimais
+        public Double Arredondar(Double valor)
+        {
+            return Math.Round(valor, 2);
+        }
+
         //método para preencher um dropdownlist
         public void setComboBox(ComboBox cb, List<ddl> lista)
         {

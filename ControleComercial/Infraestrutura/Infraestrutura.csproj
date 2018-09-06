@@ -69,7 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Access\CarrinhoAccess.cs" />
-    <Compile Include="Access\CarrinhoFormaPagamentoParcelamentoAccess.cs" />
+    <Compile Include="Access\CarrinhoFormaPagamentoAccess.cs" />
     <Compile Include="Access\CarrinhoItemAccess.cs" />
     <Compile Include="Access\CarrinhoPessoaAccess.cs" />
     <Compile Include="Access\FabricanteAccess.cs" />
@@ -83,7 +83,7 @@
     <Compile Include="Access\UnidadeMedidaAccess.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Factory\NHibernateHelper.cs" />
-    <Compile Include="Mapping\CarrinhoFormaPagamentoParcelamentoMapping.cs" />
+    <Compile Include="Mapping\CarrinhoFormaPagamentoMapping.cs" />
     <Compile Include="Mapping\CarrinhoItemMapping.cs" />
     <Compile Include="Mapping\CarrinhoMapping.cs" />
     <Compile Include="Mapping\CarrinhoPessoaMapping.cs" />
@@ -97,7 +97,7 @@
     <Compile Include="Mapping\PessoaMapping.cs" />
     <Compile Include="Mapping\UnidadeMedidaMapping.cs" />
     <Compile Include="Models\Carrinho.cs" />
-    <Compile Include="Models\CarrinhoFormaPagamentoParcelamento.cs" />
+    <Compile Include="Models\CarrinhoFormaPagamento.cs" />
     <Compile Include="Models\CarrinhoItem.cs" />
     <Compile Include="Models\CarrinhoPessoa.cs" />
     <Compile Include="Models\CarrinhoPessoaTipo.cs" />

@@ -24,13 +24,13 @@ namespace Windows.FormsCarrinho
         CarrinhoPessoa carrinhoPessoa = new CarrinhoPessoa();
         CarrinhoPessoaTipo carrinhoPessoaTipo = new CarrinhoPessoaTipo();
         FormaPagamentoParcelamento formaPagamentoParcelamento = new FormaPagamentoParcelamento();
-        CarrinhoFormaPagamentoParcelamento carrinhoFormaPagamentoParcelamento = new CarrinhoFormaPagamentoParcelamento();
+        //CarrinhoFormaPagamentoParcelamento carrinhoFormaPagamentoParcelamento = new CarrinhoFormaPagamentoParcelamento();
 
         //Persistencia
         CarrinhoAccess CarrinhoDao = new CarrinhoAccess();
         CarrinhoItemAccess carrinhoItemDao = new CarrinhoItemAccess();
         CarrinhoPessoaAccess carrinhoPessoaDao = new CarrinhoPessoaAccess();
-        CarrinhoFormaPagamentoParcelamentoAccess carrinhoFormaPagamentoParcelamentoDao = new CarrinhoFormaPagamentoParcelamentoAccess();
+        //CarrinhoFormaPagamentoParcelamentoAccess carrinhoFormaPagamentoParcelamentoDao = new CarrinhoFormaPagamentoParcelamentoAccess();
                         
         private void configuraGridProdutos()
         {
@@ -208,12 +208,12 @@ namespace Windows.FormsCarrinho
                 carrinho.Id = Convert.ToInt32(txtIdCarrinho.Text);
                 formaPagamentoParcelamento.Id = Convert.ToInt32(Row.Cells[0].Value);
 
-                carrinhoFormaPagamentoParcelamento.Carrinho = carrinho;
-                carrinhoFormaPagamentoParcelamento.FormaPagamentoParcelamento = formaPagamentoParcelamento;
-                carrinhoFormaPagamentoParcelamento.QtdParcelas = Convert.ToInt32(Row.Cells[2].Value);
-                carrinhoFormaPagamentoParcelamento.Juros = Convert.ToDecimal(Row.Cells[3].Value);
+                //carrinhoFormaPagamentoParcelamento.Carrinho = carrinho;
+                //carrinhoFormaPagamentoParcelamento.FormaPagamentoParcelamento = formaPagamentoParcelamento;
+                //carrinhoFormaPagamentoParcelamento.QtdParcelas = Convert.ToInt32(Row.Cells[2].Value);
+                //carrinhoFormaPagamentoParcelamento.Juros = Convert.ToDecimal(Row.Cells[3].Value);
 
-                carrinhoFormaPagamentoParcelamentoDao.Novo(carrinhoFormaPagamentoParcelamento);
+                //carrinhoFormaPagamentoParcelamentoDao.Novo(carrinhoFormaPagamentoParcelamento);
                 //gridFormaPgto.DataSource = dadosGridFormaPgto(carrinhoFormaPagamentoParcelamentoDao.Lista(Convert.ToInt32(txtIdCarrinho.Text)));
 
 
