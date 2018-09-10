@@ -301,7 +301,7 @@ namespace Windows.Negocio
 
             texto = texto.Replace(",", "").Replace("%", "").Trim();
 
-            //só aceita 3 digitos e menor qeu 100
+            //só aceita 3 digitos e menor que 100
             if (texto.Length <= 5)
             {
                 if (char.IsNumber(e.KeyChar))

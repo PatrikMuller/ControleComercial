@@ -106,6 +106,7 @@
             // MenuButtonNovo
             // 
             this.MenuButtonNovo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MenuButtonNovo.Enabled = false;
             this.MenuButtonNovo.Image = global::Windows.Properties.Resources.Novo;
             this.MenuButtonNovo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.MenuButtonNovo.Name = "MenuButtonNovo";
@@ -155,7 +156,7 @@
             // 
             this.MenuItemNovo.Image = global::Windows.Properties.Resources.Novo;
             this.MenuItemNovo.Name = "MenuItemNovo";
-            this.MenuItemNovo.Size = new System.Drawing.Size(184, 26);
+            this.MenuItemNovo.Size = new System.Drawing.Size(109, 22);
             this.MenuItemNovo.Text = "Novo";
             this.MenuItemNovo.Click += new System.EventHandler(this.MenuItemNovo_Click);
             // 
@@ -163,7 +164,7 @@
             // 
             this.MenuItemEditar.Image = global::Windows.Properties.Resources.Editar;
             this.MenuItemEditar.Name = "MenuItemEditar";
-            this.MenuItemEditar.Size = new System.Drawing.Size(184, 26);
+            this.MenuItemEditar.Size = new System.Drawing.Size(109, 22);
             this.MenuItemEditar.Text = "Editar";
             this.MenuItemEditar.Click += new System.EventHandler(this.MenuItemEditar_Click);
             // 
@@ -175,7 +176,7 @@
             // MenuItemFechar
             // 
             this.MenuItemFechar.Name = "MenuItemFechar";
-            this.MenuItemFechar.Size = new System.Drawing.Size(184, 26);
+            this.MenuItemFechar.Size = new System.Drawing.Size(109, 22);
             this.MenuItemFechar.Text = "Fechar";
             this.MenuItemFechar.Click += new System.EventHandler(this.MenuItemFechar_Click);
             // 

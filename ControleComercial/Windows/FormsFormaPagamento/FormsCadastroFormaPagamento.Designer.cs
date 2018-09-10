@@ -38,17 +38,17 @@
             this.btnGravar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.menuButton = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.Grid = new System.Windows.Forms.DataGridView();
+            this.menuButton = new System.Windows.Forms.ToolStrip();
             this.MenuButtonNovo = new System.Windows.Forms.ToolStripButton();
             this.MenuButtonEditar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.menuButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
+            this.menuButton.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -126,6 +126,7 @@
             // 
             // btnGravar
             // 
+            this.btnGravar.Enabled = false;
             this.btnGravar.Location = new System.Drawing.Point(14, 3);
             this.btnGravar.Name = "btnGravar";
             this.btnGravar.Size = new System.Drawing.Size(75, 23);
@@ -157,6 +158,15 @@
             this.tabPage1.Text = "Parcelamento";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // Grid
+            // 
+            this.Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Grid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Grid.Location = new System.Drawing.Point(3, 30);
+            this.Grid.Name = "Grid";
+            this.Grid.Size = new System.Drawing.Size(676, 232);
+            this.Grid.TabIndex = 30;
+            // 
             // menuButton
             // 
             this.menuButton.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -169,20 +179,6 @@
             this.menuButton.Size = new System.Drawing.Size(676, 27);
             this.menuButton.TabIndex = 29;
             this.menuButton.Text = "toolStrip1";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
-            // 
-            // Grid
-            // 
-            this.Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Grid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Grid.Location = new System.Drawing.Point(3, 30);
-            this.Grid.Name = "Grid";
-            this.Grid.Size = new System.Drawing.Size(676, 232);
-            this.Grid.TabIndex = 30;
             // 
             // MenuButtonNovo
             // 
@@ -204,6 +200,11 @@
             this.MenuButtonEditar.Text = "Editar";
             this.MenuButtonEditar.Click += new System.EventHandler(this.MenuButtonEditar_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
+            // 
             // FormsCadastroFormaPagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -216,15 +217,16 @@
             this.Name = "FormsCadastroFormaPagamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormsCadastroFormaPagamento";
+            this.Activated += new System.EventHandler(this.FormsCadastroFormaPagamento_Activated);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
             this.menuButton.ResumeLayout(false);
             this.menuButton.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
             this.ResumeLayout(false);
 
         }

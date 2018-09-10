@@ -27,7 +27,7 @@ namespace Infraestrutura.Access
             }
         }
 
-        public Int32 Gravar(FormaPagamentoParcelamento o)
+        public void Gravar(FormaPagamentoParcelamento o)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
@@ -36,7 +36,6 @@ namespace Infraestrutura.Access
                 session.Merge(o);
 
                 tx.Commit();
-                return o.Id;
             }
         }
 
@@ -95,6 +94,22 @@ namespace Infraestrutura.Access
                 }
 
                 return lista;
+
+            }
+        }
+
+        public Int32 RetornaUtimaQtdParcelas(Int32 IdFormaPagamento)
+        {
+            using (ISession session = NHibernateHelper.AbreSessao())
+            {
+
+                var retorno = (from fpp in session.Query<FormaPagamentoParcelamento>().
+                             Where(o => o.FormaPagamento.Id == IdFormaPagamento).
+                             Select(o => new { o.QtdParcelas }).
+                             OrderByDescending(o => o.QtdParcelas ).Take(1).ToList()
+                             select fpp).SingleOrDefault();
+                                
+                return retorno == null ? 0 : retorno.QtdParcelas;
 
             }
         }

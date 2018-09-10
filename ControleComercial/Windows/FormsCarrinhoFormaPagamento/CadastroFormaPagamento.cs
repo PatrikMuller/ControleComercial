@@ -61,7 +61,7 @@ namespace Windows.FormsCarrinhoFormaPagamento
                 
         private void txtValorPagar_KeyPress(object sender, KeyPressEventArgs e)
         {
-            txtValorPagar.Text = ObjUtilitario.mascaraMoney(txtValorPagar, e);
+            txtValorPagar.Text = ObjUtilitario.mascaraMoney(txtValorPagar, e); //Mudar a Mascara
             txtValorPagar.SelectionStart = txtValorPagar.TextLength;
         }
 

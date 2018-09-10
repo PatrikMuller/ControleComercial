@@ -35,6 +35,7 @@ namespace Windows.FormsFormaPagamento
 
             Grid.DataSource = formaPagamentoParcelamentoAccess.Lista(obj.Id);
 
+            Grid.Columns[0].Visible = false;
             //AtivaComponentes();
         }
 
@@ -79,13 +80,14 @@ namespace Windows.FormsFormaPagamento
 
         private void MenuButtonNovo_Click(object sender, EventArgs e)
         {
-            FormsFormaPagamentoParcelamento.Cadastro form = new FormsFormaPagamentoParcelamento.Cadastro();
+            FormsFormaPagamentoParcelamento.Cadastro form = new FormsFormaPagamentoParcelamento.Cadastro(0, Convert.ToInt32(txtId.Text));
             form.ShowDialog();
         }
 
         private void MenuButtonEditar_Click(object sender, EventArgs e)
         {
-            FormsFormaPagamentoParcelamento.Cadastro form = new FormsFormaPagamentoParcelamento.Cadastro();
+            Int32 Id = Convert.ToInt32(Grid.CurrentRow.Cells[0].Value);
+            FormsFormaPagamentoParcelamento.Cadastro form = new FormsFormaPagamentoParcelamento.Cadastro(Id, Convert.ToInt32(txtId.Text));
             form.ShowDialog();
         }
 
@@ -94,5 +96,9 @@ namespace Windows.FormsFormaPagamento
             //
         }
 
+        private void FormsCadastroFormaPagamento_Activated(object sender, EventArgs e)
+        {
+            Grid.DataSource = formaPagamentoParcelamentoAccess.Lista(Convert.ToInt32(txtId.Text));
+        }
     }
 }
