@@ -30,6 +30,7 @@
         {
             this.pnTopo = new System.Windows.Forms.Panel();
             this.pnConteudo = new System.Windows.Forms.Panel();
+            this.btnUnidadeMedida = new System.Windows.Forms.Button();
             this.btnFabricante = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -38,7 +39,8 @@
             this.btnPessoaJuridica = new System.Windows.Forms.Button();
             this.btnPessoaFisica = new System.Windows.Forms.Button();
             this.pnBaixo = new System.Windows.Forms.Panel();
-            this.btnUnidadeMedida = new System.Windows.Forms.Button();
+            this.btnGerarTabelas = new System.Windows.Forms.Button();
+            this.lblTabelas = new System.Windows.Forms.Label();
             this.pnConteudo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +54,8 @@
             // 
             // pnConteudo
             // 
+            this.pnConteudo.Controls.Add(this.lblTabelas);
+            this.pnConteudo.Controls.Add(this.btnGerarTabelas);
             this.pnConteudo.Controls.Add(this.btnUnidadeMedida);
             this.pnConteudo.Controls.Add(this.btnFabricante);
             this.pnConteudo.Controls.Add(this.button3);
@@ -65,6 +69,16 @@
             this.pnConteudo.Name = "pnConteudo";
             this.pnConteudo.Size = new System.Drawing.Size(989, 511);
             this.pnConteudo.TabIndex = 1;
+            // 
+            // btnUnidadeMedida
+            // 
+            this.btnUnidadeMedida.Location = new System.Drawing.Point(118, 118);
+            this.btnUnidadeMedida.Name = "btnUnidadeMedida";
+            this.btnUnidadeMedida.Size = new System.Drawing.Size(100, 50);
+            this.btnUnidadeMedida.TabIndex = 9;
+            this.btnUnidadeMedida.Text = "Unidade de Medida";
+            this.btnUnidadeMedida.UseVisualStyleBackColor = true;
+            this.btnUnidadeMedida.Click += new System.EventHandler(this.btnUnidadeMedida_Click);
             // 
             // btnFabricante
             // 
@@ -142,15 +156,24 @@
             this.pnBaixo.Size = new System.Drawing.Size(989, 100);
             this.pnBaixo.TabIndex = 2;
             // 
-            // btnUnidadeMedida
+            // btnGerarTabelas
             // 
-            this.btnUnidadeMedida.Location = new System.Drawing.Point(118, 118);
-            this.btnUnidadeMedida.Name = "btnUnidadeMedida";
-            this.btnUnidadeMedida.Size = new System.Drawing.Size(100, 50);
-            this.btnUnidadeMedida.TabIndex = 9;
-            this.btnUnidadeMedida.Text = "Unidade de Medida";
-            this.btnUnidadeMedida.UseVisualStyleBackColor = true;
-            this.btnUnidadeMedida.Click += new System.EventHandler(this.btnUnidadeMedida_Click);
+            this.btnGerarTabelas.Location = new System.Drawing.Point(118, 174);
+            this.btnGerarTabelas.Name = "btnGerarTabelas";
+            this.btnGerarTabelas.Size = new System.Drawing.Size(100, 50);
+            this.btnGerarTabelas.TabIndex = 10;
+            this.btnGerarTabelas.Text = "Gerar Tabelas";
+            this.btnGerarTabelas.UseVisualStyleBackColor = true;
+            this.btnGerarTabelas.Click += new System.EventHandler(this.btnGerarTabelas_Click);
+            // 
+            // lblTabelas
+            // 
+            this.lblTabelas.AutoSize = true;
+            this.lblTabelas.Location = new System.Drawing.Point(115, 227);
+            this.lblTabelas.Name = "lblTabelas";
+            this.lblTabelas.Size = new System.Drawing.Size(11, 13);
+            this.lblTabelas.TabIndex = 11;
+            this.lblTabelas.Text = "*";
             // 
             // FormPrincipal
             // 
@@ -165,6 +188,7 @@
             this.Text = "FormPrincipal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnConteudo.ResumeLayout(false);
+            this.pnConteudo.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -182,5 +206,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnFabricante;
         private System.Windows.Forms.Button btnUnidadeMedida;
+        private System.Windows.Forms.Button btnGerarTabelas;
+        private System.Windows.Forms.Label lblTabelas;
     }
 }

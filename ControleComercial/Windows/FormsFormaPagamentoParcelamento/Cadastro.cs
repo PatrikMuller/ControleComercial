@@ -35,7 +35,7 @@ namespace Windows.FormsFormaPagamentoParcelamento
             
             txtId.Text = Convert.ToString(formaPagamentoParcelamento.Id);
             txtQtdParcelas.Text = Convert.ToString(formaPagamentoParcelamento.QtdParcelas);
-            txtJuros.Text = Convert.ToString(formaPagamentoParcelamento.Juros);
+            txtJuros.Text = ObjUtilitario.lerPorcentagem(formaPagamentoParcelamento.Juros);
             cbStatus.SelectedValue = Convert.ToString(formaPagamentoParcelamento.ParcelamentoStatus.Id);
             
         }
@@ -46,7 +46,8 @@ namespace Windows.FormsFormaPagamentoParcelamento
             
             formaPagamentoParcelamento.Id = Convert.ToInt32(txtId.Text);
             formaPagamentoParcelamento.QtdParcelas = Convert.ToInt32(txtQtdParcelas.Text);
-            formaPagamentoParcelamento.Juros = Convert.ToDouble(txtJuros.Text);
+            //Convert.ToDouble(txtJuros.Text.Replace("%", ""));
+            formaPagamentoParcelamento.Juros = Convert.ToDouble(txtJuros.Text.Replace("%", ""));
             formaPagamentoParcelamento.FormaPagamento = formaPagamento;
             formaPagamentoParcelamento.ParcelamentoStatus = parcelamentoStatus;
                                     

@@ -72,6 +72,7 @@
     <Compile Include="Access\CarrinhoFormaPagamentoAccess.cs" />
     <Compile Include="Access\CarrinhoItemAccess.cs" />
     <Compile Include="Access\CarrinhoPessoaAccess.cs" />
+    <Compile Include="Access\CarrinhoPessoaTipoAccess.cs" />
     <Compile Include="Access\FabricanteAccess.cs" />
     <Compile Include="Access\FormaPagamentoAccess.cs" />
     <Compile Include="Access\FormaPagamentoParcelamentoAccess.cs" />

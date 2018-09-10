@@ -48,7 +48,17 @@ namespace Infraestrutura.Access
                 return session.Get<ParcelamentoStatus>(id);
             }
         }
-                
+
+        public IList<ParcelamentoStatus> Lista()
+        {
+            using (ISession session = NHibernateHelper.AbreSessao())
+            {
+
+                return session.Query<ParcelamentoStatus>().OrderBy(o => o.Id).ToList();
+
+            }
+        }
+
         public Object Lista(Int32 IdFormaPagamento)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
