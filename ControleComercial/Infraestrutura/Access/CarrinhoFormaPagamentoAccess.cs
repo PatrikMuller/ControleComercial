@@ -58,12 +58,24 @@ namespace Infraestrutura.Access
             }
         }
 
-        public IList<CarrinhoFormaPagamento> Lista()
+        public Object Lista(Int32 IdCarrinho)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
 
-                return session.Query<CarrinhoFormaPagamento>().OrderBy(o => o.Id).ToList();
+                //return session.Query<CarrinhoFormaPagamento>().
+                //    Where(o => o.Carrinho.Id == IdCarrinho).
+                //    OrderBy(o => o.Id).ToList();
+
+                var retorno = (from cpf in session.Query<CarrinhoFormaPagamento>().
+                                        Where(o => o.Carrinho.Id == IdCarrinho).
+                                        Select(o => new { o.Id, o.FormaPagamento.Descricao, o.QtdParcelas, o.Juros, o.ValorPagar, o.ValorParcela }).
+                                        OrderBy(o => o.Id).
+                                        ToList()
+                               select cpf).ToList();
+
+
+                return retorno;
 
             }
         }

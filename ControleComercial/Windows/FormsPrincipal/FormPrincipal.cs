@@ -198,8 +198,49 @@ namespace Windows.FormsPrincipal
 
             }
 
+
+
+            //FormaPagamento
+            ItemAccess iAccess = new ItemAccess();
+
+            var iLista = iAccess.Lista();
+
+            if (iLista.Count == 0)
+            {
+                Item iObj = new Item();
+
+                iObj.Nome = "ANTENA WIRELLES";
+                iObj.Preco = 45.38;
+                iObj.Quantidade = 100;
+                iObj.Desconto = 6.25;
+                
+                iAccess.Novo(iObj);
+
+                iObj.Nome = "BICILETA 21 MARCHAS";
+                iObj.Preco = 835.28;
+                iObj.Quantidade = 50;
+                iObj.Desconto = 15.24;
+
+                iAccess.Novo(iObj);
+
+                iObj.Nome = "FEIJAO TIO URBANO";
+                iObj.Preco = 5.29;
+                iObj.Quantidade = 1000;
+                iObj.Desconto = 5.25;
+
+                iAccess.Novo(iObj);
+
+                iObj.Nome = "CHOCOLATE BATON";
+                iObj.Preco = 0.70;
+                iObj.Quantidade = 1000;
+                iObj.Desconto = 0.00;
+
+                iAccess.Novo(iObj);
+
+            }
+
             lblTabelas.Text = "Gravado com Sucesso!";
-                        
+
         }
 
     }

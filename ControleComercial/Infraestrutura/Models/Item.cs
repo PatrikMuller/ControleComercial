@@ -10,8 +10,8 @@ namespace Infraestrutura.Models
     {
         public virtual int Id { get; set; }
         public virtual String Nome { get; set; }
-        public virtual Decimal Quantidade { get; set; }
-        public virtual Decimal Preco { get; set; }
-        public virtual Decimal Desconto { get; set; }
+        public virtual Double Quantidade { get; set; }
+        public virtual Double Preco { get; set; }
+        public virtual Double Desconto { get; set; }
     }
 }

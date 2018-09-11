@@ -27,9 +27,9 @@ namespace Windows.FormsItem
 
             item.Id = Convert.ToInt32(txtId.Text);
             item.Nome = txtNome.Text;
-            item.Quantidade = Convert.ToDecimal(txtQuantidade.Text);
-            item.Preco = Convert.ToDecimal(txtPreco.Text);
-            item.Desconto = Convert.ToDecimal(txtDesconto.Text);
+            item.Quantidade = Convert.ToDouble(txtQuantidade.Text);
+            item.Preco = Convert.ToDouble(txtPreco.Text);
+            item.Desconto = Convert.ToDouble(txtDesconto.Text);
 
             txtId.Text = Convert.ToString(itemAccess.Novo(item));
         }

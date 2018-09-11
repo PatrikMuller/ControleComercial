@@ -24,14 +24,14 @@ namespace Windows.FormsCarrinho
         CarrinhoPessoa carrinhoPessoa = new CarrinhoPessoa();
         CarrinhoPessoaTipo carrinhoPessoaTipo = new CarrinhoPessoaTipo();
         FormaPagamentoParcelamento formaPagamentoParcelamento = new FormaPagamentoParcelamento();
-        //CarrinhoFormaPagamentoParcelamento carrinhoFormaPagamentoParcelamento = new CarrinhoFormaPagamentoParcelamento();
-
+        
         //Persistencia
         CarrinhoAccess CarrinhoDao = new CarrinhoAccess();
         CarrinhoItemAccess carrinhoItemDao = new CarrinhoItemAccess();
         CarrinhoPessoaAccess carrinhoPessoaDao = new CarrinhoPessoaAccess();
-        //CarrinhoFormaPagamentoParcelamentoAccess carrinhoFormaPagamentoParcelamentoDao = new CarrinhoFormaPagamentoParcelamentoAccess();
-                        
+        CarrinhoFormaPagamentoAccess carrinhoFormaPagamentoAccess = new CarrinhoFormaPagamentoAccess();
+        
+
         private void configuraGridProdutos()
         {
 
@@ -171,23 +171,25 @@ namespace Windows.FormsCarrinho
         private void btnInserirCliente_Click(object sender, EventArgs e)
         {
 
-            InserirCliente form = new InserirCliente(0);
+            InserirCliente form = new InserirCliente(Convert.ToInt32(txtIdCarrinho.Text));
 
             if (form.ShowDialog() == DialogResult.OK)
             {
 
-                //pessoa.Id = form.Id;
-                carrinho.Id = Convert.ToInt32(txtIdCarrinho.Text);
-                carrinhoPessoaTipo.Id = 1; // 1 = Cliente
+                LerCliente();
 
-                //DataGridViewRow Row = new DataGridViewRow();
-                //Row = form.Row();
+                ////pessoa.Id = form.Id;
+                //carrinho.Id = Convert.ToInt32(txtIdCarrinho.Text);
+                //carrinhoPessoaTipo.Id = 1; // 1 = Cliente
 
-                carrinhoPessoa.Carrinho = carrinho;
-                carrinhoPessoa.Pessoa = pessoa;
-                carrinhoPessoa.CarrinhoPessoaTipo = carrinhoPessoaTipo;
+                ////DataGridViewRow Row = new DataGridViewRow();
+                ////Row = form.Row();
 
-                carrinhoPessoaDao.Novo(carrinhoPessoa);
+                //carrinhoPessoa.Carrinho = carrinho;
+                //carrinhoPessoa.Pessoa = pessoa;
+                //carrinhoPessoa.CarrinhoPessoaTipo = carrinhoPessoaTipo;
+
+                //carrinhoPessoaDao.Novo(carrinhoPessoa);
 
             }
 
@@ -196,35 +198,42 @@ namespace Windows.FormsCarrinho
         private void btnFormaPgto_Click(object sender, EventArgs e)
         {
 
-            //LocalizarItem form = new LocalizarItem();
-            SelecionarFormaPagamento form = new SelecionarFormaPagamento();
+            FormsCarrinhoFormaPagamento.CadastroFormaPagamento form = new FormsCarrinhoFormaPagamento.CadastroFormaPagamento(Convert.ToInt32(txtIdCarrinho.Text), 550.35);
 
             if (form.ShowDialog() == DialogResult.OK)
             {
-
-                DataGridViewRow Row = new DataGridViewRow();
-                Row = form.Row();
-
-                carrinho.Id = Convert.ToInt32(txtIdCarrinho.Text);
-                formaPagamentoParcelamento.Id = Convert.ToInt32(Row.Cells[0].Value);
-
-                //carrinhoFormaPagamentoParcelamento.Carrinho = carrinho;
-                //carrinhoFormaPagamentoParcelamento.FormaPagamentoParcelamento = formaPagamentoParcelamento;
-                //carrinhoFormaPagamentoParcelamento.QtdParcelas = Convert.ToInt32(Row.Cells[2].Value);
-                //carrinhoFormaPagamentoParcelamento.Juros = Convert.ToDecimal(Row.Cells[3].Value);
-
-                //carrinhoFormaPagamentoParcelamentoDao.Novo(carrinhoFormaPagamentoParcelamento);
-                //gridFormaPgto.DataSource = dadosGridFormaPgto(carrinhoFormaPagamentoParcelamentoDao.Lista(Convert.ToInt32(txtIdCarrinho.Text)));
-
-
+                gridFormaPgto.DataSource = carrinhoFormaPagamentoAccess.Lista(Convert.ToInt32(txtIdCarrinho.Text));
             }
+
+
+            ////LocalizarItem form = new LocalizarItem();
+            //SelecionarFormaPagamento form = new SelecionarFormaPagamento();
+
+                //if (form.ShowDialog() == DialogResult.OK)
+                //{
+
+                //    DataGridViewRow Row = new DataGridViewRow();
+                //    Row = form.Row();
+
+                //    carrinho.Id = Convert.ToInt32(txtIdCarrinho.Text);
+                //    formaPagamentoParcelamento.Id = Convert.ToInt32(Row.Cells[0].Value);
+
+                //    //carrinhoFormaPagamentoParcelamento.Carrinho = carrinho;
+                //    //carrinhoFormaPagamentoParcelamento.FormaPagamentoParcelamento = formaPagamentoParcelamento;
+                //    //carrinhoFormaPagamentoParcelamento.QtdParcelas = Convert.ToInt32(Row.Cells[2].Value);
+                //    //carrinhoFormaPagamentoParcelamento.Juros = Convert.ToDecimal(Row.Cells[3].Value);
+
+                //    //carrinhoFormaPagamentoParcelamentoDao.Novo(carrinhoFormaPagamentoParcelamento);
+                //    //gridFormaPgto.DataSource = dadosGridFormaPgto(carrinhoFormaPagamentoParcelamentoDao.Lista(Convert.ToInt32(txtIdCarrinho.Text)));
+
+                //}
 
         }
 
         private void btnVendedor_Click(object sender, EventArgs e)
         {
                         
-            pessoa.Id = 14;
+            pessoa.Id = 3;
             carrinho.Id = Convert.ToInt32(txtIdCarrinho.Text);
             carrinhoPessoaTipo.Id = 2; // 2 = Cliente
 
@@ -236,6 +245,7 @@ namespace Windows.FormsCarrinho
             carrinhoPessoa.CarrinhoPessoaTipo = carrinhoPessoaTipo;
 
             carrinhoPessoaDao.Novo(carrinhoPessoa);
+            LerVendedor();
             //gridVendedor.DataSource = dadosGridVendedor(carrinhoPessoaDao.Lista(Convert.ToInt32(txtIdCarrinho.Text), 2));
 
         }
