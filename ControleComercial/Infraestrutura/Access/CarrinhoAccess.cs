@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Infraestrutura.Factory;
 using Infraestrutura.Models;
 using NHibernate;
+using NHibernate.Linq;
 
 namespace Infraestrutura.Access
 {
@@ -39,7 +40,7 @@ namespace Infraestrutura.Access
             }
         }
 
-        public Carrinho Ler(int id)
+        public Carrinho Ler(Int32 id)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
@@ -57,18 +58,21 @@ namespace Infraestrutura.Access
             }
         }
 
-        public IList<Carrinho> Lista()
+        public Object Lista()
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
-                //string hql = "select p from Carrinho p";
-                //IQuery query = session.CreateQuery(hql);
-                //return query.List<Carrinho>();
-                //return session.Get<Carrinho>;
+                var retorno = (from c in session.Query<CarrinhoItem>().
+                                    //Where(o => o.Pessoa.Nome.Like(nome)).
+                                    Fetch(o => o.Carrinho).
+                                    Fetch(o => o.Item).
+                                    Select(o => new { o.Carrinho.Id, o.Carrinho.Data, Item = o.Item.Nome, o.Preco }).
+                                    OrderBy(o => o.Id).
+                                    ToList()
+                               select c).Take(40).ToList();
 
-                //return session.Query<Bem>().Fetch(b => b.Marca).Fetch(b => b.Modelo).OrderBy(b => b.IdBem).ToList();
 
-                return session.Query<Carrinho>().OrderBy(C => C.Id).ToList();
+                return retorno;
             }
         }
 

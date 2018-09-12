@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -65,6 +64,7 @@
             this.txtDataCarrinho = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.Cabecalho = new System.Windows.Forms.Panel();
+            this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.Corpo.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -81,14 +81,6 @@
             this.Rodape.SuspendLayout();
             this.Cabecalho.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txtQuantidade
-            // 
-            this.txtQuantidade.Location = new System.Drawing.Point(12, 25);
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(100, 20);
-            this.txtQuantidade.TabIndex = 6;
-            this.txtQuantidade.Text = "1,000";
             // 
             // label3
             // 
@@ -447,6 +439,20 @@
             this.Cabecalho.Size = new System.Drawing.Size(1235, 52);
             this.Cabecalho.TabIndex = 3;
             // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.BackColor = System.Drawing.SystemColors.Window;
+            this.txtQuantidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtQuantidade.Location = new System.Drawing.Point(12, 25);
+            this.txtQuantidade.MaxLength = 18;
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.ReadOnly = true;
+            this.txtQuantidade.Size = new System.Drawing.Size(160, 20);
+            this.txtQuantidade.TabIndex = 60;
+            this.txtQuantidade.Text = "1,234";
+            this.txtQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtQuantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantidade_KeyPress);
+            // 
             // CadastroCarrinho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -482,7 +488,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txtQuantidade;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
@@ -519,5 +524,6 @@
         private System.Windows.Forms.GroupBox gbFormaPgto;
         private System.Windows.Forms.DataGridView gridFormaPgto;
         private System.Windows.Forms.Button btnFormaPgto;
+        private System.Windows.Forms.TextBox txtQuantidade;
     }
 }

@@ -25,12 +25,15 @@ namespace Windows.FormsCarrinho
         CarrinhoPessoaTipo carrinhoPessoaTipo = new CarrinhoPessoaTipo();
         FormaPagamentoParcelamento formaPagamentoParcelamento = new FormaPagamentoParcelamento();
         
-        //Persistencia
-        CarrinhoAccess CarrinhoDao = new CarrinhoAccess();
+        //Access
+        CarrinhoAccess carrinhoDao = new CarrinhoAccess();
         CarrinhoItemAccess carrinhoItemDao = new CarrinhoItemAccess();
         CarrinhoPessoaAccess carrinhoPessoaDao = new CarrinhoPessoaAccess();
         CarrinhoFormaPagamentoAccess carrinhoFormaPagamentoAccess = new CarrinhoFormaPagamentoAccess();
-        
+
+        //Negocio
+        Negocio.Utilitario ObjUtilitario = new Negocio.Utilitario();
+
 
         private void configuraGridProdutos()
         {
@@ -65,6 +68,18 @@ namespace Windows.FormsCarrinho
 
         }
 
+        private void LerCarrinho(Int32 Id)
+        {
+
+            carrinho = carrinhoDao.Ler(Id);
+            if (carrinho != null)
+            {
+                txtIdCarrinho.Text = Convert.ToString(carrinho.Id);
+                txtDataCarrinho.Text = Convert.ToString(carrinho.Data);                
+            }
+
+        }
+
         private void LerCliente()
         {
 
@@ -89,10 +104,23 @@ namespace Windows.FormsCarrinho
         }
         
 
-        public CadastroCarrinho()
+        public CadastroCarrinho(Int32 Id)
         {
 
             InitializeComponent();
+
+
+            if (Id != 0)
+            {
+                LerCarrinho(Id);
+                LerCliente();
+                LerVendedor();
+                GridProdutos.DataSource = carrinhoItemDao.ListaGrid(Convert.ToInt32(txtIdCarrinho.Text));
+                gridFormaPgto.DataSource = carrinhoFormaPagamentoAccess.Lista(Convert.ToInt32(txtIdCarrinho.Text));
+                AtivaComponentes();
+            }
+                
+
                         
             //GridProdutos.DataSource = carrinhoItemDao.ListaGrid(Convert.ToInt32(txtIdCarrinho.Text));
             //configuraGridProdutos();
@@ -103,7 +131,7 @@ namespace Windows.FormsCarrinho
             
             //gridFormaPgto.DataSource = carrinhoFormaPagamentoParcelamentoDao.ListaGrid(Convert.ToInt32(txtIdCarrinho.Text));
 
-            DesativaComponentes();
+            //DesativaComponentes();
                         
 
         }
@@ -113,7 +141,7 @@ namespace Windows.FormsCarrinho
 
             carrinho.Id = Convert.ToInt32(txtIdCarrinho.Text);
             carrinho.Data = DateTime.Now;
-            txtIdCarrinho.Text = Convert.ToString(CarrinhoDao.Novo(carrinho));
+            txtIdCarrinho.Text = Convert.ToString(carrinhoDao.Novo(carrinho));
             txtDataCarrinho.Text = Convert.ToString(carrinho.Data);
             AtivaComponentes();
 
@@ -124,7 +152,7 @@ namespace Windows.FormsCarrinho
 
             carrinho.Id = Convert.ToInt32(txtIdCarrinho.Text);
             carrinho.Data = DateTime.Now;
-            txtIdCarrinho.Text = Convert.ToString(CarrinhoDao.Gravar(carrinho));
+            txtIdCarrinho.Text = Convert.ToString(carrinhoDao.Gravar(carrinho));
             txtDataCarrinho.Text = Convert.ToString(carrinho.Data);
             Close();
             DesativaComponentes();
@@ -248,6 +276,12 @@ namespace Windows.FormsCarrinho
             LerVendedor();
             //gridVendedor.DataSource = dadosGridVendedor(carrinhoPessoaDao.Lista(Convert.ToInt32(txtIdCarrinho.Text), 2));
 
+        }
+
+        private void txtQuantidade_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtQuantidade.Text = ObjUtilitario.mascaraQuantidade(txtQuantidade, e); //Mudar a Mascara
+            txtQuantidade.SelectionStart = txtQuantidade.TextLength;
         }
     }
 }

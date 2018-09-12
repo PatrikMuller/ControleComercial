@@ -111,6 +111,12 @@
     <Compile Include="FormsCarrinho\InserirCliente.Designer.cs">
       <DependentUpon>InserirCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsCarrinho\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsCarrinho\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsCarrinho\LocalizarItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,6 +272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormsCarrinho\InserirCliente.resx">
       <DependentUpon>InserirCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsCarrinho\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsCarrinho\LocalizarItem.resx">
       <DependentUpon>LocalizarItem.cs</DependentUpon>

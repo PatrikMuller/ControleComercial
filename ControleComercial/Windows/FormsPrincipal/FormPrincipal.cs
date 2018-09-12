@@ -35,7 +35,7 @@ namespace Windows.FormsPrincipal
 
         private void btnTelaVenda_Click(object sender, EventArgs e)
         {
-            FormsCarrinho.CadastroCarrinho formCadastroCarrinho = new FormsCarrinho.CadastroCarrinho();
+            FormsCarrinho.CadastroCarrinho formCadastroCarrinho = new FormsCarrinho.CadastroCarrinho(0);
             formCadastroCarrinho.ShowDialog();            
         }
 

@@ -355,6 +355,44 @@ namespace Windows.Negocio
             return texto;
         }
 
+        public String mascaraQuantidade(TextBox txt, KeyPressEventArgs e)
+        {
+
+            String texto = txt.Text;
+
+            //só aceita 18 digitos
+            if (texto.Length <= 17)
+            {
+                if (char.IsNumber(e.KeyChar))
+                {
+                    texto = texto + e.KeyChar;
+                }
+            }
+
+            texto = texto.Replace(",", "").Trim();
+
+            int tamanho = texto.Length;
+            int posvirgula = (tamanho - 3);
+
+            Int32 number = Convert.ToInt32(e.KeyChar);
+
+            //tecla backspace
+            if (number == 8)
+            {
+                texto = texto.Remove(tamanho - 1, 1);
+                texto = "0" + texto;
+                posvirgula = (texto.Length - 3);
+            }
+
+            texto = texto.Insert(posvirgula, ",");
+
+            texto = Convert.ToDouble(texto).ToString("###,###,###,##0.000");
+
+            e.KeyChar = ' ';
+
+            return texto;
+        }
+
 
 
     }
