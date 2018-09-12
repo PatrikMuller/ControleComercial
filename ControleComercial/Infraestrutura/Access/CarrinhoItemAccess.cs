@@ -8,14 +8,13 @@ using Infraestrutura.Factory;
 using Infraestrutura.Models;
 using NHibernate;
 using NHibernate.Linq;
-using NHibernate.Engine;
 using System.Data;
 
 namespace Infraestrutura.Access
 {
     public class CarrinhoItemAccess
     {
-
+        
         public Int32 Novo(CarrinhoItem obj)
         {
             using (ISession session = NHibernateHelper.AbreSessao())

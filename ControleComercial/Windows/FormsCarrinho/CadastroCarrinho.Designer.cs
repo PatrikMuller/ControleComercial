@@ -34,6 +34,7 @@
             this.btnLocalizar = new System.Windows.Forms.Button();
             this.Corpo = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.gbFormaPgto = new System.Windows.Forms.GroupBox();
@@ -50,7 +51,7 @@
             this.lblClienteCpfCnpj = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnInserirCliente = new System.Windows.Forms.Button();
+            this.btnClienteCNPJ = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gbProdutos = new System.Windows.Forms.GroupBox();
             this.GridProdutos = new System.Windows.Forms.DataGridView();
@@ -64,7 +65,7 @@
             this.txtDataCarrinho = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.Cabecalho = new System.Windows.Forms.Panel();
-            this.txtQuantidade = new System.Windows.Forms.TextBox();
+            this.btnClienteCPF = new System.Windows.Forms.Button();
             this.Corpo.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -140,6 +141,20 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(457, 120);
             this.panel5.TabIndex = 3;
+            // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.BackColor = System.Drawing.SystemColors.Window;
+            this.txtQuantidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtQuantidade.Location = new System.Drawing.Point(12, 25);
+            this.txtQuantidade.MaxLength = 18;
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.ReadOnly = true;
+            this.txtQuantidade.Size = new System.Drawing.Size(160, 20);
+            this.txtQuantidade.TabIndex = 60;
+            this.txtQuantidade.Text = "1,234";
+            this.txtQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtQuantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantidade_KeyPress);
             // 
             // panel4
             // 
@@ -252,11 +267,12 @@
             // 
             // gbCliente
             // 
+            this.gbCliente.Controls.Add(this.btnClienteCPF);
             this.gbCliente.Controls.Add(this.lblClienteNome);
             this.gbCliente.Controls.Add(this.lblClienteCpfCnpj);
             this.gbCliente.Controls.Add(this.label6);
             this.gbCliente.Controls.Add(this.label1);
-            this.gbCliente.Controls.Add(this.btnInserirCliente);
+            this.gbCliente.Controls.Add(this.btnClienteCNPJ);
             this.gbCliente.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbCliente.Location = new System.Drawing.Point(0, 0);
             this.gbCliente.Name = "gbCliente";
@@ -277,7 +293,7 @@
             // 
             this.lblClienteCpfCnpj.Location = new System.Drawing.Point(215, 34);
             this.lblClienteCpfCnpj.Name = "lblClienteCpfCnpj";
-            this.lblClienteCpfCnpj.Size = new System.Drawing.Size(150, 13);
+            this.lblClienteCpfCnpj.Size = new System.Drawing.Size(141, 13);
             this.lblClienteCpfCnpj.TabIndex = 11;
             this.lblClienteCpfCnpj.Text = "-";
             // 
@@ -299,15 +315,15 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Nome";
             // 
-            // btnInserirCliente
+            // btnClienteCNPJ
             // 
-            this.btnInserirCliente.Location = new System.Drawing.Point(374, 29);
-            this.btnInserirCliente.Name = "btnInserirCliente";
-            this.btnInserirCliente.Size = new System.Drawing.Size(75, 23);
-            this.btnInserirCliente.TabIndex = 6;
-            this.btnInserirCliente.Text = "Cliente";
-            this.btnInserirCliente.UseVisualStyleBackColor = true;
-            this.btnInserirCliente.Click += new System.EventHandler(this.btnInserirCliente_Click);
+            this.btnClienteCNPJ.Location = new System.Drawing.Point(369, 43);
+            this.btnClienteCNPJ.Name = "btnClienteCNPJ";
+            this.btnClienteCNPJ.Size = new System.Drawing.Size(80, 23);
+            this.btnClienteCNPJ.TabIndex = 6;
+            this.btnClienteCNPJ.Text = "Cliente CNPJ";
+            this.btnClienteCNPJ.UseVisualStyleBackColor = true;
+            this.btnClienteCNPJ.Click += new System.EventHandler(this.btnClienteCNPJ_Click);
             // 
             // panel1
             // 
@@ -439,19 +455,15 @@
             this.Cabecalho.Size = new System.Drawing.Size(1235, 52);
             this.Cabecalho.TabIndex = 3;
             // 
-            // txtQuantidade
+            // btnClienteCPF
             // 
-            this.txtQuantidade.BackColor = System.Drawing.SystemColors.Window;
-            this.txtQuantidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtQuantidade.Location = new System.Drawing.Point(12, 25);
-            this.txtQuantidade.MaxLength = 18;
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.ReadOnly = true;
-            this.txtQuantidade.Size = new System.Drawing.Size(160, 20);
-            this.txtQuantidade.TabIndex = 60;
-            this.txtQuantidade.Text = "1,234";
-            this.txtQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtQuantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantidade_KeyPress);
+            this.btnClienteCPF.Location = new System.Drawing.Point(369, 14);
+            this.btnClienteCPF.Name = "btnClienteCPF";
+            this.btnClienteCPF.Size = new System.Drawing.Size(80, 23);
+            this.btnClienteCPF.TabIndex = 13;
+            this.btnClienteCPF.Text = "Cliente CPF";
+            this.btnClienteCPF.UseVisualStyleBackColor = true;
+            this.btnClienteCPF.Click += new System.EventHandler(this.btnClienteCPF_Click);
             // 
             // CadastroCarrinho
             // 
@@ -510,7 +522,7 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.GroupBox gbCliente;
-        private System.Windows.Forms.Button btnInserirCliente;
+        private System.Windows.Forms.Button btnClienteCNPJ;
         private System.Windows.Forms.GroupBox gbProdutos;
         private System.Windows.Forms.DataGridView GridProdutos;
         private System.Windows.Forms.Label label6;
@@ -525,5 +537,6 @@
         private System.Windows.Forms.DataGridView gridFormaPgto;
         private System.Windows.Forms.Button btnFormaPgto;
         private System.Windows.Forms.TextBox txtQuantidade;
+        private System.Windows.Forms.Button btnClienteCPF;
     }
 }

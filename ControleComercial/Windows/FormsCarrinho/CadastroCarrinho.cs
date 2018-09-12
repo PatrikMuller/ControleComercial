@@ -50,7 +50,7 @@ namespace Windows.FormsCarrinho
         {
 
             btnNovoCarrinho.Enabled = true;
-            btnInserirCliente.Enabled = false;
+            btnClienteCNPJ.Enabled = false;
             btnVendedor.Enabled = false;
             btnFormaPgto.Enabled = false;
 
@@ -61,7 +61,7 @@ namespace Windows.FormsCarrinho
         {
 
             btnNovoCarrinho.Enabled = false;
-            btnInserirCliente.Enabled = true;
+            btnClienteCNPJ.Enabled = true;
             btnVendedor.Enabled = true;
             btnFormaPgto.Enabled = true;
 
@@ -118,22 +118,10 @@ namespace Windows.FormsCarrinho
                 GridProdutos.DataSource = carrinhoItemDao.ListaGrid(Convert.ToInt32(txtIdCarrinho.Text));
                 gridFormaPgto.DataSource = carrinhoFormaPagamentoAccess.Lista(Convert.ToInt32(txtIdCarrinho.Text));
                 AtivaComponentes();
+                configuraGridProdutos();
             }
                 
-
-                        
-            //GridProdutos.DataSource = carrinhoItemDao.ListaGrid(Convert.ToInt32(txtIdCarrinho.Text));
-            //configuraGridProdutos();
-
-            //LerCliente();
-
-            //LerVendedor();
             
-            //gridFormaPgto.DataSource = carrinhoFormaPagamentoParcelamentoDao.ListaGrid(Convert.ToInt32(txtIdCarrinho.Text));
-
-            //DesativaComponentes();
-                        
-
         }
 
         private void btnNovoCarrinho_Click(object sender, EventArgs e)
@@ -161,68 +149,19 @@ namespace Windows.FormsCarrinho
 
         private void btnLocalizar_Click(object sender, EventArgs e)
         {
-
-            LocalizarItem form = new LocalizarItem();
+            FormsCarrinhoItem.Cadastro form = new FormsCarrinhoItem.Cadastro
+                (Convert.ToInt32(txtIdCarrinho.Text), //IdCarrinho
+                GridProdutos.RowCount, //Total de Produtos
+                Convert.ToDouble(txtQuantidade.Text)); //Quantidade
 
             if (form.ShowDialog() == DialogResult.OK)
             {
-
-                DataGridViewRow Row = new DataGridViewRow();
-                Row = form.Row();
-
-                carrinho.Id = Convert.ToInt32(txtIdCarrinho.Text);
-                carrinhoItem.Carrinho = carrinho;
-
-                item.Id = Convert.ToInt32(Row.Cells[0].Value);
-                carrinhoItem.Item = item;
-
-                carrinhoItem.Ordem = (GridProdutos.Rows.Count + 1);
-                carrinhoItem.Quantidade = Convert.ToDecimal(txtQuantidade.Text);
-                carrinhoItem.Preco = Convert.ToDecimal(Row.Cells[3].Value);
-                carrinhoItem.Desconto = Convert.ToDecimal(0.00);
-
-                carrinhoItemDao.Novo(carrinhoItem);
-                GridProdutos.DataSource = null;
-                //GridProdutos.DataSource = dadosGridProduto(carrinhoItemDao.Lista(Convert.ToInt32(txtIdCarrinho.Text)));
                 GridProdutos.DataSource = carrinhoItemDao.ListaGrid(Convert.ToInt32(txtIdCarrinho.Text));
                 configuraGridProdutos();
-
-                //NHibernate.Exceptions.GenericADOException: 'could not insert: [Infraestrutura.Models.CarrinhoItem#39][SQL: 
-                //INSERT INTO "CarrinhoItem" (Ordem, Quantidade, Preco, Desconto, CarrinhoId, ItemId, Id) VALUES (?, ?, ?, ?, ?, ?, ?)]'
-
-
-
             }
 
         }
-
-        private void btnInserirCliente_Click(object sender, EventArgs e)
-        {
-
-            InserirCliente form = new InserirCliente(Convert.ToInt32(txtIdCarrinho.Text));
-
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-
-                LerCliente();
-
-                ////pessoa.Id = form.Id;
-                //carrinho.Id = Convert.ToInt32(txtIdCarrinho.Text);
-                //carrinhoPessoaTipo.Id = 1; // 1 = Cliente
-
-                ////DataGridViewRow Row = new DataGridViewRow();
-                ////Row = form.Row();
-
-                //carrinhoPessoa.Carrinho = carrinho;
-                //carrinhoPessoa.Pessoa = pessoa;
-                //carrinhoPessoa.CarrinhoPessoaTipo = carrinhoPessoaTipo;
-
-                //carrinhoPessoaDao.Novo(carrinhoPessoa);
-
-            }
-
-        }
-
+                
         private void btnFormaPgto_Click(object sender, EventArgs e)
         {
 
@@ -232,29 +171,6 @@ namespace Windows.FormsCarrinho
             {
                 gridFormaPgto.DataSource = carrinhoFormaPagamentoAccess.Lista(Convert.ToInt32(txtIdCarrinho.Text));
             }
-
-
-            ////LocalizarItem form = new LocalizarItem();
-            //SelecionarFormaPagamento form = new SelecionarFormaPagamento();
-
-                //if (form.ShowDialog() == DialogResult.OK)
-                //{
-
-                //    DataGridViewRow Row = new DataGridViewRow();
-                //    Row = form.Row();
-
-                //    carrinho.Id = Convert.ToInt32(txtIdCarrinho.Text);
-                //    formaPagamentoParcelamento.Id = Convert.ToInt32(Row.Cells[0].Value);
-
-                //    //carrinhoFormaPagamentoParcelamento.Carrinho = carrinho;
-                //    //carrinhoFormaPagamentoParcelamento.FormaPagamentoParcelamento = formaPagamentoParcelamento;
-                //    //carrinhoFormaPagamentoParcelamento.QtdParcelas = Convert.ToInt32(Row.Cells[2].Value);
-                //    //carrinhoFormaPagamentoParcelamento.Juros = Convert.ToDecimal(Row.Cells[3].Value);
-
-                //    //carrinhoFormaPagamentoParcelamentoDao.Novo(carrinhoFormaPagamentoParcelamento);
-                //    //gridFormaPgto.DataSource = dadosGridFormaPgto(carrinhoFormaPagamentoParcelamentoDao.Lista(Convert.ToInt32(txtIdCarrinho.Text)));
-
-                //}
 
         }
 
@@ -283,5 +199,18 @@ namespace Windows.FormsCarrinho
             txtQuantidade.Text = ObjUtilitario.mascaraQuantidade(txtQuantidade, e); //Mudar a Mascara
             txtQuantidade.SelectionStart = txtQuantidade.TextLength;
         }
+
+        private void btnClienteCPF_Click(object sender, EventArgs e)
+        {
+            FormsCarrinhoPessoa.ClienteCPF form = new FormsCarrinhoPessoa.ClienteCPF(Convert.ToInt32(txtIdCarrinho.Text));
+            form.ShowDialog();
+        }
+
+        private void btnClienteCNPJ_Click(object sender, EventArgs e)
+        {
+            FormsCarrinhoPessoa.ClienteCNPJ form = new FormsCarrinhoPessoa.ClienteCNPJ(Convert.ToInt32(txtIdCarrinho.Text));
+            form.ShowDialog();
+        }
+        
     }
 }

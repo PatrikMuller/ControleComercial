@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Infraestrutura.Factory;
 using Infraestrutura.Models;
 using NHibernate;
+using NHibernate.Linq;
 
 namespace Infraestrutura.Access
 {
@@ -38,11 +39,11 @@ namespace Infraestrutura.Access
             }
         }
 
-        public Carrinho Ler(int id)
+        public Item Ler(int id)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
-                return session.Get<Carrinho>(id);
+                return session.Get<Item>(id);
             }
         }
 
@@ -60,15 +61,19 @@ namespace Infraestrutura.Access
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
-                //string hql = "select p from Carrinho p";
-                //IQuery query = session.CreateQuery(hql);
-                //return query.List<Carrinho>();
-                //return session.Get<Carrinho>;
-
-                //return session.Query<Bem>().Fetch(b => b.Marca).Fetch(b => b.Modelo).OrderBy(b => b.IdBem).ToList();
-
                 return session.Query<Item>().OrderBy(C => C.Id).ToList();
             }
         }
+
+        public IList<Item> Lista(String Nome)
+        {
+            using (ISession session = NHibernateHelper.AbreSessao())
+            {
+                return session.Query<Item>().
+                    Where(o => o.Nome.Like(Nome)).
+                    OrderBy(C => C.Id).ToList();
+            }
+        }
+
     }
 }

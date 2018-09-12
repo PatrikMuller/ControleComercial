@@ -87,6 +87,12 @@
     <Compile Include="FormsCarrinhoFormaPagamento\CadastroFormaPagamento.Designer.cs">
       <DependentUpon>CadastroFormaPagamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsCarrinhoItem\Cadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsCarrinhoItem\Cadastro.Designer.cs">
+      <DependentUpon>Cadastro.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsCarrinhoPessoa\ClienteCNPJ.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -260,6 +266,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormsCarrinhoFormaPagamento\CadastroFormaPagamento.resx">
       <DependentUpon>CadastroFormaPagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsCarrinhoItem\Cadastro.resx">
+      <DependentUpon>Cadastro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsCarrinhoPessoa\ClienteCNPJ.resx">
       <DependentUpon>ClienteCNPJ.cs</DependentUpon>

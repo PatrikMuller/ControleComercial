@@ -23,11 +23,11 @@ namespace Windows.FormsCarrinho
         {
             if (QtdLinhas > 0)
             {
-                Grid.Columns[0].Width = 80;
-                Grid.Columns[1].Width = 220;
+                Grid.Columns[2].Width = 220;
+                Grid.Columns[3].DefaultCellStyle.Format = "R$ ###,###,###,##0.00";
             }
         }
-
+                
         private void configuraBotoes(Int32 QtdLinhas)
         {
 

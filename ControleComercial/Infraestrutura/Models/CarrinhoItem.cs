@@ -12,8 +12,8 @@ namespace Infraestrutura.Models
         public virtual int Ordem { get; set; }
         public virtual Carrinho Carrinho { get; set; }
         public virtual Item Item { get; set; }
-        public virtual Decimal Quantidade { get; set; }
-        public virtual Decimal Preco { get; set; }
-        public virtual Decimal Desconto { get; set; }
+        public virtual Double Quantidade { get; set; }
+        public virtual Double Preco { get; set; }
+        public virtual Double Desconto { get; set; }
     }
 }
