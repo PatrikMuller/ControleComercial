@@ -13,9 +13,14 @@ namespace Infraestrutura.Mapping
     {
         public CarrinhoMapping()
         {
+
             Id(o => o.Id).GeneratedBy.Sequence("Carrinho_Id_Seq"); //Para Postgres
             //Id(carrinho => carrinho.Id).GeneratedBy.Identity(); //Para SQL Server
-            Map(o => o.Data);
+            Map(o => o.DataAbertura);
+            Map(o => o.UsuarioAbertura);
+            Map(o => o.DataFechamento);
+            Map(o => o.UsuarioFechamento);
+
         }
     }
 }

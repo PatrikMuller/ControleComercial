@@ -69,7 +69,8 @@ namespace Infraestrutura.Access
 
                 var retorno = (from cpf in session.Query<CarrinhoFormaPagamento>().
                                         Where(o => o.Carrinho.Id == IdCarrinho).
-                                        Select(o => new { o.Id, o.FormaPagamento.Descricao, o.QtdParcelas, o.Juros, o.ValorPagar, o.ValorParcela }).
+                                        //Select(o => new { o.Id, o.FormaPagamento.Descricao, o.QtdParcelas, o.Juros, o.ValorPagar, o.ValorParcela }).
+                                        Select(o => new {o.Id, o.FormaPagamento.Descricao, o.QtdParcelas, o.ValorPagar }).
                                         OrderBy(o => o.Id).
                                         ToList()
                                select cpf).ToList();

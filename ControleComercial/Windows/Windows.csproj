@@ -105,6 +105,12 @@
     <Compile Include="FormsCarrinhoPessoa\ClienteCPF.Designer.cs">
       <DependentUpon>ClienteCPF.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsCarrinho\Cadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsCarrinho\Cadastro.Designer.cs">
+      <DependentUpon>Cadastro.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsCarrinho\CadastroCarrinho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormsCarrinhoPessoa\ClienteCPF.resx">
       <DependentUpon>ClienteCPF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsCarrinho\Cadastro.resx">
+      <DependentUpon>Cadastro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsCarrinho\CadastroCarrinho.resx">
       <DependentUpon>CadastroCarrinho.cs</DependentUpon>

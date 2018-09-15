@@ -66,7 +66,7 @@ namespace Infraestrutura.Access
                                     //Where(o => o.Pessoa.Nome.Like(nome)).
                                     Fetch(o => o.Carrinho).
                                     Fetch(o => o.Item).
-                                    Select(o => new { o.Carrinho.Id, o.Carrinho.Data, Item = o.Item.Nome, o.Preco }).
+                                    Select(o => new { o.Carrinho.Id, Abertura = o.Carrinho.DataAbertura, Item = o.Item.Nome, o.Preco }).
                                     OrderBy(o => o.Id).
                                     ToList()
                                select c).Take(40).ToList();

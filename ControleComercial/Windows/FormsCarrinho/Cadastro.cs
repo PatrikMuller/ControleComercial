@@ -13,9 +13,8 @@ using Infraestrutura.Models;
 
 namespace Windows.FormsCarrinho
 {
-    public partial class CadastroCarrinho : Form
+    public partial class Cadastro : Form
     {
-
         //Modelo
         Carrinho carrinho = new Carrinho();
         Item item = new Item();
@@ -24,7 +23,7 @@ namespace Windows.FormsCarrinho
         CarrinhoPessoa carrinhoPessoa = new CarrinhoPessoa();
         CarrinhoPessoaTipo carrinhoPessoaTipo = new CarrinhoPessoaTipo();
         FormaPagamentoParcelamento formaPagamentoParcelamento = new FormaPagamentoParcelamento();
-        
+
         //Access
         CarrinhoAccess carrinhoDao = new CarrinhoAccess();
         CarrinhoItemAccess carrinhoItemDao = new CarrinhoItemAccess();
@@ -38,7 +37,8 @@ namespace Windows.FormsCarrinho
         private void configuraGridProdutos()
         {
 
-            //GridProdutos.Columns[1].Width = 200;
+            GridProdutos.Columns[0].Width = 60;
+            GridProdutos.Columns[1].Width = 180;
             GridProdutos.Columns[2].DefaultCellStyle.Format = "###,###,###,##0.000";
             GridProdutos.Columns[3].DefaultCellStyle.Format = "R$ ###,###,###,##0.00";
             GridProdutos.Columns[4].DefaultCellStyle.Format = "R$ ###,###,###,##0.00";
@@ -88,10 +88,10 @@ namespace Windows.FormsCarrinho
                 lblClienteNome.Text = carrinhoPessoa.Pessoa.Nome;
                 lblClienteCpfCnpj.Text = carrinhoPessoa.Pessoa.CpfCnpj;
             }
-            
+
         }
-        
-        public CadastroCarrinho(Int32 Id)
+
+        public Cadastro(Int32 Id)
         {
 
             InitializeComponent();
@@ -106,8 +106,8 @@ namespace Windows.FormsCarrinho
                 AtivaComponentes();
                 configuraGridProdutos();
             }
-                
-            
+
+
         }
 
         private void btnNovoCarrinho_Click(object sender, EventArgs e)
@@ -150,7 +150,7 @@ namespace Windows.FormsCarrinho
             }
 
         }
-                
+
         private void btnFormaPgto_Click(object sender, EventArgs e)
         {
 
@@ -162,7 +162,7 @@ namespace Windows.FormsCarrinho
             }
 
         }
-                
+
         private void txtQuantidade_KeyPress(object sender, KeyPressEventArgs e)
         {
             txtQuantidade.Text = ObjUtilitario.mascaraQuantidade(txtQuantidade, e); //Mudar a Mascara
@@ -180,6 +180,5 @@ namespace Windows.FormsCarrinho
             FormsCarrinhoPessoa.ClienteCNPJ form = new FormsCarrinhoPessoa.ClienteCNPJ(Convert.ToInt32(txtIdCarrinho.Text));
             form.ShowDialog();
         }
-        
     }
 }

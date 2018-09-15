@@ -35,8 +35,8 @@ namespace Windows.FormsPrincipal
 
         private void btnTelaVenda_Click(object sender, EventArgs e)
         {
-            FormsCarrinho.CadastroCarrinho formCadastroCarrinho = new FormsCarrinho.CadastroCarrinho(0);
-            formCadastroCarrinho.ShowDialog();            
+            FormsCarrinho.Lista form = new FormsCarrinho.Lista();
+            form.ShowDialog();            
         }
 
         private void btnFormaPagamento_Click(object sender, EventArgs e)

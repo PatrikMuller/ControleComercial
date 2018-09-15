@@ -49,7 +49,7 @@ namespace Windows.FormsCarrinho
         {
 
             Int32 id = Convert.ToInt32(Grid.CurrentRow.Cells[0].Value);
-            CadastroCarrinho form = new CadastroCarrinho(id);
+            Cadastro form = new Cadastro(id);
             
             form.ShowDialog();
 
@@ -58,7 +58,7 @@ namespace Windows.FormsCarrinho
         private void Novo()
         {
 
-            CadastroCarrinho form = new CadastroCarrinho(0);
+            Cadastro form = new Cadastro(0);
             form.ShowDialog();
 
         }
