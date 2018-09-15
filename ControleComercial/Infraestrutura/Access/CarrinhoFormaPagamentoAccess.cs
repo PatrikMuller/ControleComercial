@@ -58,6 +58,16 @@ namespace Infraestrutura.Access
             }
         }
 
+        public IList<CarrinhoFormaPagamento> GetAll(Int32 IdCarrinho)
+        {
+            using (ISession session = NHibernateHelper.AbreSessao())
+            {
+
+                return session.Query<CarrinhoFormaPagamento>().OrderBy(o => o.Id).ToList();
+
+            }
+        }
+
         public Object Lista(Int32 IdCarrinho)
         {
             using (ISession session = NHibernateHelper.AbreSessao())

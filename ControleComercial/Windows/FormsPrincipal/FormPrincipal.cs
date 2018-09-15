@@ -204,6 +204,9 @@ namespace Windows.FormsPrincipal
             ItemAccess iAccess = new ItemAccess();
 
             var iLista = iAccess.Lista();
+            Int32 IdItem1 = 0;
+            Int32 IdItem2 = 0;
+            Int32 IdItem3 = 0;
 
             if (iLista.Count == 0)
             {
@@ -213,22 +216,22 @@ namespace Windows.FormsPrincipal
                 iObj.Preco = 45.38;
                 iObj.Quantidade = 100;
                 iObj.Desconto = 6.25;
-                
-                iAccess.Novo(iObj);
+
+                IdItem1 = iAccess.Novo(iObj);
 
                 iObj.Nome = "BICILETA 21 MARCHAS";
                 iObj.Preco = 835.28;
                 iObj.Quantidade = 50;
                 iObj.Desconto = 15.24;
 
-                iAccess.Novo(iObj);
+                IdItem2 = iAccess.Novo(iObj);
 
                 iObj.Nome = "FEIJAO TIO URBANO";
                 iObj.Preco = 5.29;
                 iObj.Quantidade = 1000;
                 iObj.Desconto = 5.25;
 
-                iAccess.Novo(iObj);
+                IdItem3 = iAccess.Novo(iObj);
 
                 iObj.Nome = "CHOCOLATE BATON";
                 iObj.Preco = 0.70;
@@ -238,6 +241,106 @@ namespace Windows.FormsPrincipal
                 iAccess.Novo(iObj);
 
             }
+
+
+            //Carrinho
+            CarrinhoAccess cAccess = new CarrinhoAccess();
+
+            var cLista = cAccess.Lista();
+            Int32 IdCarrinho = 0;
+
+            if (cLista.Count == 0)
+            {
+                Carrinho cObj = new Carrinho();
+
+                cObj.Id = 0;
+                cObj.DataAbertura = DateTime.Now;
+                cObj.UsuarioAbertura = "patrikmuller";
+
+                IdCarrinho = cAccess.Novo(cObj);                
+            }
+
+            //CarrinhoItem
+            CarrinhoItemAccess ciAccess = new CarrinhoItemAccess();
+
+            if (IdCarrinho != 0)
+            {
+                var ciLista = ciAccess.Lista(IdCarrinho);
+
+                if (ciLista.Count == 0)
+                {
+                    Carrinho carrinho = new Carrinho();
+                    Item item = new Item();
+                    CarrinhoItem ciObj = new CarrinhoItem();
+
+                    carrinho.Id = IdCarrinho;
+                    item = iAccess.Ler(IdItem1);
+
+                    ciObj.Carrinho = carrinho;
+                    ciObj.Item = item;
+                    ciObj.Ordem = 1;
+                    ciObj.Preco = item.Preco;
+                    ciObj.Quantidade = 1.234;
+                    ciObj.Desconto = 0.00;
+
+                    ciAccess.Novo(ciObj);
+
+
+                    item = iAccess.Ler(IdItem2);
+                    ciObj.Carrinho = carrinho;
+                    ciObj.Item = item;
+                    ciObj.Ordem = 2;
+                    ciObj.Preco = item.Preco;
+                    ciObj.Quantidade = 1.000;
+                    ciObj.Desconto = 0.00;
+
+                    ciAccess.Novo(ciObj);
+
+
+                    item = iAccess.Ler(IdItem3);
+                    ciObj.Carrinho = carrinho;
+                    ciObj.Item = item;
+                    ciObj.Ordem = 3;
+                    ciObj.Preco = item.Preco;
+                    ciObj.Quantidade = 2.123;
+                    ciObj.Desconto = 0.00;
+
+                    ciAccess.Novo(ciObj);
+
+                }
+            }
+            
+            
+            //CarrinhoFormaPagamento
+            CarrinhoFormaPagamentoAccess cfpAccess = new CarrinhoFormaPagamentoAccess();
+
+            if (IdCarrinho != 0)
+            {
+
+                var cfpLista = cfpAccess.GetAll(IdCarrinho);
+
+                if (cfpLista.Count == 0)
+                {
+                    Carrinho carrinho = new Carrinho();                    
+                    FormaPagamento fp = new FormaPagamento();
+                    CarrinhoFormaPagamento cfpObj = new CarrinhoFormaPagamento();
+
+                    carrinho.Id = IdCarrinho;
+                    fp = fpAccess.Ler(1);
+
+                    cfpObj.Id = 0;
+                    cfpObj.Carrinho = carrinho;
+                    cfpObj.FormaPagamento = fp;
+                    cfpObj.QtdParcelas = 1;
+                    cfpObj.ValorPagar = 1235.23;
+                    cfpObj.ValorParcela = 535.32;
+                    cfpObj.Juros = 0.00;
+
+                    cfpAccess.Novo(cfpObj);
+                }
+
+            }
+
 
             lblTabelas.Text = "Gravado com Sucesso!";
 

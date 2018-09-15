@@ -58,23 +58,13 @@ namespace Infraestrutura.Access
             }
         }
 
-        public Object Lista()
+        public IList<Carrinho> Lista()
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
-                var retorno = (from c in session.Query<CarrinhoItem>().
-                                    //Where(o => o.Pessoa.Nome.Like(nome)).
-                                    Fetch(o => o.Carrinho).
-                                    Fetch(o => o.Item).
-                                    Select(o => new { o.Carrinho.Id, Abertura = o.Carrinho.DataAbertura, Item = o.Item.Nome, o.Preco }).
-                                    OrderBy(o => o.Id).
-                                    ToList()
-                               select c).Take(40).ToList();
-
-
-                return retorno;
+                return session.Query<Carrinho>().OrderBy(o => o.Id).ToList();
             }
         }
-
+                
     }
 }
