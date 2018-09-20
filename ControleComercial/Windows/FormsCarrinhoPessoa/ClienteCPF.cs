@@ -94,11 +94,11 @@ namespace Windows.FormsCarrinhoPessoa
         //Fim - Métodos locais
 
 
-        public ClienteCPF(Int32 IdCarrinho)
+        public ClienteCPF(Int32 IdCarrinho, Int32 IdCarrinhoPessoa)
         {
-
-            //cbTipoPessoa.Select();
+                        
             ObjCarrinho.Id = IdCarrinho;
+            ObjCarrinhoPessoa.Id = IdCarrinhoPessoa;
             ObjCarrinhoPessoaTipo.Id = 1;
 
             InitializeComponent();
@@ -113,18 +113,12 @@ namespace Windows.FormsCarrinhoPessoa
 
             ObjPessoa.Nome = txtNome.Text;
             ObjPessoa.CpfCnpj = txtCpf.Text;
-
-            ObjCarrinhoPessoa.Id = 0;
+                        
             ObjCarrinhoPessoa.Carrinho = ObjCarrinho;
             ObjCarrinhoPessoa.Pessoa = ObjPessoa;
             ObjCarrinhoPessoa.CarrinhoPessoaTipo = ObjCarrinhoPessoaTipo;
             carrinhoPessoaAccess.Gravar(ObjCarrinhoPessoa);
-
-            //if (Id != 0)
-            //{
-            //    this.DialogResult = DialogResult.OK;
-            //}
-
+                        
             Close();
 
         }

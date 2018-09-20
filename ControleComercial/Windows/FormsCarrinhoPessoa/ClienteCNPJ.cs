@@ -36,8 +36,7 @@ namespace Windows.FormsCarrinhoPessoa
 
             //CASO OBJETO ESTEJA null CRIA UMA NOVA ESTÂNCIA
             ObjPessoa = ObjPessoa ?? new Pessoa();
-
-            //txtId.Text = Convert.ToString(ObjPessoa.Id);
+                        
             txtNome.Text = ObjPessoa.Nome;
             txtCnpj.Text = ObjPessoa.CpfCnpj == null ? txtCnpj.Text : ObjPessoa.CpfCnpj;
 
@@ -94,11 +93,11 @@ namespace Windows.FormsCarrinhoPessoa
         //Fim - Métodos locais
 
 
-        public ClienteCNPJ(Int32 IdCarrinho)
+        public ClienteCNPJ(Int32 IdCarrinho, Int32 IdCarrinhoPessoa)
         {
-
-            //cbTipoPessoa.Select();
+                        
             ObjCarrinho.Id = IdCarrinho;
+            ObjCarrinhoPessoa.Id = IdCarrinhoPessoa;
             ObjCarrinhoPessoaTipo.Id = 1;
 
             InitializeComponent();
@@ -113,18 +112,12 @@ namespace Windows.FormsCarrinhoPessoa
 
             ObjPessoa.Nome = txtNome.Text;
             ObjPessoa.CpfCnpj = txtCnpj.Text;
-
-            ObjCarrinhoPessoa.Id = 0;
+                        
             ObjCarrinhoPessoa.Carrinho = ObjCarrinho;
             ObjCarrinhoPessoa.Pessoa = ObjPessoa;
             ObjCarrinhoPessoa.CarrinhoPessoaTipo = ObjCarrinhoPessoaTipo;
             carrinhoPessoaAccess.Gravar(ObjCarrinhoPessoa);
-
-            //if (Id != 0)
-            //{
-            //    this.DialogResult = DialogResult.OK;
-            //}
-
+                        
             Close();
         }
 

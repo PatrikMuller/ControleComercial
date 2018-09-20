@@ -17,21 +17,21 @@ namespace Windows.FormsCarrinho
     {
         //Modelo
         Carrinho carrinho = new Carrinho();
-        Item item = new Item();
-        Pessoa pessoa = new Pessoa();
         CarrinhoItem carrinhoItem = new CarrinhoItem();
         CarrinhoPessoa carrinhoPessoa = new CarrinhoPessoa();
-        CarrinhoPessoaTipo carrinhoPessoaTipo = new CarrinhoPessoaTipo();
         FormaPagamentoParcelamento formaPagamentoParcelamento = new FormaPagamentoParcelamento();
 
         //Access
-        CarrinhoAccess carrinhoDao = new CarrinhoAccess();
-        CarrinhoItemAccess carrinhoItemDao = new CarrinhoItemAccess();
-        CarrinhoPessoaAccess carrinhoPessoaDao = new CarrinhoPessoaAccess();
+        CarrinhoAccess carrinhoAccess = new CarrinhoAccess();
+        CarrinhoItemAccess carrinhoItemAccess = new CarrinhoItemAccess();
+        CarrinhoPessoaAccess carrinhoPessoaAccess = new CarrinhoPessoaAccess();
         CarrinhoFormaPagamentoAccess carrinhoFormaPagamentoAccess = new CarrinhoFormaPagamentoAccess();
 
         //Negocio
         Negocio.Utilitario ObjUtilitario = new Negocio.Utilitario();
+
+        //Variaveis
+        double Total = 0.00;
 
 
         private void configuraGridProdutos()
@@ -69,12 +69,15 @@ namespace Windows.FormsCarrinho
         private void LerCarrinho(Int32 Id)
         {
 
-            carrinho = carrinhoDao.Ler(Id);
+            carrinho = carrinhoAccess.Ler(Id);
             if (carrinho != null)
             {
                 txtIdCarrinho.Text = Convert.ToString(carrinho.Id);
                 txtDataCarrinho.Text = Convert.ToString(carrinho.DataAbertura);
                 txtOperador.Text = Convert.ToString(carrinho.UsuarioAbertura);
+
+                Total = ObjUtilitario.Arredondar(carrinhoItemAccess.Total(Id));
+                lblTotal.Text = "R$ " + Convert.ToString(Total);
             }
 
         }
@@ -82,7 +85,7 @@ namespace Windows.FormsCarrinho
         private void LerCliente()
         {
 
-            carrinhoPessoa = carrinhoPessoaDao.Ler(Convert.ToInt32(txtIdCarrinho.Text), 1);
+            carrinhoPessoa = carrinhoPessoaAccess.Ler(Convert.ToInt32(txtIdCarrinho.Text), 1);
             if (carrinhoPessoa != null)
             {
                 lblClienteNome.Text = carrinhoPessoa.Pessoa.Nome;
@@ -90,7 +93,7 @@ namespace Windows.FormsCarrinho
             }
 
         }
-
+                
         public Cadastro(Int32 Id)
         {
 
@@ -101,7 +104,7 @@ namespace Windows.FormsCarrinho
             {
                 LerCarrinho(Id);
                 LerCliente();
-                GridProdutos.DataSource = carrinhoItemDao.ListaGrid(Convert.ToInt32(txtIdCarrinho.Text));
+                GridProdutos.DataSource = carrinhoItemAccess.ListaGrid(Convert.ToInt32(txtIdCarrinho.Text));
                 gridFormaPgto.DataSource = carrinhoFormaPagamentoAccess.Lista(Convert.ToInt32(txtIdCarrinho.Text));
                 AtivaComponentes();
                 configuraGridProdutos();
@@ -116,7 +119,7 @@ namespace Windows.FormsCarrinho
             carrinho.Id = Convert.ToInt32(txtIdCarrinho.Text);
             carrinho.DataAbertura = DateTime.Now;
             carrinho.UsuarioAbertura = "patrikmuller";
-            txtIdCarrinho.Text = Convert.ToString(carrinhoDao.Novo(carrinho));
+            txtIdCarrinho.Text = Convert.ToString(carrinhoAccess.Novo(carrinho));
             txtDataCarrinho.Text = Convert.ToString(carrinho.DataAbertura);
             txtOperador.Text = carrinho.UsuarioAbertura;
             AtivaComponentes();
@@ -129,7 +132,7 @@ namespace Windows.FormsCarrinho
             carrinho.Id = Convert.ToInt32(txtIdCarrinho.Text);
             carrinho.DataFechamento = DateTime.Now;
             carrinho.UsuarioFechamento = "patrikmuller";
-            txtIdCarrinho.Text = Convert.ToString(carrinhoDao.Gravar(carrinho));
+            txtIdCarrinho.Text = Convert.ToString(carrinhoAccess.Gravar(carrinho));
             txtDataCarrinho.Text = Convert.ToString(carrinho.DataAbertura);
             Close();
             DesativaComponentes();
@@ -145,7 +148,7 @@ namespace Windows.FormsCarrinho
 
             if (form.ShowDialog() == DialogResult.OK)
             {
-                GridProdutos.DataSource = carrinhoItemDao.ListaGrid(Convert.ToInt32(txtIdCarrinho.Text));
+                GridProdutos.DataSource = carrinhoItemAccess.ListaGrid(Convert.ToInt32(txtIdCarrinho.Text));
                 configuraGridProdutos();
             }
 
@@ -171,14 +174,16 @@ namespace Windows.FormsCarrinho
 
         private void btnClienteCPF_Click(object sender, EventArgs e)
         {
-            FormsCarrinhoPessoa.ClienteCPF form = new FormsCarrinhoPessoa.ClienteCPF(Convert.ToInt32(txtIdCarrinho.Text));
+            FormsCarrinhoPessoa.ClienteCPF form = new FormsCarrinhoPessoa.ClienteCPF(Convert.ToInt32(txtIdCarrinho.Text), carrinhoPessoa == null ? 0 : carrinhoPessoa.Id);
             form.ShowDialog();
+            LerCliente();
         }
 
         private void btnClienteCNPJ_Click(object sender, EventArgs e)
         {
-            FormsCarrinhoPessoa.ClienteCNPJ form = new FormsCarrinhoPessoa.ClienteCNPJ(Convert.ToInt32(txtIdCarrinho.Text));
+            FormsCarrinhoPessoa.ClienteCNPJ form = new FormsCarrinhoPessoa.ClienteCNPJ(Convert.ToInt32(txtIdCarrinho.Text), carrinhoPessoa == null ? 0 : carrinhoPessoa.Id);
             form.ShowDialog();
+            LerCliente();
         }
     }
 }

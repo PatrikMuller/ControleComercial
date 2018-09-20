@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Infraestrutura.Models
 {
-    public class Fabricante
+    class Especificacao
     {
 
         public virtual int Id { get; set; }
+        public virtual Classe Classe { get; set; }
         public virtual string Descricao { get; set; }
 
     }

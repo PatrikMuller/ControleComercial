@@ -28,7 +28,7 @@ namespace Infraestrutura.Access
             }
         }
 
-        public Int32 Gravar(CarrinhoItem obj)
+        public void Gravar(CarrinhoItem obj)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
@@ -37,7 +37,6 @@ namespace Infraestrutura.Access
                 session.Merge(obj);
 
                 tx.Commit();
-                return obj.Id;
             }
         }
 
@@ -48,18 +47,7 @@ namespace Infraestrutura.Access
                 return session.Get<CarrinhoItem>(id);
             }
         }
-
-        public void Remove(CarrinhoItem obj)
-        {
-            using (ISession session = NHibernateHelper.AbreSessao())
-            {
-                ITransaction tx = session.BeginTransaction();
-                session.Delete(obj);
-                tx.Commit();
-            }
-        }
-
-
+        
         public Object ListaGrid(Int32 idCarrinho)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
@@ -81,52 +69,11 @@ namespace Infraestrutura.Access
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
-                //string hql = "select p from Carrinho p";
-                //IQuery query = session.CreateQuery(hql);
-                //return query.List<Carrinho>();
-                //return session.Get<Carrinho>;
-
-
-                //IQuery query = session.CreateQuery("select {c.*} from CarrinhoItem c");
-                //query.setParameter("id", "123");
-                //return query.List<Object>();
-
-
-                //return session.Query<Bem>().Fetch(b => b.Marca).Fetch(b => b.Modelo).OrderBy(b => b.IdBem).ToList();
-
-                //var results = from query in session.Query<CarrinhoItem>().
-                //              Fetch(c => c.Carrinho).
-                //              Fetch(i => i.Item).OrderBy(ci => ci.Id).ToList()
-                //              select(new
-                //              {
-                //                  query.Id,
-                //                  //query.Carrinho.Id as idcar,
-                //                  //query.Item.Id as iditem,
-                //                  query.Quantidade,
-                //                  query.Preco
-                //              });
-
-                //return results.ToList<Object>();
-
-
-                //var retorno = (from pj in session.Query<PessoaJuridica>().
-                //                Where(o => o.Pessoa.Nome.Like(nome)).
-                //                Fetch(o => o.Pessoa).
-                //                Select(o => new { o.Pessoa.Id, o.Pessoa.Nome, o.Fantasia, Cnpj = o.Pessoa.CpfCnpj, IE = o.Ie }).
-                //                OrderBy(o => o.Nome).
-                //                ToList()
-                //               select pj).Take(40).ToList();
-                              
-
-                return session.Query<CarrinhoItem>().Fetch(i => i.Item).Where(i => i.Carrinho.Id == idCarrinho).OrderBy(c => c.Id).ToList();
-
-                //foreach (var c in result)
-                //{
-                //    retorno.Add(c.Carrinho.Id);
-                //}
-
-                //return result;
-
+                
+                return session.Query<CarrinhoItem>().Fetch(i => i.Item).
+                    Where(i => i.Carrinho.Id == idCarrinho).
+                    OrderBy(c => c.Id).ToList();
+                                
             }
         }
 
@@ -147,6 +94,28 @@ namespace Infraestrutura.Access
                 return retorno;
             }
         }
+
+        public Double Total(Int32 idCarrinho)
+        {
+            Double total = 0.00;
+
+            using (ISession session = NHibernateHelper.AbreSessao())
+            {                
+                var retorno = (from c in session.Query<CarrinhoItem>().
+                                    Where(o => o.Carrinho.Id == idCarrinho).
+                                    GroupBy(o => o.Carrinho.Id).
+                                    //Select(o => new { (o.Quantidade * (o.Preco - o.Desconto)) }).
+                                    Select(o => new { Total = o.Sum(i => i.Quantidade * (i.Preco - i.Desconto)) }).
+                                    ToList()
+                               select c).SingleOrDefault();
+                                
+                total = retorno.Total;
+
+            }
+
+            return total;
+        }
+
 
 
     }
