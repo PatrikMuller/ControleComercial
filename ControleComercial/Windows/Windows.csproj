@@ -129,6 +129,18 @@
     <Compile Include="FormsClasse\Lista.Designer.cs">
       <DependentUpon>Lista.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsEspecificacaoTipo\Cadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsEspecificacaoTipo\Cadastro.Designer.cs">
+      <DependentUpon>Cadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsEspecificacaoTipo\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsEspecificacaoTipo\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsEspecificacao\Cadastro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -292,6 +304,12 @@
       <DependentUpon>Cadastro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsClasse\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsEspecificacaoTipo\Cadastro.resx">
+      <DependentUpon>Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsEspecificacaoTipo\Lista.resx">
       <DependentUpon>Lista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsEspecificacao\Cadastro.resx">

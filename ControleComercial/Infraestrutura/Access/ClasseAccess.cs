@@ -11,7 +11,7 @@ using NHibernate.Linq;
 
 namespace Infraestrutura.Access
 {
-    class ClasseAccess
+    public class ClasseAccess
     {
 
         public Int32 Novo(Classe o)

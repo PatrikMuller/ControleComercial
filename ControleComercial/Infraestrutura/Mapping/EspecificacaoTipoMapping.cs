@@ -9,12 +9,12 @@ using Infraestrutura.Models;
 
 namespace Infraestrutura.Mapping
 {
-    class EspecificacaoMapping : ClassMap<Especificacao>
+    class EspecificacaoTipoMapping : ClassMap<EspecificacaoTipo>
     {
-        public EspecificacaoMapping()
+        public EspecificacaoTipoMapping()
         {
 
-            Id(o => o.Id).GeneratedBy.Sequence("Especificacao_Id_Seq");
+            Id(o => o.Id).GeneratedBy.Sequence("EspecificacaoTipo_Id_Seq");
             Map(o => o.Descricao);
 
         }

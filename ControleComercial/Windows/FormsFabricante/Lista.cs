@@ -111,12 +111,7 @@ namespace Windows.FormsFabricante
         {
             Editar();
         }
-
-        private void FormListaFabricante_Activated(object sender, EventArgs e)
-        {
-            setarGrid();
-        }
-
+                
         private void Lista_Activated(object sender, EventArgs e)
         {
             setarGrid();

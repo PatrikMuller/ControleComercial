@@ -10,18 +10,17 @@ using System.Windows.Forms;
 
 using Infraestrutura.Access;
 
-namespace Windows.FormsEspecificacao
+namespace Windows.FormsEspecificacaoTipo
 {
     public partial class Lista : Form
     {
-
         //Access
-        EspecificacaoAccess access = new EspecificacaoAccess();
+        EspecificacaoTipoAccess access = new EspecificacaoTipoAccess();
 
 
 
         //Início - Métodos locais
-        private void configuraGrid(Int32 QtdLinhas)
+        private void configuraGrid(int QtdLinhas)
         {
             if (QtdLinhas > 0)
             {
@@ -30,7 +29,7 @@ namespace Windows.FormsEspecificacao
             }
         }
 
-        private void configuraBotoes(Int32 QtdLinhas)
+        private void configuraBotoes(int QtdLinhas)
         {
 
             MenuItemEditar.Enabled = QtdLinhas == 0 ? false : true;
@@ -50,7 +49,7 @@ namespace Windows.FormsEspecificacao
         private void Editar()
         {
 
-            Int32 id = Convert.ToInt32(Grid.CurrentRow.Cells[0].Value);
+            int id = Convert.ToInt32(Grid.CurrentRow.Cells[0].Value);
             Cadastro form = new Cadastro(id);
             form.ShowDialog();
 
@@ -111,7 +110,7 @@ namespace Windows.FormsEspecificacao
         {
             Editar();
         }
-                
+
         private void Lista_Activated(object sender, EventArgs e)
         {
             setarGrid();

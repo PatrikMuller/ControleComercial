@@ -346,5 +346,22 @@ namespace Windows.FormsPrincipal
 
         }
 
+        private void btnClasse_Click(object sender, EventArgs e)
+        {
+            FormsClasse.Lista formLista = new FormsClasse.Lista();
+            formLista.ShowDialog();
+        }
+
+        private void btnEspecificacao_Click(object sender, EventArgs e)
+        {
+            FormsEspecificacao.Lista formLista = new FormsEspecificacao.Lista();
+            formLista.ShowDialog();
+        }
+
+        private void btnEspecificacaoTipo_Click(object sender, EventArgs e)
+        {
+            FormsEspecificacaoTipo.Lista formLista = new FormsEspecificacaoTipo.Lista();
+            formLista.ShowDialog();
+        }
     }
 }

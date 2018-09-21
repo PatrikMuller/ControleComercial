@@ -30,6 +30,8 @@
         {
             this.pnTopo = new System.Windows.Forms.Panel();
             this.pnConteudo = new System.Windows.Forms.Panel();
+            this.lblTabelas = new System.Windows.Forms.Label();
+            this.btnGerarTabelas = new System.Windows.Forms.Button();
             this.btnUnidadeMedida = new System.Windows.Forms.Button();
             this.btnFabricante = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -39,8 +41,9 @@
             this.btnPessoaJuridica = new System.Windows.Forms.Button();
             this.btnPessoaFisica = new System.Windows.Forms.Button();
             this.pnBaixo = new System.Windows.Forms.Panel();
-            this.btnGerarTabelas = new System.Windows.Forms.Button();
-            this.lblTabelas = new System.Windows.Forms.Label();
+            this.btnClasse = new System.Windows.Forms.Button();
+            this.btnEspecificacao = new System.Windows.Forms.Button();
+            this.btnEspecificacaoTipo = new System.Windows.Forms.Button();
             this.pnConteudo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +57,9 @@
             // 
             // pnConteudo
             // 
+            this.pnConteudo.Controls.Add(this.btnEspecificacaoTipo);
+            this.pnConteudo.Controls.Add(this.btnEspecificacao);
+            this.pnConteudo.Controls.Add(this.btnClasse);
             this.pnConteudo.Controls.Add(this.lblTabelas);
             this.pnConteudo.Controls.Add(this.btnGerarTabelas);
             this.pnConteudo.Controls.Add(this.btnUnidadeMedida);
@@ -69,6 +75,25 @@
             this.pnConteudo.Name = "pnConteudo";
             this.pnConteudo.Size = new System.Drawing.Size(989, 511);
             this.pnConteudo.TabIndex = 1;
+            // 
+            // lblTabelas
+            // 
+            this.lblTabelas.AutoSize = true;
+            this.lblTabelas.Location = new System.Drawing.Point(115, 227);
+            this.lblTabelas.Name = "lblTabelas";
+            this.lblTabelas.Size = new System.Drawing.Size(11, 13);
+            this.lblTabelas.TabIndex = 11;
+            this.lblTabelas.Text = "*";
+            // 
+            // btnGerarTabelas
+            // 
+            this.btnGerarTabelas.Location = new System.Drawing.Point(118, 174);
+            this.btnGerarTabelas.Name = "btnGerarTabelas";
+            this.btnGerarTabelas.Size = new System.Drawing.Size(100, 50);
+            this.btnGerarTabelas.TabIndex = 10;
+            this.btnGerarTabelas.Text = "Gerar Tabelas";
+            this.btnGerarTabelas.UseVisualStyleBackColor = true;
+            this.btnGerarTabelas.Click += new System.EventHandler(this.btnGerarTabelas_Click);
             // 
             // btnUnidadeMedida
             // 
@@ -156,24 +181,35 @@
             this.pnBaixo.Size = new System.Drawing.Size(989, 100);
             this.pnBaixo.TabIndex = 2;
             // 
-            // btnGerarTabelas
+            // btnClasse
             // 
-            this.btnGerarTabelas.Location = new System.Drawing.Point(118, 174);
-            this.btnGerarTabelas.Name = "btnGerarTabelas";
-            this.btnGerarTabelas.Size = new System.Drawing.Size(100, 50);
-            this.btnGerarTabelas.TabIndex = 10;
-            this.btnGerarTabelas.Text = "Gerar Tabelas";
-            this.btnGerarTabelas.UseVisualStyleBackColor = true;
-            this.btnGerarTabelas.Click += new System.EventHandler(this.btnGerarTabelas_Click);
+            this.btnClasse.Location = new System.Drawing.Point(224, 118);
+            this.btnClasse.Name = "btnClasse";
+            this.btnClasse.Size = new System.Drawing.Size(100, 50);
+            this.btnClasse.TabIndex = 12;
+            this.btnClasse.Text = "Classe";
+            this.btnClasse.UseVisualStyleBackColor = true;
+            this.btnClasse.Click += new System.EventHandler(this.btnClasse_Click);
             // 
-            // lblTabelas
+            // btnEspecificacao
             // 
-            this.lblTabelas.AutoSize = true;
-            this.lblTabelas.Location = new System.Drawing.Point(115, 227);
-            this.lblTabelas.Name = "lblTabelas";
-            this.lblTabelas.Size = new System.Drawing.Size(11, 13);
-            this.lblTabelas.TabIndex = 11;
-            this.lblTabelas.Text = "*";
+            this.btnEspecificacao.Location = new System.Drawing.Point(330, 118);
+            this.btnEspecificacao.Name = "btnEspecificacao";
+            this.btnEspecificacao.Size = new System.Drawing.Size(100, 50);
+            this.btnEspecificacao.TabIndex = 13;
+            this.btnEspecificacao.Text = "Especificação";
+            this.btnEspecificacao.UseVisualStyleBackColor = true;
+            this.btnEspecificacao.Click += new System.EventHandler(this.btnEspecificacao_Click);
+            // 
+            // btnEspecificacaoTipo
+            // 
+            this.btnEspecificacaoTipo.Location = new System.Drawing.Point(436, 118);
+            this.btnEspecificacaoTipo.Name = "btnEspecificacaoTipo";
+            this.btnEspecificacaoTipo.Size = new System.Drawing.Size(100, 50);
+            this.btnEspecificacaoTipo.TabIndex = 14;
+            this.btnEspecificacaoTipo.Text = "Especificação Tipo";
+            this.btnEspecificacaoTipo.UseVisualStyleBackColor = true;
+            this.btnEspecificacaoTipo.Click += new System.EventHandler(this.btnEspecificacaoTipo_Click);
             // 
             // FormPrincipal
             // 
@@ -208,5 +244,8 @@
         private System.Windows.Forms.Button btnUnidadeMedida;
         private System.Windows.Forms.Button btnGerarTabelas;
         private System.Windows.Forms.Label lblTabelas;
+        private System.Windows.Forms.Button btnEspecificacaoTipo;
+        private System.Windows.Forms.Button btnEspecificacao;
+        private System.Windows.Forms.Button btnClasse;
     }
 }

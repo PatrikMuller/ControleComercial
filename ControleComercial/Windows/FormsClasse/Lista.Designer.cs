@@ -30,11 +30,11 @@
         {
             this.menuPrincipal = new System.Windows.Forms.MenuStrip();
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemNovo = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemEditar = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuItemFechar = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemNovo = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemEditar = new System.Windows.Forms.ToolStripMenuItem();
             this.menuButton = new System.Windows.Forms.ToolStrip();
             this.MenuButtonNovo = new System.Windows.Forms.ToolStripButton();
             this.MenuButtonEditar = new System.Windows.Forms.ToolStripButton();
@@ -77,36 +77,39 @@
             this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.arquivoToolStripMenuItem.Text = "Arquivo";
             // 
+            // MenuItemNovo
+            // 
+            this.MenuItemNovo.Image = global::Windows.Properties.Resources.Novo;
+            this.MenuItemNovo.Name = "MenuItemNovo";
+            this.MenuItemNovo.Size = new System.Drawing.Size(184, 26);
+            this.MenuItemNovo.Text = "Novo";
+            this.MenuItemNovo.Click += new System.EventHandler(this.MenuItemNovo_Click);
+            // 
+            // MenuItemEditar
+            // 
+            this.MenuItemEditar.Image = global::Windows.Properties.Resources.Editar;
+            this.MenuItemEditar.Name = "MenuItemEditar";
+            this.MenuItemEditar.Size = new System.Drawing.Size(184, 26);
+            this.MenuItemEditar.Text = "Editar";
+            this.MenuItemEditar.Click += new System.EventHandler(this.MenuItemEditar_Click);
+            // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(106, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(181, 6);
             // 
             // MenuItemFechar
             // 
             this.MenuItemFechar.Name = "MenuItemFechar";
-            this.MenuItemFechar.Size = new System.Drawing.Size(109, 22);
+            this.MenuItemFechar.Size = new System.Drawing.Size(184, 26);
             this.MenuItemFechar.Text = "Fechar";
+            this.MenuItemFechar.Click += new System.EventHandler(this.MenuItemFechar_Click);
             // 
             // ajudaToolStripMenuItem
             // 
             this.ajudaToolStripMenuItem.Name = "ajudaToolStripMenuItem";
             this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.ajudaToolStripMenuItem.Text = "Ajuda";
-            // 
-            // MenuItemNovo
-            // 
-            this.MenuItemNovo.Image = global::Windows.Properties.Resources.Novo;
-            this.MenuItemNovo.Name = "MenuItemNovo";
-            this.MenuItemNovo.Size = new System.Drawing.Size(109, 22);
-            this.MenuItemNovo.Text = "Novo";
-            // 
-            // MenuItemEditar
-            // 
-            this.MenuItemEditar.Image = global::Windows.Properties.Resources.Editar;
-            this.MenuItemEditar.Name = "MenuItemEditar";
-            this.MenuItemEditar.Size = new System.Drawing.Size(109, 22);
-            this.MenuItemEditar.Text = "Editar";
             // 
             // menuButton
             // 
@@ -129,6 +132,7 @@
             this.MenuButtonNovo.Name = "MenuButtonNovo";
             this.MenuButtonNovo.Size = new System.Drawing.Size(24, 24);
             this.MenuButtonNovo.Text = "Novo";
+            this.MenuButtonNovo.Click += new System.EventHandler(this.MenuButtonNovo_Click);
             // 
             // MenuButtonEditar
             // 
@@ -138,6 +142,7 @@
             this.MenuButtonEditar.Name = "MenuButtonEditar";
             this.MenuButtonEditar.Size = new System.Drawing.Size(24, 24);
             this.MenuButtonEditar.Text = "Editar";
+            this.MenuButtonEditar.Click += new System.EventHandler(this.MenuButtonEditar_Click);
             // 
             // toolStripSeparator1
             // 
@@ -161,6 +166,7 @@
             this.txtLocalizar.Name = "txtLocalizar";
             this.txtLocalizar.Size = new System.Drawing.Size(500, 20);
             this.txtLocalizar.TabIndex = 3;
+            this.txtLocalizar.Click += new System.EventHandler(this.txtLocalizar_TextChanged);
             // 
             // label1
             // 
@@ -208,6 +214,7 @@
             this.Grid.Name = "Grid";
             this.Grid.Size = new System.Drawing.Size(786, 310);
             this.Grid.TabIndex = 0;
+            this.Grid.DoubleClick += new System.EventHandler(this.Grid_DoubleClick);
             // 
             // Lista
             // 
@@ -220,7 +227,9 @@
             this.Controls.Add(this.menuButton);
             this.Controls.Add(this.menuPrincipal);
             this.Name = "Lista";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista";
+            this.Activated += new System.EventHandler(this.Lista_Activated);
             this.menuPrincipal.ResumeLayout(false);
             this.menuPrincipal.PerformLayout();
             this.menuButton.ResumeLayout(false);

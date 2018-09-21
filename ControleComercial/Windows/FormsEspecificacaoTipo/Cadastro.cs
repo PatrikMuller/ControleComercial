@@ -11,15 +11,15 @@ using System.Windows.Forms;
 using Infraestrutura.Access;
 using Infraestrutura.Models;
 
-namespace Windows.FormsEspecificacao
+namespace Windows.FormsEspecificacaoTipo
 {
     public partial class Cadastro : Form
     {
         //Objetos
-        Especificacao obj = new Especificacao();
+        EspecificacaoTipo obj = new EspecificacaoTipo();
 
         //Access
-        EspecificacaoAccess access = new EspecificacaoAccess();
+        EspecificacaoTipoAccess access = new EspecificacaoTipoAccess();
 
 
         //Início - Métodos locais

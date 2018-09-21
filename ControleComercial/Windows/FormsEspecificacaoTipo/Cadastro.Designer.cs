@@ -1,4 +1,4 @@
-﻿namespace Windows.FormsClasse
+﻿namespace Windows.FormsEspecificacaoTipo
 {
     partial class Cadastro
     {
@@ -48,7 +48,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 125);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(384, 36);
-            this.panel1.TabIndex = 24;
+            this.panel1.TabIndex = 25;
             // 
             // btnCancelar
             // 
@@ -82,7 +82,7 @@
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(384, 125);
-            this.groupBox1.TabIndex = 25;
+            this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = " Dados Principais ";
             // 
@@ -133,7 +133,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Cadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Classe";
+            this.Text = "Cadastro";
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Infraestrutura.Models
 {
-    public class Especificacao
+    public class EspecificacaoTipo
     {
 
         public virtual int Id { get; set; }

@@ -75,6 +75,7 @@
     <Compile Include="Access\CarrinhoPessoaTipoAccess.cs" />
     <Compile Include="Access\ClasseAccess.cs" />
     <Compile Include="Access\EspecificacaoAccess.cs" />
+    <Compile Include="Access\EspecificacaoTipoAccess.cs" />
     <Compile Include="Access\FabricanteAccess.cs" />
     <Compile Include="Access\FormaPagamentoAccess.cs" />
     <Compile Include="Access\FormaPagamentoParcelamentoAccess.cs" />
@@ -94,6 +95,7 @@
     <Compile Include="Mapping\CarrinhoPessoaTipoMapping.cs" />
     <Compile Include="Mapping\ClasseMapping.cs" />
     <Compile Include="Mapping\EspecificacaoMapping.cs" />
+    <Compile Include="Mapping\EspecificacaoTipoMapping.cs" />
     <Compile Include="Mapping\FabricanteMapping.cs" />
     <Compile Include="Mapping\FormaPagamentoMapping.cs" />
     <Compile Include="Mapping\FormaPagamentoParcelamentoMapping.cs" />
@@ -111,6 +113,7 @@
     <Compile Include="Models\Classe.cs" />
     <Compile Include="Models\ddl.cs" />
     <Compile Include="Models\Especificacao.cs" />
+    <Compile Include="Models\EspecificacaoTipo.cs" />
     <Compile Include="Models\Fabricante.cs" />
     <Compile Include="Models\FormaPagamento.cs" />
     <Compile Include="Models\FormaPagamentoParcelamento.cs" />

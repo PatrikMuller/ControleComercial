@@ -11,10 +11,10 @@ using NHibernate.Linq;
 
 namespace Infraestrutura.Access
 {
-    public class EspecificacaoAccess
+    public class EspecificacaoTipoAccess
     {
 
-        public Int32 Novo(Especificacao o)
+        public Int32 Novo(EspecificacaoTipo o)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
@@ -27,7 +27,7 @@ namespace Infraestrutura.Access
             }
         }
 
-        public Int32 Gravar(Especificacao o)
+        public Int32 Gravar(EspecificacaoTipo o)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
@@ -40,15 +40,15 @@ namespace Infraestrutura.Access
             }
         }
 
-        public Especificacao Ler(int id)
+        public EspecificacaoTipo Ler(int id)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
-                return session.Get<Especificacao>(id);
+                return session.Get<EspecificacaoTipo>(id);
             }
         }
 
-        public void Remove(Especificacao o)
+        public void Remove(EspecificacaoTipo o)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
@@ -58,12 +58,12 @@ namespace Infraestrutura.Access
             }
         }
 
-        public IList<Especificacao> Lista()
+        public IList<EspecificacaoTipo> Lista()
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
 
-                return session.Query<Especificacao>().OrderBy(o => o.Id).ToList();
+                return session.Query<EspecificacaoTipo>().OrderBy(o => o.Id).ToList();
 
             }
         }

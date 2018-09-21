@@ -1,4 +1,4 @@
-﻿namespace Windows.FormsEspecificacao
+﻿namespace Windows.FormsEspecificacaoTipo
 {
     partial class Lista
     {
@@ -63,7 +63,7 @@
             this.menuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.menuPrincipal.Name = "menuPrincipal";
             this.menuPrincipal.Size = new System.Drawing.Size(800, 24);
-            this.menuPrincipal.TabIndex = 23;
+            this.menuPrincipal.TabIndex = 24;
             this.menuPrincipal.Text = "menuStrip1";
             // 
             // arquivoToolStripMenuItem
@@ -81,7 +81,7 @@
             // 
             this.MenuItemNovo.Image = global::Windows.Properties.Resources.Novo;
             this.MenuItemNovo.Name = "MenuItemNovo";
-            this.MenuItemNovo.Size = new System.Drawing.Size(109, 22);
+            this.MenuItemNovo.Size = new System.Drawing.Size(184, 26);
             this.MenuItemNovo.Text = "Novo";
             this.MenuItemNovo.Click += new System.EventHandler(this.MenuItemNovo_Click);
             // 
@@ -89,7 +89,7 @@
             // 
             this.MenuItemEditar.Image = global::Windows.Properties.Resources.Editar;
             this.MenuItemEditar.Name = "MenuItemEditar";
-            this.MenuItemEditar.Size = new System.Drawing.Size(109, 22);
+            this.MenuItemEditar.Size = new System.Drawing.Size(184, 26);
             this.MenuItemEditar.Text = "Editar";
             this.MenuItemEditar.Click += new System.EventHandler(this.MenuItemEditar_Click);
             // 
@@ -101,7 +101,7 @@
             // MenuItemFechar
             // 
             this.MenuItemFechar.Name = "MenuItemFechar";
-            this.MenuItemFechar.Size = new System.Drawing.Size(109, 22);
+            this.MenuItemFechar.Size = new System.Drawing.Size(184, 26);
             this.MenuItemFechar.Text = "Fechar";
             this.MenuItemFechar.Click += new System.EventHandler(this.MenuItemFechar_Click);
             // 
@@ -121,7 +121,7 @@
             this.menuButton.Location = new System.Drawing.Point(0, 24);
             this.menuButton.Name = "menuButton";
             this.menuButton.Size = new System.Drawing.Size(800, 27);
-            this.menuButton.TabIndex = 24;
+            this.menuButton.TabIndex = 25;
             this.menuButton.Text = "toolStrip1";
             // 
             // MenuButtonNovo
@@ -157,7 +157,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 51);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 35);
-            this.panel1.TabIndex = 25;
+            this.panel1.TabIndex = 26;
             // 
             // txtLocalizar
             // 
@@ -183,7 +183,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 428);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(800, 22);
-            this.panel2.TabIndex = 26;
+            this.panel2.TabIndex = 27;
             // 
             // tabControl1
             // 
@@ -193,7 +193,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(800, 342);
-            this.tabControl1.TabIndex = 27;
+            this.tabControl1.TabIndex = 28;
             // 
             // tabPage1
             // 
@@ -226,6 +226,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuButton);
             this.Controls.Add(this.menuPrincipal);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Lista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista";
