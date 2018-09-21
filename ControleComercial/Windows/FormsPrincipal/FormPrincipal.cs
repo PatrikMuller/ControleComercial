@@ -363,5 +363,11 @@ namespace Windows.FormsPrincipal
             FormsEspecificacaoTipo.Lista formLista = new FormsEspecificacaoTipo.Lista();
             formLista.ShowDialog();
         }
+
+        private void btnProduto_Click(object sender, EventArgs e)
+        {
+            FormsItem.Lista formLista = new FormsItem.Lista();
+            formLista.ShowDialog();
+        }
     }
 }

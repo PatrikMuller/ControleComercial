@@ -195,29 +195,29 @@
     <Compile Include="FormsFormaPagamento\Lista.Designer.cs">
       <DependentUpon>Lista.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsItemClasse\Cadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsItemClasse\Cadastro.Designer.cs">
+      <DependentUpon>Cadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsItemEspecificacao\Cadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsItemEspecificacao\Cadastro.Designer.cs">
+      <DependentUpon>Cadastro.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsItem\Cadastro.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormsItem\Cadastro.Designer.cs">
       <DependentUpon>Cadastro.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsItem\CadastroItem.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormsItem\CadastroItem.Designer.cs">
-      <DependentUpon>CadastroItem.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormsItem\Lista.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormsItem\Lista.Designer.cs">
       <DependentUpon>Lista.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormsItem\ListaItem.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormsItem\ListaItem.Designer.cs">
-      <DependentUpon>ListaItem.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsPessoaFisica\Cadastro.cs">
       <SubType>Form</SubType>
@@ -339,17 +339,17 @@
     <EmbeddedResource Include="FormsFormaPagamento\Lista.resx">
       <DependentUpon>Lista.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormsItemClasse\Cadastro.resx">
+      <DependentUpon>Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsItemEspecificacao\Cadastro.resx">
+      <DependentUpon>Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormsItem\Cadastro.resx">
       <DependentUpon>Cadastro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormsItem\CadastroItem.resx">
-      <DependentUpon>CadastroItem.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormsItem\Lista.resx">
       <DependentUpon>Lista.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormsItem\ListaItem.resx">
-      <DependentUpon>ListaItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsPessoaFisica\Cadastro.resx">
       <DependentUpon>Cadastro.cs</DependentUpon>

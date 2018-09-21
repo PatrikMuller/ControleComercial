@@ -30,20 +30,20 @@
         {
             this.pnTopo = new System.Windows.Forms.Panel();
             this.pnConteudo = new System.Windows.Forms.Panel();
+            this.btnEspecificacaoTipo = new System.Windows.Forms.Button();
+            this.btnEspecificacao = new System.Windows.Forms.Button();
+            this.btnClasse = new System.Windows.Forms.Button();
             this.lblTabelas = new System.Windows.Forms.Label();
             this.btnGerarTabelas = new System.Windows.Forms.Button();
             this.btnUnidadeMedida = new System.Windows.Forms.Button();
             this.btnFabricante = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnProduto = new System.Windows.Forms.Button();
             this.btnFormaPagamento = new System.Windows.Forms.Button();
             this.btnTelaVenda = new System.Windows.Forms.Button();
             this.btnPessoaJuridica = new System.Windows.Forms.Button();
             this.btnPessoaFisica = new System.Windows.Forms.Button();
             this.pnBaixo = new System.Windows.Forms.Panel();
-            this.btnClasse = new System.Windows.Forms.Button();
-            this.btnEspecificacao = new System.Windows.Forms.Button();
-            this.btnEspecificacaoTipo = new System.Windows.Forms.Button();
             this.pnConteudo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,7 +65,7 @@
             this.pnConteudo.Controls.Add(this.btnUnidadeMedida);
             this.pnConteudo.Controls.Add(this.btnFabricante);
             this.pnConteudo.Controls.Add(this.button3);
-            this.pnConteudo.Controls.Add(this.button2);
+            this.pnConteudo.Controls.Add(this.btnProduto);
             this.pnConteudo.Controls.Add(this.btnFormaPagamento);
             this.pnConteudo.Controls.Add(this.btnTelaVenda);
             this.pnConteudo.Controls.Add(this.btnPessoaJuridica);
@@ -75,6 +75,36 @@
             this.pnConteudo.Name = "pnConteudo";
             this.pnConteudo.Size = new System.Drawing.Size(989, 511);
             this.pnConteudo.TabIndex = 1;
+            // 
+            // btnEspecificacaoTipo
+            // 
+            this.btnEspecificacaoTipo.Location = new System.Drawing.Point(436, 118);
+            this.btnEspecificacaoTipo.Name = "btnEspecificacaoTipo";
+            this.btnEspecificacaoTipo.Size = new System.Drawing.Size(100, 50);
+            this.btnEspecificacaoTipo.TabIndex = 14;
+            this.btnEspecificacaoTipo.Text = "Especificação Tipo";
+            this.btnEspecificacaoTipo.UseVisualStyleBackColor = true;
+            this.btnEspecificacaoTipo.Click += new System.EventHandler(this.btnEspecificacaoTipo_Click);
+            // 
+            // btnEspecificacao
+            // 
+            this.btnEspecificacao.Location = new System.Drawing.Point(330, 118);
+            this.btnEspecificacao.Name = "btnEspecificacao";
+            this.btnEspecificacao.Size = new System.Drawing.Size(100, 50);
+            this.btnEspecificacao.TabIndex = 13;
+            this.btnEspecificacao.Text = "Especificação";
+            this.btnEspecificacao.UseVisualStyleBackColor = true;
+            this.btnEspecificacao.Click += new System.EventHandler(this.btnEspecificacao_Click);
+            // 
+            // btnClasse
+            // 
+            this.btnClasse.Location = new System.Drawing.Point(224, 118);
+            this.btnClasse.Name = "btnClasse";
+            this.btnClasse.Size = new System.Drawing.Size(100, 50);
+            this.btnClasse.TabIndex = 12;
+            this.btnClasse.Text = "Classe";
+            this.btnClasse.UseVisualStyleBackColor = true;
+            this.btnClasse.Click += new System.EventHandler(this.btnClasse_Click);
             // 
             // lblTabelas
             // 
@@ -124,14 +154,15 @@
             this.button3.Text = "Controle de Acesso";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnProduto
             // 
-            this.button2.Location = new System.Drawing.Point(12, 62);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 50);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Produtos";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnProduto.Location = new System.Drawing.Point(12, 62);
+            this.btnProduto.Name = "btnProduto";
+            this.btnProduto.Size = new System.Drawing.Size(100, 50);
+            this.btnProduto.TabIndex = 5;
+            this.btnProduto.Text = "Produtos";
+            this.btnProduto.UseVisualStyleBackColor = true;
+            this.btnProduto.Click += new System.EventHandler(this.btnProduto_Click);
             // 
             // btnFormaPagamento
             // 
@@ -181,36 +212,6 @@
             this.pnBaixo.Size = new System.Drawing.Size(989, 100);
             this.pnBaixo.TabIndex = 2;
             // 
-            // btnClasse
-            // 
-            this.btnClasse.Location = new System.Drawing.Point(224, 118);
-            this.btnClasse.Name = "btnClasse";
-            this.btnClasse.Size = new System.Drawing.Size(100, 50);
-            this.btnClasse.TabIndex = 12;
-            this.btnClasse.Text = "Classe";
-            this.btnClasse.UseVisualStyleBackColor = true;
-            this.btnClasse.Click += new System.EventHandler(this.btnClasse_Click);
-            // 
-            // btnEspecificacao
-            // 
-            this.btnEspecificacao.Location = new System.Drawing.Point(330, 118);
-            this.btnEspecificacao.Name = "btnEspecificacao";
-            this.btnEspecificacao.Size = new System.Drawing.Size(100, 50);
-            this.btnEspecificacao.TabIndex = 13;
-            this.btnEspecificacao.Text = "Especificação";
-            this.btnEspecificacao.UseVisualStyleBackColor = true;
-            this.btnEspecificacao.Click += new System.EventHandler(this.btnEspecificacao_Click);
-            // 
-            // btnEspecificacaoTipo
-            // 
-            this.btnEspecificacaoTipo.Location = new System.Drawing.Point(436, 118);
-            this.btnEspecificacaoTipo.Name = "btnEspecificacaoTipo";
-            this.btnEspecificacaoTipo.Size = new System.Drawing.Size(100, 50);
-            this.btnEspecificacaoTipo.TabIndex = 14;
-            this.btnEspecificacaoTipo.Text = "Especificação Tipo";
-            this.btnEspecificacaoTipo.UseVisualStyleBackColor = true;
-            this.btnEspecificacaoTipo.Click += new System.EventHandler(this.btnEspecificacaoTipo_Click);
-            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,7 +239,7 @@
         private System.Windows.Forms.Button btnPessoaJuridica;
         private System.Windows.Forms.Button btnTelaVenda;
         private System.Windows.Forms.Button btnFormaPagamento;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnProduto;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnFabricante;
         private System.Windows.Forms.Button btnUnidadeMedida;

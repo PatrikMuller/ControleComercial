@@ -118,6 +118,8 @@
     <Compile Include="Models\FormaPagamento.cs" />
     <Compile Include="Models\FormaPagamentoParcelamento.cs" />
     <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\ItemClasse.cs" />
+    <Compile Include="Models\ItemEspecificacao.cs" />
     <Compile Include="Models\ParcelamentoStatus.cs" />
     <Compile Include="Models\Pessoa.cs" />
     <Compile Include="Models\PessoaFisica.cs" />
