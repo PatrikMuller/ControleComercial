@@ -19,34 +19,42 @@ namespace Windows.FormsItem
         Item obj = new Item();
 
         //Access
-        ItemAccess access = new ItemAccess();
+        ItemAccess itemAccess = new ItemAccess();
+        UnidadeMedidaAccess unidadeMedidaAccess = new UnidadeMedidaAccess();
+
+        //Negocio
+        Negocio.Utilitario ObjUtilitario = new Negocio.Utilitario();
 
 
         //Início - Métodos locais
         private void Ler(Int32 Id)
         {
 
-            obj = access.Ler(Id);
+            obj = itemAccess.Ler(Id);
 
             txtId.Text = Convert.ToString(obj.Id);
             txtNome.Text = obj.Nome;
-            txtQuantidade.Text = Convert.ToString(obj.Quantidade);
-            txtPreco.Text = Convert.ToString(obj.Preco);
-            txtDesconto.Text = Convert.ToString(obj.Desconto);
+            cbUnidadeMedida.SelectedValue = obj.UnidadeMedida == null ? "1" : Convert.ToString(obj.UnidadeMedida.Id);
+            txtQuantidade.Text = ObjUtilitario.lerQuantidade(obj.Quantidade);
+            txtPreco.Text = ObjUtilitario.lerPreco(obj.Preco);
+            txtDesconto.Text = ObjUtilitario.lerPorcentagem(obj.Desconto);
 
             //AtivaComponentes();
         }
 
         private void Gravar()
         {
+            UnidadeMedida unidadeMedida = new UnidadeMedida();
+            unidadeMedida.Id = Convert.ToInt32(cbUnidadeMedida.SelectedValue);
 
             obj.Id = Convert.ToInt32(txtId.Text);
             obj.Nome = txtNome.Text;
+            obj.UnidadeMedida = unidadeMedida;
             obj.Quantidade = Convert.ToDouble(txtQuantidade.Text);
             obj.Preco = Convert.ToDouble(txtPreco.Text);
             obj.Desconto = Convert.ToDouble(txtDesconto.Text);
 
-            access.Gravar(obj);
+            itemAccess.Gravar(obj);
 
             Close();
 
@@ -76,6 +84,7 @@ namespace Windows.FormsItem
         {
 
             InitializeComponent();
+            ObjUtilitario.setComboBox(cbUnidadeMedida, unidadeMedidaAccess.ddl());
 
             if (Id > 0)
             {
@@ -117,6 +126,26 @@ namespace Windows.FormsItem
         {
             FormsItemEspecificacao.Cadastro form = new FormsItemEspecificacao.Cadastro();
             form.ShowDialog();
+        }
+
+
+
+        private void txtQuantidade_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtQuantidade.Text = ObjUtilitario.mascaraQuantidade(txtQuantidade, e); //Mudar a Mascara
+            txtQuantidade.SelectionStart = txtQuantidade.TextLength;
+        }
+
+        private void txtPreco_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtPreco.Text = ObjUtilitario.mascaraMoney(txtPreco, e); //Mudar a Mascara
+            txtPreco.SelectionStart = txtPreco.TextLength;
+        }
+
+        private void txtDesconto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtDesconto.Text = ObjUtilitario.mascaraPorcentagem(txtDesconto, e);
+            txtDesconto.SelectionStart = txtDesconto.TextLength;
         }
     }
 }

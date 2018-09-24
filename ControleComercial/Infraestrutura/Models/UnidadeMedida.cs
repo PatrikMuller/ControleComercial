@@ -10,8 +10,8 @@ namespace Infraestrutura.Models
     {
 
         public virtual int Id { get; set; }
-        public virtual String Descricao { get; set; }
-        public virtual String Sigla { get; set; }
+        public virtual string Descricao { get; set; }
+        public virtual string Sigla { get; set; }
 
     }
 }

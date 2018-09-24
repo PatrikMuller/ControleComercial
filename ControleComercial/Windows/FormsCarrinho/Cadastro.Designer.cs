@@ -37,6 +37,8 @@
             this.txtIdCarrinho = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.Rodape = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.btnGravar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnNovoCarrinho = new System.Windows.Forms.Button();
@@ -62,8 +64,6 @@
             this.gbListaProduto = new System.Windows.Forms.GroupBox();
             this.GridProdutos = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.Cabecalho.SuspendLayout();
             this.gbCarrinho.SuspendLayout();
             this.Rodape.SuspendLayout();
@@ -169,6 +169,27 @@
             this.Rodape.Name = "Rodape";
             this.Rodape.Size = new System.Drawing.Size(1284, 100);
             this.Rodape.TabIndex = 5;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(982, 6);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(72, 25);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "Total:";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(1060, 6);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(212, 25);
+            this.lblTotal.TabIndex = 5;
+            this.lblTotal.Text = "R$ 000.000.000,00";
             // 
             // btnGravar
             // 
@@ -281,6 +302,7 @@
             this.txtQuantidade.TabIndex = 65;
             this.txtQuantidade.Text = "0,000";
             this.txtQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtQuantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantidade_KeyPress);
             // 
             // label3
             // 
@@ -426,27 +448,6 @@
             this.label8.Size = new System.Drawing.Size(35, 13);
             this.label8.TabIndex = 8;
             this.label8.Text = "label8";
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(1060, 6);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(212, 25);
-            this.lblTotal.TabIndex = 5;
-            this.lblTotal.Text = "R$ 000.000.000,00";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(982, 6);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(72, 25);
-            this.label10.TabIndex = 6;
-            this.label10.Text = "Total:";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Cadastro
             // 

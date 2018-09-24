@@ -38,11 +38,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tcDados = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.txtDesconto = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cbUnidadeMedida = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtPreco = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.gridFormaPgto = new System.Windows.Forms.DataGridView();
@@ -56,6 +55,9 @@
             this.MenuButtonNovaEspecificacao = new System.Windows.Forms.ToolStripButton();
             this.MenuButtonEditarEspecificacao = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.txtQuantidade = new System.Windows.Forms.TextBox();
+            this.txtDesconto = new System.Windows.Forms.TextBox();
+            this.txtPreco = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tcDados.SuspendLayout();
@@ -109,14 +111,14 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(622, 98);
+            this.groupBox1.Size = new System.Drawing.Size(622, 92);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados Principais";
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(93, 50);
+            this.txtNome.Location = new System.Drawing.Point(96, 45);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(200, 20);
             this.txtNome.TabIndex = 3;
@@ -124,7 +126,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(52, 53);
+            this.label2.Location = new System.Drawing.Point(55, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 2;
@@ -132,7 +134,7 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(93, 24);
+            this.txtId.Location = new System.Drawing.Point(96, 19);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(100, 20);
@@ -142,7 +144,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 27);
+            this.label1.Location = new System.Drawing.Point(25, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 13);
             this.label1.TabIndex = 0;
@@ -154,71 +156,71 @@
             this.tcDados.Controls.Add(this.tabPage2);
             this.tcDados.Controls.Add(this.tabPage3);
             this.tcDados.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tcDados.Location = new System.Drawing.Point(0, 98);
+            this.tcDados.Location = new System.Drawing.Point(0, 92);
             this.tcDados.Name = "tcDados";
             this.tcDados.SelectedIndex = 0;
-            this.tcDados.Size = new System.Drawing.Size(622, 238);
+            this.tcDados.Size = new System.Drawing.Size(622, 244);
             this.tcDados.TabIndex = 27;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.txtDesconto);
-            this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.txtPreco);
-            this.tabPage1.Controls.Add(this.label5);
+            this.tabPage1.Controls.Add(this.txtDesconto);
             this.tabPage1.Controls.Add(this.txtQuantidade);
+            this.tabPage1.Controls.Add(this.label6);
+            this.tabPage1.Controls.Add(this.cbUnidadeMedida);
+            this.tabPage1.Controls.Add(this.label4);
+            this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(614, 212);
+            this.tabPage1.Size = new System.Drawing.Size(614, 218);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Geral";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // txtDesconto
+            // label6
             // 
-            this.txtDesconto.Location = new System.Drawing.Point(89, 43);
-            this.txtDesconto.Name = "txtDesconto";
-            this.txtDesconto.Size = new System.Drawing.Size(140, 20);
-            this.txtDesconto.TabIndex = 15;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(1, 21);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(85, 13);
+            this.label6.TabIndex = 67;
+            this.label6.Text = "Unidade Medida";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // cbUnidadeMedida
+            // 
+            this.cbUnidadeMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbUnidadeMedida.FormattingEnabled = true;
+            this.cbUnidadeMedida.Location = new System.Drawing.Point(92, 18);
+            this.cbUnidadeMedida.Name = "cbUnidadeMedida";
+            this.cbUnidadeMedida.Size = new System.Drawing.Size(200, 21);
+            this.cbUnidadeMedida.TabIndex = 66;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(30, 46);
+            this.label4.Location = new System.Drawing.Point(317, 48);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.Size = new System.Drawing.Size(64, 13);
             this.label4.TabIndex = 14;
-            this.label4.Text = "Desconto";
-            // 
-            // txtPreco
-            // 
-            this.txtPreco.Location = new System.Drawing.Point(365, 17);
-            this.txtPreco.Name = "txtPreco";
-            this.txtPreco.Size = new System.Drawing.Size(140, 20);
-            this.txtPreco.TabIndex = 13;
+            this.label4.Text = "Desconto %";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(324, 20);
+            this.label5.Location = new System.Drawing.Point(34, 48);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.Size = new System.Drawing.Size(52, 13);
             this.label5.TabIndex = 12;
-            this.label5.Text = "Preço";
-            // 
-            // txtQuantidade
-            // 
-            this.txtQuantidade.Location = new System.Drawing.Point(89, 17);
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(140, 20);
-            this.txtQuantidade.TabIndex = 11;
+            this.label5.Text = "Preço R$";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 20);
+            this.label3.Location = new System.Drawing.Point(319, 21);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 13);
             this.label3.TabIndex = 10;
@@ -231,7 +233,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(614, 212);
+            this.tabPage2.Size = new System.Drawing.Size(614, 218);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Classe";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -245,7 +247,7 @@
             this.gridFormaPgto.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.gridFormaPgto.Location = new System.Drawing.Point(3, 30);
             this.gridFormaPgto.Name = "gridFormaPgto";
-            this.gridFormaPgto.Size = new System.Drawing.Size(608, 179);
+            this.gridFormaPgto.Size = new System.Drawing.Size(608, 185);
             this.gridFormaPgto.TabIndex = 32;
             // 
             // menuFormaPagamento
@@ -293,7 +295,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(614, 212);
+            this.tabPage3.Size = new System.Drawing.Size(614, 218);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Especificação";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -307,7 +309,7 @@
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.dataGridView1.Location = new System.Drawing.Point(3, 30);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(608, 179);
+            this.dataGridView1.Size = new System.Drawing.Size(608, 185);
             this.dataGridView1.TabIndex = 33;
             // 
             // toolStrip1
@@ -347,6 +349,48 @@
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
+            // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.BackColor = System.Drawing.SystemColors.Window;
+            this.txtQuantidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtQuantidade.Location = new System.Drawing.Point(387, 18);
+            this.txtQuantidade.MaxLength = 18;
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.ReadOnly = true;
+            this.txtQuantidade.Size = new System.Drawing.Size(140, 20);
+            this.txtQuantidade.TabIndex = 68;
+            this.txtQuantidade.Text = "0,000";
+            this.txtQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtQuantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantidade_KeyPress);
+            // 
+            // txtDesconto
+            // 
+            this.txtDesconto.BackColor = System.Drawing.SystemColors.Window;
+            this.txtDesconto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtDesconto.Location = new System.Drawing.Point(387, 45);
+            this.txtDesconto.MaxLength = 18;
+            this.txtDesconto.Name = "txtDesconto";
+            this.txtDesconto.ReadOnly = true;
+            this.txtDesconto.Size = new System.Drawing.Size(140, 20);
+            this.txtDesconto.TabIndex = 69;
+            this.txtDesconto.Text = "0,00";
+            this.txtDesconto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtDesconto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDesconto_KeyPress);
+            // 
+            // txtPreco
+            // 
+            this.txtPreco.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPreco.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPreco.Location = new System.Drawing.Point(92, 45);
+            this.txtPreco.MaxLength = 18;
+            this.txtPreco.Name = "txtPreco";
+            this.txtPreco.ReadOnly = true;
+            this.txtPreco.Size = new System.Drawing.Size(140, 20);
+            this.txtPreco.TabIndex = 70;
+            this.txtPreco.Text = "0,00";
+            this.txtPreco.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPreco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPreco_KeyPress);
             // 
             // Cadastro
             // 
@@ -392,11 +436,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tcDados;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TextBox txtDesconto;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtPreco;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtQuantidade;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
@@ -410,5 +451,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.DataGridView gridFormaPgto;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cbUnidadeMedida;
+        private System.Windows.Forms.TextBox txtQuantidade;
+        private System.Windows.Forms.TextBox txtPreco;
+        private System.Windows.Forms.TextBox txtDesconto;
     }
 }

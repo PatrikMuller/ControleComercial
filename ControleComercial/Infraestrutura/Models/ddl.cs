@@ -8,7 +8,7 @@ namespace Infraestrutura.Models
 {
     public class ddl
     {
-        public virtual String Id { get; set; }
-        public virtual String Nome { get; set; }
+        public virtual string Id { get; set; }
+        public virtual string Nome { get; set; }
     }
 }

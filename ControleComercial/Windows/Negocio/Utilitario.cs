@@ -203,7 +203,7 @@ namespace Windows.Negocio
         }
 
         //Método para colocar Mascara no formato dinheiro em TextBox (Colocar no Evento KeyPress)
-        public String mascaraMoney(TextBox txt, KeyPressEventArgs e)
+        public string mascaraMoney(TextBox txt, KeyPressEventArgs e)
         {
 
             String texto = txt.Text;
@@ -217,7 +217,7 @@ namespace Windows.Negocio
                 }
             }
 
-            texto = texto.Replace(",", "").Trim();
+            texto = texto.Replace(",", "").Replace("R$", "").Trim();
 
             int tamanho = texto.Length;
             int posvirgula = (tamanho - 2);
@@ -239,7 +239,7 @@ namespace Windows.Negocio
 
             return texto;
         }
-        public String mascaraMoney(TextBox txt, Double ValorMaximo, KeyPressEventArgs e)
+        public string mascaraMoney(TextBox txt, double ValorMaximo, KeyPressEventArgs e)
         {
 
             String texto = txt.Text;
@@ -294,7 +294,7 @@ namespace Windows.Negocio
         }
 
         //Método para colocar Mascara no formato dinheiro em TextBox (Colocar no Evento KeyPress)
-        public String mascaraPorcentagem(TextBox txt, KeyPressEventArgs e)
+        public string mascaraPorcentagem(TextBox txt, KeyPressEventArgs e)
         {
 
             String texto = txt.Text;
@@ -334,28 +334,44 @@ namespace Windows.Negocio
 
             texto = Convert.ToDouble(texto).ToString("##0.00");
 
-            e.KeyChar = '%';
+            //e.KeyChar = '%';
 
             return texto;
         }
 
-        //Método para colocar Mascara no formato dinheiro em TextBox (Colocar no Evento KeyPress)
-        public String lerPorcentagem(Double campo)
+        //Método para colocar Mascara no formato porcentagem
+        public string lerPorcentagem(double campo)
         {
-            String texto = Convert.ToDouble(campo).ToString("##0.00") + "%";
+            String texto = Convert.ToDouble(campo).ToString("##0.00");// + "%";
+
+            return texto;
+        }
+
+        //Método para colocar Mascara no formato 3 casa após a vírgual
+        public string lerQuantidade(double campo)
+        {
+            String texto = Convert.ToDouble(campo).ToString("###,###,###,##0.000");
+
+            return texto;
+        }
+
+        //Método para colocar Mascara no formato 3 casa após a vírgual
+        public string lerPreco(double campo)
+        {
+            String texto = Convert.ToDouble(campo).ToString("###,###,###,##0.00");
 
             return texto;
         }
 
         //Método para colocar Mascara no formato inteiro com 8 digitos completanto com 0 a esquerda
-        public String mascaraInteiro(Int32 campo)
+        public string mascaraInteiro(Int32 campo)
         {
             String texto = Convert.ToString(campo).PadLeft(8, '0');
 
             return texto;
         }
 
-        public String mascaraQuantidade(TextBox txt, KeyPressEventArgs e)
+        public string mascaraQuantidade(TextBox txt, KeyPressEventArgs e)
         {
 
             String texto = txt.Text;

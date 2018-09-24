@@ -26,6 +26,11 @@ namespace Windows.FormsItem
             {
                 Grid.Columns[0].Width = 80;
                 Grid.Columns[1].Width = 220;
+
+                Grid.Columns[3].DefaultCellStyle.Format = "###,###,###,##0.000";
+                Grid.Columns[4].DefaultCellStyle.Format = "R$ ###,###,###,##0.00";
+                Grid.Columns[5].DefaultCellStyle.Format = "###,##0.00";
+
             }
         }
 
@@ -40,7 +45,7 @@ namespace Windows.FormsItem
         private void setarGrid()
         {
 
-            Grid.DataSource = access.Lista();
+            Grid.DataSource = access.Lista("%" + txtLocalizar.Text + "%");
             configuraGrid(Grid.RowCount);
             configuraBotoes(Grid.RowCount);
 

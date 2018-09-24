@@ -65,13 +65,31 @@ namespace Infraestrutura.Access
             }
         }
 
-        public IList<Item> Lista(String Nome)
+        //public IList<Item> Lista(String Nome)
+        //{
+        //    using (ISession session = NHibernateHelper.AbreSessao())
+        //    {
+        //        return session.Query<Item>().
+        //            Where(o => o.Nome.Like(Nome)).
+        //            OrderBy(C => C.Id).ToList();
+        //    }
+        //}
+
+        public Object Lista(String nome)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
-                return session.Query<Item>().
-                    Where(o => o.Nome.Like(Nome)).
-                    OrderBy(C => C.Id).ToList();
+                
+                var retorno = (from pf in session.Query<Item>().
+                                    Where(o => o.Nome.Like(nome)).
+                                    Fetch(o => o.UnidadeMedida).
+                                    Select(o => new { o.Id, o.Nome, Medida = o.UnidadeMedida.Sigla, o.Quantidade, o.Preco, o.Desconto }).
+                                    OrderBy(o => o.Nome).
+                                    ToList()
+                               select pf).Take(40).ToList();
+                
+                return retorno;
+
             }
         }
 

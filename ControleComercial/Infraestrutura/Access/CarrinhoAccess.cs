@@ -14,7 +14,7 @@ namespace Infraestrutura.Access
     public class CarrinhoAccess
     {
 
-        public Int32 Novo(Carrinho obj)
+        public int Novo(Carrinho obj)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
@@ -27,7 +27,7 @@ namespace Infraestrutura.Access
             }
         }
 
-        public Int32 Gravar(Carrinho obj)
+        public int Gravar(Carrinho obj)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
@@ -40,7 +40,7 @@ namespace Infraestrutura.Access
             }
         }
 
-        public Carrinho Ler(Int32 id)
+        public Carrinho Ler(int id)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {

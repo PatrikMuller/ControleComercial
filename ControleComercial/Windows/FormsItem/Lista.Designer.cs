@@ -81,7 +81,7 @@
             // 
             this.MenuItemNovo.Image = global::Windows.Properties.Resources.Novo;
             this.MenuItemNovo.Name = "MenuItemNovo";
-            this.MenuItemNovo.Size = new System.Drawing.Size(184, 26);
+            this.MenuItemNovo.Size = new System.Drawing.Size(109, 22);
             this.MenuItemNovo.Text = "Novo";
             this.MenuItemNovo.Click += new System.EventHandler(this.MenuItemNovo_Click);
             // 
@@ -89,7 +89,7 @@
             // 
             this.MenuItemEditar.Image = global::Windows.Properties.Resources.Editar;
             this.MenuItemEditar.Name = "MenuItemEditar";
-            this.MenuItemEditar.Size = new System.Drawing.Size(184, 26);
+            this.MenuItemEditar.Size = new System.Drawing.Size(109, 22);
             this.MenuItemEditar.Text = "Editar";
             this.MenuItemEditar.Click += new System.EventHandler(this.MenuItemEditar_Click);
             // 
@@ -101,7 +101,7 @@
             // MenuItemFechar
             // 
             this.MenuItemFechar.Name = "MenuItemFechar";
-            this.MenuItemFechar.Size = new System.Drawing.Size(184, 26);
+            this.MenuItemFechar.Size = new System.Drawing.Size(109, 22);
             this.MenuItemFechar.Text = "Fechar";
             this.MenuItemFechar.Click += new System.EventHandler(this.MenuItemFechar_Click);
             // 
@@ -167,6 +167,7 @@
             this.txtLocalizar.Size = new System.Drawing.Size(500, 20);
             this.txtLocalizar.TabIndex = 3;
             this.txtLocalizar.Click += new System.EventHandler(this.txtLocalizar_TextChanged);
+            this.txtLocalizar.TextChanged += new System.EventHandler(this.txtLocalizar_TextChanged);
             // 
             // label1
             // 

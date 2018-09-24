@@ -68,5 +68,29 @@ namespace Infraestrutura.Access
             }
         }
 
+        public List<ddl> ddl()
+        {
+            using (ISession session = NHibernateHelper.AbreSessao())
+            {
+                var retorno = session.Query<EspecificacaoTipo>().
+                    OrderBy(o => o.Descricao).ToList();
+
+                List<ddl> lista = new List<ddl>();
+
+                foreach (var obj in retorno)
+                {
+                    ddl Objddl = new ddl();
+
+                    Objddl.Id = Convert.ToString(obj.Id);
+                    Objddl.Nome = obj.Descricao;
+
+                    lista.Add(Objddl);
+                }
+
+                return lista;
+
+            }
+        }
+
     }
 }

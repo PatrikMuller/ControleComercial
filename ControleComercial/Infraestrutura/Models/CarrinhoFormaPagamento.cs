@@ -12,10 +12,10 @@ namespace Infraestrutura.Models
         public virtual int Id { get; set; }
         public virtual Carrinho Carrinho { get; set; }
         public virtual FormaPagamento FormaPagamento { get; set; }
-        public virtual Double ValorPagar { get; set; }
+        public virtual double ValorPagar { get; set; }
         public virtual int QtdParcelas { get; set; }
-        public virtual Double Juros { get; set; }
-        public virtual Double ValorParcela { get; set; }
+        public virtual double Juros { get; set; }
+        public virtual double ValorParcela { get; set; }
 
     }
 }

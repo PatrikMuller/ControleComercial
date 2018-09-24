@@ -10,9 +10,9 @@ namespace Infraestrutura.Models
     {
 
         public virtual int Id { get; set; }
-        public Item Item { get; set; }
-        public EspecificacaoTipo EspecificacaoTipo { get; set; }
-        public Especificacao Especificacao { get; set; }
+        public virtual Item Item { get; set; }
+        public virtual EspecificacaoTipo EspecificacaoTipo { get; set; }
+        public virtual Especificacao Especificacao { get; set; }
         
     }
 }
