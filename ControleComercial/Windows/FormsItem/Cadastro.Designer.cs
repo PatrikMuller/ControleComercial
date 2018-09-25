@@ -38,35 +38,35 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tcDados = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txtPreco = new System.Windows.Forms.TextBox();
+            this.txtDesconto = new System.Windows.Forms.TextBox();
+            this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cbUnidadeMedida = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.gridFormaPgto = new System.Windows.Forms.DataGridView();
+            this.gridClasse = new System.Windows.Forms.DataGridView();
             this.menuFormaPagamento = new System.Windows.Forms.ToolStrip();
             this.MenuButtonNovoClasse = new System.Windows.Forms.ToolStripButton();
             this.MenuButtonEditarClasse = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gridEspecificacao = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.MenuButtonNovaEspecificacao = new System.Windows.Forms.ToolStripButton();
             this.MenuButtonEditarEspecificacao = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.txtQuantidade = new System.Windows.Forms.TextBox();
-            this.txtDesconto = new System.Windows.Forms.TextBox();
-            this.txtPreco = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tcDados.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridFormaPgto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridClasse)).BeginInit();
             this.menuFormaPagamento.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEspecificacao)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -180,6 +180,48 @@
             this.tabPage1.Text = "Geral";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // txtPreco
+            // 
+            this.txtPreco.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPreco.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPreco.Location = new System.Drawing.Point(92, 45);
+            this.txtPreco.MaxLength = 18;
+            this.txtPreco.Name = "txtPreco";
+            this.txtPreco.ReadOnly = true;
+            this.txtPreco.Size = new System.Drawing.Size(140, 20);
+            this.txtPreco.TabIndex = 70;
+            this.txtPreco.Text = "0,00";
+            this.txtPreco.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPreco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPreco_KeyPress);
+            // 
+            // txtDesconto
+            // 
+            this.txtDesconto.BackColor = System.Drawing.SystemColors.Window;
+            this.txtDesconto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtDesconto.Location = new System.Drawing.Point(387, 45);
+            this.txtDesconto.MaxLength = 18;
+            this.txtDesconto.Name = "txtDesconto";
+            this.txtDesconto.ReadOnly = true;
+            this.txtDesconto.Size = new System.Drawing.Size(140, 20);
+            this.txtDesconto.TabIndex = 69;
+            this.txtDesconto.Text = "0,00";
+            this.txtDesconto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtDesconto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDesconto_KeyPress);
+            // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.BackColor = System.Drawing.SystemColors.Window;
+            this.txtQuantidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtQuantidade.Location = new System.Drawing.Point(387, 18);
+            this.txtQuantidade.MaxLength = 18;
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.ReadOnly = true;
+            this.txtQuantidade.Size = new System.Drawing.Size(140, 20);
+            this.txtQuantidade.TabIndex = 68;
+            this.txtQuantidade.Text = "0,000";
+            this.txtQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtQuantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantidade_KeyPress);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -228,7 +270,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.gridFormaPgto);
+            this.tabPage2.Controls.Add(this.gridClasse);
             this.tabPage2.Controls.Add(this.menuFormaPagamento);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -238,17 +280,17 @@
             this.tabPage2.Text = "Classe";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // gridFormaPgto
+            // gridClasse
             // 
-            this.gridFormaPgto.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.gridFormaPgto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.gridFormaPgto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridFormaPgto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridFormaPgto.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            this.gridFormaPgto.Location = new System.Drawing.Point(3, 30);
-            this.gridFormaPgto.Name = "gridFormaPgto";
-            this.gridFormaPgto.Size = new System.Drawing.Size(608, 185);
-            this.gridFormaPgto.TabIndex = 32;
+            this.gridClasse.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.gridClasse.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.gridClasse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridClasse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridClasse.GridColor = System.Drawing.SystemColors.ActiveBorder;
+            this.gridClasse.Location = new System.Drawing.Point(3, 30);
+            this.gridClasse.Name = "gridClasse";
+            this.gridClasse.Size = new System.Drawing.Size(608, 185);
+            this.gridClasse.TabIndex = 32;
             // 
             // menuFormaPagamento
             // 
@@ -290,7 +332,7 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.dataGridView1);
+            this.tabPage3.Controls.Add(this.gridEspecificacao);
             this.tabPage3.Controls.Add(this.toolStrip1);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
@@ -300,17 +342,17 @@
             this.tabPage3.Text = "Especificação";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // gridEspecificacao
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 30);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(608, 185);
-            this.dataGridView1.TabIndex = 33;
+            this.gridEspecificacao.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.gridEspecificacao.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.gridEspecificacao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridEspecificacao.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridEspecificacao.GridColor = System.Drawing.SystemColors.ActiveBorder;
+            this.gridEspecificacao.Location = new System.Drawing.Point(3, 30);
+            this.gridEspecificacao.Name = "gridEspecificacao";
+            this.gridEspecificacao.Size = new System.Drawing.Size(608, 185);
+            this.gridEspecificacao.TabIndex = 33;
             // 
             // toolStrip1
             // 
@@ -350,48 +392,6 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
-            // txtQuantidade
-            // 
-            this.txtQuantidade.BackColor = System.Drawing.SystemColors.Window;
-            this.txtQuantidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtQuantidade.Location = new System.Drawing.Point(387, 18);
-            this.txtQuantidade.MaxLength = 18;
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.ReadOnly = true;
-            this.txtQuantidade.Size = new System.Drawing.Size(140, 20);
-            this.txtQuantidade.TabIndex = 68;
-            this.txtQuantidade.Text = "0,000";
-            this.txtQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtQuantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantidade_KeyPress);
-            // 
-            // txtDesconto
-            // 
-            this.txtDesconto.BackColor = System.Drawing.SystemColors.Window;
-            this.txtDesconto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDesconto.Location = new System.Drawing.Point(387, 45);
-            this.txtDesconto.MaxLength = 18;
-            this.txtDesconto.Name = "txtDesconto";
-            this.txtDesconto.ReadOnly = true;
-            this.txtDesconto.Size = new System.Drawing.Size(140, 20);
-            this.txtDesconto.TabIndex = 69;
-            this.txtDesconto.Text = "0,00";
-            this.txtDesconto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtDesconto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDesconto_KeyPress);
-            // 
-            // txtPreco
-            // 
-            this.txtPreco.BackColor = System.Drawing.SystemColors.Window;
-            this.txtPreco.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPreco.Location = new System.Drawing.Point(92, 45);
-            this.txtPreco.MaxLength = 18;
-            this.txtPreco.Name = "txtPreco";
-            this.txtPreco.ReadOnly = true;
-            this.txtPreco.Size = new System.Drawing.Size(140, 20);
-            this.txtPreco.TabIndex = 70;
-            this.txtPreco.Text = "0,00";
-            this.txtPreco.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtPreco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPreco_KeyPress);
-            // 
             // Cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -412,12 +412,12 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridFormaPgto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridClasse)).EndInit();
             this.menuFormaPagamento.ResumeLayout(false);
             this.menuFormaPagamento.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEspecificacao)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -449,8 +449,8 @@
         private System.Windows.Forms.ToolStripButton MenuButtonNovaEspecificacao;
         private System.Windows.Forms.ToolStripButton MenuButtonEditarEspecificacao;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.DataGridView gridFormaPgto;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView gridClasse;
+        private System.Windows.Forms.DataGridView gridEspecificacao;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbUnidadeMedida;
         private System.Windows.Forms.TextBox txtQuantidade;

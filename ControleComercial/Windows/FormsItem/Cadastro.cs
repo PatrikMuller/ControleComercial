@@ -21,6 +21,8 @@ namespace Windows.FormsItem
         //Access
         ItemAccess itemAccess = new ItemAccess();
         UnidadeMedidaAccess unidadeMedidaAccess = new UnidadeMedidaAccess();
+        ItemClasseAccess itemClasseAccess = new ItemClasseAccess();
+        ItemEspecificacaoAccess itemEspecificacaoAccess = new ItemEspecificacaoAccess();
 
         //Negocio
         Negocio.Utilitario ObjUtilitario = new Negocio.Utilitario();
@@ -76,6 +78,16 @@ namespace Windows.FormsItem
 
         }
 
+        private void SetaGridClasse()
+        {
+            gridClasse.DataSource = itemClasseAccess.Lista(obj.Id);
+        }
+
+        private void SetaGridEspecificacao()
+        {
+            gridEspecificacao.DataSource = itemEspecificacaoAccess.Lista(obj.Id);
+        }
+
         //Fim - Métodos locais
 
 
@@ -103,32 +115,6 @@ namespace Windows.FormsItem
         {
             Close();
         }
-                
-        private void MenuButtonNovoClasse_Click(object sender, EventArgs e)
-        {
-            FormsItemClasse.Cadastro form = new FormsItemClasse.Cadastro();
-            form.ShowDialog();
-        }
-
-        private void MenuButtonEditarClasse_Click(object sender, EventArgs e)
-        {
-            FormsItemClasse.Cadastro form = new FormsItemClasse.Cadastro();
-            form.ShowDialog();
-        }
-
-        private void MenuButtonNovaEspecificacao_Click(object sender, EventArgs e)
-        {
-            FormsItemEspecificacao.Cadastro form = new FormsItemEspecificacao.Cadastro();
-            form.ShowDialog();
-        }
-
-        private void MenuButtonEditarEspecificacao_Click(object sender, EventArgs e)
-        {
-            FormsItemEspecificacao.Cadastro form = new FormsItemEspecificacao.Cadastro();
-            form.ShowDialog();
-        }
-
-
 
         private void txtQuantidade_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -147,6 +133,37 @@ namespace Windows.FormsItem
             txtDesconto.Text = ObjUtilitario.mascaraPorcentagem(txtDesconto, e);
             txtDesconto.SelectionStart = txtDesconto.TextLength;
         }
+
+
+        private void MenuButtonNovoClasse_Click(object sender, EventArgs e)
+        {
+            FormsItemClasse.Cadastro form = new FormsItemClasse.Cadastro(obj.Id);
+            form.ShowDialog();
+            SetaGridClasse();
+        }
+
+        private void MenuButtonEditarClasse_Click(object sender, EventArgs e)
+        {
+            FormsItemClasse.Cadastro form = new FormsItemClasse.Cadastro(obj.Id);
+            form.ShowDialog();
+        }
+
+        private void MenuButtonNovaEspecificacao_Click(object sender, EventArgs e)
+        {
+            FormsItemEspecificacao.Cadastro form = new FormsItemEspecificacao.Cadastro(obj.Id);
+            form.ShowDialog();
+            SetaGridEspecificacao();
+        }
+
+        private void MenuButtonEditarEspecificacao_Click(object sender, EventArgs e)
+        {
+            FormsItemEspecificacao.Cadastro form = new FormsItemEspecificacao.Cadastro(obj.Id);
+            form.ShowDialog();
+        }
+
+
+
+        
     }
 }
 

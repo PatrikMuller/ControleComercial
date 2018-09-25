@@ -211,9 +211,12 @@ namespace Windows.FormsPrincipal
             if (iLista.Count == 0)
             {
                 Item iObj = new Item();
+                UnidadeMedida uObj = new UnidadeMedida();
+                uObj.Id = 1;
 
                 iObj.Nome = "ANTENA WIRELLES";
                 iObj.Preco = 45.38;
+                iObj.UnidadeMedida = uObj;
                 iObj.Quantidade = 100;
                 iObj.Desconto = 6.25;
 
@@ -221,6 +224,7 @@ namespace Windows.FormsPrincipal
 
                 iObj.Nome = "BICILETA 21 MARCHAS";
                 iObj.Preco = 835.28;
+                iObj.UnidadeMedida = uObj;
                 iObj.Quantidade = 50;
                 iObj.Desconto = 15.24;
 
@@ -228,6 +232,7 @@ namespace Windows.FormsPrincipal
 
                 iObj.Nome = "FEIJAO TIO URBANO";
                 iObj.Preco = 5.29;
+                iObj.UnidadeMedida = uObj;
                 iObj.Quantidade = 1000;
                 iObj.Desconto = 5.25;
 
@@ -235,6 +240,7 @@ namespace Windows.FormsPrincipal
 
                 iObj.Nome = "CHOCOLATE BATON";
                 iObj.Preco = 0.70;
+                iObj.UnidadeMedida = uObj;
                 iObj.Quantidade = 1000;
                 iObj.Desconto = 0.00;
 

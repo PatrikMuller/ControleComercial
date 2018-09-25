@@ -67,7 +67,7 @@ namespace Infraestrutura.Access
 
             }
         }
-
+                
         public List<ddl> ddl()
         {
             using (ISession session = NHibernateHelper.AbreSessao())

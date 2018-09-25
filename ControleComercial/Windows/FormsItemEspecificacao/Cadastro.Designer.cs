@@ -31,10 +31,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnInserir = new System.Windows.Forms.Button();
             this.Classe = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cbTipo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cbEspecificacao = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cbTipo = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.Classe.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +57,7 @@
             this.btnInserir.TabIndex = 12;
             this.btnInserir.Text = "Inserir";
             this.btnInserir.UseVisualStyleBackColor = true;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // Classe
             // 
@@ -71,25 +72,6 @@
             this.Classe.TabIndex = 13;
             this.Classe.TabStop = false;
             this.Classe.Text = "Especificação do Item";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(54, 22);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(28, 13);
-            this.label6.TabIndex = 69;
-            this.label6.Text = "Tipo";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // cbTipo
-            // 
-            this.cbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTipo.FormattingEnabled = true;
-            this.cbTipo.Location = new System.Drawing.Point(88, 19);
-            this.cbTipo.Name = "cbTipo";
-            this.cbTipo.Size = new System.Drawing.Size(200, 21);
-            this.cbTipo.TabIndex = 68;
             // 
             // label1
             // 
@@ -109,6 +91,25 @@
             this.cbEspecificacao.Name = "cbEspecificacao";
             this.cbEspecificacao.Size = new System.Drawing.Size(200, 21);
             this.cbEspecificacao.TabIndex = 70;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(54, 22);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(28, 13);
+            this.label6.TabIndex = 69;
+            this.label6.Text = "Tipo";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // cbTipo
+            // 
+            this.cbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipo.FormattingEnabled = true;
+            this.cbTipo.Location = new System.Drawing.Point(88, 19);
+            this.cbTipo.Name = "cbTipo";
+            this.cbTipo.Size = new System.Drawing.Size(200, 21);
+            this.cbTipo.TabIndex = 68;
             // 
             // Cadastro
             // 

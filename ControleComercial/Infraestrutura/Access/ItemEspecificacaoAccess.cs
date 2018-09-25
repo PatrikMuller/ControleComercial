@@ -58,5 +58,25 @@ namespace Infraestrutura.Access
             }
         }
 
+        public Object Lista(int IdItem)
+        {
+            using (ISession session = NHibernateHelper.AbreSessao())
+            {
+
+                var lista = (from fpp in session.Query<ItemEspecificacao>().
+                             Where(o => o.Item.Id == IdItem).
+                             Fetch(o => o.EspecificacaoTipo).
+                             Fetch(o => o.Especificacao).
+                             Select(o => new { Tipo = o.EspecificacaoTipo.Descricao, Especificacao = o.Especificacao.Descricao }).
+                             OrderBy(o => o.Tipo).ToList()
+                             select fpp).ToList();
+
+
+
+                return lista;
+
+            }
+        }
+
     }
 }
