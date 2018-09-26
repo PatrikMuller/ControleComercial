@@ -28,20 +28,39 @@ namespace Windows.FormsItem
         Negocio.Utilitario ObjUtilitario = new Negocio.Utilitario();
 
 
+        private void SetaGridClasse()
+        {
+            gridClasse.DataSource = itemClasseAccess.Lista(obj.Id);
+        }
+
+        private void SetaGridEspecificacao()
+        {
+            gridEspecificacao.DataSource = itemEspecificacaoAccess.Lista(obj.Id);
+        }
+
+
         //Início - Métodos locais
         private void Ler(Int32 Id)
         {
 
             obj = itemAccess.Ler(Id);
 
-            txtId.Text = Convert.ToString(obj.Id);
-            txtNome.Text = obj.Nome;
-            cbUnidadeMedida.SelectedValue = obj.UnidadeMedida == null ? "1" : Convert.ToString(obj.UnidadeMedida.Id);
-            txtQuantidade.Text = ObjUtilitario.lerQuantidade(obj.Quantidade);
-            txtPreco.Text = ObjUtilitario.lerPreco(obj.Preco);
-            txtDesconto.Text = ObjUtilitario.lerPorcentagem(obj.Desconto);
+            if (obj != null)
+            {
+                txtId.Text = Convert.ToString(obj.Id);
+                txtNome.Text = obj.Nome;
+                cbUnidadeMedida.SelectedValue = obj.UnidadeMedida == null ? "1" : Convert.ToString(obj.UnidadeMedida.Id);
+                txtQuantidade.Text = ObjUtilitario.lerQuantidade(obj.Quantidade);
+                txtPreco.Text = ObjUtilitario.lerPreco(obj.Preco);
+                txtDesconto.Text = ObjUtilitario.lerPorcentagem(obj.Desconto);
 
-            //AtivaComponentes();
+                SetaGridClasse();
+                SetaGridEspecificacao();
+
+                //AtivaComponentes();
+                //HabilitaGrids();
+            }
+
         }
 
         private void Gravar()
@@ -56,9 +75,32 @@ namespace Windows.FormsItem
             obj.Preco = Convert.ToDouble(txtPreco.Text);
             obj.Desconto = Convert.ToDouble(txtDesconto.Text);
 
-            itemAccess.Gravar(obj);
+
+            if (obj.Id == 0)
+                txtId.Text = Convert.ToString(itemAccess.Novo(obj));
+            else
+                itemAccess.Gravar(obj);
 
             Close();
+
+        }
+
+        private bool idZero()
+        {
+            return txtId.Text == "0" ? false : true;
+        }
+
+
+        private void HabilitaGrids()
+        {
+            //MenuButtonNovoClasse.Enabled = idZero();
+            //MenuButtonDeletarClasse.Enabled = idZero();
+
+            //MenuButtonNovaEspecificacao.Enabled = idZero();
+            //MenuButtonExcluirEspecificacao.Enabled = idZero(); 
+
+            tsClasse.Enabled = idZero();
+            tsEspecificacao.Enabled = idZero();
 
         }
 
@@ -76,18 +118,7 @@ namespace Windows.FormsItem
             txtNome.Enabled = true;
             btnGravar.Enabled = true;
 
-        }
-
-        private void SetaGridClasse()
-        {
-            gridClasse.DataSource = itemClasseAccess.Lista(obj.Id);
-        }
-
-        private void SetaGridEspecificacao()
-        {
-            gridEspecificacao.DataSource = itemEspecificacaoAccess.Lista(obj.Id);
-        }
-
+        }        
         //Fim - Métodos locais
 
 
@@ -103,6 +134,7 @@ namespace Windows.FormsItem
                 Ler(Id);
             }
 
+            HabilitaGrids();
 
         }
 
@@ -142,10 +174,12 @@ namespace Windows.FormsItem
             SetaGridClasse();
         }
 
-        private void MenuButtonEditarClasse_Click(object sender, EventArgs e)
+        private void MenuButtonDeletarClasse_Click(object sender, EventArgs e)
         {
-            FormsItemClasse.Cadastro form = new FormsItemClasse.Cadastro(obj.Id);
-            form.ShowDialog();
+            ItemClasse obj = new ItemClasse();
+            obj.Id = Convert.ToInt32(gridClasse.CurrentRow.Cells[0].Value);
+            itemClasseAccess.Remove(obj);
+            SetaGridClasse();
         }
 
         private void MenuButtonNovaEspecificacao_Click(object sender, EventArgs e)
@@ -154,16 +188,15 @@ namespace Windows.FormsItem
             form.ShowDialog();
             SetaGridEspecificacao();
         }
-
-        private void MenuButtonEditarEspecificacao_Click(object sender, EventArgs e)
+                
+        private void MenuButtonExcluirEspecificacao_Click(object sender, EventArgs e)
         {
-            FormsItemEspecificacao.Cadastro form = new FormsItemEspecificacao.Cadastro(obj.Id);
-            form.ShowDialog();
+            ItemEspecificacao obj = new ItemEspecificacao();
+            obj.Id = Convert.ToInt32(gridEspecificacao.CurrentRow.Cells[0].Value);
+            itemEspecificacaoAccess.Remove(obj);
+            SetaGridEspecificacao();
         }
-
-
-
-        
+                
     }
 }
 

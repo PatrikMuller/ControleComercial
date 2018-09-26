@@ -47,7 +47,17 @@ namespace Infraestrutura.Access
                 return session.Get<ItemEspecificacao>(id);
             }
         }
-                
+
+        public void Remove(ItemEspecificacao o)
+        {
+            using (ISession session = NHibernateHelper.AbreSessao())
+            {
+                ITransaction tx = session.BeginTransaction();
+                session.Delete(o);
+                tx.Commit();
+            }
+        }
+
         public IList<ItemEspecificacao> Lista()
         {
             using (ISession session = NHibernateHelper.AbreSessao())
@@ -67,7 +77,7 @@ namespace Infraestrutura.Access
                              Where(o => o.Item.Id == IdItem).
                              Fetch(o => o.EspecificacaoTipo).
                              Fetch(o => o.Especificacao).
-                             Select(o => new { Tipo = o.EspecificacaoTipo.Descricao, Especificacao = o.Especificacao.Descricao }).
+                             Select(o => new { o.Id, Tipo = o.EspecificacaoTipo.Descricao, Especificacao = o.Especificacao.Descricao }).
                              OrderBy(o => o.Tipo).ToList()
                              select fpp).ToList();
 

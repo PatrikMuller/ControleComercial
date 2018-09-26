@@ -37,7 +37,7 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tcDados = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tpGeral = new System.Windows.Forms.TabPage();
             this.txtPreco = new System.Windows.Forms.TextBox();
             this.txtDesconto = new System.Windows.Forms.TextBox();
             this.txtQuantidade = new System.Windows.Forms.TextBox();
@@ -46,28 +46,28 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tpClasse = new System.Windows.Forms.TabPage();
             this.gridClasse = new System.Windows.Forms.DataGridView();
-            this.menuFormaPagamento = new System.Windows.Forms.ToolStrip();
-            this.MenuButtonNovoClasse = new System.Windows.Forms.ToolStripButton();
-            this.MenuButtonEditarClasse = new System.Windows.Forms.ToolStripButton();
+            this.tsClasse = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tpEspecificacao = new System.Windows.Forms.TabPage();
             this.gridEspecificacao = new System.Windows.Forms.DataGridView();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.MenuButtonNovaEspecificacao = new System.Windows.Forms.ToolStripButton();
-            this.MenuButtonEditarEspecificacao = new System.Windows.Forms.ToolStripButton();
+            this.tsEspecificacao = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.MenuButtonNovoClasse = new System.Windows.Forms.ToolStripButton();
+            this.MenuButtonDeletarClasse = new System.Windows.Forms.ToolStripButton();
+            this.MenuButtonNovaEspecificacao = new System.Windows.Forms.ToolStripButton();
+            this.MenuButtonExcluirEspecificacao = new System.Windows.Forms.ToolStripButton();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tcDados.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.tpGeral.SuspendLayout();
+            this.tpClasse.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridClasse)).BeginInit();
-            this.menuFormaPagamento.SuspendLayout();
-            this.tabPage3.SuspendLayout();
+            this.tsClasse.SuspendLayout();
+            this.tpEspecificacao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEspecificacao)).BeginInit();
-            this.toolStrip1.SuspendLayout();
+            this.tsEspecificacao.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -152,9 +152,9 @@
             // 
             // tcDados
             // 
-            this.tcDados.Controls.Add(this.tabPage1);
-            this.tcDados.Controls.Add(this.tabPage2);
-            this.tcDados.Controls.Add(this.tabPage3);
+            this.tcDados.Controls.Add(this.tpGeral);
+            this.tcDados.Controls.Add(this.tpClasse);
+            this.tcDados.Controls.Add(this.tpEspecificacao);
             this.tcDados.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcDados.Location = new System.Drawing.Point(0, 92);
             this.tcDados.Name = "tcDados";
@@ -162,23 +162,23 @@
             this.tcDados.Size = new System.Drawing.Size(622, 244);
             this.tcDados.TabIndex = 27;
             // 
-            // tabPage1
+            // tpGeral
             // 
-            this.tabPage1.Controls.Add(this.txtPreco);
-            this.tabPage1.Controls.Add(this.txtDesconto);
-            this.tabPage1.Controls.Add(this.txtQuantidade);
-            this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.cbUnidadeMedida);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(614, 218);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Geral";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tpGeral.Controls.Add(this.txtPreco);
+            this.tpGeral.Controls.Add(this.txtDesconto);
+            this.tpGeral.Controls.Add(this.txtQuantidade);
+            this.tpGeral.Controls.Add(this.label6);
+            this.tpGeral.Controls.Add(this.cbUnidadeMedida);
+            this.tpGeral.Controls.Add(this.label4);
+            this.tpGeral.Controls.Add(this.label5);
+            this.tpGeral.Controls.Add(this.label3);
+            this.tpGeral.Location = new System.Drawing.Point(4, 22);
+            this.tpGeral.Name = "tpGeral";
+            this.tpGeral.Padding = new System.Windows.Forms.Padding(3);
+            this.tpGeral.Size = new System.Drawing.Size(614, 218);
+            this.tpGeral.TabIndex = 0;
+            this.tpGeral.Text = "Geral";
+            this.tpGeral.UseVisualStyleBackColor = true;
             // 
             // txtPreco
             // 
@@ -268,17 +268,17 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Quantidade";
             // 
-            // tabPage2
+            // tpClasse
             // 
-            this.tabPage2.Controls.Add(this.gridClasse);
-            this.tabPage2.Controls.Add(this.menuFormaPagamento);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(614, 218);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Classe";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tpClasse.Controls.Add(this.gridClasse);
+            this.tpClasse.Controls.Add(this.tsClasse);
+            this.tpClasse.Location = new System.Drawing.Point(4, 22);
+            this.tpClasse.Name = "tpClasse";
+            this.tpClasse.Padding = new System.Windows.Forms.Padding(3);
+            this.tpClasse.Size = new System.Drawing.Size(614, 218);
+            this.tpClasse.TabIndex = 1;
+            this.tpClasse.Text = "Classe";
+            this.tpClasse.UseVisualStyleBackColor = true;
             // 
             // gridClasse
             // 
@@ -292,55 +292,35 @@
             this.gridClasse.Size = new System.Drawing.Size(608, 185);
             this.gridClasse.TabIndex = 32;
             // 
-            // menuFormaPagamento
+            // tsClasse
             // 
-            this.menuFormaPagamento.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuFormaPagamento.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsClasse.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.tsClasse.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuButtonNovoClasse,
-            this.MenuButtonEditarClasse,
+            this.MenuButtonDeletarClasse,
             this.toolStripSeparator1});
-            this.menuFormaPagamento.Location = new System.Drawing.Point(3, 3);
-            this.menuFormaPagamento.Name = "menuFormaPagamento";
-            this.menuFormaPagamento.Size = new System.Drawing.Size(608, 27);
-            this.menuFormaPagamento.TabIndex = 31;
-            this.menuFormaPagamento.Text = "toolStrip1";
-            // 
-            // MenuButtonNovoClasse
-            // 
-            this.MenuButtonNovoClasse.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MenuButtonNovoClasse.Image = global::Windows.Properties.Resources.Novo;
-            this.MenuButtonNovoClasse.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MenuButtonNovoClasse.Name = "MenuButtonNovoClasse";
-            this.MenuButtonNovoClasse.Size = new System.Drawing.Size(24, 24);
-            this.MenuButtonNovoClasse.Text = "Novo";
-            this.MenuButtonNovoClasse.Click += new System.EventHandler(this.MenuButtonNovoClasse_Click);
-            // 
-            // MenuButtonEditarClasse
-            // 
-            this.MenuButtonEditarClasse.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MenuButtonEditarClasse.Image = global::Windows.Properties.Resources.Editar;
-            this.MenuButtonEditarClasse.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MenuButtonEditarClasse.Name = "MenuButtonEditarClasse";
-            this.MenuButtonEditarClasse.Size = new System.Drawing.Size(24, 24);
-            this.MenuButtonEditarClasse.Text = "Editar";
-            this.MenuButtonEditarClasse.Click += new System.EventHandler(this.MenuButtonEditarClasse_Click);
+            this.tsClasse.Location = new System.Drawing.Point(3, 3);
+            this.tsClasse.Name = "tsClasse";
+            this.tsClasse.Size = new System.Drawing.Size(608, 27);
+            this.tsClasse.TabIndex = 31;
+            this.tsClasse.Text = "toolStrip1";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
-            // tabPage3
+            // tpEspecificacao
             // 
-            this.tabPage3.Controls.Add(this.gridEspecificacao);
-            this.tabPage3.Controls.Add(this.toolStrip1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(614, 218);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Especificação";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tpEspecificacao.Controls.Add(this.gridEspecificacao);
+            this.tpEspecificacao.Controls.Add(this.tsEspecificacao);
+            this.tpEspecificacao.Location = new System.Drawing.Point(4, 22);
+            this.tpEspecificacao.Name = "tpEspecificacao";
+            this.tpEspecificacao.Padding = new System.Windows.Forms.Padding(3);
+            this.tpEspecificacao.Size = new System.Drawing.Size(614, 218);
+            this.tpEspecificacao.TabIndex = 2;
+            this.tpEspecificacao.Text = "Especificação";
+            this.tpEspecificacao.UseVisualStyleBackColor = true;
             // 
             // gridEspecificacao
             // 
@@ -354,43 +334,63 @@
             this.gridEspecificacao.Size = new System.Drawing.Size(608, 185);
             this.gridEspecificacao.TabIndex = 33;
             // 
-            // toolStrip1
+            // tsEspecificacao
             // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsEspecificacao.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.tsEspecificacao.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuButtonNovaEspecificacao,
-            this.MenuButtonEditarEspecificacao,
+            this.MenuButtonExcluirEspecificacao,
             this.toolStripSeparator2});
-            this.toolStrip1.Location = new System.Drawing.Point(3, 3);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(608, 27);
-            this.toolStrip1.TabIndex = 32;
-            this.toolStrip1.Text = "toolStrip1";
+            this.tsEspecificacao.Location = new System.Drawing.Point(3, 3);
+            this.tsEspecificacao.Name = "tsEspecificacao";
+            this.tsEspecificacao.Size = new System.Drawing.Size(608, 27);
+            this.tsEspecificacao.TabIndex = 32;
+            this.tsEspecificacao.Text = "toolStrip1";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
+            // 
+            // MenuButtonNovoClasse
+            // 
+            this.MenuButtonNovoClasse.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MenuButtonNovoClasse.Image = global::Windows.Properties.Resources.novo1;
+            this.MenuButtonNovoClasse.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MenuButtonNovoClasse.Name = "MenuButtonNovoClasse";
+            this.MenuButtonNovoClasse.Size = new System.Drawing.Size(24, 24);
+            this.MenuButtonNovoClasse.Text = "Novo";
+            this.MenuButtonNovoClasse.Click += new System.EventHandler(this.MenuButtonNovoClasse_Click);
+            // 
+            // MenuButtonDeletarClasse
+            // 
+            this.MenuButtonDeletarClasse.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MenuButtonDeletarClasse.Image = global::Windows.Properties.Resources.delete;
+            this.MenuButtonDeletarClasse.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MenuButtonDeletarClasse.Name = "MenuButtonDeletarClasse";
+            this.MenuButtonDeletarClasse.Size = new System.Drawing.Size(24, 24);
+            this.MenuButtonDeletarClasse.Text = "Deletar";
+            this.MenuButtonDeletarClasse.Click += new System.EventHandler(this.MenuButtonDeletarClasse_Click);
             // 
             // MenuButtonNovaEspecificacao
             // 
             this.MenuButtonNovaEspecificacao.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MenuButtonNovaEspecificacao.Image = global::Windows.Properties.Resources.Novo;
+            this.MenuButtonNovaEspecificacao.Image = global::Windows.Properties.Resources.novo1;
             this.MenuButtonNovaEspecificacao.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.MenuButtonNovaEspecificacao.Name = "MenuButtonNovaEspecificacao";
             this.MenuButtonNovaEspecificacao.Size = new System.Drawing.Size(24, 24);
             this.MenuButtonNovaEspecificacao.Text = "Novo";
             this.MenuButtonNovaEspecificacao.Click += new System.EventHandler(this.MenuButtonNovaEspecificacao_Click);
             // 
-            // MenuButtonEditarEspecificacao
+            // MenuButtonExcluirEspecificacao
             // 
-            this.MenuButtonEditarEspecificacao.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MenuButtonEditarEspecificacao.Image = global::Windows.Properties.Resources.Editar;
-            this.MenuButtonEditarEspecificacao.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MenuButtonEditarEspecificacao.Name = "MenuButtonEditarEspecificacao";
-            this.MenuButtonEditarEspecificacao.Size = new System.Drawing.Size(24, 24);
-            this.MenuButtonEditarEspecificacao.Text = "Editar";
-            this.MenuButtonEditarEspecificacao.Click += new System.EventHandler(this.MenuButtonEditarEspecificacao_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
+            this.MenuButtonExcluirEspecificacao.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MenuButtonExcluirEspecificacao.Image = global::Windows.Properties.Resources.delete;
+            this.MenuButtonExcluirEspecificacao.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MenuButtonExcluirEspecificacao.Name = "MenuButtonExcluirEspecificacao";
+            this.MenuButtonExcluirEspecificacao.Size = new System.Drawing.Size(24, 24);
+            this.MenuButtonExcluirEspecificacao.Text = "Editar";
+            this.MenuButtonExcluirEspecificacao.Click += new System.EventHandler(this.MenuButtonExcluirEspecificacao_Click);
             // 
             // Cadastro
             // 
@@ -408,18 +408,18 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tcDados.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.tpGeral.ResumeLayout(false);
+            this.tpGeral.PerformLayout();
+            this.tpClasse.ResumeLayout(false);
+            this.tpClasse.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridClasse)).EndInit();
-            this.menuFormaPagamento.ResumeLayout(false);
-            this.menuFormaPagamento.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
+            this.tsClasse.ResumeLayout(false);
+            this.tsClasse.PerformLayout();
+            this.tpEspecificacao.ResumeLayout(false);
+            this.tpEspecificacao.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEspecificacao)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.tsEspecificacao.ResumeLayout(false);
+            this.tsEspecificacao.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -435,19 +435,18 @@
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tcDados;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tpGeral;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.ToolStrip menuFormaPagamento;
+        private System.Windows.Forms.TabPage tpClasse;
+        private System.Windows.Forms.TabPage tpEspecificacao;
+        private System.Windows.Forms.ToolStrip tsClasse;
         private System.Windows.Forms.ToolStripButton MenuButtonNovoClasse;
-        private System.Windows.Forms.ToolStripButton MenuButtonEditarClasse;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip tsEspecificacao;
         private System.Windows.Forms.ToolStripButton MenuButtonNovaEspecificacao;
-        private System.Windows.Forms.ToolStripButton MenuButtonEditarEspecificacao;
+        private System.Windows.Forms.ToolStripButton MenuButtonExcluirEspecificacao;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.DataGridView gridClasse;
         private System.Windows.Forms.DataGridView gridEspecificacao;
@@ -456,5 +455,6 @@
         private System.Windows.Forms.TextBox txtQuantidade;
         private System.Windows.Forms.TextBox txtPreco;
         private System.Windows.Forms.TextBox txtDesconto;
+        private System.Windows.Forms.ToolStripButton MenuButtonDeletarClasse;
     }
 }

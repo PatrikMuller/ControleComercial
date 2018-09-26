@@ -47,7 +47,17 @@ namespace Infraestrutura.Access
                 return session.Get<ItemClasse>(id);
             }
         }
-                
+
+        public void Remove(ItemClasse o)
+        {
+            using (ISession session = NHibernateHelper.AbreSessao())
+            {
+                ITransaction tx = session.BeginTransaction();
+                session.Delete(o);
+                tx.Commit();
+            }
+        }
+
         public IList<ItemClasse> Lista()
         {
             using (ISession session = NHibernateHelper.AbreSessao())
@@ -66,7 +76,7 @@ namespace Infraestrutura.Access
                 var lista = (from fpp in session.Query<ItemClasse>().
                              Where(o => o.Item.Id == IdItem).
                              Fetch(o => o.Classe).
-                             Select(o => new { Classe = o.Classe.Descricao }).
+                             Select(o => new { o.Id, Classe = o.Classe.Descricao }).
                              OrderBy(o => o.Classe).ToList()
                              select fpp).ToList();
 
