@@ -168,12 +168,10 @@ namespace Windows.FormsItem
 
         private void MenuButtonDeletarClasse_Click(object sender, EventArgs e)
         {
-            //ItemClasse obj = new ItemClasse();
-            //obj.Id = Convert.ToInt32(gridClasse.CurrentRow.Cells[0].Value);
-            //itemClasseAccess.Remove(obj);
             itemClasseAccess.Delete(Convert.ToInt32(gridClasse.CurrentRow.Cells[0].Value));
             SetaGridClasse();
             ConfiguraCampos();
+            lblGravar.Text = "Classe deletada com sucesso!";
         }
 
         private void MenuButtonNovaEspecificacao_Click(object sender, EventArgs e)
@@ -186,12 +184,10 @@ namespace Windows.FormsItem
                 
         private void MenuButtonDeletarEspecificacao_Click(object sender, EventArgs e)
         {
-            //ItemEspecificacao obj = new ItemEspecificacao();
-            //obj.Id = Convert.ToInt32(gridEspecificacao.CurrentRow.Cells[0].Value);
-            //itemEspecificacaoAccess.Remove(obj);
             itemEspecificacaoAccess.Delete(Convert.ToInt32(gridEspecificacao.CurrentRow.Cells[0].Value));
             SetaGridEspecificacao();
             ConfiguraCampos();
+            lblGravar.Text = "Especificação deletada com sucesso!";
         }
     }
 }
