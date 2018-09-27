@@ -24,7 +24,8 @@ namespace Windows.FormsItem
         {
             if (QtdLinhas > 0)
             {
-                Grid.Columns[0].Width = 80;
+                //Grid.Columns[0].Width = 80;
+                Grid.Columns[0].Visible = false;
                 Grid.Columns[1].Width = 220;
 
                 Grid.Columns[3].DefaultCellStyle.Format = "###,###,###,##0.000";

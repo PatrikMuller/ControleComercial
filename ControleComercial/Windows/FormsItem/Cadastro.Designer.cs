@@ -49,15 +49,18 @@
             this.tpClasse = new System.Windows.Forms.TabPage();
             this.gridClasse = new System.Windows.Forms.DataGridView();
             this.tsClasse = new System.Windows.Forms.ToolStrip();
+            this.MenuButtonNovoClasse = new System.Windows.Forms.ToolStripButton();
+            this.MenuButtonDeletarClasse = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tpEspecificacao = new System.Windows.Forms.TabPage();
             this.gridEspecificacao = new System.Windows.Forms.DataGridView();
             this.tsEspecificacao = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.MenuButtonNovoClasse = new System.Windows.Forms.ToolStripButton();
-            this.MenuButtonDeletarClasse = new System.Windows.Forms.ToolStripButton();
             this.MenuButtonNovaEspecificacao = new System.Windows.Forms.ToolStripButton();
-            this.MenuButtonExcluirEspecificacao = new System.Windows.Forms.ToolStripButton();
+            this.MenuButtonDeletarEspecificacao = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbFabricante = new System.Windows.Forms.ComboBox();
+            this.lblGravar = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tcDados.SuspendLayout();
@@ -72,6 +75,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblGravar);
             this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.btnGravar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -111,16 +115,17 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(622, 92);
+            this.groupBox1.Size = new System.Drawing.Size(622, 102);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados Principais";
             // 
             // txtNome
             // 
+            this.txtNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNome.Location = new System.Drawing.Point(96, 45);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(200, 20);
+            this.txtNome.Size = new System.Drawing.Size(400, 20);
             this.txtNome.TabIndex = 3;
             // 
             // label2
@@ -156,16 +161,18 @@
             this.tcDados.Controls.Add(this.tpClasse);
             this.tcDados.Controls.Add(this.tpEspecificacao);
             this.tcDados.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tcDados.Location = new System.Drawing.Point(0, 92);
+            this.tcDados.Location = new System.Drawing.Point(0, 102);
             this.tcDados.Name = "tcDados";
             this.tcDados.SelectedIndex = 0;
-            this.tcDados.Size = new System.Drawing.Size(622, 244);
+            this.tcDados.Size = new System.Drawing.Size(622, 234);
             this.tcDados.TabIndex = 27;
             // 
             // tpGeral
             // 
+            this.tpGeral.Controls.Add(this.label7);
             this.tpGeral.Controls.Add(this.txtPreco);
             this.tpGeral.Controls.Add(this.txtDesconto);
+            this.tpGeral.Controls.Add(this.cbFabricante);
             this.tpGeral.Controls.Add(this.txtQuantidade);
             this.tpGeral.Controls.Add(this.label6);
             this.tpGeral.Controls.Add(this.cbUnidadeMedida);
@@ -175,7 +182,7 @@
             this.tpGeral.Location = new System.Drawing.Point(4, 22);
             this.tpGeral.Name = "tpGeral";
             this.tpGeral.Padding = new System.Windows.Forms.Padding(3);
-            this.tpGeral.Size = new System.Drawing.Size(614, 218);
+            this.tpGeral.Size = new System.Drawing.Size(614, 208);
             this.tpGeral.TabIndex = 0;
             this.tpGeral.Text = "Geral";
             this.tpGeral.UseVisualStyleBackColor = true;
@@ -184,7 +191,7 @@
             // 
             this.txtPreco.BackColor = System.Drawing.SystemColors.Window;
             this.txtPreco.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPreco.Location = new System.Drawing.Point(92, 45);
+            this.txtPreco.Location = new System.Drawing.Point(92, 87);
             this.txtPreco.MaxLength = 18;
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.ReadOnly = true;
@@ -198,7 +205,7 @@
             // 
             this.txtDesconto.BackColor = System.Drawing.SystemColors.Window;
             this.txtDesconto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDesconto.Location = new System.Drawing.Point(387, 45);
+            this.txtDesconto.Location = new System.Drawing.Point(387, 87);
             this.txtDesconto.MaxLength = 18;
             this.txtDesconto.Name = "txtDesconto";
             this.txtDesconto.ReadOnly = true;
@@ -212,7 +219,7 @@
             // 
             this.txtQuantidade.BackColor = System.Drawing.SystemColors.Window;
             this.txtQuantidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtQuantidade.Location = new System.Drawing.Point(387, 18);
+            this.txtQuantidade.Location = new System.Drawing.Point(387, 60);
             this.txtQuantidade.MaxLength = 18;
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.ReadOnly = true;
@@ -225,7 +232,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1, 21);
+            this.label6.Location = new System.Drawing.Point(1, 63);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(85, 13);
             this.label6.TabIndex = 67;
@@ -236,7 +243,7 @@
             // 
             this.cbUnidadeMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUnidadeMedida.FormattingEnabled = true;
-            this.cbUnidadeMedida.Location = new System.Drawing.Point(92, 18);
+            this.cbUnidadeMedida.Location = new System.Drawing.Point(92, 60);
             this.cbUnidadeMedida.Name = "cbUnidadeMedida";
             this.cbUnidadeMedida.Size = new System.Drawing.Size(200, 21);
             this.cbUnidadeMedida.TabIndex = 66;
@@ -244,7 +251,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(317, 48);
+            this.label4.Location = new System.Drawing.Point(317, 90);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 13);
             this.label4.TabIndex = 14;
@@ -253,7 +260,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(34, 48);
+            this.label5.Location = new System.Drawing.Point(34, 90);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 13);
             this.label5.TabIndex = 12;
@@ -262,7 +269,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(319, 21);
+            this.label3.Location = new System.Drawing.Point(319, 63);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 13);
             this.label3.TabIndex = 10;
@@ -275,7 +282,7 @@
             this.tpClasse.Location = new System.Drawing.Point(4, 22);
             this.tpClasse.Name = "tpClasse";
             this.tpClasse.Padding = new System.Windows.Forms.Padding(3);
-            this.tpClasse.Size = new System.Drawing.Size(614, 218);
+            this.tpClasse.Size = new System.Drawing.Size(614, 208);
             this.tpClasse.TabIndex = 1;
             this.tpClasse.Text = "Classe";
             this.tpClasse.UseVisualStyleBackColor = true;
@@ -289,7 +296,7 @@
             this.gridClasse.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.gridClasse.Location = new System.Drawing.Point(3, 30);
             this.gridClasse.Name = "gridClasse";
-            this.gridClasse.Size = new System.Drawing.Size(608, 185);
+            this.gridClasse.Size = new System.Drawing.Size(608, 175);
             this.gridClasse.TabIndex = 32;
             // 
             // tsClasse
@@ -304,6 +311,26 @@
             this.tsClasse.Size = new System.Drawing.Size(608, 27);
             this.tsClasse.TabIndex = 31;
             this.tsClasse.Text = "toolStrip1";
+            // 
+            // MenuButtonNovoClasse
+            // 
+            this.MenuButtonNovoClasse.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MenuButtonNovoClasse.Image = global::Windows.Properties.Resources.novo1;
+            this.MenuButtonNovoClasse.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MenuButtonNovoClasse.Name = "MenuButtonNovoClasse";
+            this.MenuButtonNovoClasse.Size = new System.Drawing.Size(24, 24);
+            this.MenuButtonNovoClasse.Text = "Novo";
+            this.MenuButtonNovoClasse.Click += new System.EventHandler(this.MenuButtonNovoClasse_Click);
+            // 
+            // MenuButtonDeletarClasse
+            // 
+            this.MenuButtonDeletarClasse.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MenuButtonDeletarClasse.Image = global::Windows.Properties.Resources.delete;
+            this.MenuButtonDeletarClasse.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MenuButtonDeletarClasse.Name = "MenuButtonDeletarClasse";
+            this.MenuButtonDeletarClasse.Size = new System.Drawing.Size(24, 24);
+            this.MenuButtonDeletarClasse.Text = "Deletar";
+            this.MenuButtonDeletarClasse.Click += new System.EventHandler(this.MenuButtonDeletarClasse_Click);
             // 
             // toolStripSeparator1
             // 
@@ -339,38 +366,13 @@
             this.tsEspecificacao.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.tsEspecificacao.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuButtonNovaEspecificacao,
-            this.MenuButtonExcluirEspecificacao,
+            this.MenuButtonDeletarEspecificacao,
             this.toolStripSeparator2});
             this.tsEspecificacao.Location = new System.Drawing.Point(3, 3);
             this.tsEspecificacao.Name = "tsEspecificacao";
             this.tsEspecificacao.Size = new System.Drawing.Size(608, 27);
             this.tsEspecificacao.TabIndex = 32;
             this.tsEspecificacao.Text = "toolStrip1";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
-            // 
-            // MenuButtonNovoClasse
-            // 
-            this.MenuButtonNovoClasse.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MenuButtonNovoClasse.Image = global::Windows.Properties.Resources.novo1;
-            this.MenuButtonNovoClasse.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MenuButtonNovoClasse.Name = "MenuButtonNovoClasse";
-            this.MenuButtonNovoClasse.Size = new System.Drawing.Size(24, 24);
-            this.MenuButtonNovoClasse.Text = "Novo";
-            this.MenuButtonNovoClasse.Click += new System.EventHandler(this.MenuButtonNovoClasse_Click);
-            // 
-            // MenuButtonDeletarClasse
-            // 
-            this.MenuButtonDeletarClasse.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MenuButtonDeletarClasse.Image = global::Windows.Properties.Resources.delete;
-            this.MenuButtonDeletarClasse.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MenuButtonDeletarClasse.Name = "MenuButtonDeletarClasse";
-            this.MenuButtonDeletarClasse.Size = new System.Drawing.Size(24, 24);
-            this.MenuButtonDeletarClasse.Text = "Deletar";
-            this.MenuButtonDeletarClasse.Click += new System.EventHandler(this.MenuButtonDeletarClasse_Click);
             // 
             // MenuButtonNovaEspecificacao
             // 
@@ -382,15 +384,49 @@
             this.MenuButtonNovaEspecificacao.Text = "Novo";
             this.MenuButtonNovaEspecificacao.Click += new System.EventHandler(this.MenuButtonNovaEspecificacao_Click);
             // 
-            // MenuButtonExcluirEspecificacao
+            // MenuButtonDeletarEspecificacao
             // 
-            this.MenuButtonExcluirEspecificacao.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MenuButtonExcluirEspecificacao.Image = global::Windows.Properties.Resources.delete;
-            this.MenuButtonExcluirEspecificacao.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MenuButtonExcluirEspecificacao.Name = "MenuButtonExcluirEspecificacao";
-            this.MenuButtonExcluirEspecificacao.Size = new System.Drawing.Size(24, 24);
-            this.MenuButtonExcluirEspecificacao.Text = "Editar";
-            this.MenuButtonExcluirEspecificacao.Click += new System.EventHandler(this.MenuButtonExcluirEspecificacao_Click);
+            this.MenuButtonDeletarEspecificacao.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MenuButtonDeletarEspecificacao.Image = global::Windows.Properties.Resources.delete;
+            this.MenuButtonDeletarEspecificacao.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MenuButtonDeletarEspecificacao.Name = "MenuButtonDeletarEspecificacao";
+            this.MenuButtonDeletarEspecificacao.Size = new System.Drawing.Size(24, 24);
+            this.MenuButtonDeletarEspecificacao.Text = "Deletar";
+            this.MenuButtonDeletarEspecificacao.ToolTipText = "Deletar";
+            this.MenuButtonDeletarEspecificacao.Click += new System.EventHandler(this.MenuButtonDeletarEspecificacao_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(29, 36);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 13);
+            this.label7.TabIndex = 72;
+            this.label7.Text = "Fabricante";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // cbFabricante
+            // 
+            this.cbFabricante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFabricante.FormattingEnabled = true;
+            this.cbFabricante.Location = new System.Drawing.Point(92, 33);
+            this.cbFabricante.Name = "cbFabricante";
+            this.cbFabricante.Size = new System.Drawing.Size(200, 21);
+            this.cbFabricante.TabIndex = 71;
+            // 
+            // lblGravar
+            // 
+            this.lblGravar.AutoSize = true;
+            this.lblGravar.Location = new System.Drawing.Point(236, 8);
+            this.lblGravar.Name = "lblGravar";
+            this.lblGravar.Size = new System.Drawing.Size(0, 13);
+            this.lblGravar.TabIndex = 73;
+            this.lblGravar.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // Cadastro
             // 
@@ -405,6 +441,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Item";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tcDados.ResumeLayout(false);
@@ -446,7 +483,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStrip tsEspecificacao;
         private System.Windows.Forms.ToolStripButton MenuButtonNovaEspecificacao;
-        private System.Windows.Forms.ToolStripButton MenuButtonExcluirEspecificacao;
+        private System.Windows.Forms.ToolStripButton MenuButtonDeletarEspecificacao;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.DataGridView gridClasse;
         private System.Windows.Forms.DataGridView gridEspecificacao;
@@ -456,5 +493,8 @@
         private System.Windows.Forms.TextBox txtPreco;
         private System.Windows.Forms.TextBox txtDesconto;
         private System.Windows.Forms.ToolStripButton MenuButtonDeletarClasse;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cbFabricante;
+        private System.Windows.Forms.Label lblGravar;
     }
 }

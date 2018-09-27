@@ -58,6 +58,20 @@ namespace Infraestrutura.Access
             }
         }
 
+        public void Delete(int Id)
+        {
+            using (ISession session = NHibernateHelper.AbreSessao())
+            {
+                ItemClasse o = new ItemClasse();
+
+                o.Id = Id;
+
+                ITransaction tx = session.BeginTransaction();
+                session.Delete(o);
+                tx.Commit();
+            }
+        }
+
         public IList<ItemClasse> Lista()
         {
             using (ISession session = NHibernateHelper.AbreSessao())

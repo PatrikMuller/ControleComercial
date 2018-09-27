@@ -13,7 +13,7 @@ namespace Infraestrutura.Access
 {
     public class ItemAccess
     {
-        public Int32 Novo(Item o)
+        public int Novo(Item o)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
@@ -26,7 +26,7 @@ namespace Infraestrutura.Access
             }
         }
 
-        public Int32 Gravar(Item o)
+        public int Gravar(Item o)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
@@ -75,15 +75,16 @@ namespace Infraestrutura.Access
         //    }
         //}
 
-        public Object Lista(String nome)
+        public object Lista(String nome)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
                 
                 var retorno = (from pf in session.Query<Item>().
                                     Where(o => o.Nome.Like(nome)).
+                                    Fetch(o => o.Fabricante).
                                     Fetch(o => o.UnidadeMedida).
-                                    Select(o => new { o.Id, o.Nome, Medida = o.UnidadeMedida.Sigla, o.Quantidade, o.Preco, o.Desconto }).
+                                    Select(o => new { o.Id, o.Nome, Fabricante = o.Fabricante.Descricao, Medida = o.UnidadeMedida.Sigla, o.Quantidade, o.Preco, o.Desconto }).
                                     OrderBy(o => o.Nome).
                                     ToList()
                                select pf).Take(40).ToList();

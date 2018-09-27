@@ -30,8 +30,7 @@ namespace Windows.FormsFabricante
 
             txtId.Text = Convert.ToString(obj.Id);
             txtDescricao.Text = obj.Descricao;
-                        
-            //AtivaComponentes();
+
         }
 
         private void Gravar()
@@ -42,24 +41,7 @@ namespace Windows.FormsFabricante
             access.Gravar(obj);
 
             Close();
-        }
-
-        private void DesativaComponentes()
-        {
-
-            //txtDescricao.Enabled = false;
-            btnGravar.Enabled = false;
-
-        }
-
-        private void AtivaComponentes()
-        {
-
-            txtDescricao.Enabled = true;
-            btnGravar.Enabled = true;
-
-        }
-
+        }        
         //Fim - Métodos locais
 
 

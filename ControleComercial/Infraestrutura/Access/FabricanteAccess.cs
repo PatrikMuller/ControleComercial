@@ -47,23 +47,37 @@ namespace Infraestrutura.Access
                 return session.Get<Fabricante>(id);
             }
         }
-
-        public void Remove(Fabricante o)
-        {
-            using (ISession session = NHibernateHelper.AbreSessao())
-            {
-                ITransaction tx = session.BeginTransaction();
-                session.Delete(o);
-                tx.Commit();
-            }
-        }
-
+                
         public IList<Fabricante> Lista()
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
 
                 return session.Query<Fabricante>().OrderBy(o => o.Id).ToList();
+
+            }
+        }
+
+        public List<ddl> ddl()
+        {
+            using (ISession session = NHibernateHelper.AbreSessao())
+            {
+                var retorno = session.Query<Fabricante>().
+                    OrderBy(o => o.Descricao).ToList();
+
+                List<ddl> lista = new List<ddl>();
+
+                foreach (var obj in retorno)
+                {
+                    ddl Objddl = new ddl();
+
+                    Objddl.Id = Convert.ToString(obj.Id);
+                    Objddl.Nome = Convert.ToString(obj.Descricao);
+
+                    lista.Add(Objddl);
+                }
+
+                return lista;
 
             }
         }
