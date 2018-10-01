@@ -19,7 +19,7 @@ namespace Windows.FormsPessoaFisica
 
 
         //Início - Métodos locais
-        private void configuraGrid(Int32 QtdLinhas)
+        private void configuraGrid(int QtdLinhas)
         {
             if (QtdLinhas > 0)
             {
@@ -30,7 +30,7 @@ namespace Windows.FormsPessoaFisica
             }
         }
 
-        private void configuraBotoes(Int32 QtdLinhas)
+        private void configuraBotoes(int QtdLinhas)
         {
 
             MenuItemEditar.Enabled = QtdLinhas == 0 ? false : true;
@@ -50,8 +50,8 @@ namespace Windows.FormsPessoaFisica
         private void Editar()
         {
 
-            Int32 id = Convert.ToInt32(Grid.CurrentRow.Cells[0].Value);
-            FormCadastroPessoaFisica form = new FormCadastroPessoaFisica(id);
+            int id = Convert.ToInt32(Grid.CurrentRow.Cells[0].Value);
+            Cadastro form = new Cadastro(id);
             form.ShowDialog();
 
         }
@@ -59,7 +59,7 @@ namespace Windows.FormsPessoaFisica
         private void Novo()
         {
 
-            FormCadastroPessoaFisica form = new FormCadastroPessoaFisica(0);
+            Cadastro form = new Cadastro(0);
             form.ShowDialog();
 
         }

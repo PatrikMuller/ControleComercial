@@ -50,8 +50,8 @@ namespace Windows.FormsFormaPagamento
         private void Editar()
         {
 
-            Int32 id = Convert.ToInt32(Grid.CurrentRow.Cells[0].Value);
-            FormsCadastroFormaPagamento form = new FormsCadastroFormaPagamento(id);
+            int id = Convert.ToInt32(Grid.CurrentRow.Cells[0].Value);
+            Cadastro form = new Cadastro(id);
             form.ShowDialog();
 
         }

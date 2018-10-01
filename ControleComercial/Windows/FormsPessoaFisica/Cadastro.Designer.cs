@@ -73,7 +73,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(800, 140);
+            this.groupBox1.Size = new System.Drawing.Size(634, 140);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = " Dados Principais ";
@@ -112,6 +112,7 @@
             this.btnValidar.TabIndex = 2;
             this.btnValidar.Text = "Validar";
             this.btnValidar.UseVisualStyleBackColor = true;
+            this.btnValidar.Click += new System.EventHandler(this.btnValidar_Click);
             // 
             // label5
             // 
@@ -175,9 +176,9 @@
             this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.btnGravar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 414);
+            this.panel1.Location = new System.Drawing.Point(0, 375);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 36);
+            this.panel1.Size = new System.Drawing.Size(634, 36);
             this.panel1.TabIndex = 21;
             // 
             // btnCancelar
@@ -189,6 +190,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGravar
             // 
@@ -199,6 +201,7 @@
             this.btnGravar.Text = "Gravar";
             this.btnGravar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGravar.UseVisualStyleBackColor = true;
+            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
             // 
             // tcDados
             // 
@@ -207,7 +210,7 @@
             this.tcDados.Location = new System.Drawing.Point(0, 140);
             this.tcDados.Name = "tcDados";
             this.tcDados.SelectedIndex = 0;
-            this.tcDados.Size = new System.Drawing.Size(800, 274);
+            this.tcDados.Size = new System.Drawing.Size(634, 235);
             this.tcDados.TabIndex = 22;
             // 
             // tabPage1
@@ -223,7 +226,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(792, 248);
+            this.tabPage1.Size = new System.Drawing.Size(626, 209);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dados Pessoais";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -306,7 +309,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(634, 411);
             this.Controls.Add(this.tcDados);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);

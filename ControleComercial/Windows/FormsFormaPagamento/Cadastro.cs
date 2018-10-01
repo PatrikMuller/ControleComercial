@@ -8,13 +8,97 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Infraestrutura.Access;
+using Infraestrutura.Models;
+
 namespace Windows.FormsFormaPagamento
 {
     public partial class Cadastro : Form
     {
-        public Cadastro()
+        //Objetos
+        FormaPagamento obj = new FormaPagamento();
+
+        //Access
+        FormaPagamentoAccess formaPagamentoAccess = new FormaPagamentoAccess();
+        FormaPagamentoParcelamentoAccess formaPagamentoParcelamentoAccess = new FormaPagamentoParcelamentoAccess();
+
+
+        //Início - Métodos locais
+        private void Ler(int Id)
         {
-            InitializeComponent();
+
+            obj = formaPagamentoAccess.Ler(Id);
+
+            txtId.Text = Convert.ToString(obj.Id);
+            txtDescricao.Text = obj.Descricao;
+
+            Grid.DataSource = formaPagamentoParcelamentoAccess.Lista(obj.Id);
+
+            Grid.Columns[0].Visible = false;
+            //AtivaComponentes();
         }
+
+        private void DesativaComponentes()
+        {
+
+            //txtDescricao.Enabled = false;
+            btnGravar.Enabled = false;
+
+        }
+
+        private void AtivaComponentes()
+        {
+
+            txtDescricao.Enabled = true;
+            btnGravar.Enabled = true;
+
+        }
+
+        //Fim - Métodos locais
+
+
+
+        public Cadastro(int Id)
+        {
+
+            InitializeComponent();
+
+            Ler(Id);
+
+        }
+
+        private void btnGravar_Click(object sender, EventArgs e)
+        {
+            //
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void MenuButtonNovo_Click(object sender, EventArgs e)
+        {
+            FormsFormaPagamentoParcelamento.Cadastro form = new FormsFormaPagamentoParcelamento.Cadastro(0, Convert.ToInt32(txtId.Text));
+            form.ShowDialog();
+        }
+
+        private void MenuButtonEditar_Click(object sender, EventArgs e)
+        {
+            int Id = Convert.ToInt32(Grid.CurrentRow.Cells[0].Value);
+            FormsFormaPagamentoParcelamento.Cadastro form = new FormsFormaPagamentoParcelamento.Cadastro(Id, Convert.ToInt32(txtId.Text));
+            form.ShowDialog();
+        }
+
+        private void MenuButtonCancelar_Click(object sender, EventArgs e)
+        {
+            //
+        }
+
+        private void Cadastro_Activated(object sender, EventArgs e)
+        {
+            Grid.DataSource = formaPagamentoParcelamentoAccess.Lista(Convert.ToInt32(txtId.Text));
+        }
+                
     }
 }

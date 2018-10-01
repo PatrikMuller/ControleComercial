@@ -53,8 +53,8 @@ namespace Windows.FormsPessoaJuridica
         private void Editar()
         {
 
-            Int32 id = Convert.ToInt32(Grid.CurrentRow.Cells[0].Value);
-            FormCadastroPessoaJuridica form = new FormCadastroPessoaJuridica(id);
+            int id = Convert.ToInt32(Grid.CurrentRow.Cells[0].Value);
+            Cadastro form = new Cadastro(id);
             form.ShowDialog();
 
         }
@@ -62,7 +62,7 @@ namespace Windows.FormsPessoaJuridica
         private void Novo()
         {
 
-            FormCadastroPessoaJuridica form = new FormCadastroPessoaJuridica(0);
+            Cadastro form = new Cadastro(0);
             form.ShowDialog();
 
         }

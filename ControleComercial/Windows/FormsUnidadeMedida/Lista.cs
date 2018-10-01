@@ -54,8 +54,8 @@ namespace Windows.FormsUnidadeMedida
         private void Editar()
         {
 
-            Int32 id = Convert.ToInt32(Grid.CurrentRow.Cells[0].Value);
-            FormUnidadeMedida form = new FormUnidadeMedida(id);
+            int id = Convert.ToInt32(Grid.CurrentRow.Cells[0].Value);
+            Cadastro form = new Cadastro(id);
             form.ShowDialog();
 
         }
@@ -63,7 +63,7 @@ namespace Windows.FormsUnidadeMedida
         private void Novo()
         {
 
-            FormUnidadeMedida form = new FormUnidadeMedida(0);
+            Cadastro form = new Cadastro(0);
             form.ShowDialog();
 
         }

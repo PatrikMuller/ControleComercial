@@ -21,7 +21,7 @@ namespace Windows.FormsFabricante
 
 
         //Início - Métodos locais
-        private void configuraGrid(Int32 QtdLinhas)
+        private void configuraGrid(int QtdLinhas)
         {
             if (QtdLinhas > 0)
             {
@@ -30,7 +30,7 @@ namespace Windows.FormsFabricante
             }
         }
 
-        private void configuraBotoes(Int32 QtdLinhas)
+        private void configuraBotoes(int QtdLinhas)
         {
 
             MenuItemEditar.Enabled = QtdLinhas == 0 ? false : true;
@@ -50,8 +50,8 @@ namespace Windows.FormsFabricante
         private void Editar()
         {
 
-            Int32 id = Convert.ToInt32(Grid.CurrentRow.Cells[0].Value);
-            FormCadastroFabricante form = new FormCadastroFabricante(id);
+            int id = Convert.ToInt32(Grid.CurrentRow.Cells[0].Value);
+            Cadastro form = new Cadastro(id);
             form.ShowDialog();
 
         }
@@ -59,7 +59,7 @@ namespace Windows.FormsFabricante
         private void Novo()
         {
 
-            FormCadastroFabricante form = new FormCadastroFabricante(0);
+            Cadastro form = new Cadastro(0);
             form.ShowDialog();
 
         }

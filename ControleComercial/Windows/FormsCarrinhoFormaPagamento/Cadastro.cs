@@ -13,9 +13,8 @@ using Infraestrutura.Models;
 
 namespace Windows.FormsCarrinhoFormaPagamento
 {
-    public partial class CadastroFormaPagamento : Form
+    public partial class Cadastro : Form
     {
-
         //Objetos
         Carrinho ObjCarrinho = new Carrinho();
         FormaPagamento ObjFormaPagamento = new FormaPagamento();
@@ -47,25 +46,25 @@ namespace Windows.FormsCarrinhoFormaPagamento
         }
 
 
-        public CadastroFormaPagamento(Int32 IdCarrinho, Double ValorTotal)
+        public Cadastro(Int32 IdCarrinho, Double ValorTotal)
         {
             ObjCarrinho.Id = IdCarrinho;
             Total = ValorTotal;
-            
+
             InitializeComponent();
 
             ObjUtilitario.setComboBox(cbFormaPagamento, formaPagamentoAccess.ddl());
             ObjUtilitario.setComboBox(cbParcelas, formaPagamentoParcelamentoAccess.ddl(Convert.ToInt32(cbFormaPagamento.SelectedValue)));
 
         }
-                
+
         private void txtValorPagar_KeyPress(object sender, KeyPressEventArgs e)
         {
             txtValorPagar.Text = ObjUtilitario.mascaraMoney(txtValorPagar, e); //Mudar a Mascara
             txtValorPagar.SelectionStart = txtValorPagar.TextLength;
         }
 
-        private void CadastroFormaPagamento_Activated(object sender, EventArgs e)
+        private void Cadastro_Activated(object sender, EventArgs e)
         {
             txtTotal.Text = Total.ToString("###,###,###,##0.00");
             txtValorPagar.Text = Total.ToString("###,###,###,##0.00");
@@ -103,6 +102,6 @@ namespace Windows.FormsCarrinhoFormaPagamento
             Close();
 
         }
-
+                
     }
 }

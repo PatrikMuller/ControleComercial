@@ -157,7 +157,7 @@ namespace Windows.FormsCarrinho
         private void btnFormaPgto_Click(object sender, EventArgs e)
         {
 
-            FormsCarrinhoFormaPagamento.CadastroFormaPagamento form = new FormsCarrinhoFormaPagamento.CadastroFormaPagamento(Convert.ToInt32(txtIdCarrinho.Text), 550.35);
+            FormsCarrinhoFormaPagamento.Cadastro form = new FormsCarrinhoFormaPagamento.Cadastro(Convert.ToInt32(txtIdCarrinho.Text), 550.35);
 
             if (form.ShowDialog() == DialogResult.OK)
             {

@@ -1,6 +1,6 @@
 ﻿namespace Windows.FormsCarrinhoFormaPagamento
 {
-    partial class CadastroFormaPagamento
+    partial class Cadastro
     {
         /// <summary>
         /// Required designer variable.
@@ -31,6 +31,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnInserir = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtValorPagar = new System.Windows.Forms.TextBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.txtValorParcela = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -39,8 +41,6 @@
             this.cbFormaPagamento = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtValorPagar = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -49,10 +49,10 @@
             // 
             this.panel1.Controls.Add(this.btnInserir);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 225);
+            this.panel1.Location = new System.Drawing.Point(0, 205);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(564, 36);
-            this.panel1.TabIndex = 13;
+            this.panel1.Size = new System.Drawing.Size(384, 36);
+            this.panel1.TabIndex = 14;
             // 
             // btnInserir
             // 
@@ -80,10 +80,33 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(564, 225);
-            this.groupBox1.TabIndex = 14;
+            this.groupBox1.Size = new System.Drawing.Size(384, 205);
+            this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Forma de Pagamento";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(58, 56);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(71, 13);
+            this.label5.TabIndex = 60;
+            this.label5.Text = "Valor a Pagar";
+            // 
+            // txtValorPagar
+            // 
+            this.txtValorPagar.BackColor = System.Drawing.SystemColors.Window;
+            this.txtValorPagar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtValorPagar.Location = new System.Drawing.Point(135, 53);
+            this.txtValorPagar.MaxLength = 18;
+            this.txtValorPagar.Name = "txtValorPagar";
+            this.txtValorPagar.ReadOnly = true;
+            this.txtValorPagar.Size = new System.Drawing.Size(160, 20);
+            this.txtValorPagar.TabIndex = 59;
+            this.txtValorPagar.Text = "0,00";
+            this.txtValorPagar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtValorPagar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorPagar_KeyPress);
             // 
             // txtTotal
             // 
@@ -160,42 +183,18 @@
             this.label1.TabIndex = 43;
             this.label1.Text = "Forma de Pagamento";
             // 
-            // txtValorPagar
-            // 
-            this.txtValorPagar.BackColor = System.Drawing.SystemColors.Window;
-            this.txtValorPagar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtValorPagar.Location = new System.Drawing.Point(135, 53);
-            this.txtValorPagar.MaxLength = 18;
-            this.txtValorPagar.Name = "txtValorPagar";
-            this.txtValorPagar.ReadOnly = true;
-            this.txtValorPagar.Size = new System.Drawing.Size(160, 20);
-            this.txtValorPagar.TabIndex = 59;
-            this.txtValorPagar.Text = "0,00";
-            this.txtValorPagar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtValorPagar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorPagar_KeyPress);
-            this.txtValorPagar.Leave += new System.EventHandler(this.txtValorPagar_Leave);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(58, 56);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 13);
-            this.label5.TabIndex = 60;
-            this.label5.Text = "Valor a Pagar";
-            // 
-            // CadastroFormaPagamento
+            // Cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(564, 261);
+            this.ClientSize = new System.Drawing.Size(384, 241);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "CadastroFormaPagamento";
+            this.Name = "Cadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CadastroFormaPagamento";
-            this.Activated += new System.EventHandler(this.CadastroFormaPagamento_Activated);
+            this.Text = "Cadastro";
+            this.Activated += new System.EventHandler(this.Cadastro_Activated);
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -208,6 +207,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnInserir;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtValorPagar;
+        private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.TextBox txtValorParcela;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
@@ -215,8 +217,5 @@
         private System.Windows.Forms.ComboBox cbFormaPagamento;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtTotal;
-        private System.Windows.Forms.TextBox txtValorPagar;
-        private System.Windows.Forms.Label label5;
     }
 }
