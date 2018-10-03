@@ -91,5 +91,26 @@ namespace Infraestrutura.Access
             }
         }
 
+        public double TotalPago(int IdCarrinho)
+        {
+            double total = 0.00;
+
+            using (ISession session = NHibernateHelper.AbreSessao())
+            {
+
+                var retorno = session.Query<CarrinhoFormaPagamento>().
+                                    Where(o => o.Carrinho.Id == IdCarrinho).
+                                    GroupBy(o => o.Carrinho.Id).
+                                    //Select(o => new { (o.Quantidade * (o.Preco - o.Desconto)) }).
+                                    Select(o => new { Total = o.Sum(i => i.ValorPagar) }).
+                                    FirstOrDefault();
+
+                total = retorno == null ? 0.00 : retorno.Total;
+
+            }
+
+            return total;
+        }
+
     }
 }

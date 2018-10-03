@@ -22,8 +22,9 @@ namespace Windows.Negocio
 
 
         //Método arredonda para 2 casas decimais
-        public Double Arredondar(Double valor)
+        public double Arredondar(double valor)
         {
+            //double o = Convert.ToDouble(valor == null ? 0.00 : valor);
             return Math.Round(valor, 2);
         }
 
@@ -405,7 +406,7 @@ namespace Windows.Negocio
             texto = Convert.ToDouble(texto).ToString("###,###,###,##0.000");
 
             e.KeyChar = ' ';
-
+                        
             return texto;
         }
 

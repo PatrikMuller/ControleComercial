@@ -46,24 +46,45 @@ namespace Windows.FormsCarrinho
 
         }
 
-        private void DesativaComponentes()
+        private bool IdZero()
         {
-
-            btnNovoCarrinho.Enabled = true;
-            btnClienteCNPJ.Enabled = false;
-            btnFormaPgto.Enabled = false;
-
-
+            return txtIdCarrinho.Text == "0" ? true : false;
         }
 
-        private void AtivaComponentes()
+        private bool IdMaiorZero()
         {
+            return txtIdCarrinho.Text == "0" ? false : true;
+        }
 
-            btnNovoCarrinho.Enabled = false;
-            btnClienteCNPJ.Enabled = true;
-            btnFormaPgto.Enabled = true;
+        private void ConfiguraComponetes()
+        {
+            btnNovoCarrinho.Enabled = IdZero();
+            btnGravar.Enabled = IdMaiorZero();
+            btnCancelar.Enabled = IdMaiorZero();
+            btnClienteCPF.Enabled = IdMaiorZero();
+            btnClienteCNPJ.Enabled = IdMaiorZero();
+            btnFormaPgto.Enabled = IdMaiorZero();
+            btnLocalizar.Enabled = IdMaiorZero();
+            txtQuantidade.Enabled = IdMaiorZero();
+            txtProduto.Enabled = IdMaiorZero();
+        }
 
+        private void LimpaComponetes()
+        {
+            txtIdCarrinho.Text = "0";
+            txtDataCarrinho.Text = "00/00/0000 00:00:00";
+            txtOperador.Text = "operador";
 
+            lblClienteNome.Text = "0000000000000000";
+            lblClienteCpfCnpj.Text = "0000000000000000";
+
+            gridFormaPgto.DataSource = null;
+            GridProdutos.DataSource = null;
+
+            txtQuantidade.Text = "1,000";
+            txtProduto.Text = "";
+
+            lblTotal.Text = "R$ 000.000.000,00";
         }
 
         private void LerCarrinho(Int32 Id)
@@ -77,7 +98,7 @@ namespace Windows.FormsCarrinho
                 txtOperador.Text = Convert.ToString(carrinho.UsuarioAbertura);
 
                 Total = ObjUtilitario.Arredondar(carrinhoItemAccess.Total(Id));
-                lblTotal.Text = "R$ " + Convert.ToString(Total);
+                lblTotal.Text = "R$ " + ObjUtilitario.lerPreco(Total);
             }
 
         }
@@ -99,6 +120,7 @@ namespace Windows.FormsCarrinho
 
             InitializeComponent();
 
+            LimpaComponetes();
 
             if (Id != 0)
             {
@@ -106,10 +128,10 @@ namespace Windows.FormsCarrinho
                 LerCliente();
                 GridProdutos.DataSource = carrinhoItemAccess.ListaGrid(Convert.ToInt32(txtIdCarrinho.Text));
                 gridFormaPgto.DataSource = carrinhoFormaPagamentoAccess.Lista(Convert.ToInt32(txtIdCarrinho.Text));
-                AtivaComponentes();
                 configuraGridProdutos();
             }
 
+            ConfiguraComponetes();
 
         }
 
@@ -122,7 +144,7 @@ namespace Windows.FormsCarrinho
             txtIdCarrinho.Text = Convert.ToString(carrinhoAccess.Novo(carrinho));
             txtDataCarrinho.Text = Convert.ToString(carrinho.DataAbertura);
             txtOperador.Text = carrinho.UsuarioAbertura;
-            AtivaComponentes();
+            ConfiguraComponetes();
 
         }
 
@@ -134,9 +156,10 @@ namespace Windows.FormsCarrinho
             carrinho.UsuarioFechamento = "patrikmuller";
             txtIdCarrinho.Text = Convert.ToString(carrinhoAccess.Gravar(carrinho));
             txtDataCarrinho.Text = Convert.ToString(carrinho.DataAbertura);
-            Close();
-            DesativaComponentes();
+            //ConfiguraComponetes();
 
+            LimpaComponetes();
+            ConfiguraComponetes();
         }
 
         private void btnLocalizar_Click(object sender, EventArgs e)
@@ -157,7 +180,7 @@ namespace Windows.FormsCarrinho
         private void btnFormaPgto_Click(object sender, EventArgs e)
         {
 
-            FormsCarrinhoFormaPagamento.Cadastro form = new FormsCarrinhoFormaPagamento.Cadastro(Convert.ToInt32(txtIdCarrinho.Text), 550.35);
+            FormsCarrinhoFormaPagamento.Cadastro form = new FormsCarrinhoFormaPagamento.Cadastro(Convert.ToInt32(txtIdCarrinho.Text), Total);
 
             if (form.ShowDialog() == DialogResult.OK)
             {
@@ -185,5 +208,16 @@ namespace Windows.FormsCarrinho
             form.ShowDialog();
             LerCliente();
         }
+
+        private void txtQuantidade_Leave(object sender, EventArgs e)
+        {
+            txtQuantidade.Text = txtQuantidade.Text == "0,000" ? "1,000" : txtQuantidade.Text;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
     }
 }

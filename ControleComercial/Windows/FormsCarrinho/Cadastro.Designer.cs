@@ -50,7 +50,7 @@
             this.gbLocalizarProduto = new System.Windows.Forms.GroupBox();
             this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtProduto = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnLocalizar = new System.Windows.Forms.Button();
             this.gbCliente = new System.Windows.Forms.GroupBox();
@@ -210,6 +210,7 @@
             this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnNovoCarrinho
             // 
@@ -279,7 +280,7 @@
             // 
             this.gbLocalizarProduto.Controls.Add(this.txtQuantidade);
             this.gbLocalizarProduto.Controls.Add(this.label3);
-            this.gbLocalizarProduto.Controls.Add(this.textBox1);
+            this.gbLocalizarProduto.Controls.Add(this.txtProduto);
             this.gbLocalizarProduto.Controls.Add(this.label2);
             this.gbLocalizarProduto.Controls.Add(this.btnLocalizar);
             this.gbLocalizarProduto.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -300,9 +301,10 @@
             this.txtQuantidade.ReadOnly = true;
             this.txtQuantidade.Size = new System.Drawing.Size(140, 20);
             this.txtQuantidade.TabIndex = 65;
-            this.txtQuantidade.Text = "0,000";
+            this.txtQuantidade.Text = "1,000";
             this.txtQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtQuantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantidade_KeyPress);
+            this.txtQuantidade.Leave += new System.EventHandler(this.txtQuantidade_Leave);
             // 
             // label3
             // 
@@ -313,12 +315,12 @@
             this.label3.TabIndex = 64;
             this.label3.Text = "Quantidade";
             // 
-            // textBox1
+            // txtProduto
             // 
-            this.textBox1.Location = new System.Drawing.Point(158, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
-            this.textBox1.TabIndex = 63;
+            this.txtProduto.Location = new System.Drawing.Point(158, 37);
+            this.txtProduto.Name = "txtProduto";
+            this.txtProduto.Size = new System.Drawing.Size(200, 20);
+            this.txtProduto.TabIndex = 63;
             // 
             // label2
             // 
@@ -511,7 +513,7 @@
         private System.Windows.Forms.GroupBox gbLocalizarProduto;
         private System.Windows.Forms.TextBox txtQuantidade;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtProduto;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLocalizar;
         private System.Windows.Forms.GroupBox gbFormaPgto;

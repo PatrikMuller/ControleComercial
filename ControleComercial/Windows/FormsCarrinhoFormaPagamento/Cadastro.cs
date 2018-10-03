@@ -33,25 +33,31 @@ namespace Windows.FormsCarrinhoFormaPagamento
 
 
         //Variaveis
-        Double Total = 0.00;
+        double Total = 0.00;
+        double TotalPago = 0.00;
 
         private void CalculaParcela()
         {
-            Double valorPagar = Convert.ToDouble(txtValorPagar.Text);
+            double valorPagar = Convert.ToDouble(txtValorPagar.Text);
             ObjFormaPagamentoParcelamento = formaPagamentoParcelamentoAccess.Ler(Convert.ToInt32(cbParcelas.SelectedValue));
 
-            Double Parcela = ObjUtilitario.Arredondar((valorPagar / ObjFormaPagamentoParcelamento.QtdParcelas) + (valorPagar / 100 * ObjFormaPagamentoParcelamento.Juros));
+            double Parcela = ObjUtilitario.Arredondar((valorPagar / ObjFormaPagamentoParcelamento.QtdParcelas) + (valorPagar / 100 * ObjFormaPagamentoParcelamento.Juros));
 
             txtValorParcela.Text = Parcela.ToString("###,###,###,##0.00");
         }
 
 
-        public Cadastro(Int32 IdCarrinho, Double ValorTotal)
+        public Cadastro(int IdCarrinho, double ValorTotal)
         {
+
+            InitializeComponent();
+
             ObjCarrinho.Id = IdCarrinho;
             Total = ValorTotal;
 
-            InitializeComponent();
+            TotalPago = ObjUtilitario.Arredondar(carrinhoFormaPagamentoAccess.TotalPago(IdCarrinho));
+            txtValorPagar.Text = ObjUtilitario.lerPreco(TotalPago);
+            txtValorParcela.Text = ObjUtilitario.lerPreco(TotalPago);
 
             ObjUtilitario.setComboBox(cbFormaPagamento, formaPagamentoAccess.ddl());
             ObjUtilitario.setComboBox(cbParcelas, formaPagamentoParcelamentoAccess.ddl(Convert.ToInt32(cbFormaPagamento.SelectedValue)));
@@ -67,8 +73,8 @@ namespace Windows.FormsCarrinhoFormaPagamento
         private void Cadastro_Activated(object sender, EventArgs e)
         {
             txtTotal.Text = Total.ToString("###,###,###,##0.00");
-            txtValorPagar.Text = Total.ToString("###,###,###,##0.00");
-            txtValorParcela.Text = Total.ToString("###,###,###,##0.00");
+            txtValorPagar.Text = TotalPago.ToString("###,###,###,##0.00");
+            //txtValorParcela.Text = txtValorParcela.Text.ToString("###,###,###,##0.00");
             txtValorPagar.Focus();
         }
 

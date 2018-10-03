@@ -95,21 +95,21 @@ namespace Infraestrutura.Access
             }
         }
 
-        public Double Total(Int32 idCarrinho)
+        public double Total(Int32 idCarrinho)
         {
-            Double total = 0.00;
+            double total = 0.00;
 
             using (ISession session = NHibernateHelper.AbreSessao())
-            {                
-                var retorno = (from c in session.Query<CarrinhoItem>().
+            {
+                
+                var retorno = session.Query<CarrinhoItem>().
                                     Where(o => o.Carrinho.Id == idCarrinho).
                                     GroupBy(o => o.Carrinho.Id).
                                     //Select(o => new { (o.Quantidade * (o.Preco - o.Desconto)) }).
                                     Select(o => new { Total = o.Sum(i => i.Quantidade * (i.Preco - i.Desconto)) }).
-                                    ToList()
-                               select c).SingleOrDefault();
-                                
-                total = retorno.Total;
+                                    FirstOrDefault();
+
+                total = retorno == null ? 0.00 : retorno.Total;
 
             }
 
