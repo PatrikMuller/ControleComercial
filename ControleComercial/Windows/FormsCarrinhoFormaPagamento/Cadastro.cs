@@ -35,13 +35,15 @@ namespace Windows.FormsCarrinhoFormaPagamento
         //Variaveis
         double Total = 0.00;
         double TotalPago = 0.00;
+        double valorPagar = 0.00;
+        double Parcela = 0.00;
 
         private void CalculaParcela()
         {
-            double valorPagar = Convert.ToDouble(txtValorPagar.Text);
+            valorPagar = Convert.ToDouble(txtValorPagar.Text);
             ObjFormaPagamentoParcelamento = formaPagamentoParcelamentoAccess.Ler(Convert.ToInt32(cbParcelas.SelectedValue));
 
-            double Parcela = ObjUtilitario.Arredondar((valorPagar / ObjFormaPagamentoParcelamento.QtdParcelas) + (valorPagar / 100 * ObjFormaPagamentoParcelamento.Juros));
+            Parcela = ObjUtilitario.Arredondar((valorPagar / ObjFormaPagamentoParcelamento.QtdParcelas) + (valorPagar / 100 * ObjFormaPagamentoParcelamento.Juros));
 
             txtValorParcela.Text = Parcela.ToString("###,###,###,##0.00");
         }
@@ -54,10 +56,12 @@ namespace Windows.FormsCarrinhoFormaPagamento
 
             ObjCarrinho.Id = IdCarrinho;
             Total = ValorTotal;
-
             TotalPago = ObjUtilitario.Arredondar(carrinhoFormaPagamentoAccess.TotalPago(IdCarrinho));
-            txtValorPagar.Text = ObjUtilitario.lerPreco(TotalPago);
-            txtValorParcela.Text = ObjUtilitario.lerPreco(TotalPago);
+            valorPagar = Total - TotalPago;
+            Parcela = valorPagar;
+
+            txtValorPagar.Text = ObjUtilitario.lerPreco(valorPagar);
+            txtValorParcela.Text = ObjUtilitario.lerPreco(valorPagar);
 
             ObjUtilitario.setComboBox(cbFormaPagamento, formaPagamentoAccess.ddl());
             ObjUtilitario.setComboBox(cbParcelas, formaPagamentoParcelamentoAccess.ddl(Convert.ToInt32(cbFormaPagamento.SelectedValue)));
@@ -66,15 +70,15 @@ namespace Windows.FormsCarrinhoFormaPagamento
 
         private void txtValorPagar_KeyPress(object sender, KeyPressEventArgs e)
         {
-            txtValorPagar.Text = ObjUtilitario.mascaraMoney(txtValorPagar, e); //Mudar a Mascara
+            txtValorPagar.Text = ObjUtilitario.mascaraMoney(txtValorPagar, valorPagar, e); //Mudar a Mascara
             txtValorPagar.SelectionStart = txtValorPagar.TextLength;
         }
 
         private void Cadastro_Activated(object sender, EventArgs e)
         {
             txtTotal.Text = Total.ToString("###,###,###,##0.00");
-            txtValorPagar.Text = TotalPago.ToString("###,###,###,##0.00");
-            //txtValorParcela.Text = txtValorParcela.Text.ToString("###,###,###,##0.00");
+            txtValorPagar.Text = valorPagar.ToString("###,###,###,##0.00");
+            txtValorParcela.Text = Parcela.ToString("###,###,###,##0.00");
             txtValorPagar.Focus();
         }
 

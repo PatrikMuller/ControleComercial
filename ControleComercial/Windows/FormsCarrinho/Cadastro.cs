@@ -46,6 +46,14 @@ namespace Windows.FormsCarrinho
 
         }
 
+        private void configuraGridFormaPgto()
+        {
+            if (gridFormaPgto.RowCount > 0)
+            {
+                gridFormaPgto.Columns[3].DefaultCellStyle.Format = "R$ ###,###,###,##0.00";
+            }
+        }
+
         private bool IdZero()
         {
             return txtIdCarrinho.Text == "0" ? true : false;
@@ -129,6 +137,7 @@ namespace Windows.FormsCarrinho
                 GridProdutos.DataSource = carrinhoItemAccess.ListaGrid(Convert.ToInt32(txtIdCarrinho.Text));
                 gridFormaPgto.DataSource = carrinhoFormaPagamentoAccess.Lista(Convert.ToInt32(txtIdCarrinho.Text));
                 configuraGridProdutos();
+                configuraGridFormaPgto();
             }
 
             ConfiguraComponetes();

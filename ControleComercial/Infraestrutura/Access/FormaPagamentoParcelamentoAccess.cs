@@ -98,7 +98,7 @@ namespace Infraestrutura.Access
                     ddl Objddl = new ddl();
 
                     Objddl.Id = Convert.ToString(obj.Id);
-                    Objddl.Nome = Convert.ToString(obj.QtdParcelas) + " - Juros em cada Parcela: " + obj.Juros.ToString("###,###,###,##0.00"); //ToString("###,###,###,##0.00")
+                    Objddl.Nome = Convert.ToString(obj.QtdParcelas) + "X - Juros em cada Parcela: " + obj.Juros.ToString("###,###,###,##0.00"); //ToString("###,###,###,##0.00")
 
                     lista.Add(Objddl);
                 }
