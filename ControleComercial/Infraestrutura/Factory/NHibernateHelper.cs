@@ -30,8 +30,13 @@ namespace Infraestrutura.Factory
         public static ISessionFactory CriaSessionFactory()
         {
 
-            IPersistenceConfigurer configDB = PostgreSQLConfiguration.PostgreSQL82.ConnectionString("Server=localhost;Port=5432;Database=money_sic;User Id=postgres;Password=123456;");
-            //IPersistenceConfigurer configDB = MsSqlConfiguration.MsSql2012.ConnectionString("Server=(local); Database=teste; User Id=user_teste; Password=123456;");
+            //Casa
+            //IPersistenceConfigurer configDB = PostgreSQLConfiguration.PostgreSQL82.ConnectionString("Server=localhost;Port=5432;Database=money_sic;User Id=postgres;Password=123456;"); 
+
+            //Trabalho
+            IPersistenceConfigurer configDB = PostgreSQLConfiguration.PostgreSQL82.ConnectionString("Server=localhost;Port=5432;Database=money_sic;User Id=login_money;Password=123456;");
+                        
+
             var configMap = Fluently.Configure().Database(configDB)
                 //Mappings(c => c.FluentMappings.AddFromAssemblyOf<Mapping.PessoaFisicaMapping>());
 
@@ -41,7 +46,8 @@ namespace Infraestrutura.Factory
 
                 //ExposeConfiguration( y => new SchemaExport(y).Create(true, false));
                 .ExposeConfiguration(y => new SchemaUpdate(y).Execute(true, true))
-                .BuildConfiguration().BuildSessionFactory();
+                .BuildConfiguration()
+                .BuildSessionFactory();
                                                 
             factory = configMap;
                                     
