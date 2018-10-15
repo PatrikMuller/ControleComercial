@@ -104,11 +104,14 @@
     <Compile Include="Mapping\ItemClasseMapping.cs" />
     <Compile Include="Mapping\ItemEspecificacaoMapping.cs" />
     <Compile Include="Mapping\ItemMapping.cs" />
+    <Compile Include="Mapping\ModuloMapping.cs" />
     <Compile Include="Mapping\ParcelamentoStatusMapping.cs" />
     <Compile Include="Mapping\PessoaFisicaMapping.cs" />
     <Compile Include="Mapping\PessoaJuridicaMapping.cs" />
     <Compile Include="Mapping\PessoaMapping.cs" />
     <Compile Include="Mapping\UnidadeMedidaMapping.cs" />
+    <Compile Include="Mapping\UsuarioMapping.cs" />
+    <Compile Include="Mapping\UsuarioPermissaoMapping.cs" />
     <Compile Include="Models\Carrinho.cs" />
     <Compile Include="Models\CarrinhoFormaPagamento.cs" />
     <Compile Include="Models\CarrinhoItem.cs" />
@@ -124,11 +127,14 @@
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\ItemClasse.cs" />
     <Compile Include="Models\ItemEspecificacao.cs" />
+    <Compile Include="Models\Modulo.cs" />
     <Compile Include="Models\ParcelamentoStatus.cs" />
     <Compile Include="Models\Pessoa.cs" />
     <Compile Include="Models\PessoaFisica.cs" />
     <Compile Include="Models\PessoaJuridica.cs" />
     <Compile Include="Models\UnidadeMedida.cs" />
+    <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Models\UsuarioPermissao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
