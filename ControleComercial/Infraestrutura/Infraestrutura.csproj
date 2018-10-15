@@ -82,12 +82,15 @@
     <Compile Include="Access\ItemAccess.cs" />
     <Compile Include="Access\ItemClasseAccess.cs" />
     <Compile Include="Access\ItemEspecificacaoAccess.cs" />
+    <Compile Include="Access\ModuloAccess.cs" />
     <Compile Include="Access\ParcelamentoStatusAccess.cs" />
     <Compile Include="Access\PessoaAccess.cs" />
     <Compile Include="Access\PessoaFisicaAccess.cs" />
     <Compile Include="Access\PessoaJuridicaAccess.cs" />
     <Compile Include="Access\SexoAccess.cs" />
     <Compile Include="Access\UnidadeMedidaAccess.cs" />
+    <Compile Include="Access\UsuarioAccess.cs" />
+    <Compile Include="Access\UsuarioPermissaoAccess.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Factory\NHibernateHelper.cs" />
     <Compile Include="Mapping\CarrinhoFormaPagamentoMapping.cs" />

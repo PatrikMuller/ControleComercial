@@ -8,23 +8,23 @@ using NHibernate;
 
 namespace Infraestrutura.Access
 {
-    public class CarrinhoAccess
+    public class UsuarioAccess
     {
 
-        public int Novo(Carrinho obj)
+        public int Novo(Usuario obj)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
                 ITransaction tx = session.BeginTransaction();
-                                
+
                 session.Save(obj);
-                
+
                 tx.Commit();
                 return obj.Id;
             }
         }
 
-        public int Gravar(Carrinho obj)
+        public int Gravar(Usuario obj)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
@@ -37,15 +37,15 @@ namespace Infraestrutura.Access
             }
         }
 
-        public Carrinho Ler(int id)
+        public Usuario Ler(int id)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
-                return session.Get<Carrinho>(id);
+                return session.Get<Usuario>(id);
             }
         }
 
-        public void Remove(Carrinho obj)
+        public void Remove(Usuario obj)
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
@@ -55,13 +55,13 @@ namespace Infraestrutura.Access
             }
         }
 
-        public IList<Carrinho> Lista()
+        public IList<Usuario> Lista()
         {
             using (ISession session = NHibernateHelper.AbreSessao())
             {
-                return session.Query<Carrinho>().OrderBy(o => o.Id).ToList();
+                return session.Query<Usuario>().OrderBy(o => o.Id).ToList();
             }
         }
-                
+
     }
 }
